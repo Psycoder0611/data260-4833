@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW1-Trapti Kulshrestha</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+    
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        /* Prevent the checkbox from stretching to full width */
+        input[type="checkbox"] {
+            width: auto;
+            margin-right: 8px;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Clinical Trial Listing</h1>
+
+    <!-- Form for collecting clinical trial information -->
+    <form id="clinicalTrialForm"> <!-- <form> - collect user input -->
+        <!-- a) Primary field -->
+        <!-- required = user cannot leave this empty -->
+        <!-- autofocus = cursor automatically starts in this field -->
+        <label for="trialTitle">Clinical Trial Title:</label>
+        <input
+            type="text"
+            id="trialTitle"  
+            name="trialTitle"
+            placeholder="Enter clinical trial title"
+            required
+            autofocus
+        >
+    
+
+    <!-- b) Required text input for the entity's secondary field -->
+     <!-- type="text" -> means user can enter normal text -->
+    <label for="sponsor">Sponsor / Institution:</label> 
+    <input
+        type="text"
+        id="sponsor"
+        name="sponsor"
+        placeholder="Enter sponsor or institution name"
+        required
+    >
+
+    <!-- c) Required email input for submitter's email -->
+    <!-- type="email" -> tells browser this field should contain an email add. -->
+    <!-- required -> means user cannot leave this field empty -->
+    <label for="submitterEmail">Submitter Email:</label>
+
+    <input
+        type="email"
+        id="submitterEmail"
+        name="submitterEmail"
+        placeholder="Enter submitter email"
+        required
+    >
+
+    <!-- d) Required text area for entity's description field -->
+    <!-- textarea is used when user needs to enter longer text -->
+    <!-- required ->field cannot be left empty -->
+    <label for="description">Trial Description:</label>
+
+    <textarea
+        id="description"
+        name="description"
+        placeholder="Enter a detailed description of the clinical trial"
+        required
+    ></textarea>
+
+
+    <!-- e) Dropdown for category selection -->
+    <!-- select creates a dropdown menu -->
+    <!-- option defines each choice inside the dropdown -->
+    <label for="category">Study Type:</label>
+
+    <select
+        id="category"
+        name="category"
+        required
+    >
+        <option value="" disabled selected>Select study type</option>
+        <option value="Drug Trial">Drug Trial</option>
+        <option value="Device Trial">Device Trial</option>
+        <option value="Behavioral Study">Behavioral Study</option>
+        <option value="Vaccine Trial">Vaccine Trial</option>
+    </select>
+
+    <!-- f) Checkbox for agreeing to the terms & conditions -->
+    <!-- type="checkbox" creates box the user can check -->
+    <label>
+        <input
+            type="checkbox"
+            id="terms"
+            name="terms"
+        >
+        I agree to the terms and conditions.
+    </label>
+
+
+    <!-- g) Submit button -->
+    <!-- type="submit" submits form when clicked -->
+    <!-- button text is domain-appropriate for Clinical Trial Listings -->
+    <button type="submit">Submit Clinical Trial</button>
+
+</form>
+
+<!-- Link to the JavaScript file for Part II -->
+<script src="script.js"></script>
+    
+</body>
+</html>

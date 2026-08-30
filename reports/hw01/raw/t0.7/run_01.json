@@ -1,0 +1,39 @@
+{
+  "temperature": 0.7,
+  "run": 1,
+  "model": "qwen3:8b",
+  "latency_ms": 254599.63,
+  "final_tags": [
+    "Type 2 Diabetes Treatment",
+    "Blood Glucose Management",
+    "Clinical Trial Innovation"
+  ],
+  "publish_package": {
+    "title": "New Diabetes Drug Trial",
+    "email": "tripti@sjsu.edu",
+    "content": "A clinical trial is evaluating a new diabetes medication designed to improve blood glucose control in adults with type 2 diabetes.",
+    "agents": {
+      "transcript": [
+        {
+          "role": "Planner",
+          "content": "Tags and summary created based on trial's focus on type 2 diabetes medication and blood glucose control."
+        },
+        {
+          "role": "Reviewer",
+          "content": "Tags and summary reflect the trial's specific focus on type 2 diabetes treatment and glucose management."
+        }
+      ],
+      "final": {
+        "tags": [
+          "Type 2 Diabetes Treatment",
+          "Blood Glucose Management",
+          "Clinical Trial Innovation"
+        ],
+        "summary": "A new diabetes medication is being tested in a clinical trial to enhance blood glucose control for type 2 diabetes patients.",
+        "issues": []
+      }
+    },
+    "submissionDate": "2026-08-27T21:29:04Z"
+  },
+  "console_output": "\n--- Planner (79049 ms) ---\n{\n  \"thought\": \"Identified key themes: clinical trial focus, diabetes treatment, and blood glucose management. Formulated tags around these areas.\",\n  \"message\": \"Tags and summary created based on trial's focus on type 2 diabetes medication and blood glucose control.\",\n  \"data\": {\n    \"tags\": [\n      \"Clinical Trial Diabetes\",\n      \"Type 2 Diabetes Treatment\",\n      \"Blood Glucose Control Medication\"\n    ],\n    \"summary\": \"A new diabetes medication is being tested in a clinical trial to enhance blood glucose control for adults with type 2 diabetes.\",\n    \"issues\": []\n  }\n}\n\n--- Reviewer (103627 ms) ---\n{\n  \"thought\": \"Tags and summary created based on trial's focus on type 2 diabetes medication and blood glucose control.\",\n  \"message\": \"Tags and summary reflect the trial's specific focus on type 2 diabetes treatment and glucose management.\",\n  \"data\": {\n    \"tags\": [\n      \"Type 2 Diabetes\",\n      \"Blood Glucose Control\",\n      \"Clinical Trial\"\n    ],\n    \"summary\": \"Clinical trial tests new diabetes medication for improved blood glucose control in type 2 patients.\",\n    \"issues\": []\n  }\n}\n\n Finalized Output \n{\n  \"thought\": \"Finalizing tags and summary based on trial's focus on type 2 diabetes, glucose control, and clinical evaluation.\",\n  \"message\": \"Tags and summary emphasize type 2 diabetes treatment, glucose management, and clinical trial context as requested.\",\n  \"data\": {\n    \"tags\": [\n      \"Type 2 Diabetes Treatment\",\n      \"Blood Glucose Management\",\n      \"Clinical Trial Innovation\"\n    ],\n    \"summary\": \"A new diabetes medication is being tested in a clinical trial to enhance blood glucose control for type 2 diabetes patients.\",\n    \"issues\": []\n  }\n}\n\n Publish Package \n{\n  \"title\": \"New Diabetes Drug Trial\",\n  \"email\": \"tripti@sjsu.edu\",\n  \"content\": \"A clinical trial is evaluating a new diabetes medication designed to improve blood glucose control in adults with type 2 diabetes.\",\n  \"agents\": {\n    \"transcript\": [\n      {\n        \"role\": \"Planner\",\n        \"content\": \"Tags and summary created based on trial's focus on type 2 diabetes medication and blood glucose control.\"\n      },\n      {\n        \"role\": \"Reviewer\",\n        \"content\": \"Tags and summary reflect the trial's specific focus on type 2 diabetes treatment and glucose management.\"\n      }\n    ],\n    \"final\": {\n      \"tags\": [\n        \"Type 2 Diabetes Treatment\",\n        \"Blood Glucose Management\",\n        \"Clinical Trial Innovation\"\n      ],\n      \"summary\": \"A new diabetes medication is being tested in a clinical trial to enhance blood glucose control for type 2 diabetes patients.\",\n      \"issues\": []\n    }\n  },\n  \"submissionDate\": \"2026-08-27T21:29:04Z\"\n}\n"
+}

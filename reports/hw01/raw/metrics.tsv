@@ -1,0 +1,41 @@
+temperature	run	latency_ms	tags_json	status
+0.7	1	254599.63	"[""Type 2 Diabetes Treatment"", ""Blood Glucose Management"", ""Clinical Trial Innovation""]"	success
+0.7	2	209067.03	"[""Type 2 Diabetes Treatment"", ""Blood Glucose Management"", ""Diabetes Medication Trial""]"	success
+0.7	3	175591.51	"[""Type 2 Diabetes Treatment"", ""Blood Glucose Management"", ""Clinical Trial for Diabetes Medication""]"	success
+0.7	4	159036.92	"[""Type 2 Diabetes"", ""Diabetes Medication"", ""Clinical Trials""]"	success
+0.7	5	242217.45	"[""Type 2 Diabetes"", ""Blood Glucose Control"", ""Clinical Trials""]"	success
+0.7	6	202182.92	"[""Type 2 Diabetes Treatment"", ""Blood Glucose Control"", ""Clinical Trial""]"	success
+0.7	7	172711.71	"[""Type 2 Diabetes Treatment"", ""Blood Glucose Control"", ""Clinical Trial Medication""]"	success
+0.7	8	342524.06	"[""Diabetes Treatment"", ""Clinical Trial"", ""Type 2 Diabetes""]"	success
+0.7	9	229797.96	"[""Type 2 Diabetes Treatment"", ""Blood Glucose Management"", ""Clinical Trial Drug Development""]"	success
+0.7	10	202047.21	"[""Clinical Trial"", ""Diabetes Medication"", ""Type 2 Diabetes""]"	success
+0.7	11	193386.87	"[""Diabetes Medication"", ""Clinical Trials"", ""Blood Glucose Control""]"	success
+0.7	12	287837.68	"[""Type 2 Diabetes Treatment"", ""Blood Glucose Control"", ""Clinical Trial""]"	success
+0.7	13	265358.65	"[""Type 2 Diabetes"", ""Blood Glucose Control"", ""Clinical Drug Trials""]"	success
+0.7	14	239054.34	"[""Type 2 Diabetes Treatment"", ""Clinical Trial"", ""Blood Glucose Management""]"	success
+0.7	15	250387.13	"[""Clinical Trials"", ""Type 2 Diabetes"", ""Blood Glucose Management""]"	success
+0.7	16	177652.25	"[""Clinical Trials"", ""Type 2 Diabetes"", ""Blood Glucose Management""]"	success
+0.7	17	302286.39	"[""Clinical Trials"", ""Type 2 Diabetes"", ""Blood Glucose Management""]"	success
+0.7	18	253357.46	"[""Diabetes Treatment"", ""Type 2 Diabetes"", ""Blood Glucose Control""]"	success
+0.7	19	315536.01	"[""Type 2 Diabetes Treatment"", ""Clinical Trial Research"", ""Diabetes Medication Development""]"	success
+0.7	20	213824.72	"[""Type 2 Diabetes Treatment"", ""Blood Glucose Management"", ""Clinical Trial""]"	success
+0.0	1	255039.31	"[""Type 2 Diabetes"", ""Clinical Trials"", ""Blood Glucose Control""]"	success
+0.0	2	239182.95	"[""Type 2 Diabetes"", ""Blood Glucose Control"", ""Clinical Trials""]"	success
+0.0	3	255811.0	"[""Type 2 Diabetes"", ""Blood Glucose Control"", ""Clinical Trials""]"	success
+0.0	4	235915.29	"[""Type 2 Diabetes"", ""Blood Glucose Control"", ""Clinical Trials""]"	success
+0.0	5	244490.15	"[""Type 2 Diabetes"", ""Blood Glucose Control"", ""Clinical Trials""]"	success
+0.0	6	241481.07	"[""Type 2 Diabetes"", ""Blood Glucose Control"", ""Clinical Trials""]"	success
+0.0	7	233503.43	"[""Type 2 Diabetes"", ""Blood Glucose Control"", ""Clinical Trials""]"	success
+0.0	8	230464.28	"[""Type 2 Diabetes"", ""Blood Glucose Control"", ""Clinical Trials""]"	success
+0.0	9	228750.23	"[""Type 2 Diabetes"", ""Blood Glucose Control"", ""Clinical Trials""]"	success
+0.0	10	229735.19	"[""Type 2 Diabetes"", ""Blood Glucose Control"", ""Clinical Trials""]"	success
+0.0	11	228826.47	"[""Type 2 Diabetes"", ""Blood Glucose Control"", ""Clinical Trials""]"	success
+0.0	12	228449.08	"[""Type 2 Diabetes"", ""Blood Glucose Control"", ""Clinical Trials""]"	success
+0.0	13	228904.21	"[""Type 2 Diabetes"", ""Blood Glucose Control"", ""Clinical Trials""]"	success
+0.0	14	230826.67	"[""Type 2 Diabetes"", ""Blood Glucose Control"", ""Clinical Trials""]"	success
+0.0	15	230476.37	"[""Type 2 Diabetes"", ""Blood Glucose Control"", ""Clinical Trials""]"	success
+0.0	16	230152.86	"[""Type 2 Diabetes"", ""Blood Glucose Control"", ""Clinical Trials""]"	success
+0.0	17	231404.24	"[""Type 2 Diabetes"", ""Blood Glucose Control"", ""Clinical Trials""]"	success
+0.0	18	238689.24	"[""Type 2 Diabetes"", ""Blood Glucose Control"", ""Clinical Trials""]"	success
+0.0	19	244686.91	"[""Type 2 Diabetes"", ""Blood Glucose Control"", ""Clinical Trials""]"	success
+0.0	20	244847.26	"[""Type 2 Diabetes"", ""Blood Glucose Control"", ""Clinical Trials""]"	success

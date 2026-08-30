@@ -1,0 +1,26 @@
+{
+  "index_html_exists": true,
+  "script_js_exists": true,
+  "dockerfile_exists": true,
+  "agents_demo_exists": true,
+  "hw1_client_exists": true,
+  "agent_md_exists": true,
+  "model_client_exists": true,
+  "domain_schema_exists": true,
+  "metrics_exists": true,
+  "ai_use_exists": true,
+  "nondeterminism_input_exists": true,
+  "temperature_0_7_run_count": 20,
+  "temperature_0_0_run_count": 20,
+  "temperature_0_7_has_20_runs": true,
+  "temperature_0_0_has_20_runs": true,
+  "python_import_check": {
+    "success": true,
+    "stdout": "Imports OK",
+    "stderr": ""
+  },
+  "agents_demo_help_check": {
+    "success": true
+  },
+  "overall_pass": true
+}

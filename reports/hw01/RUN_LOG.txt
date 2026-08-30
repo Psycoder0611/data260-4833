@@ -1,0 +1,21 @@
+Non-Determinism Experiment Run Log
+
+Model used: qwen3:8b
+Environment: Local machine with Ollama
+Fixed input file: reports/hw01/cases/nondeterminism_input.json
+
+For this experiment, I used the same title, content, and email for every run so that the only main variable being changed was the temperature setting.
+
+I ran the Planner -> Reviewer -> Finalizer pipeline 20 times with temperature 0.7 and 20 times with temperature 0.0. Strict mode was enabled for all runs, and the end-to-end latency was recorded each time.
+
+Raw outputs were saved in:
+- reports/hw01/raw/t0.7/
+- reports/hw01/raw/t0.0/
+
+The summary metrics are available in:
+- reports/hw01/METRICS.md
+- reports/hw01/raw/metrics.tsv
+
+From the results, temperature 0.7 produced noticeably more variation in the final tag sets. In comparison, temperature 0.0 was much more consistent, with the same tag set appearing in 19 out of 20 runs.
+
+The average runtime was quite similar for both temperature settings, although the higher-temperature runs showed a larger variation in latency.

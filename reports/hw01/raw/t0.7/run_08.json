@@ -1,0 +1,39 @@
+{
+  "temperature": 0.7,
+  "run": 8,
+  "model": "qwen3:8b",
+  "latency_ms": 342524.06,
+  "final_tags": [
+    "Diabetes Treatment",
+    "Clinical Trial",
+    "Type 2 Diabetes"
+  ],
+  "publish_package": {
+    "title": "New Diabetes Drug Trial",
+    "email": "tripti@sjsu.edu",
+    "content": "A clinical trial is evaluating a new diabetes medication designed to improve blood glucose control in adults with type 2 diabetes.",
+    "agents": {
+      "transcript": [
+        {
+          "role": "Planner",
+          "content": "Tags and summary generated for the diabetes drug trial."
+        },
+        {
+          "role": "Reviewer",
+          "content": "Tags and summary created for diabetes drug trial content. Ensured topical relevance and brevity."
+        }
+      ],
+      "final": {
+        "tags": [
+          "Diabetes Treatment",
+          "Clinical Trial",
+          "Type 2 Diabetes"
+        ],
+        "summary": "A new diabetes medication is being tested in a clinical trial to enhance blood glucose control for type 2 diabetes patients.",
+        "issues": []
+      }
+    },
+    "submissionDate": "2026-08-27T21:54:08Z"
+  },
+  "console_output": "\n--- Planner (238903 ms) ---\n{\n  \"thought\": \"Identify key themes from the title and content to generate relevant, multi-word tags and a concise summary.\",\n  \"message\": \"Tags and summary generated for the diabetes drug trial.\",\n  \"data\": {\n    \"tags\": [\n      \"Diabetes Drug Trial\",\n      \"Blood Glucose Control\",\n      \"Type 2 Diabetes Research\"\n    ],\n    \"summary\": \"A clinical trial assesses a new diabetes medication to enhance blood glucose control in type 2 diabetes patients.\",\n    \"issues\": []\n  }\n}\n\n--- Reviewer (60071 ms) ---\n{\n  \"thought\": \"Tags focus on trial specifics and medical aspects; summary condenses key trial details.\",\n  \"message\": \"Tags and summary created for diabetes drug trial content. Ensured topical relevance and brevity.\",\n  \"data\": {\n    \"tags\": [\n      \"Clinical Trials\",\n      \"Type 2 Diabetes\",\n      \"Blood Glucose Control\"\n    ],\n    \"summary\": \"A new diabetes medication is being tested in a clinical trial to enhance blood glucose control for type 2 diabetes patients.\",\n    \"issues\": []\n  }\n}\n\n Finalized Output \n{\n  \"thought\": \"Finalizing tags and summary based on feedback, ensuring topical relevance and conciseness.\",\n  \"message\": \"Tags and summary finalized for diabetes drug trial content, prioritizing clarity and relevance.\",\n  \"data\": {\n    \"tags\": [\n      \"Diabetes Treatment\",\n      \"Clinical Trial\",\n      \"Type 2 Diabetes\"\n    ],\n    \"summary\": \"A new diabetes medication is being tested in a clinical trial to enhance blood glucose control for type 2 diabetes patients.\",\n    \"issues\": []\n  }\n}\n\n Publish Package \n{\n  \"title\": \"New Diabetes Drug Trial\",\n  \"email\": \"tripti@sjsu.edu\",\n  \"content\": \"A clinical trial is evaluating a new diabetes medication designed to improve blood glucose control in adults with type 2 diabetes.\",\n  \"agents\": {\n    \"transcript\": [\n      {\n        \"role\": \"Planner\",\n        \"content\": \"Tags and summary generated for the diabetes drug trial.\"\n      },\n      {\n        \"role\": \"Reviewer\",\n        \"content\": \"Tags and summary created for diabetes drug trial content. Ensured topical relevance and brevity.\"\n      }\n    ],\n    \"final\": {\n      \"tags\": [\n        \"Diabetes Treatment\",\n        \"Clinical Trial\",\n        \"Type 2 Diabetes\"\n      ],\n      \"summary\": \"A new diabetes medication is being tested in a clinical trial to enhance blood glucose control for type 2 diabetes patients.\",\n      \"issues\": []\n    }\n  },\n  \"submissionDate\": \"2026-08-27T21:54:08Z\"\n}\n"
+}
