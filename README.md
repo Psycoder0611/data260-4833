@@ -1,3 +1,34 @@
+# DATA 260 Homework 1
+
+This repository contains my Homework 1 implementation for DATA 260.
+
+Assigned domain: Clinical Trial Listings
+
+## Project Structure
+
+- `index.html` - Clinical Trial Listing form
+- `script.js` - JavaScript validation and form processing
+- `Dockerfile` - Docker configuration for the web application
+- `agents_demo.py` - Planner, Reviewer, and Finalizer agent pipeline
+- `run_nondeterminism.py` - Runs the 40 non-determinism experiments
+- `analyze_nondeterminism.py` - Calculates the required experiment metrics
+- `hw1_client.py` - Command-line model client for Part 4
+- `src/model_client.py` - Reusable Ollama model adapter
+- `AGENT.md` - System instructions for bullet-only code review
+- `verify_hw01.py` - Self-check script
+- `reports/hw01/` - Experiment outputs, metrics, logs, and report files
+
+## Setup
+
+Python 3.12 was used for this assignment.
+
+Activate the virtual environment:
+
+```bash
+source .venv/bin/activate
+
+
+
 ## Model Client and Token Accounting
 
 I created a reusable model adapter in `src/model_client.py` and used it from
