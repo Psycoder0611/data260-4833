@@ -1,0 +1,56 @@
+{
+  "homework": 2,
+  "sid4": 4833,
+  "commit_hash": "50651e6f80a29f82bb58fefbc53f9ae16a9007ec",
+  "configuration": {
+    "port_base": 8333,
+    "prefix": "s4833",
+    "domain_id": 1,
+    "model": "qwen3:8b"
+  },
+  "seed": 4833,
+  "verify_seed": 264833,
+  "checks": [
+    {
+      "check": "375px responsive CSS exists",
+      "passed": true,
+      "details": "index.html contains the required 375px media query"
+    },
+    {
+      "check": "Loading, empty, and error states exist",
+      "passed": true,
+      "details": "Checked required state elements in index.html"
+    },
+    {
+      "check": "FastAPI home responds on PORT_BASE",
+      "passed": true,
+      "details": "GET / returned HTTP 200 on port 8333"
+    },
+    {
+      "check": "Clinical trial API returns a list",
+      "passed": true,
+      "details": "GET /api/trials returned 3 record(s)"
+    },
+    {
+      "check": "PlannerOutput accepts valid schema",
+      "passed": true,
+      "details": "Valid output contains exactly three tags"
+    },
+    {
+      "check": "PlannerOutput rejects invalid schema",
+      "passed": true,
+      "details": "Invalid short/two-tag output must fail validation"
+    },
+    {
+      "check": "LangGraph terminates within configured ceiling",
+      "passed": true,
+      "details": "Planner attempts: 1"
+    },
+    {
+      "check": "LangGraph final Planner output passes schema",
+      "passed": true,
+      "details": "Schema valid: True"
+    }
+  ],
+  "overall_passed": true
+}
