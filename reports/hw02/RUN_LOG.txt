@@ -1,0 +1,197 @@
+HW2 RUN LOG
+===========
+
+Repository:
+data260-4833
+
+Branch:
+hw02
+
+Configuration:
+SID4 = 4833
+PORT_BASE = 8333
+PREFIX = s4833
+SEED = 4833
+VERIFY_SEED = 264833
+DOMAIN_ID = 1
+Domain = Clinical Trial Listings
+Model = qwen3:8b
+
+
+1. Environment Setup
+--------------------
+
+Activate virtual environment:
+
+source .venv/bin/activate
+
+Install FastAPI and Uvicorn:
+
+pip install fastapi uvicorn
+
+Install LangGraph:
+
+pip install langgraph
+
+Check installed package versions:
+
+pip freeze | grep -E "fastapi|uvicorn|pydantic|langgraph|langchain|ollama"
+
+
+2. FastAPI Application
+----------------------
+
+Run the backend:
+
+python main.py
+
+Application URL:
+
+http://localhost:8333
+
+API endpoint:
+
+http://localhost:8333/api/trials
+
+FastAPI documentation:
+
+http://localhost:8333/docs
+
+
+3. FastAPI Functional Tests
+---------------------------
+
+The web application was tested for:
+
+- Add a clinical trial record
+- Update record ID 1
+- Delete the record with the highest ID
+- Search using Clinical Trial Title
+- Search using Sponsor / Institution
+- Loading state
+- Empty state
+- Error state
+- Responsive layout at 375px width
+
+
+4. LangGraph Syntax Checks
+--------------------------
+
+Check agent graph syntax:
+
+python -m py_compile agent_graph.py
+
+Run graph:
+
+python agent_graph.py
+
+
+5. Pydantic Schema Tests
+------------------------
+
+Valid schema test:
+
+python -c "from agent_graph import PlannerOutput; print(PlannerOutput(tags=['Sepsis Detection','Machine Learning','Patient Risk'], summary='Machine learning helps identify patients who may be at risk of sepsis.'))"
+
+Invalid schema test:
+
+python -c "from agent_graph import PlannerOutput; print(PlannerOutput(tags=['AI','ML'], summary='Short summary.'))"
+
+The invalid test correctly produced a Pydantic ValidationError.
+
+
+6. Experiment Syntax Check
+--------------------------
+
+python -m py_compile agent_graph.py run_hw02_experiments.py
+
+
+7. Schema Validation Experiment
+-------------------------------
+
+Frozen input:
+
+reports/hw02/cases/schema_input.json
+
+Run 30 schema-validation experiments:
+
+python run_hw02_experiments.py
+
+Saved outputs:
+
+reports/hw02/raw/schema_runs.csv
+reports/hw02/raw/schema_runs.json
+
+Observed result:
+
+30/30 valid on first attempt
+Mean latency = 91121.70 ms
+
+
+8. Turn Ceiling Comparison
+--------------------------
+
+20 runs using Planner-attempt ceiling 2
+20 runs using Planner-attempt ceiling 10
+
+Saved outputs:
+
+reports/hw02/raw/ceiling_2_runs.csv
+reports/hw02/raw/ceiling_2_runs.json
+reports/hw02/raw/ceiling_10_runs.csv
+reports/hw02/raw/ceiling_10_runs.json
+
+Observed results:
+
+Ceiling 2:
+Completion = 20/20 (100.0%)
+Mean latency = 94650.37 ms
+
+Ceiling 10:
+Completion = 20/20 (100.0%)
+Mean latency = 89413.78 ms
+
+
+9. Adversarial Experiment
+-------------------------
+
+Adversarial input:
+
+reports/hw02/cases/adversarial_input.json
+
+The adversarial prompt encourages tags such as AI, ML, and X,
+which violate the requirement that each tag must contain 3-30 characters.
+
+The bounded adversarial experiment used Planner-attempt ceiling 1.
+
+Run:
+
+python run_hw02_experiments.py
+
+Saved outputs:
+
+reports/hw02/raw/adversarial_runs.csv
+reports/hw02/raw/adversarial_runs.json
+
+Observed result:
+
+Adversarial ceiling hits = 5/5
+
+
+10. Raw Result Verification
+---------------------------
+
+List raw experiment files:
+
+ls reports/hw02/raw
+
+Expected files:
+
+adversarial_runs.csv
+adversarial_runs.json
+ceiling_10_runs.csv
+ceiling_10_runs.json
+ceiling_2_runs.csv
+ceiling_2_runs.json
+schema_runs.csv
+schema_runs.json

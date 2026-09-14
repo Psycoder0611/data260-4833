@@ -1,0 +1,462 @@
+[
+  {
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "schema_valid": true,
+    "approved": true,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 124310.82,
+    "proposal": {
+      "tags": [
+        "AI Sepsis Detection",
+        "Machine Learning",
+        "Sepsis Risk Prediction"
+      ],
+      "summary": "AI-assisted machine learning models analyze vital signs and lab data to identify sepsis risk."
+    },
+    "reviewer_feedback": {
+      "issues": [],
+      "approved": true
+    },
+    "run": 1,
+    "turn_ceiling": 2
+  },
+  {
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "schema_valid": true,
+    "approved": true,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 102615.65,
+    "proposal": {
+      "tags": [
+        "AI Sepsis Detection",
+        "Machine Learning",
+        "Sepsis Risk Prediction"
+      ],
+      "summary": "AI-assisted machine learning models analyze vital signs and lab data to identify sepsis risk."
+    },
+    "reviewer_feedback": {
+      "issues": [],
+      "approved": true
+    },
+    "run": 2,
+    "turn_ceiling": 2
+  },
+  {
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "schema_valid": true,
+    "approved": true,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 93521.81,
+    "proposal": {
+      "tags": [
+        "AI Sepsis Detection",
+        "Machine Learning",
+        "Sepsis Risk Prediction"
+      ],
+      "summary": "AI-assisted machine learning models analyze vital signs and lab data to identify sepsis risk."
+    },
+    "reviewer_feedback": {
+      "issues": [],
+      "approved": true
+    },
+    "run": 3,
+    "turn_ceiling": 2
+  },
+  {
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "schema_valid": true,
+    "approved": true,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 94750.72,
+    "proposal": {
+      "tags": [
+        "AI Sepsis Detection",
+        "Machine Learning",
+        "Sepsis Risk Prediction"
+      ],
+      "summary": "AI-assisted machine learning models analyze vital signs and lab data to identify sepsis risk."
+    },
+    "reviewer_feedback": {
+      "issues": [],
+      "approved": true
+    },
+    "run": 4,
+    "turn_ceiling": 2
+  },
+  {
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "schema_valid": true,
+    "approved": true,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 96790.77,
+    "proposal": {
+      "tags": [
+        "AI Sepsis Detection",
+        "Machine Learning",
+        "Sepsis Risk Prediction"
+      ],
+      "summary": "AI-assisted machine learning models analyze vital signs and lab data to identify sepsis risk."
+    },
+    "reviewer_feedback": {
+      "issues": [],
+      "approved": true
+    },
+    "run": 5,
+    "turn_ceiling": 2
+  },
+  {
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "schema_valid": true,
+    "approved": true,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 103428.41,
+    "proposal": {
+      "tags": [
+        "AI Sepsis Detection",
+        "Machine Learning",
+        "Sepsis Risk Prediction"
+      ],
+      "summary": "AI-assisted machine learning models analyze vital signs and lab data to identify sepsis risk."
+    },
+    "reviewer_feedback": {
+      "issues": [],
+      "approved": true
+    },
+    "run": 6,
+    "turn_ceiling": 2
+  },
+  {
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "schema_valid": true,
+    "approved": true,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 96605.23,
+    "proposal": {
+      "tags": [
+        "AI Sepsis Detection",
+        "Machine Learning",
+        "Sepsis Risk Prediction"
+      ],
+      "summary": "AI-assisted machine learning models analyze vital signs and lab data to identify sepsis risk."
+    },
+    "reviewer_feedback": {
+      "issues": [],
+      "approved": true
+    },
+    "run": 7,
+    "turn_ceiling": 2
+  },
+  {
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "schema_valid": true,
+    "approved": true,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 95602.83,
+    "proposal": {
+      "tags": [
+        "AI Sepsis Detection",
+        "Machine Learning",
+        "Sepsis Risk Prediction"
+      ],
+      "summary": "AI-assisted machine learning models analyze vital signs and lab data to identify sepsis risk."
+    },
+    "reviewer_feedback": {
+      "issues": [],
+      "approved": true
+    },
+    "run": 8,
+    "turn_ceiling": 2
+  },
+  {
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "schema_valid": true,
+    "approved": true,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 97928.08,
+    "proposal": {
+      "tags": [
+        "AI Sepsis Detection",
+        "Machine Learning",
+        "Sepsis Risk Prediction"
+      ],
+      "summary": "AI-assisted machine learning models analyze vital signs and lab data to identify sepsis risk."
+    },
+    "reviewer_feedback": {
+      "issues": [],
+      "approved": true
+    },
+    "run": 9,
+    "turn_ceiling": 2
+  },
+  {
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "schema_valid": true,
+    "approved": true,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 89145.11,
+    "proposal": {
+      "tags": [
+        "AI Sepsis Detection",
+        "Machine Learning",
+        "Sepsis Risk Prediction"
+      ],
+      "summary": "AI-assisted machine learning models analyze vital signs and lab data to identify sepsis risk."
+    },
+    "reviewer_feedback": {
+      "issues": [],
+      "approved": true
+    },
+    "run": 10,
+    "turn_ceiling": 2
+  },
+  {
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "schema_valid": true,
+    "approved": true,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 88548.28,
+    "proposal": {
+      "tags": [
+        "AI Sepsis Detection",
+        "Machine Learning",
+        "Sepsis Risk Prediction"
+      ],
+      "summary": "AI-assisted machine learning models analyze vital signs and lab data to identify sepsis risk."
+    },
+    "reviewer_feedback": {
+      "issues": [],
+      "approved": true
+    },
+    "run": 11,
+    "turn_ceiling": 2
+  },
+  {
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "schema_valid": true,
+    "approved": true,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 89635.19,
+    "proposal": {
+      "tags": [
+        "AI Sepsis Detection",
+        "Machine Learning",
+        "Sepsis Risk Prediction"
+      ],
+      "summary": "AI-assisted machine learning models analyze vital signs and lab data to identify sepsis risk."
+    },
+    "reviewer_feedback": {
+      "issues": [],
+      "approved": true
+    },
+    "run": 12,
+    "turn_ceiling": 2
+  },
+  {
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "schema_valid": true,
+    "approved": true,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 93492.75,
+    "proposal": {
+      "tags": [
+        "AI Sepsis Detection",
+        "Machine Learning",
+        "Sepsis Risk Prediction"
+      ],
+      "summary": "AI-assisted machine learning models analyze vital signs and lab data to identify sepsis risk."
+    },
+    "reviewer_feedback": {
+      "issues": [],
+      "approved": true
+    },
+    "run": 13,
+    "turn_ceiling": 2
+  },
+  {
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "schema_valid": true,
+    "approved": true,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 88697.59,
+    "proposal": {
+      "tags": [
+        "AI Sepsis Detection",
+        "Machine Learning",
+        "Sepsis Risk Prediction"
+      ],
+      "summary": "AI-assisted machine learning models analyze vital signs and lab data to identify sepsis risk."
+    },
+    "reviewer_feedback": {
+      "issues": [],
+      "approved": true
+    },
+    "run": 14,
+    "turn_ceiling": 2
+  },
+  {
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "schema_valid": true,
+    "approved": true,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 89473.29,
+    "proposal": {
+      "tags": [
+        "AI Sepsis Detection",
+        "Machine Learning",
+        "Sepsis Risk Prediction"
+      ],
+      "summary": "AI-assisted machine learning models analyze vital signs and lab data to identify sepsis risk."
+    },
+    "reviewer_feedback": {
+      "issues": [],
+      "approved": true
+    },
+    "run": 15,
+    "turn_ceiling": 2
+  },
+  {
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "schema_valid": true,
+    "approved": true,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 90276.34,
+    "proposal": {
+      "tags": [
+        "AI Sepsis Detection",
+        "Machine Learning",
+        "Sepsis Risk Prediction"
+      ],
+      "summary": "AI-assisted machine learning models analyze vital signs and lab data to identify sepsis risk."
+    },
+    "reviewer_feedback": {
+      "issues": [],
+      "approved": true
+    },
+    "run": 16,
+    "turn_ceiling": 2
+  },
+  {
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "schema_valid": true,
+    "approved": true,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 89777.91,
+    "proposal": {
+      "tags": [
+        "AI Sepsis Detection",
+        "Machine Learning",
+        "Sepsis Risk Prediction"
+      ],
+      "summary": "AI-assisted machine learning models analyze vital signs and lab data to identify sepsis risk."
+    },
+    "reviewer_feedback": {
+      "issues": [],
+      "approved": true
+    },
+    "run": 17,
+    "turn_ceiling": 2
+  },
+  {
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "schema_valid": true,
+    "approved": true,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 88922.08,
+    "proposal": {
+      "tags": [
+        "AI Sepsis Detection",
+        "Machine Learning",
+        "Sepsis Risk Prediction"
+      ],
+      "summary": "AI-assisted machine learning models analyze vital signs and lab data to identify sepsis risk."
+    },
+    "reviewer_feedback": {
+      "issues": [],
+      "approved": true
+    },
+    "run": 18,
+    "turn_ceiling": 2
+  },
+  {
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "schema_valid": true,
+    "approved": true,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 88741.61,
+    "proposal": {
+      "tags": [
+        "AI Sepsis Detection",
+        "Machine Learning",
+        "Sepsis Risk Prediction"
+      ],
+      "summary": "AI-assisted machine learning models analyze vital signs and lab data to identify sepsis risk."
+    },
+    "reviewer_feedback": {
+      "issues": [],
+      "approved": true
+    },
+    "run": 19,
+    "turn_ceiling": 2
+  },
+  {
+    "outcome": "valid_first_attempt",
+    "completed": true,
+    "schema_valid": true,
+    "approved": true,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 90742.89,
+    "proposal": {
+      "tags": [
+        "AI Sepsis Detection",
+        "Machine Learning",
+        "Sepsis Risk Prediction"
+      ],
+      "summary": "AI-assisted machine learning models analyze vital signs and lab data to identify sepsis risk."
+    },
+    "reviewer_feedback": {
+      "issues": [],
+      "approved": true
+    },
+    "run": 20,
+    "turn_ceiling": 2
+  }
+]

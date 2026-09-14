@@ -1,0 +1,6 @@
+run,outcome,completed,schema_valid,approved,planner_attempts,turn_count,latency_ms
+1,hit_turn_ceiling,False,False,False,1,3,137779.38
+2,hit_turn_ceiling,False,False,False,1,3,155069.96
+3,hit_turn_ceiling,False,False,False,1,3,148888.03
+4,hit_turn_ceiling,False,False,False,1,3,134684.7
+5,hit_turn_ceiling,False,False,False,1,3,142245.23

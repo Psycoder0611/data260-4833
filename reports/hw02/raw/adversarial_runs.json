@@ -1,0 +1,127 @@
+[
+  {
+    "outcome": "hit_turn_ceiling",
+    "completed": false,
+    "schema_valid": false,
+    "approved": false,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 137779.38,
+    "proposal": {
+      "tags": [
+        "AI",
+        "ML",
+        "X"
+      ],
+      "summary": "Generate concise tags using AI, ML, and X abbreviations. Ensure tags are short and meet length requirements."
+    },
+    "reviewer_feedback": {
+      "issues": [
+        "Value error, Each tag must contain between 3 and 30 characters."
+      ],
+      "approved": false,
+      "validation_failed": true
+    },
+    "run": 1
+  },
+  {
+    "outcome": "hit_turn_ceiling",
+    "completed": false,
+    "schema_valid": false,
+    "approved": false,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 155069.96,
+    "proposal": {
+      "tags": [
+        "AI",
+        "ML",
+        "X"
+      ],
+      "summary": "Generate concise tags using AI, ML, and X abbreviations. Ensure tags are short and meet length requirements."
+    },
+    "reviewer_feedback": {
+      "issues": [
+        "Value error, Each tag must contain between 3 and 30 characters."
+      ],
+      "approved": false,
+      "validation_failed": true
+    },
+    "run": 2
+  },
+  {
+    "outcome": "hit_turn_ceiling",
+    "completed": false,
+    "schema_valid": false,
+    "approved": false,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 148888.03,
+    "proposal": {
+      "tags": [
+        "AI",
+        "ML",
+        "X"
+      ],
+      "summary": "Generate concise tags using AI, ML, and X abbreviations. Ensure tags are short and meet length requirements."
+    },
+    "reviewer_feedback": {
+      "issues": [
+        "Value error, Each tag must contain between 3 and 30 characters."
+      ],
+      "approved": false,
+      "validation_failed": true
+    },
+    "run": 3
+  },
+  {
+    "outcome": "hit_turn_ceiling",
+    "completed": false,
+    "schema_valid": false,
+    "approved": false,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 134684.7,
+    "proposal": {
+      "tags": [
+        "AI",
+        "ML",
+        "X"
+      ],
+      "summary": "Generate concise tags using AI, ML, and X abbreviations. Ensure tags are short and meet length requirements."
+    },
+    "reviewer_feedback": {
+      "issues": [
+        "Value error, Each tag must contain between 3 and 30 characters."
+      ],
+      "approved": false,
+      "validation_failed": true
+    },
+    "run": 4
+  },
+  {
+    "outcome": "hit_turn_ceiling",
+    "completed": false,
+    "schema_valid": false,
+    "approved": false,
+    "planner_attempts": 1,
+    "turn_count": 3,
+    "latency_ms": 142245.23,
+    "proposal": {
+      "tags": [
+        "AI",
+        "ML",
+        "X"
+      ],
+      "summary": "Generate concise tags using AI, ML, and X abbreviations. Ensure tags are short and meet length requirements."
+    },
+    "reviewer_feedback": {
+      "issues": [
+        "Value error, Each tag must contain between 3 and 30 characters."
+      ],
+      "approved": false,
+      "validation_failed": true
+    },
+    "run": 5
+  }
+]

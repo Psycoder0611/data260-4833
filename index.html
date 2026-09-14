@@ -1,48 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+
+    <!-- I am using this so the page adjusts properly on mobile screens -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HW1-Trapti Kulshrestha</title>
+
+    <title>Clinical Trial Listings</title>
 
     <style>
+        /* I am applying border-box so padding does not make elements wider than expected */
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            max-width: 700px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #f5f5f5;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 32px 20px;
+            background-color: #f4f7fb;
             line-height: 1.6;
+            color: #222;
         }
-    
+
         h1 {
             text-align: center;
-            margin-bottom: 30px;
+            margin: 0;
+            font-size: 34px;
+            color: #16324f;
         }
-    
-        form {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+        /* I am keeping a short description under the main heading */
+        .subtitle {
+            text-align: center;
+            margin: 8px 0 30px;
+            color: #64748b;
         }
+
+        /* I am using the same card style for form, search and trial list sections */
+        .card {
+            background-color: white;
+            padding: 28px;
+            margin-bottom: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #1e293b;
+        }
+
         label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
         }
 
         input,
         select,
         textarea {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            box-sizing: border-box;
+            padding: 12px;
+            margin-bottom: 16px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
             font-size: 16px;
+            background-color: white;
         }
 
-        /* Prevent the checkbox from stretching to full width */
+        /* I am highlighting the field the user is currently typing in */
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #1769aa;
+            box-shadow: 0 0 0 3px rgba(23, 105, 170, 0.12);
+        }
+
+        /* I am keeping the checkbox small instead of allowing it to take full width */
         input[type="checkbox"] {
             width: auto;
             margin-right: 8px;
@@ -54,109 +93,383 @@
         }
 
         button {
-            padding: 12px 20px;
+            padding: 12px 18px;
             font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
+            border: none;
+            border-radius: 7px;
+            background-color: #1769aa;
+            color: white;
         }
 
+        button:hover {
+            background-color: #0f4f82;
+        }
+
+        /* I am placing the search input and button beside each other on larger screens */
+        .search-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-row input {
+            flex: 1;
+            margin-bottom: 0;
+        }
+
+        .search-row button {
+            flex-shrink: 0;
+        }
+
+        /* These are the loading, empty and error states required in HW2 */
+        .status-message {
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 7px;
+            text-align: center;
+        }
+
+        #loadingState {
+            background-color: #eef5ff;
+            color: #244c74;
+        }
+
+        #emptyState {
+            background-color: #fff8e6;
+            color: #7a5a00;
+        }
+
+        #errorState {
+            background-color: #ffecec;
+            color: #8b1e1e;
+        }
+
+        /* I am using this class in JavaScript to hide states that are not active */
+        .hidden {
+            display: none;
+        }
+
+        /* Each clinical trial returned by FastAPI will appear in one card */
+        .trial-item {
+            border: 1px solid #dbe2ea;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+            background-color: #fbfdff;
+        }
+
+        .trial-item h3 {
+            margin-top: 0;
+            margin-bottom: 6px;
+            color: #16324f;
+        }
+
+        .trial-item p {
+            margin: 5px 0;
+        }
+
+        /* I am using this for short explanations inside the action cards */
+        .section-note {
+            margin-top: -10px;
+            margin-bottom: 18px;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* I am using a different color for delete because it is a destructive action */
+        .danger-button {
+            background-color: #b42318;
+        }
+
+        .danger-button:hover {
+            background-color: #8f1d14;
+        }
+
+        /*
+            I am adjusting the layout specifically for 375px screens,
+            because HW2 requires the page to remain usable at this width.
+        */
+        @media (max-width: 375px) {
+
+            body {
+                padding: 16px 12px;
+            }
+
+            h1 {
+                font-size: 26px;
+                line-height: 1.2;
+            }
+
+            .subtitle {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+
+            .card {
+                padding: 16px;
+                border-radius: 10px;
+                margin-bottom: 18px;
+            }
+
+            .card h2 {
+                font-size: 21px;
+            }
+
+            input,
+            select,
+            textarea,
+            button {
+                font-size: 16px;
+            }
+
+            /* I am stacking the search controls on mobile so they do not get squeezed */
+            .search-row {
+                flex-direction: column;
+            }
+
+            .search-row button,
+            button {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <h1>Clinical Trial Listing</h1>
+    <h1>Clinical Trial Listings</h1>
 
-    <!-- Form for collecting clinical trial information -->
-    <form id="clinicalTrialForm"> <!-- <form> - collect user input -->
-        <!-- a) Primary field -->
-        <!-- required = user cannot leave this empty -->
-        <!-- autofocus = cursor automatically starts in this field -->
-        <label for="trialTitle">Clinical Trial Title:</label>
+    <p class="subtitle">
+        Add, search, update, and review clinical trial records.
+    </p>
+
+
+    <!-- I am extending my existing HW1 clinical trial form here -->
+    <section class="card">
+
+        <h2>Add Clinical Trial</h2>
+
+        <form id="clinicalTrialForm">
+
+            <!-- Primary field for my Clinical Trial Listings domain -->
+            <label for="trialTitle">Clinical Trial Title:</label>
+
+            <input
+                type="text"
+                id="trialTitle"
+                name="trialTitle"
+                placeholder="Enter clinical trial title"
+                required
+                autofocus
+            >
+
+
+            <!-- Secondary field for my domain -->
+            <label for="sponsor">Sponsor / Institution:</label>
+
+            <input
+                type="text"
+                id="sponsor"
+                name="sponsor"
+                placeholder="Enter sponsor or institution name"
+                required
+            >
+
+
+            <label for="submitterEmail">Submitter Email:</label>
+
+            <input
+                type="email"
+                id="submitterEmail"
+                name="submitterEmail"
+                placeholder="Enter submitter email"
+                required
+            >
+
+
+            <label for="description">Trial Description:</label>
+
+            <textarea
+                id="description"
+                name="description"
+                placeholder="Enter a detailed description of the clinical trial"
+                required
+            ></textarea>
+
+
+            <label for="category">Study Type:</label>
+
+            <select
+                id="category"
+                name="category"
+                required
+            >
+                <option value="" disabled selected>
+                    Select study type
+                </option>
+
+                <option value="Drug Trial">
+                    Drug Trial
+                </option>
+
+                <option value="Device Trial">
+                    Device Trial
+                </option>
+
+                <option value="Behavioral Study">
+                    Behavioral Study
+                </option>
+
+                <option value="Vaccine Trial">
+                    Vaccine Trial
+                </option>
+            </select>
+
+
+            <label>
+                <input
+                    type="checkbox"
+                    id="terms"
+                    name="terms"
+                >
+                I agree to the terms and conditions.
+            </label>
+
+            <br>
+
+            <button type="submit">
+                Add Clinical Trial
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- I am adding search functionality for HW2 -->
+    <section class="card">
+
+        <h2>Search Clinical Trials</h2>
+
+        <div class="search-row">
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search by trial title or sponsor"
+            >
+
+            <button
+                type="button"
+                id="searchButton"
+            >
+                Search
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- I am adding this section for HW2 Question 2.
+         The assignment specifically asks me to update record ID 1. -->
+    <section class="card">
+
+        <h2>Update Clinical Trial ID 1</h2>
+
+        <p class="section-note">
+            Update the primary and secondary fields for record ID 1.
+        </p>
+
+        <label for="updateTitle">
+            New Clinical Trial Title:
+        </label>
+
         <input
             type="text"
-            id="trialTitle"  
-            name="trialTitle"
-            placeholder="Enter clinical trial title"
-            required
-            autofocus
+            id="updateTitle"
+            placeholder="Enter updated trial title"
         >
-    
 
-    <!-- b) Required text input for the entity's secondary field -->
-     <!-- type="text" -> means user can enter normal text -->
-    <label for="sponsor">Sponsor / Institution:</label> 
-    <input
-        type="text"
-        id="sponsor"
-        name="sponsor"
-        placeholder="Enter sponsor or institution name"
-        required
-    >
+        <label for="updateSponsor">
+            New Sponsor / Institution:
+        </label>
 
-    <!-- c) Required email input for submitter's email -->
-    <!-- type="email" -> tells browser this field should contain an email add. -->
-    <!-- required -> means user cannot leave this field empty -->
-    <label for="submitterEmail">Submitter Email:</label>
-
-    <input
-        type="email"
-        id="submitterEmail"
-        name="submitterEmail"
-        placeholder="Enter submitter email"
-        required
-    >
-
-    <!-- d) Required text area for entity's description field -->
-    <!-- textarea is used when user needs to enter longer text -->
-    <!-- required ->field cannot be left empty -->
-    <label for="description">Trial Description:</label>
-
-    <textarea
-        id="description"
-        name="description"
-        placeholder="Enter a detailed description of the clinical trial"
-        required
-    ></textarea>
-
-
-    <!-- e) Dropdown for category selection -->
-    <!-- select creates a dropdown menu -->
-    <!-- option defines each choice inside the dropdown -->
-    <label for="category">Study Type:</label>
-
-    <select
-        id="category"
-        name="category"
-        required
-    >
-        <option value="" disabled selected>Select study type</option>
-        <option value="Drug Trial">Drug Trial</option>
-        <option value="Device Trial">Device Trial</option>
-        <option value="Behavioral Study">Behavioral Study</option>
-        <option value="Vaccine Trial">Vaccine Trial</option>
-    </select>
-
-    <!-- f) Checkbox for agreeing to the terms & conditions -->
-    <!-- type="checkbox" creates box the user can check -->
-    <label>
         <input
-            type="checkbox"
-            id="terms"
-            name="terms"
+            type="text"
+            id="updateSponsor"
+            placeholder="Enter updated sponsor or institution"
         >
-        I agree to the terms and conditions.
-    </label>
+
+        <button
+            type="button"
+            id="updateButton"
+        >
+            Update Record ID 1
+        </button>
+
+    </section>
 
 
-    <!-- g) Submit button -->
-    <!-- type="submit" submits form when clicked -->
-    <!-- button text is domain-appropriate for Clinical Trial Listings -->
-    <button type="submit">Submit Clinical Trial</button>
+    <!-- I am adding this section for HW2 Question 3.
+         JavaScript will determine the current highest ID before deleting it. -->
+    <section class="card">
 
-</form>
+        <h2>Delete Highest-ID Record</h2>
 
-<!-- Link to the JavaScript file for Part II -->
-<script src="script.js"></script>
-    
+        <p class="section-note">
+            Delete the clinical trial record with the current highest ID.
+        </p>
+
+        <button
+            type="button"
+            id="deleteHighestButton"
+            class="danger-button"
+        >
+            Delete Highest-ID Record
+        </button>
+
+    </section>
+
+
+    <!-- This section will display the records returned from FastAPI -->
+    <section class="card">
+
+        <h2>Available Clinical Trials</h2>
+
+        <!-- I am showing this while records are loading -->
+        <div
+            id="loadingState"
+            class="status-message"
+        >
+            Loading clinical trials...
+        </div>
+
+        <!-- I am showing this when no matching records are found -->
+        <div
+            id="emptyState"
+            class="status-message hidden"
+        >
+            No clinical trials found.
+        </div>
+
+        <!-- I am showing this when the API request fails -->
+        <div
+            id="errorState"
+            class="status-message hidden"
+        >
+            Unable to load clinical trials. Please try again.
+        </div>
+
+        <!-- JavaScript will insert the clinical trial records here -->
+        <div id="trialList"></div>
+
+    </section>
+
+
+    <script src="/script.js?v=3"></script>
+
 </body>
+
 </html>
