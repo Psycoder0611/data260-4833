@@ -127,6 +127,17 @@ Observed result:
 30/30 valid on first attempt
 Mean latency = 91121.70 ms
 
+Result file timestamp:
+2026-09-11 17:21:02
+
+Observed console output:
+===== SCHEMA EXPERIMENT COMPLETE =====
+Saved:
+reports/hw02/raw/schema_runs.json
+reports/hw02/raw/schema_runs.csv
+
+30/30 valid on first attempt
+Mean latency = 91121.70 ms
 
 8. Turn Ceiling Comparison
 --------------------------
@@ -150,6 +161,18 @@ Mean latency = 94650.37 ms
 Ceiling 10:
 Completion = 20/20 (100.0%)
 Mean latency = 89413.78 ms
+
+Result file timestamps:
+
+Ceiling 2:
+2026-09-11 18:02:30
+
+Ceiling 10:
+2026-09-11 18:32:19
+
+Observed console output:
+Ceiling 2: completion=20/20 (100.0%), mean latency=94650.37 ms
+Ceiling 10: completion=20/20 (100.0%), mean latency=89413.78 ms
 
 
 9. Adversarial Experiment
@@ -177,6 +200,15 @@ Observed result:
 
 Adversarial ceiling hits = 5/5
 
+Result file timestamp:
+2026-09-11 22:08:39
+
+Observed console output:
+PYDANTIC: Validation failed
+Value error, Each tag must contain between 3 and 30 characters.
+ROUTER: Planner attempt ceiling reached -> END
+Adversarial ceiling hits: 5/5
+===== ADVERSARIAL EXPERIMENT COMPLETE =====
 
 10. Raw Result Verification
 ---------------------------
