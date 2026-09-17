@@ -1,0 +1,31 @@
+questions:
+
+  - id: Q1
+    question: "Why was the breast cancer study NCT01110954 terminated?"
+    expected_answer: "The study was terminated because of insufficient recruitment."
+    expected_source: "NCT01110954_breast_cancer.pdf"
+    source_specific: true
+
+  - id: Q2
+    question: "What intervention is being evaluated in the heart failure study NCT01377987?"
+    expected_answer: "The study evaluates acetazolamide for predicting successful sleep apnea treatment in patients with heart failure."
+    expected_source: "NCT01377987_heart_failure.pdf"
+    source_specific: true
+
+  - id: Q3
+    question: "What is the recruitment status of the Type 2 diabetes study NCT06864546?"
+    expected_answer: "The study is recruiting."
+    expected_source: "NCT06864546_type2_diabetes.pdf"
+    source_specific: true
+
+  - id: Q4
+    question: "Which study in the corpus focuses on supporting glucose tolerance tracking in real life?"
+    expected_answer: "NCT06864546, the GluToTrack study for patients with Type 2 diabetes."
+    expected_source: "NCT06864546_type2_diabetes.pdf"
+    source_specific: false
+
+  - id: Q5
+    question: "Which study in the corpus involves sleep apnea treatment in patients with heart failure?"
+    expected_answer: "NCT01377987, the HF-ACZ study involving acetazolamide."
+    expected_source: "NCT01377987_heart_failure.pdf"
+    source_specific: false

@@ -1,0 +1,22 @@
+{
+  "corpus_directory": "data/hw03",
+  "file_count": 3,
+  "total_bytes": 2094862,
+  "files": [
+    {
+      "filename": "NCT01110954_breast_cancer.pdf",
+      "bytes": 667212,
+      "sha256": "1cef71815b7ab0321886ee96a999ddcae591cac594940d7b484810ac105fb8a1"
+    },
+    {
+      "filename": "NCT01377987_heart_failure.pdf",
+      "bytes": 704263,
+      "sha256": "ffece7b68c84150dbad8e15c2e617a78b7cfc64de21595145f87db888d5e5f58"
+    },
+    {
+      "filename": "NCT06864546_type2_diabetes.pdf",
+      "bytes": 723387,
+      "sha256": "464f8f5474f47c2ecb144c01251ed0e5659e9053f2f90d0cbdc87f54e6c65ee8"
+    }
+  ]
+}
