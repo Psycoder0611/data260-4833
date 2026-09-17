@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Login | Clinical Trial Listings</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Small custom styling to make the starter UI more polished -->
+  <style>
+    body {
+      background: linear-gradient(135deg, #f5f9fc, #eef5f8);
+      min-height: 100vh;
+    }
+
+    .navbar {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .login-card {
+      border: none;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .badge-soft {
+      background-color: #e8f3f5;
+      color: #1f6f78;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <div class="container">
+
+      <!-- Updated branding for my assigned domain -->
+      <a class="navbar-brand fw-semibold" href="/">
+        Clinical Trial Listings
+      </a>
+
+      <div class="navbar-nav">
+
+        {% if user %}
+
+          <!-- Show these links when a user is already logged in -->
+          <a class="nav-link" href="/dashboard">Dashboard</a>
+
+          <a class="nav-link" href="/logout">Logout</a>
+
+        {% else %}
+
+          <!-- Login link shown when there is no active user session -->
+          <a class="nav-link active" href="/login">Login</a>
+
+        {% endif %}
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- Main login section -->
+  <div class="container py-5">
+
+    <div class="row justify-content-center">
+
+      <div class="col-md-7 col-lg-5">
+
+        <div class="card login-card">
+
+          <div class="card-body p-4 p-md-5">
+
+            <!-- Domain-specific label -->
+            <span class="badge badge-soft rounded-pill mb-3">
+              Secure Login
+            </span>
+
+            <h2 class="fw-bold mb-2">
+              Welcome Back
+            </h2>
+
+            <p class="text-muted mb-4">
+              Sign in to access the Clinical Trial Listings dashboard.
+            </p>
+
+            <!--
+              Intentionally no alert shown for invalid login
+              in the original starter code.
+
+              Students can add a Bootstrap Alert as an extra step.
+            -->
+
+            <!--
+              HW3 extension:
+              If the backend sends an "error" value,
+              display it using a Bootstrap danger alert.
+            -->
+            <!-- Show a message when an idle session expires -->
+            {% if expired %}
+            <div class="alert alert-warning" role="alert">
+            Your session expired due to inactivity. Please log in again.
+            </div>
+            {% endif %}
+
+
+            {% if error %}
+
+              <div class="alert alert-danger" role="alert">
+                {{ error }}
+              </div>
+
+            {% endif %}
+
+            <!-- Login form posts credentials to /login -->
+            <form method="post" action="/login">
+
+              <div class="mb-3">
+
+                <label class="form-label">
+                  Username
+                </label>
+
+                <input
+                  class="form-control"
+                  type="text"
+                  name="username"
+                  required
+                >
+
+              </div>
+
+              <div class="mb-4">
+
+                <label class="form-label">
+                  Password
+                </label>
+
+                <input
+                  class="form-control"
+                  type="password"
+                  name="password"
+                  required
+                >
+
+              </div>
+
+              <!-- Full-width Bootstrap login button -->
+              <button
+                class="btn btn-primary w-100"
+                type="submit"
+              >
+                Login
+              </button>
+
+            </form>
+
+            <!-- Return to the application home page -->
+            <div class="text-center mt-4">
+
+              <a
+                href="/"
+                class="text-decoration-none"
+              >
+                Back to Home
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

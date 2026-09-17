@@ -3,6 +3,9 @@ from fastapi.responses import FileResponse
 from pydantic import BaseModel, EmailStr
 from typing import List, Optional
 import uvicorn
+import os
+from starlette.middleware.sessions import SessionMiddleware  #extension of hw3
+from routers.auth import router as auth_router
 
 
 # I am creating one FastAPI application for my Clinical Trial Listings domain.
@@ -11,6 +14,17 @@ app = FastAPI(
     version="2.0.0"
 )
 
+SECRET_KEY = os.getenv("SECRET_KEY", "dev-only-secret-key")
+
+app.add_middleware(
+    SessionMiddleware,
+    secret_key=SECRET_KEY,
+    https_only=True,
+    same_site="lax",
+    max_age=3600
+)
+
+app.include_router(auth_router)
 
 # ---------------------------------------------------------
 # Pydantic models
@@ -96,7 +110,7 @@ clinical_trials: List[ClinicalTrial] = [
 # ---------------------------------------------------------
 
 # I am serving my existing HW1 HTML file through FastAPI.
-@app.get("/")
+@app.get("/trials")   #changed from "/" to "/trials" for hw3
 async def home():
     return FileResponse("index.html")
 
