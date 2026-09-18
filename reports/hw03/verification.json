@@ -1,0 +1,38 @@
+{
+  "homework": 3,
+  "sid4": 4833,
+  "verify_seed": 264833,
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "Python files compile",
+      "passed": true,
+      "details": "main.py: PASS; routers/auth.py: PASS; run_hw03_retrieval.py: PASS; compute_hw03_metrics.py: PASS"
+    },
+    {
+      "check": "Corpus size and PDF count",
+      "passed": true,
+      "details": "3 PDFs, 2094862 bytes total"
+    },
+    {
+      "check": "Five precommitted retrieval questions",
+      "passed": true,
+      "details": "5 questions found"
+    },
+    {
+      "check": "Raw retrieval outputs",
+      "passed": true,
+      "details": "Token: 15 rows, required columns=True; Semantic: 15 rows, required columns=True; Sentence-Window: 15 rows, required columns=True"
+    },
+    {
+      "check": "Recall@3 verification",
+      "passed": true,
+      "details": "Token: Recall@3=1.00; Semantic: Recall@3=1.00; Sentence-Window: Recall@3=1.00"
+    },
+    {
+      "check": "Required HW3 documentation files",
+      "passed": true,
+      "details": "SOURCES.md=PASS, CORPUS_MANIFEST.json=PASS, questions.yaml=PASS, METRICS.md=PASS, RUN_LOG.txt=PASS, AI_USE.md=PASS"
+    }
+  ]
+}
