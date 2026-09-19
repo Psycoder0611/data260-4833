@@ -6,9 +6,9 @@ three retrieval techniques. Top-k was fixed at 3.
 
 | Technique       |   Top-1 Cosine |   Mean@3 Cosine |   # Chunks |   Avg Chunk Length |   Avg Retrieval Latency (ms) |   Recall@3 |
 |:----------------|---------------:|----------------:|-----------:|-------------------:|-----------------------------:|-----------:|
-| Token           |         0.591  |          0.5611 |         19 |            1875.84 |                        10.26 |          1 |
-| Semantic        |         0.5683 |          0.533  |         10 |            3269.2  |                         8.12 |          1 |
-| Sentence-Window |         0.5267 |          0.5008 |        115 |             284.28 |                        10.9  |          1 |
+| Token           |         0.591  |          0.5611 |         19 |            1875.84 |                         8.16 |          1 |
+| Semantic        |         0.5683 |          0.533  |         10 |            3269.2  |                        10.08 |          1 |
+| Sentence-Window |         0.5267 |          0.5008 |        115 |             284.28 |                        10.01 |          1 |
 
 ## Metric definitions
 

@@ -2776,3 +2776,582 @@ Window preview: government does not review or approve the safety and science of 
 ======================================================================
 Saved sentence-window retrieval results to: reports/hw03/raw/sentence_window_retrieval.csv
 ======================================================================
+===== HW3 FINAL RUN START: Fri Sep 18 16:25:18 PDT 2026 =====
+======================================================================
+HW3 CORPUS LOADING CHECK
+======================================================================
+Corpus directory: data/hw03
+PDF files found: 3
+
+File: NCT01110954_breast_cancer.pdf
+Extracted characters: 6,352
+Preview: Fluorescence-guided Resection in BreastCancer ClinicalTrials.gov ID NCT01110954 Sponsor photonamic GmbH & Co. KG Information provided by photonamic GmbH & Co. KG (Responsible Party) Last Update Posted
+----------------------------------------------------------------------
+File: NCT01377987_heart_failure.pdf
+Extracted characters: 10,426
+Preview: Predicting Successful Sleep Apnea Treatment With Acetazolamide in Heart Failure Patients (HF-ACZ) ClinicalTrials.gov ID NCT01377987 Sponsor David Andrew Wellman Information provided by David Andrew We
+----------------------------------------------------------------------
+File: NCT06864546_type2_diabetes.pdf
+Extracted characters: 15,914
+Preview: A Participatory Approach to Support Glucose Tolerance Tracking in Real-Life of Patients With Type2Diabetes (GluToTrack) ClinicalTrials.gov ID NCT06864546 Sponsor Enea Parimbelli Information provided b
+----------------------------------------------------------------------
+
+Total extracted characters: 32,692
+Corpus loading completed successfully.
+
+======================================================================
+TOKEN TEXT SPLITTER
+======================================================================
+Chunk size: 512 tokens
+Chunk overlap: 50 tokens
+Total chunks created: 19
+Average chunk length: 1875.84 characters
+
+First chunk preview:
+Fluorescence-guided Resection in BreastCancer ClinicalTrials.gov ID NCT01110954 Sponsor photonamic GmbH & Co. KG Information provided by photonamic GmbH & Co. KG (Responsible Party) Last Update Posted 2017-04-04 Terminated Insufficient recruitment No longer looking for participants Researcher View T
+
+First chunk source:
+NCT01110954_breast_cancer.pdf
+
+======================================================================
+TOKEN-BASED RETRIEVAL
+======================================================================
+Embedding model: sentence-transformers/all-MiniLM-L6-v2
+Top-k retrieval: 3
+
+----------------------------------------------------------------------
+Q1: Why was the breast cancer study NCT01110954 terminated?
+Query embedding dimension: 384
+First 8 query embedding values: [-0.022638, 0.028743, -0.020714, 0.016539, 0.045536, -0.045165, -0.081648, 0.035189]
+Query vector shape: (384,)
+Stacked document vector shape: (3, 384)
+Retrieval latency: 7.86 ms
+
+Rank 1
+Source: NCT01110954_breast_cancer.pdf
+Store score: 0.561163
+Cosine similarity: 0.547093
+Chunk length: 1749
+Preview: Fluorescence-guided Resection in BreastCancer ClinicalTrials.gov ID NCT01110954 Sponsor photonamic GmbH & Co. KG Information provided by photonamic GmbH & Co. K
+
+Rank 2
+Source: NCT01110954_breast_cancer.pdf
+Store score: 0.541429
+Cosine similarity: 0.563296
+Chunk length: 1456
+Preview: Number NCT01110954 ICMJEOther Study ID Numbers[*] MK01 Has Data Monitoring Committee No U.S. FDA-regulated Product*§ Not provided ICMJEIPD Sharing Statement Not
+
+Rank 3
+Source: NCT01110954_breast_cancer.pdf
+Store score: 0.472167
+Cosine similarity: 0.477078
+Chunk length: 1853
+Preview: 2010-04-23) 16 ICMJEStudy Start Date (Actual)*§ 2010-05-31 Primary Completion Date (Actual)* 2012-07-19 (Final data collection date for primary outcome measure)
+
+----------------------------------------------------------------------
+Q2: What intervention is being evaluated in the heart failure study NCT01377987?
+Query embedding dimension: 384
+First 8 query embedding values: [-0.008389, 0.079015, -0.005345, 0.011453, 0.018499, 0.04187, -0.115763, 0.087134]
+Query vector shape: (384,)
+Stacked document vector shape: (3, 384)
+Retrieval latency: 8.43 ms
+
+Rank 1
+Source: NCT01377987_heart_failure.pdf
+Store score: 0.624830
+Cosine similarity: 0.602898
+Chunk length: 1755
+Preview: Comparator: Sugar pill Interventions: Drug: Placebo Publications (Includes general and study results’ publications, and Pubmed publications referencing this stu
+
+Rank 2
+Source: NCT01377987_heart_failure.pdf
+Store score: 0.560508
+Cosine similarity: 0.568226
+Chunk length: 1808
+Preview: Predicting Successful Sleep Apnea Treatment With Acetazolamide in Heart Failure Patients (HF-ACZ) ClinicalTrials.gov ID NCT01377987 Sponsor David Andrew Wellman
+
+Rank 3
+Source: NCT01377987_heart_failure.pdf
+Store score: 0.527084
+Cosine similarity: 0.398213
+Chunk length: 1947
+Preview: method. Lower values were considered a favorable outcome. We considered values ≤ 28 mL/m^2 to indicate normal left atrial volume. Values indicating graded left
+
+----------------------------------------------------------------------
+Q3: What is the recruitment status of the Type 2 diabetes study NCT06864546?
+Query embedding dimension: 384
+First 8 query embedding values: [-0.0272, 0.017865, -0.045162, 0.069113, -0.028147, 0.002071, -0.041797, 0.071156]
+Query vector shape: (384,)
+Stacked document vector shape: (3, 384)
+Retrieval latency: 7.83 ms
+
+Rank 1
+Source: NCT06864546_type2_diabetes.pdf
+Store score: 0.673240
+Cosine similarity: 0.636565
+Chunk length: 1858
+Preview: A Participatory Approach to Support Glucose Tolerance Tracking in Real-Life of Patients With Type2Diabetes (GluToTrack) ClinicalTrials.gov ID NCT06864546 Sponso
+
+Rank 2
+Source: NCT06864546_type2_diabetes.pdf
+Store score: 0.605486
+Cosine similarity: 0.584832
+Chunk length: 1405
+Preview: IPD: Undecided Current Responsible Party* Enea Parimbelli, University of Pavia Original Responsible Party* Same as current ICMJECurrent Study Sponsor* Enea Pari
+
+Rank 3
+Source: NCT06864546_type2_diabetes.pdf
+Store score: 0.599935
+Cosine similarity: 0.586183
+Chunk length: 2032
+Preview: vivo clinical trial in a population of 20 patients with non-insulin treated T2D. The clinical trial is an interrupted time series analysis. The trial seeks to e
+
+----------------------------------------------------------------------
+Q4: Which study in the corpus focuses on supporting glucose tolerance tracking in real life?
+Query embedding dimension: 384
+First 8 query embedding values: [-0.015759, -0.007772, -0.099241, 0.046852, 0.048499, 0.022574, 0.050065, 0.055823]
+Query vector shape: (384,)
+Stacked document vector shape: (3, 384)
+Retrieval latency: 7.89 ms
+
+Rank 1
+Source: NCT06864546_type2_diabetes.pdf
+Store score: 0.613761
+Cosine similarity: 0.598865
+Chunk length: 2305
+Preview: such as exercise, healthy diet, and education, can help prevent type 2 diabetes in high-risk individuals, and even reverse the disease in its early stages. Howe
+
+Rank 2
+Source: NCT06864546_type2_diabetes.pdf
+Store score: 0.590345
+Cosine similarity: 0.614944
+Chunk length: 1858
+Preview: A Participatory Approach to Support Glucose Tolerance Tracking in Real-Life of Patients With Type2Diabetes (GluToTrack) ClinicalTrials.gov ID NCT06864546 Sponso
+
+Rank 3
+Source: NCT06864546_type2_diabetes.pdf
+Store score: 0.586992
+Cosine similarity: 0.572090
+Chunk length: 2032
+Preview: vivo clinical trial in a population of 20 patients with non-insulin treated T2D. The clinical trial is an interrupted time series analysis. The trial seeks to e
+
+----------------------------------------------------------------------
+Q5: Which study in the corpus involves sleep apnea treatment in patients with heart failure?
+Query embedding dimension: 384
+First 8 query embedding values: [0.056835, -0.01213, -0.029554, 0.058141, 0.000147, 0.057857, -0.069656, 0.034549]
+Query vector shape: (384,)
+Stacked document vector shape: (3, 384)
+Retrieval latency: 8.77 ms
+
+Rank 1
+Source: NCT01377987_heart_failure.pdf
+Store score: 0.579146
+Cosine similarity: 0.569446
+Chunk length: 1808
+Preview: Predicting Successful Sleep Apnea Treatment With Acetazolamide in Heart Failure Patients (HF-ACZ) ClinicalTrials.gov ID NCT01377987 Sponsor David Andrew Wellman
+
+Rank 2
+Source: NCT01377987_heart_failure.pdf
+Store score: 0.555515
+Cosine similarity: 0.556149
+Chunk length: 2031
+Preview: Title*§ Physiological Study to Predict Successful Sleep Apnea Treatment With Acetazolamide in HeartFailure Patients Brief Summary* The ultimate goal is to impro
+
+Rank 3
+Source: NCT01377987_heart_failure.pdf
+Store score: 0.534212
+Cosine similarity: 0.540828
+Chunk length: 1879
+Preview: 6/8 Administrative Information ICMJENCT Number NCT01377987 ICMJEOther Study ID Numbers[*] 2011-P-000049/1 Has Data Monitoring Committee No U.S. FDA-regulated Pr
+
+======================================================================
+Saved token retrieval results to: reports/hw03/raw/token_retrieval.csv
+======================================================================
+
+======================================================================
+SEMANTIC SPLITTER
+======================================================================
+Buffer size: 1
+Breakpoint percentile threshold: 95
+Total chunks created: 10
+Average chunk length: 3269.20 characters
+
+First chunk preview:
+Fluorescence-guided Resection in BreastCancer ClinicalTrials.gov ID NCT01110954 Sponsor photonamic GmbH & Co. KG Information provided by photonamic GmbH & Co. 
+
+First chunk source:
+NCT01110954_breast_cancer.pdf
+
+======================================================================
+SEMANTIC-BASED RETRIEVAL
+======================================================================
+Embedding model: sentence-transformers/all-MiniLM-L6-v2
+Top-k retrieval: 3
+
+----------------------------------------------------------------------
+Q1: Why was the breast cancer study NCT01110954 terminated?
+Query embedding dimension: 384
+First 8 query embedding values: [-0.022638, 0.028743, -0.020714, 0.016539, 0.045536, -0.045165, -0.081648, 0.035189]
+Query vector shape: (384,)
+Stacked document vector shape: (3, 384)
+Retrieval latency: 14.43 ms
+
+Rank 1
+Source: NCT01110954_breast_cancer.pdf
+Store score: 0.693964
+Cosine similarity: 0.621275
+Chunk length: 6193
+Preview: KG (Responsible Party) Last Update Posted 2017-04-04 Terminated Insufficient recruitment No longer looking for participants Researcher View Tab Record 1 of 16,8
+
+Rank 2
+Source: NCT01110954_breast_cancer.pdf
+Store score: 0.462161
+Cosine similarity: 0.370723
+Chunk length: 159
+Preview: Fluorescence-guided Resection in BreastCancer ClinicalTrials.gov ID NCT01110954 Sponsor photonamic GmbH & Co. KG Information provided by photonamic GmbH & Co.
+
+Rank 3
+Source: NCT01377987_heart_failure.pdf
+Store score: 0.403747
+Cosine similarity: 0.372767
+Chunk length: 88
+Preview: Read our full disclaimer(https://clinicaltrials.gov/about-site/disclaimer) for details.
+
+----------------------------------------------------------------------
+Q2: What intervention is being evaluated in the heart failure study NCT01377987?
+Query embedding dimension: 384
+First 8 query embedding values: [-0.008389, 0.079015, -0.005345, 0.011453, 0.018499, 0.04187, -0.115763, 0.087134]
+Query vector shape: (384,)
+Stacked document vector shape: (3, 384)
+Retrieval latency: 10.66 ms
+
+Rank 1
+Source: NCT01377987_heart_failure.pdf
+Store score: 0.698176
+Cosine similarity: 0.343790
+Chunk length: 88
+Preview: Read our full disclaimer(https://clinicaltrials.gov/about-site/disclaimer) for details.
+
+Rank 2
+Source: NCT01377987_heart_failure.pdf
+Store score: 0.601113
+Cosine similarity: 0.550985
+Chunk length: 9860
+Preview: Trial Contacts ICMJEContacts Contact information is displayed when a study is open for participants to join. Study Record Dates ICMJEFirst Submitted 2011-06-20
+
+Rank 3
+Source: NCT01377987_heart_failure.pdf
+Store score: 0.547044
+Cosine similarity: 0.537390
+Chunk length: 478
+Preview: Predicting Successful Sleep Apnea Treatment With Acetazolamide in Heart Failure Patients (HF-ACZ) ClinicalTrials.gov ID NCT01377987 Sponsor David Andrew Wellman
+
+----------------------------------------------------------------------
+Q3: What is the recruitment status of the Type 2 diabetes study NCT06864546?
+Query embedding dimension: 384
+First 8 query embedding values: [-0.0272, 0.017865, -0.045162, 0.069113, -0.028147, 0.002071, -0.041797, 0.071156]
+Query vector shape: (384,)
+Stacked document vector shape: (3, 384)
+Retrieval latency: 9.52 ms
+
+Rank 1
+Source: NCT06864546_type2_diabetes.pdf
+Store score: 0.721197
+Cosine similarity: 0.633713
+Chunk length: 2740
+Preview: (https://pubmed.ncbi.nlm.nih.gov/34047962) Duvivier BM, Schaper NC, Hesselink MK, van Kan L, Stienen N, Winkens B, Koster A, Savelberg HH. Breaking sitting with
+
+Rank 2
+Source: NCT06864546_type2_diabetes.pdf
+Store score: 0.705084
+Cosine similarity: 0.639264
+Chunk length: 719
+Preview: A Participatory Approach to Support Glucose Tolerance Tracking in Real-Life of Patients With Type2Diabetes (GluToTrack) ClinicalTrials.gov ID NCT06864546 Sponso
+
+Rank 3
+Source: NCT06864546_type2_diabetes.pdf
+Store score: 0.608018
+Cosine similarity: 0.554836
+Chunk length: 10442
+Preview: Trial Contacts ICMJEContacts* 1. Contact: Enea Parimbelli Phone Number: +39 0382 9895981 Email Address: enea.parimbelli@unipv.it 9/17/26, 2:33 PM Researcher Vie
+
+----------------------------------------------------------------------
+Q4: Which study in the corpus focuses on supporting glucose tolerance tracking in real life?
+Query embedding dimension: 384
+First 8 query embedding values: [-0.015759, -0.007772, -0.099241, 0.046852, 0.048499, 0.022574, 0.050065, 0.055823]
+Query vector shape: (384,)
+Stacked document vector shape: (3, 384)
+Retrieval latency: 7.95 ms
+
+Rank 1
+Source: NCT06864546_type2_diabetes.pdf
+Store score: 0.635046
+Cosine similarity: 0.647265
+Chunk length: 719
+Preview: A Participatory Approach to Support Glucose Tolerance Tracking in Real-Life of Patients With Type2Diabetes (GluToTrack) ClinicalTrials.gov ID NCT06864546 Sponso
+
+Rank 2
+Source: NCT06864546_type2_diabetes.pdf
+Store score: 0.624012
+Cosine similarity: 0.681551
+Chunk length: 433
+Preview: (https://pubmed.ncbi.nlm.nih.gov/33534631) Dehghani Zahedani A, Shariat Torbaghan S, Rahili S, Karlin K, Scilley D, Thakkar R, Saberi M, Hashemi N, Perelman D,
+
+Rank 3
+Source: NCT06864546_type2_diabetes.pdf
+Store score: 0.581691
+Cosine similarity: 0.580936
+Chunk length: 1580
+Preview: FDA-regulated Drug Product: No Studies a U.S. FDA-regulated Device Product: No Product manufactured in and exported from the U.S.: No ICMJEIPD Sharing Statement
+
+----------------------------------------------------------------------
+Q5: Which study in the corpus involves sleep apnea treatment in patients with heart failure?
+Query embedding dimension: 384
+First 8 query embedding values: [0.056835, -0.01213, -0.029554, 0.058141, 0.000147, 0.057857, -0.069656, 0.034549]
+Query vector shape: (384,)
+Stacked document vector shape: (3, 384)
+Retrieval latency: 7.83 ms
+
+Rank 1
+Source: NCT01377987_heart_failure.pdf
+Store score: 0.635319
+Cosine similarity: 0.595588
+Chunk length: 9860
+Preview: Trial Contacts ICMJEContacts Contact information is displayed when a study is open for participants to join. Study Record Dates ICMJEFirst Submitted 2011-06-20
+
+Rank 2
+Source: NCT01377987_heart_failure.pdf
+Store score: 0.587909
+Cosine similarity: 0.613368
+Chunk length: 478
+Preview: Predicting Successful Sleep Apnea Treatment With Acetazolamide in Heart Failure Patients (HF-ACZ) ClinicalTrials.gov ID NCT01377987 Sponsor David Andrew Wellman
+
+Rank 3
+Source: NCT01377987_heart_failure.pdf
+Store score: 0.529716
+Cosine similarity: 0.251346
+Chunk length: 88
+Preview: Read our full disclaimer(https://clinicaltrials.gov/about-site/disclaimer) for details.
+
+======================================================================
+Saved semantic retrieval results to: reports/hw03/raw/semantic_retrieval.csv
+======================================================================
+
+======================================================================
+SENTENCE-WINDOW SPLITTER
+======================================================================
+Window size: 3 neighboring sentences
+Node content: 1 sentence
+Total sentence nodes created: 115
+Average sentence length: 284.28 characters
+
+First sentence node:
+Fluorescence-guided Resection in BreastCancer ClinicalTrials.gov ID NCT01110954 Sponsor photonamic GmbH & Co. 
+
+First sentence source:
+NCT01110954_breast_cancer.pdf
+
+First sentence window metadata:
+Fluorescence-guided Resection in BreastCancer ClinicalTrials.gov ID NCT01110954 Sponsor photonamic GmbH & Co.  KG Information provided by photonamic GmbH & Co.  KG (Responsible Party) Last Update Posted 2017-04-04 Terminated Insufficient recruitment No longer looking for participants Researcher View Tab Record 1 of 16,822 The U.S.  government does not review or approve the safety and science of all studies listed on this website. 
+
+======================================================================
+SENTENCE-WINDOW RETRIEVAL
+======================================================================
+Embedding model: sentence-transformers/all-MiniLM-L6-v2
+Top-k retrieval: 3
+
+----------------------------------------------------------------------
+Q1: Why was the breast cancer study NCT01110954 terminated?
+Query embedding dimension: 384
+First 8 query embedding values: [-0.022638, 0.028743, -0.020714, 0.016539, 0.045536, -0.045165, -0.081648, 0.035189]
+Query vector shape: (384,)
+Stacked document vector shape: (3, 384)
+Retrieval latency: 9.96 ms
+
+Rank 1
+Source: NCT01110954_breast_cancer.pdf
+Store score: 0.651485
+Cosine similarity: 0.372767
+Sentence length: 88
+Window length: 4885
+Window preview: KG Information provided by photonamic GmbH & Co. KG (Responsible Party) Last Update Posted 2017-04-04 Terminated Insufficient recruitment No longer looking for
+
+Rank 2
+Source: NCT01110954_breast_cancer.pdf
+Store score: 0.631789
+Cosine similarity: 0.318677
+Sentence length: 100
+Window length: 2090
+Window preview: Fluorescence-guided Resection in BreastCancer ClinicalTrials.gov ID NCT01110954 Sponsor photonamic GmbH & Co. KG Information provided by photonamic GmbH & Co.
+
+Rank 3
+Source: NCT01110954_breast_cancer.pdf
+Store score: 0.619224
+Cosine similarity: 0.362657
+Sentence length: 172
+Window length: 633
+Window preview: Fluorescence-guided Resection in BreastCancer ClinicalTrials.gov ID NCT01110954 Sponsor photonamic GmbH & Co. KG Information provided by photonamic GmbH & Co.
+
+----------------------------------------------------------------------
+Q2: What intervention is being evaluated in the heart failure study NCT01377987?
+Query embedding dimension: 384
+First 8 query embedding values: [-0.008389, 0.079015, -0.005345, 0.011453, 0.018499, 0.04187, -0.115763, 0.087134]
+Query vector shape: (384,)
+Stacked document vector shape: (3, 384)
+Retrieval latency: 9.89 ms
+
+Rank 1
+Source: NCT01377987_heart_failure.pdf
+Store score: 0.717278
+Cosine similarity: 0.261264
+Sentence length: 50
+Window length: 1099
+Window preview: The procedure involved brief administration of 7% carbon dioxide in air for 0.5 min ("pulses"); tests were repeated every 3 min for 30 min while measuring venti
+
+Rank 2
+Source: NCT01377987_heart_failure.pdf
+Store score: 0.698176
+Cosine similarity: 0.343790
+Sentence length: 88
+Window length: 1508
+Window preview: Predicting Successful Sleep Apnea Treatment With Acetazolamide in Heart Failure Patients (HF-ACZ) ClinicalTrials.gov ID NCT01377987 Sponsor David Andrew Wellman
+
+Rank 3
+Source: NCT01377987_heart_failure.pdf
+Store score: 0.675860
+Cosine similarity: 0.215816
+Sentence length: 100
+Window length: 1447
+Window preview: Predicting Successful Sleep Apnea Treatment With Acetazolamide in Heart Failure Patients (HF-ACZ) ClinicalTrials.gov ID NCT01377987 Sponsor David Andrew Wellman
+
+----------------------------------------------------------------------
+Q3: What is the recruitment status of the Type 2 diabetes study NCT06864546?
+Query embedding dimension: 384
+First 8 query embedding values: [-0.0272, 0.017865, -0.045162, 0.069113, -0.028147, 0.002071, -0.041797, 0.071156]
+Query vector shape: (384,)
+Stacked document vector shape: (3, 384)
+Retrieval latency: 11.03 ms
+
+Rank 1
+Source: NCT06864546_type2_diabetes.pdf
+Store score: 0.718565
+Cosine similarity: 0.711893
+Sentence length: 924
+Window length: 2387
+Window preview: Diabetologia. 2017 Mar;60(3):490- 498. doi: 10.1007/s00125-016-4161-7. Epub 2016 Nov 30. (https://pubmed.ncbi.nlm.nih.gov/27904925) Recruitment Information IC
+
+Rank 2
+Source: NCT06864546_type2_diabetes.pdf
+Store score: 0.712285
+Cosine similarity: 0.651721
+Sentence length: 531
+Window length: 755
+Window preview: A Participatory Approach to Support Glucose Tolerance Tracking in Real-Life of Patients With Type2Diabetes (GluToTrack) ClinicalTrials.gov ID NCT06864546 Sponso
+
+Rank 3
+Source: NCT06864546_type2_diabetes.pdf
+Store score: 0.710104
+Cosine similarity: 0.382144
+Sentence length: 28
+Window length: 510
+Window preview: Type 2 Diabetes and the Use of Real-Time Continuous Glucose Monitoring. Diabetes Technol Ther. 2021 Mar;23(S1):S27-S34. doi: 10.1089/dia.2021.0007. (https:/
+
+----------------------------------------------------------------------
+Q4: Which study in the corpus focuses on supporting glucose tolerance tracking in real life?
+Query embedding dimension: 384
+First 8 query embedding values: [-0.015759, -0.007772, -0.099241, 0.046852, 0.048499, 0.022574, 0.050065, 0.055823]
+Query vector shape: (384,)
+Stacked document vector shape: (3, 384)
+Retrieval latency: 9.82 ms
+
+Rank 1
+Source: NCT06864546_type2_diabetes.pdf
+Store score: 0.703041
+Cosine similarity: 0.688256
+Sentence length: 137
+Window length: 1421
+Window preview: A fundamental component of these technological platforms for participatory medicine in diabetes is represented by continuous glucose monitoring (CGM) devices.
+
+Rank 2
+Source: NCT06864546_type2_diabetes.pdf
+Store score: 0.687268
+Cosine similarity: 0.701577
+Sentence length: 423
+Window length: 1715
+Window preview: Data, required for the mathematical model validation phase, will be gathered, exploiting an e-health approach combining medical informatics and medical device w
+
+Rank 3
+Source: NCT06864546_type2_diabetes.pdf
+Store score: 0.669398
+Cosine similarity: 0.644732
+Sentence length: 628
+Window length: 1583
+Window preview: FDA-regulated Drug Product: No Studies a U.S. FDA-regulated Device Product: No Product manufactured in and exported from the U.S. : No ICMJEIPD Sharing Stateme
+
+----------------------------------------------------------------------
+Q5: Which study in the corpus involves sleep apnea treatment in patients with heart failure?
+Query embedding dimension: 384
+First 8 query embedding values: [0.056835, -0.01213, -0.029554, 0.058141, 0.000147, 0.057857, -0.069656, 0.034549]
+Query vector shape: (384,)
+Stacked document vector shape: (3, 384)
+Retrieval latency: 9.34 ms
+
+Rank 1
+Source: NCT01377987_heart_failure.pdf
+Store score: 0.631279
+Cosine similarity: 0.599233
+Sentence length: 644
+Window length: 4412
+Window preview: Detailed Description Not provided ICMJEStudy Type* Interventional ICMJEStudy Phase* Not Applicable ICMJEStudy Design*§ Allocation Randomized Interventional Mode
+
+Rank 2
+Source: NCT01377987_heart_failure.pdf
+Store score: 0.612042
+Cosine similarity: 0.643110
+Sentence length: 201
+Window length: 4620
+Window preview: The total score is reported. ICMJESecondary (Original)[*] (Submitted: 2011-06-20) Ventilatory stability, i.e. loop gain, ventilatory responses to carbon dioxi
+
+Rank 3
+Source: NCT01377987_heart_failure.pdf
+Store score: 0.611375
+Cosine similarity: 0.614604
+Sentence length: 768
+Window length: 1256
+Window preview: government does not review or approve the safety and science of all studies listed on this website. Read our full disclaimer(https://clinicaltrials.gov/about-s
+
+======================================================================
+Saved sentence-window retrieval results to: reports/hw03/raw/sentence_window_retrieval.csv
+======================================================================
+===== HW3 FINAL RUN END: Fri Sep 18 16:25:40 PDT 2026 =====
+===== METRICS START: Fri Sep 18 16:25:47 PDT 2026 =====
+====================================================================================================
+HW3 RETRIEVAL METRICS COMPARISON
+====================================================================================================
+      Technique Top-1 Cosine Mean@3 Cosine  # Chunks Avg Chunk Length Avg Retrieval Latency (ms) Recall@3
+          Token       0.5910        0.5611        19          1875.84                       8.16     1.00
+       Semantic       0.5683        0.5330        10          3269.20                      10.08     1.00
+Sentence-Window       0.5267        0.5008       115           284.28                      10.01     1.00
+
+Saved metrics table to: reports/hw03/METRICS.md
+===== METRICS END: Fri Sep 18 16:25:47 PDT 2026 =====
+===== VERIFICATION START: Fri Sep 18 16:25:47 PDT 2026 =====
+======================================================================
+HW3 VERIFICATION
+======================================================================
+[PASS] Python files compile
+       main.py: PASS; routers/auth.py: PASS; run_hw03_retrieval.py: PASS; compute_hw03_metrics.py: PASS
+[PASS] Corpus size and PDF count
+       3 PDFs, 2094862 bytes total
+[PASS] Five precommitted retrieval questions
+       5 questions found
+[PASS] Raw retrieval outputs
+       Token: 15 rows, required columns=True; Semantic: 15 rows, required columns=True; Sentence-Window: 15 rows, required columns=True
+[PASS] Recall@3 verification
+       Token: Recall@3=1.00; Semantic: Recall@3=1.00; Sentence-Window: Recall@3=1.00
+[PASS] Required HW3 documentation files
+       SOURCES.md=PASS, CORPUS_MANIFEST.json=PASS, questions.yaml=PASS, METRICS.md=PASS, RUN_LOG.txt=PASS, AI_USE.md=PASS
+
+Overall: PASS
+Saved verification output to: reports/hw03/verification.json
+===== VERIFICATION END: Fri Sep 18 16:25:47 PDT 2026 =====
