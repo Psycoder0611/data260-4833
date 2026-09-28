@@ -1,0 +1,19 @@
+Question,Configuration,Correct Retrieval,Correct Answer,Grounded,Refused When Needed
+Q1,A - No RAG,N/A,Yes,No,N/A
+Q1,B - Basic RAG,Yes,Yes,Yes,N/A
+Q1,C - Context RAG,Yes,Yes,Yes,N/A
+Q2,A - No RAG,N/A,Yes,No,N/A
+Q2,B - Basic RAG,Yes,Yes,Mostly Yes,N/A
+Q2,C - Context RAG,Yes,Yes,Yes,N/A
+Q3,A - No RAG,N/A,Partly,No,N/A
+Q3,B - Basic RAG,Yes,Yes,Mostly Yes,N/A
+Q3,C - Context RAG,Yes,Yes,Yes,N/A
+Q4,A - No RAG,N/A,No,No,N/A
+Q4,B - Basic RAG,Yes,Yes,Mostly Yes,N/A
+Q4,C - Context RAG,No,Yes,Yes,Yes
+Q5,A - No RAG,N/A,No,No,No
+Q5,B - Basic RAG,Yes,Yes,Yes,Yes
+Q5,C - Context RAG,Yes,Yes,Yes,Yes
+Q6,A - No RAG,N/A,No,No,No
+Q6,B - Basic RAG,No,No,No,No
+Q6,C - Context RAG,No,Yes,Yes,Yes

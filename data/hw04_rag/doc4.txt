@@ -1,0 +1,9 @@
+Blinding in Clinical Research
+
+Blinding reduces the chance that expectations influence study results.
+
+In a single-blind study, participants generally do not know which treatment group they are assigned to.
+
+In a double-blind study, both participants and relevant study personnel are unaware of treatment assignments.
+
+Blinding can reduce measurement and expectation bias when it is practical and appropriate for the study design.

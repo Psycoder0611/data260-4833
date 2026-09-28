@@ -1,0 +1,7 @@
+Eligibility and Adverse Events
+
+Eligibility criteria define who may participate in a clinical trial. Inclusion criteria describe characteristics participants must have, while exclusion criteria identify conditions that prevent participation.
+
+An adverse event is an unfavorable medical occurrence experienced by a participant during a study. An adverse event does not automatically mean that the experimental treatment caused the event.
+
+Researchers document and evaluate adverse events to support participant safety and study monitoring.

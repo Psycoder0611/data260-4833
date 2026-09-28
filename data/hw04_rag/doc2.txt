@@ -1,0 +1,7 @@
+Randomization and Control Groups
+
+Randomization assigns participants to study groups using a chance-based method. Its purpose is to reduce selection bias and make treatment groups more comparable.
+
+A control group provides a comparison for the experimental treatment. A control may receive a placebo, standard treatment, or another intervention.
+
+Randomized controlled trials combine random assignment with a comparison group to improve the reliability of conclusions about treatment effects.

@@ -1,0 +1,110 @@
+Q1: What is the purpose of randomization in a clinical trial?
+
+Relevance threshold: 0.6799
+
+[Source 1]
+Source: doc2.txt
+Chunk ID: doc2.txt_chunk_0
+Score: 0.7555
+Randomization and Control Groups
+
+Randomization assigns participants to study groups using a chance-based method. Its purpose is to reduce selection bias and make treatment groups more comparable.
+
+A control group provides a comparison for the experimental treatment. A control may receive a placebo, standard treatment, or another intervention.
+
+Randomized controlled trials combine random assignment with a comparison group to improve the reliability of conclusions about treatment effects.
+
+
+================================================================================
+
+Q2: How do randomization and blinding help reduce bias in clinical research?
+
+Relevance threshold: 0.7489
+
+[Source 1]
+Source: doc4.txt
+Chunk ID: doc4.txt_chunk_0
+Score: 0.8321
+Blinding in Clinical Research
+
+Blinding reduces the chance that expectations influence study results.
+
+In a single-blind study, participants generally do not know which treatment group they are assigned to.
+
+In a double-blind study, both participants and relevant study personnel are unaware of treatment assignments.
+
+Blinding can reduce measurement and expectation bias when it is practical and appropriate for the study design.
+
+[Source 2]
+Source: doc2.txt
+Chunk ID: doc2.txt_chunk_0
+Score: 0.7537
+Randomization and Control Groups
+
+Randomization assigns participants to study groups using a chance-based method. Its purpose is to reduce selection bias and make treatment groups more comparable.
+
+A control group provides a comparison for the experimental treatment. A control may receive a placebo, standard treatment, or another intervention.
+
+Randomized controlled trials combine random assignment with a comparison group to improve the reliability of conclusions about treatment effects.
+
+
+================================================================================
+
+Q3: How is participant safety addressed across different stages and processes of a clinical trial?
+
+Relevance threshold: 0.6653
+
+[Source 1]
+Source: doc1.txt
+Chunk ID: doc1.txt_chunk_0
+Score: 0.7392
+Clinical Trial Phases
+
+Phase I clinical trials primarily evaluate safety, dosage, and side effects. They usually involve a relatively small number of participants.
+
+Phase II trials evaluate whether a treatment shows evidence of effectiveness while continuing to monitor safety.
+
+Phase III trials compare the treatment with existing treatments or standard care in larger groups of participants.
+
+Phase IV studies occur after regulatory approval and continue to monitor long-term safety and effectivene
+
+[Source 2]
+Source: doc5.txt
+Chunk ID: doc5.txt_chunk_0
+Score: 0.7064
+Eligibility and Adverse Events
+
+Eligibility criteria define who may participate in a clinical trial. Inclusion criteria describe characteristics participants must have, while exclusion criteria identify conditions that prevent participation.
+
+An adverse event is an unfavorable medical occurrence experienced by a participant during a study. An adverse event does not automatically mean that the experimental treatment caused the event.
+
+Researchers document and evaluate adverse events to support pa
+
+[Source 3]
+Source: doc5.txt
+Chunk ID: doc5.txt_chunk_1
+Score: 0.6923
+document and evaluate adverse events to support participant safety and study monitoring.
+
+
+================================================================================
+
+Q4: What is the role of the study group?
+
+Relevance threshold: 0.6000
+
+No context retained / refusal required.
+
+================================================================================
+
+Q5: What percentage of participants experience side effects during Phase I trials?
+
+No context retained / refusal required.
+
+================================================================================
+
+Q6: What is the capital of France?
+
+No context retained / refusal required.
+
+================================================================================

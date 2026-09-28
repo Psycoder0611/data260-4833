@@ -1,13 +1,19 @@
 fastapi==0.141.1
 uvicorn==0.52.4
 pydantic==2.13.4
+
 langgraph==1.2.11
 langchain-core==1.6.0
 langchain-ollama==1.1.0
 ollama==0.6.2
 
-curl -i \  #hw4
-  -X POST \
-  http://127.0.0.1:8333/api/login \
-  -H "Content-Type: application/json" \
-  -d '{"email":"admin@example.com","password":"password123"}'
+SQLAlchemy==2.0.52
+PyMySQL==1.2.3
+python-dotenv==1.2.3
+
+passlib==1.7.4
+bcrypt==4.0.1
+email-validator==2.3.0
+
+numpy==2.5.2
+faiss-cpu==1.15.1

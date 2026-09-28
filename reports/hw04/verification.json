@@ -1,0 +1,40 @@
+{
+  "homework": 4,
+  "SID4": 4833,
+  "commit_hash": "55d4d5b16758cb01bd285f81fba12e1e48dcf88e",
+  "model_configuration": {
+    "llm": "qwen3:8b",
+    "embedding_model": "nomic-embed-text",
+    "vector_store": "FAISS",
+    "top_k": 3
+  },
+  "SEED": 4833,
+  "VERIFY_SEED": 264833,
+  "checks": [
+    {
+      "name": "login_endpoint",
+      "passed": true
+    },
+    {
+      "name": "naive_endpoint_returns_data",
+      "passed": true
+    },
+    {
+      "name": "fixed_endpoint_returns_data",
+      "passed": true
+    },
+    {
+      "name": "naive_and_fixed_same_length",
+      "passed": true
+    },
+    {
+      "name": "rag_raw_outputs_exist",
+      "passed": true
+    },
+    {
+      "name": "nplus1_raw_output_exists",
+      "passed": true
+    }
+  ],
+  "all_passed": true
+}

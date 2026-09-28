@@ -1,0 +1,9 @@
+Clinical Trial Phases
+
+Phase I clinical trials primarily evaluate safety, dosage, and side effects. They usually involve a relatively small number of participants.
+
+Phase II trials evaluate whether a treatment shows evidence of effectiveness while continuing to monitor safety.
+
+Phase III trials compare the treatment with existing treatments or standard care in larger groups of participants.
+
+Phase IV studies occur after regulatory approval and continue to monitor long-term safety and effectiveness in broader populations.
