@@ -65,3 +65,42 @@ The model has a limited context window, so there is a maximum amount of text
 that can be included in one request. Once the conversation becomes too large,
 older content must be removed, summarized, or otherwise reduced to stay within
 that context limit.
+
+
+---
+
+# DATA 260 Homework 2
+
+Homework 2 extends the same Clinical Trial Listings application from Homework 1.
+
+## Main HW2 Components
+
+- `main.py` - FastAPI backend and Clinical Trial Listings API
+- `agent_graph.py` - Stateful LangGraph Planner/Reviewer/Supervisor workflow
+- `run_hw02_experiments.py` - HW2 experiment runner
+- `verify_hw02.py` - HW2 self-check script
+- `reports/hw02/` - HW2 experiment results, metrics, logs, and report
+
+---
+
+# DATA 260 Homework 3
+
+Homework 3 extends the same repository with FastAPI authentication and a
+retrieval-only LlamaIndex comparison using ClinicalTrials.gov documents.
+
+## Main HW3 Components
+
+- `routers/auth.py` - Login, logout, protected dashboard, and session handling
+- `templates/` - Bootstrap/Jinja authentication pages
+- `run_hw03_retrieval.py` - Three LlamaIndex chunking and retrieval pipelines
+- `compute_hw03_metrics.py` - Recomputes retrieval comparison metrics
+- `verify_hw03.py` - HW3 self-check script
+- `data/hw03/` - Local ClinicalTrials.gov corpus
+- `reports/hw03/` - Sources, questions, raw retrieval results, metrics, logs, and verification output
+
+## HW3 Reproducible Run Instructions
+
+### 1. Activate the virtual environment
+
+```bash
+source .venv/bin/activate

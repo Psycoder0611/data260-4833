@@ -5,3 +5,9 @@ langgraph==1.2.11
 langchain-core==1.6.0
 langchain-ollama==1.1.0
 ollama==0.6.2
+
+curl -i \  #hw4
+  -X POST \
+  http://127.0.0.1:8333/api/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"admin@example.com","password":"password123"}'

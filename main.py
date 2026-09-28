@@ -1,3 +1,4 @@
+from fastapi.middleware.cors import CORSMiddleware #hw4%
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, EmailStr
@@ -6,12 +7,21 @@ import uvicorn
 import os
 from starlette.middleware.sessions import SessionMiddleware  #extension of hw3
 from routers.auth import router as auth_router
+from routers.hw4_auth import router as hw4_auth_router # adding for hw4
+from routers.hw4_trials import router as hw4_trials_router #adding for hw4
 
 
 # I am creating one FastAPI application for my Clinical Trial Listings domain.
 app = FastAPI(
     title="Clinical Trial Listings API",
     version="2.0.0"
+)
+app.add_middleware(  #added hw4
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 SECRET_KEY = os.getenv("SECRET_KEY", "dev-only-secret-key")
@@ -25,7 +35,8 @@ app.add_middleware(
 )
 
 app.include_router(auth_router)
-
+app.include_router(hw4_auth_router) # adding for hw4
+app.include_router(hw4_trials_router) # adding for hw4
 # ---------------------------------------------------------
 # Pydantic models
 # ---------------------------------------------------------
