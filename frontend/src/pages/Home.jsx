@@ -1,54 +1,41 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { fetchTrials } from "../features/trials/trialsSlice";
+
 
 function Home() {
-  const [records, setRecords] = useState([]);
-  const [isAuthenticated, setIsAuthenticated] = useState(null);
+  const dispatch = useDispatch();
+
+  const {
+    records,
+    loading,
+    error
+  } = useSelector((state) => state.trials);
+
 
   useEffect(() => {
-    const loadData = async () => {
-      try {
-        await axios.get(
-          "http://localhost:8333/api/me",
-          {
-            withCredentials: true,
-          }
-        );
+    dispatch(fetchTrials());
+  }, [dispatch]);
 
-        setIsAuthenticated(true);
 
-        const response = await axios.get(
-          "http://localhost:8333/api/hw4/trials",
-          {
-            withCredentials: true,
-          }
-        );
-
-        setRecords(response.data);
-      } catch (error) {
-        setIsAuthenticated(false);
-      }
-    };
-
-    loadData();
-  }, []);
-
-  if (isAuthenticated === null) {
-    return <p>Loading...</p>;
-  }
-
-  if (!isAuthenticated) {
+  if (loading) {
     return (
       <div className="page-container">
         <h1>Clinical Trial Listings</h1>
-        <p>Login required</p>
+        <p>Loading clinical trials...</p>
       </div>
     );
   }
 
+
   return (
     <div className="page-container">
       <h1>Clinical Trial Listings</h1>
+
+      {error && (
+        <p>{error}</p>
+      )}
 
       {records.length === 0 ? (
         <p>No clinical trials found.</p>
@@ -58,7 +45,9 @@ function Home() {
             <tr>
               <th>ID</th>
               <th>Trial Title</th>
-              <th>Sponsor</th>
+              <th>Trial Code</th>
+              <th>Participant Capacity</th>
+              <th>Organization ID</th>
             </tr>
           </thead>
 
@@ -67,7 +56,9 @@ function Home() {
               <tr key={record.id}>
                 <td>{record.id}</td>
                 <td>{record.trialTitle}</td>
-                <td>{record.sponsor}</td>
+                <td>{record.trial_code}</td>
+                <td>{record.participant_capacity}</td>
+                <td>{record.organization_id}</td>
               </tr>
             ))}
           </tbody>
@@ -76,5 +67,6 @@ function Home() {
     </div>
   );
 }
+
 
 export default Home;

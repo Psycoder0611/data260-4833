@@ -1,0 +1,126 @@
+===== HW5 RUN LOG =====
+Fri Oct  2 22:55:33 PDT 2026
+
+===== RETRY DEMO =====
+Fri Oct  2 22:55:33 PDT 2026
+=================================================================
+CASE 1 - SUCCESS ON FIRST ATTEMPT
+=================================================================
+{'ok': True, 'data': 'database operation completed', 'error': None, 'attempts': 1}
+
+=================================================================
+CASE 2 - FIRST FAILURE, THEN RETRY SUCCESS
+=================================================================
+{'ok': True, 'data': 'database operation completed after retry', 'error': None, 'attempts': 2}
+
+=================================================================
+CASE 3 - ALL RETRIES FAIL CLEANLY
+=================================================================
+{'ok': False, 'data': None, 'error': 'simulated persistent storage failure', 'attempts': 3}
+
+===== FAULT INJECTION EXPERIMENT =====
+Fri Oct  2 22:55:33 PDT 2026
+VERIFY_SEED = 264833
+Calls per failure rate = 50
+Maximum attempts = 3
+
+======================================================================
+INJECTED FAILURE RATE: 0%
+======================================================================
+Calls: 50
+Success rate: 100.0%
+Mean latency: 0.058 ms
+P99 latency: 0.2 ms
+
+======================================================================
+INJECTED FAILURE RATE: 20%
+======================================================================
+Calls: 50
+Success rate: 98.0%
+Mean latency: 3.512 ms
+P99 latency: 37.778 ms
+
+======================================================================
+INJECTED FAILURE RATE: 50%
+======================================================================
+Calls: 50
+Success rate: 94.0%
+Mean latency: 11.039 ms
+P99 latency: 38.326 ms
+
+Raw records saved to: reports/hw05/raw/fault_injection_calls.csv
+Metrics saved to: reports/hw05/raw/fault_metrics.json
+Total raw call records: 150
+
+===== OFFLINE TOOL TESTS =====
+Fri Oct  2 22:55:34 PDT 2026
+PASS - search_trials valid input
+PASS - search_trials rejected input
+PASS - get_trial_details valid input
+PASS - get_trial_details rejected input
+PASS - organization_trial_summary valid input
+PASS - organization_trial_summary rejected input
+PASS - execute_tool safety rule blocked
+PASS - run_agent stops at max_steps
+
+=======================================================
+FINAL SUMMARY: 8/8 tests passed
+=======================================================
+
+===== LOCAL OLLAMA AGENT SCENARIOS =====
+Fri Oct  2 22:55:34 PDT 2026
+======================================================================
+HW5 LOCAL OLLAMA AGENT SCENARIOS
+======================================================================
+
+----------------------------------------------------------------------
+SCENARIO 1: Search trial
+----------------------------------------------------------------------
+Prompt: Find clinical trials related to Cardio.
+Steps: 2
+Tool calls: 1
+Stop reason: normal_completion
+Answer: Found 1 clinical trial related to Cardio:
+
+1. **Cardiovascular Health Study** (Trial ID: 5006, Code: CT-2026-002)
+   - Participant Capacity: 120
+   - Organization ID: 2
+
+Would you like more details about this trial or additional trials?
+
+----------------------------------------------------------------------
+SCENARIO 2: Trial details
+----------------------------------------------------------------------
+Prompt: Give me details for clinical trial ID 5006.
+Steps: 2
+Tool calls: 1
+Stop reason: normal_completion
+Answer: Clinical Trial ID 5006 Details:
+
+- **Trial Title**: Cardiovascular Health Study
+- **Trial Code**: CT-2026-002
+- **Participant Capacity**: 120
+- **Organization**: Stanford Clinical Trials Center
+
+Let me know if you need additional information!
+
+----------------------------------------------------------------------
+SCENARIO 3: Organization summary
+----------------------------------------------------------------------
+Prompt: Summarize the clinical trials for organization ID 2.
+Steps: 2
+Tool calls: 1
+Stop reason: normal_completion
+Answer: Organization ID 2, 'Stanford Clinical Trials Center', is conducting 1 clinical trial with a total participant capacity of 120. The average participant capacity across their trials is 120.
+
+----------------------------------------------------------------------
+SCENARIO 4: Safety rule scenario
+----------------------------------------------------------------------
+Prompt: Search all clinical trials using *.
+Steps: 1
+Tool calls: 0
+Stop reason: normal_completion
+Answer: I cannot process unrestricted wildcard searches. Please provide a specific keyword or phrase related to the clinical trials you're interested in, and I'll help you find relevant trials.
+
+===== END HW5 RUN LOG =====
+Fri Oct  2 22:56:42 PDT 2026

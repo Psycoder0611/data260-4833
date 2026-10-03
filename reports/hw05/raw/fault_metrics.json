@@ -1,0 +1,20 @@
+{
+  "0%": {
+    "calls": 50,
+    "success_rate_percent": 100.0,
+    "mean_latency_ms": 0.058,
+    "p99_latency_ms": 0.2
+  },
+  "20%": {
+    "calls": 50,
+    "success_rate_percent": 98.0,
+    "mean_latency_ms": 3.512,
+    "p99_latency_ms": 37.778
+  },
+  "50%": {
+    "calls": 50,
+    "success_rate_percent": 94.0,
+    "mean_latency_ms": 11.039,
+    "p99_latency_ms": 38.326
+  }
+}

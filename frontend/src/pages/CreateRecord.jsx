@@ -1,81 +1,140 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
-function CreateRecord({ apiBaseUrl }) {
-  const [trialTitle, setTrialTitle] = useState("");
-  const [sponsor, setSponsor] = useState("");
-  const [error, setError] = useState("");
+import { createTrial } from "../features/trials/trialsSlice";
 
+
+function CreateRecord() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const { loading, error } = useSelector(
+    (state) => state.trials
+  );
+
+  const [trialTitle, setTrialTitle] = useState("");
+  const [trialCode, setTrialCode] = useState("");
+  const [participantCapacity, setParticipantCapacity] =
+    useState(100);
+  const [organizationId, setOrganizationId] = useState("");
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setError("");
+
+    const trialData = {
+      trialTitle: trialTitle.trim(),
+      trial_code: trialCode.trim(),
+      participant_capacity: Number(participantCapacity),
+      organization_id: Number(organizationId),
+    };
 
     try {
-      await axios.post(
-        `${apiBaseUrl}/api/hw4/trials`,
-        {
-          trialTitle: trialTitle.trim(),
-          sponsor: sponsor.trim(),
-        },
-        {
-          withCredentials: true,
-        }
-      );
+      await dispatch(
+        createTrial(trialData)
+      ).unwrap();
 
       navigate("/");
-    } catch (err) {
-      if (err.response?.status === 401) {
-        setError("Login required");
-      } else {
-        setError("Unable to create clinical trial");
-      }
+    } catch {
+      // Redux stores the API error in state.
     }
   };
+
 
   return (
     <div className="page-container">
       <h1>Add Clinical Trial</h1>
 
       <form onSubmit={handleSubmit}>
+
         <div>
-          <label htmlFor="trialTitle">Trial Title</label>
-          <br />
+          <label htmlFor="trialTitle">
+            Trial Title
+          </label>
 
           <input
             id="trialTitle"
             type="text"
             value={trialTitle}
-            onChange={(event) => setTrialTitle(event.target.value)}
+            onChange={(event) =>
+              setTrialTitle(event.target.value)
+            }
             placeholder="Enter trial title"
             required
           />
         </div>
 
+
         <div>
-          <label htmlFor="sponsor">Sponsor</label>
-          <br />
+          <label htmlFor="trialCode">
+            Trial Code
+          </label>
 
           <input
-            id="sponsor"
+            id="trialCode"
             type="text"
-            value={sponsor}
-            onChange={(event) => setSponsor(event.target.value)}
-            placeholder="Enter sponsor"
+            value={trialCode}
+            onChange={(event) =>
+              setTrialCode(event.target.value)
+            }
+            placeholder="Example: CT-2026-003"
             required
           />
         </div>
 
-        <button type="submit">
-          Add Clinical Trial
+
+        <div>
+          <label htmlFor="participantCapacity">
+            Participant Capacity
+          </label>
+
+          <input
+            id="participantCapacity"
+            type="number"
+            min="1"
+            value={participantCapacity}
+            onChange={(event) =>
+              setParticipantCapacity(event.target.value)
+            }
+            required
+          />
+        </div>
+
+
+        <div>
+          <label htmlFor="organizationId">
+            Organization ID
+          </label>
+
+          <input
+            id="organizationId"
+            type="number"
+            min="1"
+            value={organizationId}
+            onChange={(event) =>
+              setOrganizationId(event.target.value)
+            }
+            placeholder="Example: 2"
+            required
+          />
+        </div>
+
+
+        <button type="submit" disabled={loading}>
+          {loading ? "Creating..." : "Add Clinical Trial"}
         </button>
+
       </form>
 
-      {error && <p>{error}</p>}
+      {error && (
+        <p className="error-message">
+          {error}
+        </p>
+      )}
     </div>
   );
 }
+
 
 export default CreateRecord;

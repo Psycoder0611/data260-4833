@@ -13,13 +13,9 @@ function App() {
     <div>
       <nav>
         <Link to="/">Home</Link>
-        {" | "}
         <Link to="/login">Login</Link>
-        {" | "}
         <Link to="/create">Add Record</Link>
-        {" | "}
         <Link to="/update">Update Record</Link>
-        {" | "}
         <Link to="/delete">Delete Record</Link>
       </nav>
 

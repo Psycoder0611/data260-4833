@@ -1,64 +1,75 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
-function DeleteRecord({ apiBaseUrl }) {
-  const [id, setId] = useState("");
-  const [error, setError] = useState("");
+import { deleteTrial } from "../features/trials/trialsSlice";
 
+
+function DeleteRecord() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const { loading, error } = useSelector(
+    (state) => state.trials
+  );
+
+  const [id, setId] = useState("");
+
 
   const handleDelete = async (event) => {
     event.preventDefault();
-    setError("");
 
     try {
-      await axios.delete(
-        `${apiBaseUrl}/api/hw4/trials/${id}`,
-        {
-          withCredentials: true,
-        }
-      );
+      await dispatch(
+        deleteTrial(Number(id))
+      ).unwrap();
 
       navigate("/");
-    } catch (err) {
-      if (err.response?.status === 401) {
-        setError("Login required");
-      } else if (err.response?.status === 404) {
-        setError("Clinical trial not found");
-      } else {
-        setError("Unable to delete clinical trial");
-      }
+    } catch {
+      // Redux stores the API error in state.
     }
   };
+
 
   return (
     <div className="page-container">
       <h1>Delete Clinical Trial</h1>
 
       <form onSubmit={handleDelete}>
+
         <div>
-          <label htmlFor="id">Trial ID</label>
-          <br />
+          <label htmlFor="id">
+            Trial ID
+          </label>
 
           <input
             id="id"
             type="number"
+            min="1"
             value={id}
-            onChange={(event) => setId(event.target.value)}
+            onChange={(event) =>
+              setId(event.target.value)
+            }
             placeholder="Enter trial ID"
             required
           />
         </div>
 
-        <button type="submit">
-          Delete Clinical Trial
+
+        <button type="submit" disabled={loading}>
+          {loading ? "Deleting..." : "Delete Clinical Trial"}
         </button>
+
       </form>
 
-      {error && <p>{error}</p>}
+      {error && (
+        <p className="error-message">
+          {error}
+        </p>
+      )}
     </div>
   );
 }
+
 
 export default DeleteRecord;
