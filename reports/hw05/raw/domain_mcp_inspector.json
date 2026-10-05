@@ -1,0 +1,100 @@
+{
+    "server": "clinical_trials",
+    "tool_calls": [
+      {
+        "tool": "search_trials",
+        "case": "valid",
+        "input": {
+          "query": "Cardio",
+          "limit": 10
+        },
+        "output": {
+          "ok": true,
+          "data": [
+            {
+              "id": 5006,
+              "trialTitle": "Cardiovascular Health Study",
+              "trial_code": "CT-2026-002",
+              "participant_capacity": 120,
+              "organization_id": 2
+            }
+          ],
+          "error": null
+        }
+      },
+      {
+        "tool": "search_trials",
+        "case": "invalid",
+        "input": {
+          "query": " ",
+          "limit": 10
+        },
+        "output": {
+          "ok": false,
+          "data": null,
+          "error": "query must not be empty"
+        }
+      },
+      {
+        "tool": "get_trial_details",
+        "case": "valid",
+        "input": {
+          "trial_id": 5006
+        },
+        "output": {
+          "ok": true,
+          "data": {
+            "id": 5006,
+            "trialTitle": "Cardiovascular Health Study",
+            "trial_code": "CT-2026-002",
+            "participant_capacity": 120,
+            "organization_id": 2,
+            "organization_name": "Stanford Clinical Trials Center"
+          },
+          "error": null
+        }
+      },
+      {
+        "tool": "get_trial_details",
+        "case": "invalid",
+        "input": {
+          "trial_id": 0
+        },
+        "output": {
+          "ok": false,
+          "data": null,
+          "error": "trial_id must be a positive integer"
+        }
+      },
+      {
+        "tool": "organization_trial_summary",
+        "case": "valid",
+        "input": {
+          "organization_id": 2
+        },
+        "output": {
+          "ok": true,
+          "data": {
+            "organization_id": 2,
+            "organization_name": "Stanford Clinical Trials Center",
+            "trial_count": 1,
+            "total_participant_capacity": 120,
+            "average_participant_capacity": 120.0
+          },
+          "error": null
+        }
+      },
+      {
+        "tool": "organization_trial_summary",
+        "case": "invalid",
+        "input": {
+          "organization_id": 0
+        },
+        "output": {
+          "ok": false,
+          "data": null,
+          "error": "organization_id must be a positive integer"
+        }
+      }
+    ]
+  }

@@ -1,0 +1,44 @@
+{
+  "homework": 5,
+  "sid4": 4833,
+  "port_base": 8333,
+  "prefix": "s4833",
+  "seed": 4833,
+  "verify_seed": 264833,
+  "model": "qwen3:8b",
+  "embedding_model": "nomic-embed-text",
+  "commit_hash": "872d73b85aa95fe741b2273cbdfc113b30538f4a",
+  "overall_pass": true,
+  "checks": [
+    {
+      "name": "FastAPI backend responds on PORT_BASE",
+      "passed": true,
+      "details": "GET /docs returned HTTP 200"
+    },
+    {
+      "name": "Meals MCP server imports and exposes required tools",
+      "passed": true,
+      "details": "All four required tools found"
+    },
+    {
+      "name": "Domain MCP server imports and exposes required tools",
+      "passed": true,
+      "details": "All three required domain tools found"
+    },
+    {
+      "name": "Offline tool and agent tests",
+      "passed": true,
+      "details": "8/8 tests passed"
+    },
+    {
+      "name": "Required HW5 raw artifacts exist",
+      "passed": true,
+      "details": "All required raw artifacts found"
+    },
+    {
+      "name": "150 fault-injection records exist",
+      "passed": true,
+      "details": "Found 150 records"
+    }
+  ]
+}
