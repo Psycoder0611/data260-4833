@@ -1,0 +1,81 @@
+# HW6 Part 3 - memory probes.
+# Created BEFORE the graded runs. Do not edit the expected facts or rubric after results exist.
+#
+# How a probe is asked: after the fixed 30-message conversation, each question is sent to
+# POST /api/chat in the same session with persist=false, so probes do not change memory
+# and do not affect each other.
+#
+# How a probe is scored (automatic, same code for every setting):
+#   Each probe has 3 expected facts. A fact counts as matched when the reply contains ANY
+#   of its patterns (case-insensitive regular expressions).
+#   score = 1 + round(4 * matched_facts / 3)
+#   3 of 3 -> 5, 2 of 3 -> 4, 1 of 3 -> 2, 0 of 3 -> 1
+#
+# Rubric (1-5):
+#   5 = all three expected facts are stated correctly
+#   4 = two of three facts are correct
+#   3 = reserved for a half-correct reply (not reachable with 3 facts)
+#   2 = only one fact is correct
+#   1 = no expected fact, or says it does not know
+
+version: 1
+facts_planted_in_turns:
+  identity: 1
+  trip: 2
+  paper: 9-10
+  pet: 21
+  gear_and_diet: 26-27
+scoring:
+  facts_per_probe: 3
+  formula: "1 + round(4 * matched / 3)"
+probes:
+  - id: P1
+    question: "What is my name, what is my job, and which city do I live in?"
+    expected_answer: "Dana Whitfield, field ecologist, Monterey (California)."
+    facts:
+      - id: name
+        patterns: ["dana"]
+      - id: job
+        patterns: ["ecologist"]
+      - id: city
+        patterns: ["monterey"]
+  - id: P2
+    question: "Where am I travelling, for how long, and when does the trip start?"
+    expected_answer: "Iceland, 12 days, starting March 3rd."
+    facts:
+      - id: place
+        patterns: ["iceland"]
+      - id: length
+        patterns: ["12[- ]day", "12 days", "twelve"]
+      - id: start
+        patterns: ["march 3", "3 march", "3rd of march", "march 3rd", "3/3", "03-03"]
+  - id: P3
+    question: "What paper am I writing, when is it due, and who is my co-author?"
+    expected_answer: "A paper on seabird nesting success, due April 20th, co-author Dr. Lena Okafor."
+    facts:
+      - id: topic
+        patterns: ["seabird", "nesting"]
+      - id: deadline
+        patterns: ["april 20", "20 april", "20th of april", "april 20th", "4/20"]
+      - id: coauthor
+        patterns: ["okafor", "lena"]
+  - id: P4
+    question: "What is my pet's name, what kind of animal is it, and who looks after it when I travel?"
+    expected_answer: "A cat named Biscuit, looked after by the neighbour Omar."
+    facts:
+      - id: name
+        patterns: ["biscuit"]
+      - id: animal
+        patterns: ["\\bcat\\b"]
+      - id: caretaker
+        patterns: ["omar"]
+  - id: P5
+    question: "Which camera and lens do I use for birds, and what is my diet?"
+    expected_answer: "Nikon Z6 with a 400mm lens; vegetarian."
+    facts:
+      - id: camera
+        patterns: ["nikon", "z6"]
+      - id: lens
+        patterns: ["400 ?mm"]
+      - id: diet
+        patterns: ["vegetarian"]

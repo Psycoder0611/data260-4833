@@ -11,6 +11,8 @@ from routers.hw4_auth import router as hw4_auth_router # adding for hw4
 from routers.hw4_trials import router as hw4_trials_router #adding for hw4
 from routers.hw5_organizations import router as hw5_organizations_router
 from routers.hw5_trials import router as hw5_trials_router
+from routers.hw6_trials import router as hw6_trials_router  # HW6 MongoDB trials
+from routers.hw6_chat import router as hw6_chat_router  # HW6 memory chat
 
 
 # I am creating one FastAPI application for my Clinical Trial Listings domain.
@@ -41,6 +43,8 @@ app.include_router(hw4_auth_router) # adding for hw4
 app.include_router(hw4_trials_router) # adding for hw4
 app.include_router(hw5_organizations_router)
 app.include_router(hw5_trials_router)
+app.include_router(hw6_trials_router)  # HW6
+app.include_router(hw6_chat_router)  # HW6
 # ---------------------------------------------------------
 # Pydantic models
 # ---------------------------------------------------------

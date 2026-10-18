@@ -7,3 +7,8 @@ __pycache__/
 .aws/
 Homework1_AWS_Docker_export/
 .env
+
+# HW6: Canvas copy of the report is never committed; local chat history for /dream
+canvas_submission/
+data/hw6_recent_conversation.jsonl
+reports/hw06/screenshots/.DS_Store

@@ -1,0 +1,61 @@
+[
+  {
+    "probe": "P1",
+    "question": "What is my name, what is my job, and which city do I live in?",
+    "answer": "Your name is Dana, you're a field ecologist, and you live in Monterey, California.",
+    "matched": [
+      "name",
+      "job",
+      "city"
+    ],
+    "score": 5,
+    "prompt_tokens": 823
+  },
+  {
+    "probe": "P2",
+    "question": "Where am I travelling, for how long, and when does the trip start?",
+    "answer": "You're traveling to Iceland for a 12-day research trip starting on March 3rd. Enjoy your journey and good luck with your studies!",
+    "matched": [
+      "place",
+      "length",
+      "start"
+    ],
+    "score": 5,
+    "prompt_tokens": 824
+  },
+  {
+    "probe": "P3",
+    "question": "What paper am I writing, when is it due, and who is my co-author?",
+    "answer": "You're writing a paper on seabird nesting success, and it's due on April 20th. Your co-author is Dr. Lena Okafor from the University of Washington.",
+    "matched": [
+      "topic",
+      "deadline",
+      "coauthor"
+    ],
+    "score": 5,
+    "prompt_tokens": 830
+  },
+  {
+    "probe": "P4",
+    "question": "What is my pet's name, what kind of animal is it, and who looks after it when I travel?",
+    "answer": "Your pet's name is Biscuit, and it's a cat. While you're traveling, a friend or family member will look after Biscuit. Be sure to mention your drone concerns to them, just in case!",
+    "matched": [
+      "name",
+      "animal"
+    ],
+    "score": 4,
+    "prompt_tokens": 825
+  },
+  {
+    "probe": "P5",
+    "question": "Which camera and lens do I use for birds, and what is my diet?",
+    "answer": "You use a Nikon Z6 with a 400mm lens for bird photography. Your diet is vegetarian, so you plan lightweight, non-perishable meals like lentils, oats, and nuts.",
+    "matched": [
+      "camera",
+      "lens",
+      "diet"
+    ],
+    "score": 5,
+    "prompt_tokens": 827
+  }
+]

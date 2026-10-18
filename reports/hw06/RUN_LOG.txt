@@ -1,0 +1,155 @@
+===== HW6 RUN START: Fri Oct 16 23:14:47 PDT 2026 =====
+[2026-10-16 23:14:56] === SHORT_TERM_N=4 | user exp_n4_20261016231456 ===
+[2026-10-16 23:15:01] turn  1/30 prompt=   86 completion=  26 latency=  5634.9 ms
+[2026-10-16 23:15:06] turn  2/30 prompt=  172 completion=  28 latency=  4398.4 ms
+[2026-10-16 23:15:10] turn  3/30 prompt=  246 completion=  37 latency=  4082.2 ms
+[2026-10-16 23:15:12] turn  4/30 prompt=  252 completion=  41 latency=  2201.0 ms
+[2026-10-16 23:15:19] turn  5/30 prompt=  264 completion=  47 latency=  6598.1 ms
+[2026-10-16 23:15:21] turn  6/30 prompt=  352 completion=  34 latency=  2102.1 ms
+[2026-10-16 23:15:23] turn  7/30 prompt=  349 completion=  44 latency=  2273.3 ms
+[2026-10-16 23:15:25] turn  8/30 prompt=  347 completion=  44 latency=  2218.6 ms
+[2026-10-16 23:15:30] turn  9/30 prompt=  358 completion=  51 latency=  4570.3 ms
+[2026-10-16 23:15:39] turn 10/30 prompt=  368 completion=  42 latency=  9179.5 ms
+[2026-10-16 23:15:41] turn 11/30 prompt=  405 completion=  28 latency=  1988.9 ms
+[2026-10-16 23:15:44] turn 12/30 prompt=  379 completion=  36 latency=  2752.6 ms
+[2026-10-16 23:15:46] turn 13/30 prompt=  366 completion=  57 latency=  2762.0 ms
+[2026-10-16 23:15:49] turn 14/30 prompt=  391 completion=  38 latency=  2076.6 ms
+[2026-10-16 23:16:05] turn 15/30 prompt=  398 completion=  38 latency= 16294.9 ms
+[2026-10-16 23:16:08] turn 16/30 prompt=  528 completion=  46 latency=  2962.3 ms
+[2026-10-16 23:16:10] turn 17/30 prompt=  542 completion=  50 latency=  2580.2 ms
+[2026-10-16 23:16:12] turn 18/30 prompt=  536 completion=  34 latency=  1924.9 ms
+[2026-10-16 23:16:16] turn 19/30 prompt=  531 completion=  45 latency=  3367.6 ms
+[2026-10-16 23:16:23] turn 20/30 prompt=  529 completion=  50 latency=  7428.5 ms
+[2026-10-16 23:16:27] turn 21/30 prompt=  538 completion=  42 latency=  4209.2 ms
+[2026-10-16 23:16:30] turn 22/30 prompt=  547 completion=  43 latency=  2219.4 ms
+[2026-10-16 23:16:32] turn 23/30 prompt=  539 completion=  49 latency=  2482.2 ms
+[2026-10-16 23:16:35] turn 24/30 prompt=  531 completion=  49 latency=  2493.8 ms
+[2026-10-16 23:16:42] turn 25/30 prompt=  530 completion=  34 latency=  7626.7 ms
+[2026-10-16 23:16:46] turn 26/30 prompt=  541 completion=  45 latency=  3854.9 ms
+[2026-10-16 23:16:50] turn 27/30 prompt=  558 completion=  41 latency=  3656.6 ms
+[2026-10-16 23:16:52] turn 28/30 prompt=  553 completion=  38 latency=  2092.6 ms
+[2026-10-16 23:16:55] turn 29/30 prompt=  543 completion=  46 latency=  3398.1 ms
+[2026-10-16 23:17:08] turn 30/30 prompt=  550 completion=  31 latency= 13077.8 ms
+[2026-10-16 23:17:08] --- probes for SHORT_TERM_N=4 ---
+[2026-10-16 23:17:10] P1 score=5 matched=['name', 'job', 'city']
+[2026-10-16 23:17:11] P2 score=5 matched=['place', 'length', 'start']
+[2026-10-16 23:17:13] P3 score=5 matched=['topic', 'deadline', 'coauthor']
+[2026-10-16 23:17:14] P4 score=1 matched=[]
+[2026-10-16 23:17:16] P5 score=5 matched=['camera', 'lens', 'diet']
+[2026-10-16 23:17:16] SUMMARY SHORT_TERM_N=4: prompt/turn=427.6 latency=4416.9 ms probe=4.2
+[2026-10-16 23:17:16] === SHORT_TERM_N=12 | user exp_n12_20261016231456 ===
+[2026-10-16 23:17:19] turn  1/30 prompt=   86 completion=  26 latency=  3257.1 ms
+[2026-10-16 23:17:24] turn  2/30 prompt=  172 completion=  28 latency=  4308.6 ms
+[2026-10-16 23:17:28] turn  3/30 prompt=  246 completion=  37 latency=  3878.6 ms
+[2026-10-16 23:17:30] turn  4/30 prompt=  305 completion=  44 latency=  2118.6 ms
+[2026-10-16 23:17:36] turn  5/30 prompt=  381 completion=  41 latency=  6019.8 ms
+[2026-10-16 23:17:39] turn  6/30 prompt=  537 completion=  49 latency=  2892.1 ms
+[2026-10-16 23:17:41] turn  7/30 prompt=  611 completion=  48 latency=  2439.3 ms
+[2026-10-16 23:17:45] turn  8/30 prompt=  634 completion=  58 latency=  3521.4 ms
+[2026-10-16 23:17:49] turn  9/30 prompt=  655 completion=  41 latency=  4789.5 ms
+[2026-10-16 23:17:59] turn 10/30 prompt=  654 completion=  48 latency=  9614.4 ms
+[2026-10-16 23:18:02] turn 11/30 prompt=  676 completion=  46 latency=  3278.2 ms
+[2026-10-16 23:18:06] turn 12/30 prompt=  681 completion=  37 latency=  3741.1 ms
+[2026-10-16 23:18:10] turn 13/30 prompt=  664 completion=  57 latency=  3570.0 ms
+[2026-10-16 23:18:13] turn 14/30 prompt=  664 completion=  55 latency=  3585.2 ms
+[2026-10-16 23:18:30] turn 15/30 prompt=  666 completion=  50 latency= 16541.2 ms
+[2026-10-16 23:18:34] turn 16/30 prompt=  814 completion=  52 latency=  3719.2 ms
+[2026-10-16 23:18:37] turn 17/30 prompt=  819 completion=  57 latency=  3303.7 ms
+[2026-10-16 23:18:39] turn 18/30 prompt=  820 completion=  39 latency=  2460.1 ms
+[2026-10-16 23:18:43] turn 19/30 prompt=  824 completion=  52 latency=  4054.1 ms
+[2026-10-16 23:18:52] turn 20/30 prompt=  820 completion=  45 latency=  8313.5 ms
+[2026-10-16 23:18:57] turn 21/30 prompt=  842 completion=  53 latency=  5227.9 ms
+[2026-10-16 23:19:00] turn 22/30 prompt=  852 completion=  54 latency=  3112.2 ms
+[2026-10-16 23:19:03] turn 23/30 prompt=  856 completion=  53 latency=  3084.7 ms
+[2026-10-16 23:19:07] turn 24/30 prompt=  848 completion=  67 latency=  3731.5 ms
+[2026-10-16 23:19:15] turn 25/30 prompt=  871 completion=  34 latency=  8210.5 ms
+[2026-10-16 23:19:20] turn 26/30 prompt=  858 completion=  53 latency=  4524.6 ms
+[2026-10-16 23:19:25] turn 27/30 prompt=  885 completion=  56 latency=  4883.0 ms
+[2026-10-16 23:19:27] turn 28/30 prompt=  861 completion=  44 latency=  2855.7 ms
+[2026-10-16 23:19:31] turn 29/30 prompt=  856 completion=  37 latency=  3482.6 ms
+[2026-10-16 23:19:46] turn 30/30 prompt=  844 completion=  38 latency= 15405.0 ms
+[2026-10-16 23:19:46] --- probes for SHORT_TERM_N=12 ---
+[2026-10-16 23:19:49] P1 score=5 matched=['name', 'job', 'city']
+[2026-10-16 23:19:50] P2 score=5 matched=['place', 'length', 'start']
+[2026-10-16 23:19:52] P3 score=5 matched=['topic', 'deadline', 'coauthor']
+[2026-10-16 23:19:54] P4 score=4 matched=['name', 'animal']
+[2026-10-16 23:19:56] P5 score=5 matched=['camera', 'lens', 'diet']
+[2026-10-16 23:19:56] SUMMARY SHORT_TERM_N=12: prompt/turn=676.7 latency=4997.4 ms probe=4.8
+[2026-10-16 23:19:56] === SHORT_TERM_N=30 | user exp_n30_20261016231456 ===
+[2026-10-16 23:19:59] turn  1/30 prompt=   86 completion=  26 latency=  3282.4 ms
+[2026-10-16 23:20:03] turn  2/30 prompt=  172 completion=  28 latency=  4200.4 ms
+[2026-10-16 23:20:07] turn  3/30 prompt=  246 completion=  37 latency=  3828.6 ms
+[2026-10-16 23:20:09] turn  4/30 prompt=  305 completion=  44 latency=  2197.2 ms
+[2026-10-16 23:20:16] turn  5/30 prompt=  381 completion=  41 latency=  6054.4 ms
+[2026-10-16 23:20:18] turn  6/30 prompt=  537 completion=  49 latency=  2375.0 ms
+[2026-10-16 23:20:20] turn  7/30 prompt=  611 completion=  48 latency=  2429.3 ms
+[2026-10-16 23:20:23] turn  8/30 prompt=  687 completion=  54 latency=  2628.0 ms
+[2026-10-16 23:20:28] turn  9/30 prompt=  765 completion=  55 latency=  4677.3 ms
+[2026-10-16 23:20:36] turn 10/30 prompt=  848 completion=  40 latency=  8513.3 ms
+[2026-10-16 23:20:40] turn 11/30 prompt=  941 completion=  40 latency=  3335.0 ms
+[2026-10-16 23:20:42] turn 12/30 prompt= 1008 completion=  38 latency=  2837.8 ms
+[2026-10-16 23:20:46] turn 13/30 prompt= 1064 completion=  67 latency=  3329.0 ms
+[2026-10-16 23:20:48] turn 14/30 prompt= 1147 completion=  54 latency=  2770.0 ms
+[2026-10-16 23:21:05] turn 15/30 prompt= 1229 completion=  37 latency= 16486.2 ms
+[2026-10-16 23:21:09] turn 16/30 prompt= 1447 completion=  48 latency=  4471.6 ms
+[2026-10-16 23:21:14] turn 17/30 prompt= 1468 completion=  52 latency=  4716.3 ms
+[2026-10-16 23:21:19] turn 18/30 prompt= 1469 completion=  50 latency=  4552.0 ms
+[2026-10-16 23:21:25] turn 19/30 prompt= 1474 completion=  59 latency=  5968.6 ms
+[2026-10-16 23:21:35] turn 20/30 prompt= 1491 completion=  51 latency= 10178.9 ms
+[2026-10-16 23:21:42] turn 21/30 prompt= 1520 completion=  60 latency=  6886.9 ms
+[2026-10-16 23:21:47] turn 22/30 prompt= 1543 completion=  51 latency=  5119.8 ms
+[2026-10-16 23:21:52] turn 23/30 prompt= 1541 completion=  50 latency=  4830.8 ms
+[2026-10-16 23:21:58] turn 24/30 prompt= 1530 completion=  82 latency=  6015.1 ms
+[2026-10-16 23:22:08] turn 25/30 prompt= 1543 completion=  46 latency= 10140.7 ms
+[2026-10-16 23:22:14] turn 26/30 prompt= 1552 completion=  58 latency=  6416.1 ms
+[2026-10-16 23:22:22] turn 27/30 prompt= 1590 completion=  71 latency=  7248.2 ms
+[2026-10-16 23:22:26] turn 28/30 prompt= 1604 completion=  48 latency=  4901.6 ms
+[2026-10-16 23:22:33] turn 29/30 prompt= 1591 completion=  57 latency=  6018.2 ms
+[2026-10-16 23:22:49] turn 30/30 prompt= 1600 completion=  42 latency= 16802.8 ms
+[2026-10-16 23:22:49] --- probes for SHORT_TERM_N=30 ---
+[2026-10-16 23:22:54] P1 score=5 matched=['name', 'job', 'city']
+[2026-10-16 23:22:55] P2 score=5 matched=['place', 'length', 'start']
+[2026-10-16 23:22:58] P3 score=5 matched=['topic', 'deadline', 'coauthor']
+[2026-10-16 23:22:59] P4 score=5 matched=['name', 'animal', 'caretaker']
+[2026-10-16 23:23:02] P5 score=5 matched=['camera', 'lens', 'diet']
+[2026-10-16 23:23:02] SUMMARY SHORT_TERM_N=30: prompt/turn=1099.7 latency=5773.7 ms probe=5
+[2026-10-16 23:23:02] === Compression policy (N=30, last 6 verbatim) | user exp_compress_20261016231456 ===
+[2026-10-16 23:23:06] turn  1/30 prompt=   86 completion=  26 latency=  3168.6 ms
+[2026-10-16 23:23:10] turn  2/30 prompt=  172 completion=  28 latency=  4198.2 ms
+[2026-10-16 23:23:14] turn  3/30 prompt=  246 completion=  37 latency=  3908.0 ms
+[2026-10-16 23:23:16] turn  4/30 prompt=  305 completion=  44 latency=  2137.3 ms
+[2026-10-16 23:23:22] turn  5/30 prompt=  357 completion=  43 latency=  6243.8 ms
+[2026-10-16 23:23:24] turn  6/30 prompt=  478 completion=  36 latency=  2356.9 ms
+[2026-10-16 23:23:27] turn  7/30 prompt=  494 completion=  39 latency=  2269.4 ms
+[2026-10-16 23:23:30] turn  8/30 prompt=  509 completion=  57 latency=  2939.5 ms
+[2026-10-16 23:23:34] turn  9/30 prompt=  539 completion=  50 latency=  4699.4 ms
+[2026-10-16 23:23:44] turn 10/30 prompt=  573 completion=  52 latency=  9747.4 ms
+[2026-10-16 23:23:47] turn 11/30 prompt=  638 completion=  33 latency=  2464.7 ms
+[2026-10-16 23:23:50] turn 12/30 prompt=  633 completion=  52 latency=  3680.3 ms
+[2026-10-16 23:23:54] turn 13/30 prompt=  645 completion=  79 latency=  3917.6 ms
+[2026-10-16 23:23:57] turn 14/30 prompt=  680 completion=  42 latency=  2358.3 ms
+[2026-10-16 23:24:14] turn 15/30 prompt=  709 completion=  41 latency= 17200.0 ms
+[2026-10-16 23:24:17] turn 16/30 prompt=  875 completion=  49 latency=  3542.1 ms
+[2026-10-16 23:24:20] turn 17/30 prompt=  844 completion=  53 latency=  3178.7 ms
+[2026-10-16 23:24:23] turn 18/30 prompt=  832 completion=  41 latency=  2607.8 ms
+[2026-10-16 23:24:27] turn 19/30 prompt=  824 completion=  44 latency=  3834.0 ms
+[2026-10-16 23:24:36] turn 20/30 prompt=  821 completion=  45 latency=  9323.4 ms
+[2026-10-16 23:24:41] turn 21/30 prompt=  829 completion=  47 latency=  4846.4 ms
+[2026-10-16 23:24:44] turn 22/30 prompt=  847 completion=  48 latency=  3004.5 ms
+[2026-10-16 23:24:47] turn 23/30 prompt=  846 completion=  50 latency=  2910.5 ms
+[2026-10-16 23:24:51] turn 24/30 prompt=  844 completion=  74 latency=  3928.5 ms
+[2026-10-16 23:25:00] turn 25/30 prompt=  857 completion=  34 latency=  9021.2 ms
+[2026-10-16 23:25:04] turn 26/30 prompt=  846 completion=  49 latency=  4112.3 ms
+[2026-10-16 23:25:09] turn 27/30 prompt=  865 completion=  60 latency=  4983.1 ms
+[2026-10-16 23:25:12] turn 28/30 prompt=  832 completion=  55 latency=  3190.1 ms
+[2026-10-16 23:25:16] turn 29/30 prompt=  859 completion=  42 latency=  3601.9 ms
+[2026-10-16 23:25:32] turn 30/30 prompt=  858 completion=  29 latency= 16532.7 ms
+[2026-10-16 23:25:32] --- probes for Compression policy (N=30, last 6 verbatim) ---
+[2026-10-16 23:25:35] P1 score=5 matched=['name', 'job', 'city']
+[2026-10-16 23:25:36] P2 score=5 matched=['place', 'length', 'start']
+[2026-10-16 23:25:38] P3 score=5 matched=['topic', 'deadline', 'coauthor']
+[2026-10-16 23:25:39] P4 score=5 matched=['name', 'animal', 'caretaker']
+[2026-10-16 23:25:41] P5 score=5 matched=['camera', 'lens', 'diet']
+[2026-10-16 23:25:41] SUMMARY Compression policy (N=30, last 6 verbatim): prompt/turn=658.1 latency=4996.9 ms probe=5
+[2026-10-16 23:25:41] done in 10.8 minutes -> /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw06/raw/summary.json
+===== HW6 RUN END: Fri Oct 16 23:26:11 PDT 2026 =====

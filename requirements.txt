@@ -19,3 +19,11 @@ numpy==2.5.2
 faiss-cpu==1.15.1
 mcp==2.3.0
 requests==2.34.2
+
+# HW6
+pymongo==4.19.0
+PyYAML==6.0.3
+httpx==0.28.1
+mongomock==4.3.0
+pytest==9.1.1
+reportlab==5.0.1

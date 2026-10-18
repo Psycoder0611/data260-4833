@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HW6 Memory Chat</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { font-family: -apple-system, Helvetica, Arial, sans-serif; max-width: 860px; margin: 24px auto; padding: 0 16px; color: #1f2937; }
+  h1 { font-size: 20px; margin-bottom: 4px; }
+  .sub { color: #6b7280; font-size: 13px; margin-bottom: 12px; }
+  .row { display: flex; gap: 8px; margin-bottom: 8px; }
+  input { padding: 8px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; }
+  #message { flex: 1; }
+  button { padding: 8px 14px; border: 0; border-radius: 6px; background: #2563eb; color: #fff; font-size: 14px; cursor: pointer; }
+  #log { border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px; min-height: 260px; background: #fafafa; }
+  .bubble { margin: 8px 0; padding: 8px 12px; border-radius: 8px; max-width: 80%; white-space: pre-wrap; }
+  .user { background: #dbeafe; margin-left: auto; }
+  .bot { background: #e5e7eb; }
+  .meta { font-size: 12px; color: #4b5563; margin: 0 0 8px 4px; }
+</style>
+</head>
+<body>
+<h1>HW6 Memory Chat</h1>
+<div class="sub">Trapti Kulshrestha | SID4 4833 | POST /api/chat (qwen3:8b via Ollama)</div>
+<div class="row">
+  <input id="user" value="user1" size="10" aria-label="user id">
+  <input id="session" value="session1" size="12" aria-label="session id">
+</div>
+<div id="log"></div>
+<div class="row" style="margin-top:8px">
+  <input id="message" placeholder="Type a message and press Enter" autofocus>
+  <button id="send">Send</button>
+</div>
+<script>
+const log = document.getElementById("log");
+function add(cls, text) {
+  const div = document.createElement("div");
+  div.className = cls === "meta" ? "meta" : "bubble " + cls;
+  div.textContent = text;
+  log.appendChild(div);
+  log.scrollTop = log.scrollHeight;
+}
+async function send() {
+  const box = document.getElementById("message");
+  const text = box.value.trim();
+  if (!text) return;
+  box.value = "";
+  add("user", text);
+  const response = await fetch("/api/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      user_id: document.getElementById("user").value,
+      session_id: document.getElementById("session").value,
+      message: text,
+    }),
+  });
+  const data = await response.json();
+  if (!response.ok) { add("bot", "Error: " + (data.detail || response.status)); return; }
+  add("bot", data.reply);
+  const used = data.memory_used;
+  add("meta", "short-term: " + used.short_term_count + " msgs | session summary: " +
+    (used.session_summary ? "yes" : "no") + " | lifetime summary: " +
+    (used.lifetime_summary ? "yes" : "no") + " | episodic facts: " + used.episodic_facts.length +
+    " | prompt tokens: " + data.usage.prompt_tokens + " | " + data.usage.latency_ms + " ms");
+}
+document.getElementById("send").onclick = send;
+document.getElementById("message").addEventListener("keydown", e => { if (e.key === "Enter") send(); });
+</script>
+</body>
+</html>

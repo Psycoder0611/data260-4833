@@ -1,0 +1,105 @@
+{
+  "homework": 6,
+  "sid4": 4833,
+  "port_base": 8333,
+  "prefix": "s4833",
+  "seed": 4833,
+  "verify_seed": 264833,
+  "model": "qwen3:8b",
+  "embedding_model": "nomic-embed-text",
+  "commit_hash": "25eba56c39732eb939613df98ab9dcf73b9b12e5",
+  "uncommitted_changes": true,
+  "overall_pass": true,
+  "checks": [
+    {
+      "name": "FastAPI backend responds on PORT_BASE",
+      "passed": true,
+      "details": "GET /docs returned HTTP 200"
+    },
+    {
+      "name": "HW2-HW6 routes are all registered (nothing removed)",
+      "passed": true,
+      "details": "HW2-HW6 routes all registered"
+    },
+    {
+      "name": "MongoDB connection works, s4833_doc has the four collections",
+      "passed": true,
+      "details": "database s4833_doc; collections present: ['clinical_trials', 'episodes', 'messages', 'summaries']; missing: []"
+    },
+    {
+      "name": "POST /api/hw6/trials creates a trial (default status recruiting)",
+      "passed": true,
+      "details": "POST returned HTTP 201; default status = recruiting"
+    },
+    {
+      "name": "GET /api/hw6/trials lists it",
+      "passed": true,
+      "details": "GET list returned 2 trials"
+    },
+    {
+      "name": "GET by id and PUT update work",
+      "passed": true,
+      "details": "GET by id HTTP 200; PUT HTTP 200"
+    },
+    {
+      "name": "DELETE removes it",
+      "passed": true,
+      "details": "DELETE HTTP 204; then GET HTTP 404"
+    },
+    {
+      "name": "Validation and error codes (422, 422, 400, 404)",
+      "passed": true,
+      "details": "invalid enum/missing field/bad id/unknown id -> (422, 422, 400, 404)"
+    },
+    {
+      "name": "POST /api/chat returns an assistant reply and memory metadata",
+      "passed": true,
+      "details": "HTTP 200; reply length 75; usage keys ['aux_completion_tokens', 'aux_prompt_tokens', 'completion_tokens', 'current_message_tokens']"
+    },
+    {
+      "name": "GET /api/memory/{user_id} returns the messages",
+      "passed": true,
+      "details": "2 messages returned"
+    },
+    {
+      "name": "GET /api/aggregate/{user_id} returns daily counts",
+      "passed": true,
+      "details": "daily counts: [{'date': '2026-10-18', 'messages': 2, 'user_messages': 1}]"
+    },
+    {
+      "name": "memory_probes.yaml has 5 probes",
+      "passed": true,
+      "details": "5 probes with question, expected answer and facts"
+    },
+    {
+      "name": "Raw experiment files exist (30 rows and 5 probes per setting)",
+      "passed": true,
+      "details": "all raw experiment files found"
+    },
+    {
+      "name": "AGENT.md and MEMORY.md exist",
+      "passed": true,
+      "details": "AGENT.md has 25 bullets in the HW6 section; MEMORY.md exists: True"
+    },
+    {
+      "name": "/help and /memory commands run",
+      "passed": true,
+      "details": "/help and /memory run and print expected text"
+    },
+    {
+      "name": "AGENT.md compliance check passes",
+      "passed": true,
+      "details": "AGENT.md compliance checker passed"
+    },
+    {
+      "name": "Offline tests pass",
+      "passed": true,
+      "details": "16 passed"
+    },
+    {
+      "name": "Required report files exist (report.pdf is added after this run)",
+      "passed": true,
+      "details": "RUN_LOG, METRICS, AI_USE and memory_probes present (report.pdf is added after this run)"
+    }
+  ]
+}

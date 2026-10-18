@@ -1,0 +1,94 @@
+{
+  "n4": {
+    "label": "SHORT_TERM_N=4",
+    "short_term_n": 4,
+    "memory_policy": "none",
+    "user_id": "exp_n4_20261016231456",
+    "turns": 30,
+    "mean_prompt_tokens": 427.6,
+    "mean_completion_tokens": 41.1,
+    "mean_latency_ms": 4416.9,
+    "mean_model_latency_ms": 1992.0,
+    "total_prompt_tokens": 12829,
+    "total_completion_tokens": 1234,
+    "total_aux_prompt_tokens": 8647,
+    "total_aux_completion_tokens": 1500,
+    "mean_probe_score": 4.2,
+    "probe_scores": {
+      "P1": 5,
+      "P2": 5,
+      "P3": 5,
+      "P4": 1,
+      "P5": 5
+    }
+  },
+  "n12": {
+    "label": "SHORT_TERM_N=12",
+    "short_term_n": 12,
+    "memory_policy": "none",
+    "user_id": "exp_n12_20261016231456",
+    "turns": 30,
+    "mean_prompt_tokens": 676.7,
+    "mean_completion_tokens": 46.6,
+    "mean_latency_ms": 4997.4,
+    "mean_model_latency_ms": 2580.8,
+    "total_prompt_tokens": 20302,
+    "total_completion_tokens": 1399,
+    "total_aux_prompt_tokens": 8804,
+    "total_aux_completion_tokens": 1522,
+    "mean_probe_score": 4.8,
+    "probe_scores": {
+      "P1": 5,
+      "P2": 5,
+      "P3": 5,
+      "P4": 4,
+      "P5": 5
+    }
+  },
+  "n30": {
+    "label": "SHORT_TERM_N=30",
+    "short_term_n": 30,
+    "memory_policy": "none",
+    "user_id": "exp_n30_20261016231456",
+    "turns": 30,
+    "mean_prompt_tokens": 1099.7,
+    "mean_completion_tokens": 49.4,
+    "mean_latency_ms": 5773.7,
+    "mean_model_latency_ms": 3341.2,
+    "total_prompt_tokens": 32990,
+    "total_completion_tokens": 1483,
+    "total_aux_prompt_tokens": 8949,
+    "total_aux_completion_tokens": 1542,
+    "mean_probe_score": 5,
+    "probe_scores": {
+      "P1": 5,
+      "P2": 5,
+      "P3": 5,
+      "P4": 5,
+      "P5": 5
+    }
+  },
+  "compress": {
+    "label": "Compression policy (N=30, last 6 verbatim)",
+    "short_term_n": 30,
+    "memory_policy": "compress_older",
+    "user_id": "exp_compress_20261016231456",
+    "turns": 30,
+    "mean_prompt_tokens": 658.1,
+    "mean_completion_tokens": 46.0,
+    "mean_latency_ms": 4996.9,
+    "mean_model_latency_ms": 2378.0,
+    "total_prompt_tokens": 19743,
+    "total_completion_tokens": 1379,
+    "total_aux_prompt_tokens": 9052,
+    "total_aux_completion_tokens": 1668,
+    "mean_probe_score": 5,
+    "probe_scores": {
+      "P1": 5,
+      "P2": 5,
+      "P3": 5,
+      "P4": 5,
+      "P5": 5
+    }
+  }
+}

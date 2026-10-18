@@ -1,0 +1,62 @@
+[
+  {
+    "probe": "P1",
+    "question": "What is my name, what is my job, and which city do I live in?",
+    "answer": "Your name is Dana, you're a field ecologist, and you live in Monterey, California. Enjoy your trip to Iceland and good luck with your research and writing! 🌍🐦📚",
+    "matched": [
+      "name",
+      "job",
+      "city"
+    ],
+    "score": 5,
+    "prompt_tokens": 1568
+  },
+  {
+    "probe": "P2",
+    "question": "Where am I travelling, for how long, and when does the trip start?",
+    "answer": "You're traveling to Iceland for a 12-day research trip starting on March 3rd. Safe travels and good luck with your studies! 🌍🐦",
+    "matched": [
+      "place",
+      "length",
+      "start"
+    ],
+    "score": 5,
+    "prompt_tokens": 1569
+  },
+  {
+    "probe": "P3",
+    "question": "What paper am I writing, when is it due, and who is my co-author?",
+    "answer": "You're writing a paper on seabird nesting success, and it's due on April 20th. Your co-author is Dr. Lena Okafor from the University of Washington. Keep up the great work on your research and writing! 🐦📚",
+    "matched": [
+      "topic",
+      "deadline",
+      "coauthor"
+    ],
+    "score": 5,
+    "prompt_tokens": 1575
+  },
+  {
+    "probe": "P4",
+    "question": "What is my pet's name, what kind of animal is it, and who looks after it when I travel?",
+    "answer": "Your pet's name is Biscuit, and they are a cat. Omar will look after Biscuit while you're away on your research trip studying puffins. 🐱🐦",
+    "matched": [
+      "name",
+      "animal",
+      "caretaker"
+    ],
+    "score": 5,
+    "prompt_tokens": 1570
+  },
+  {
+    "probe": "P5",
+    "question": "Which camera and lens do I use for birds, and what is my diet?",
+    "answer": "For photographing birds like puffins, you're already using the perfect setup: the Nikon Z6 with a 400mm lens. As for your diet, you're vegetarian, so pack lightweight, non-perishable meals like lentils, oats, and dried fruits for your remote days. 🌿📸",
+    "matched": [
+      "camera",
+      "lens",
+      "diet"
+    ],
+    "score": 5,
+    "prompt_tokens": 1572
+  }
+]
