@@ -1,0 +1,10 @@
+# HW7: Ruff runs on the HW7 files only, so older homework code is never reformatted.
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.6
+    hooks:
+      - id: ruff-check
+        args: [--fix]
+        files: ^(hw7/|routers/hw7_|init_hw7_|test_hw7_|demo_hw07_|verify_hw07|build_hw07_|run_hw07_|make_hw07_).*\.py$
+      - id: ruff-format
+        files: ^(hw7/|routers/hw7_|init_hw7_|test_hw7_|demo_hw07_|verify_hw07|build_hw07_|run_hw07_|make_hw07_).*\.py$

@@ -1,0 +1,111 @@
+===== HW7 PART 1 RUN START: Fri Oct 23 21:39:48 PDT 2026 =====
+Student: Trapti Kulshrestha | SID4 4833 | HW7 Part 1 demo
+2026-10-23 21:40:31
+
+--- POST /auth/login (writer_user, correct password) -> HTTP 200
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ3cml0ZXJfdXNlciIsInJvbGUiOiJ3cml0ZXIiLCJpYXQiOjE3OTI4MTY4MzEsImV4cCI6MTc5MjgxODYzMX0.7_fZZFtqha-3YlOcudkCjuJVw-JkHBsoEUofY0KNb3I",
+  "token_type": "bearer"
+}
+
+--- POST /auth/login (writer_user, wrong password) -> HTTP 401
+{
+  "detail": "Invalid username or password"
+}
+Student: Trapti Kulshrestha | SID4 4833 | HW7 Part 1 demo
+2026-10-23 21:41:37
+
+--- POST /auth/login (writer_user, correct password) -> HTTP 200
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ3cml0ZXJfdXNlciIsInJvbGUiOiJ3cml0ZXIiLCJpYXQiOjE3OTI4MTY4OTcsImV4cCI6MTc5MjgxODY5N30.lgNPCABNqASBIMF_3QQ_gITdpFUeB-ITNZ6_d15T3HU",
+  "token_type": "bearer"
+}
+
+--- POST /auth/login (writer_user, wrong password) -> HTTP 401
+{
+  "detail": "Invalid username or password"
+}
+Student: Trapti Kulshrestha | SID4 4833 | HW7 Part 1 demo
+2026-10-23 21:43:02
+
+--- GET /auth/me (no token) -> HTTP 401
+{
+  "detail": "Not authenticated"
+}
+Student: Trapti Kulshrestha | SID4 4833 | HW7 Part 1 demo
+2026-10-23 21:43:11
+
+--- GET /auth/me (invalid token 'abc.def.ghi') -> HTTP 401
+{
+  "detail": "Could not validate credentials"
+}
+(expired token = signed with the real key, exp set 5 minutes in the past)
+
+--- GET /auth/me (expired token) -> HTTP 401
+{
+  "detail": "Token has expired"
+}
+
+--- GET /auth/me (valid reader token, for comparison) -> HTTP 200
+{
+  "id": 1,
+  "username": "reader_user",
+  "role": "reader"
+}
+Student: Trapti Kulshrestha | SID4 4833 | HW7 Part 1 demo
+2026-10-23 21:43:42
+
+--- POST /api/hw7/trials (reader_user) -> HTTP 403
+{
+  "detail": "Role 'reader' is not allowed to do this"
+}
+
+--- POST /api/hw7/trials (writer_user) -> HTTP 201
+{
+  "id": 5008,
+  "trialTitle": "HW7 JWT Demo Trial",
+  "sponsor": "Stanford Clinical Trials Center",
+  "trial_code": "HW7-DEMO-214342552488",
+  "participant_capacity": 25,
+  "organization_id": 2,
+  "created_at": "2026-10-24T04:43:43",
+  "updated_at": "2026-10-24T04:43:43"
+}
+
+(demo trial removed again by moderator_user)
+Student: Trapti Kulshrestha | SID4 4833 | HW7 Part 1 demo
+2026-10-23 21:43:52
+(setup: writer_user created demo trial id 5009)
+
+--- DELETE /api/hw7/trials/5009 (writer_user) -> HTTP 403
+{
+  "detail": "Role 'writer' is not allowed to do this"
+}
+
+--- DELETE /api/hw7/trials/5009 (moderator_user) -> HTTP 200
+{
+  "message": "Clinical trial deleted successfully",
+  "id": 5009,
+  "deleted_by": "moderator_user"
+}
+
+--- GET /api/hw7/trials/5009 (after delete) -> HTTP 404
+{
+  "detail": "Clinical trial not found"
+}
+Student: Trapti Kulshrestha | SID4 4833 | HW7 Part 1 demo
+2026-10-23 21:44:26
+
+--- GET /api/hw7/trials?limit=3 (reader_user) -> HTTP 200
+[
+  {
+    "id": 5006,
+    "trialTitle": "Cardiovascular Health Study",
+    "sponsor": "Stanford Clinical Trials Center",
+    "trial_code": "CT-2026-002",
+    "participant_capacity": 120,
+    "organization_id": 2,
+    "created_at": "2026-10-03T03:51:39",
+    "updated_at": "2026-10-03T03:51:39"
+  }
+]

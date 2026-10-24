@@ -27,3 +27,10 @@ httpx==0.28.1
 mongomock==4.3.0
 pytest==9.1.1
 reportlab==5.0.1
+
+# HW7
+PyJWT==2.15.1
+python-multipart==0.0.31
+ruff==0.15.6
+pre-commit==4.6.2
+beautifulsoup4==4.14.3

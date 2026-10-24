@@ -12,3 +12,9 @@ Homework1_AWS_Docker_export/
 canvas_submission/
 data/hw6_recent_conversation.jsonl
 reports/hw06/screenshots/.DS_Store
+
+# HW7
+.ruff_cache/
+reports/hw07/screenshots/.DS_Store
+reports/hw07/.demo_state.json
+reports/hw07/screenshots/.resized_*

@@ -13,6 +13,8 @@ from routers.hw5_organizations import router as hw5_organizations_router
 from routers.hw5_trials import router as hw5_trials_router
 from routers.hw6_trials import router as hw6_trials_router  # HW6 MongoDB trials
 from routers.hw6_chat import router as hw6_chat_router  # HW6 memory chat
+from routers.hw7_auth import router as hw7_auth_router  # HW7 JWT auth
+from routers.hw7_trials import router as hw7_trials_router  # HW7 JWT trials
 
 
 # I am creating one FastAPI application for my Clinical Trial Listings domain.
@@ -45,6 +47,8 @@ app.include_router(hw5_organizations_router)
 app.include_router(hw5_trials_router)
 app.include_router(hw6_trials_router)  # HW6
 app.include_router(hw6_chat_router)  # HW6
+app.include_router(hw7_auth_router)  # HW7
+app.include_router(hw7_trials_router)  # HW7
 # ---------------------------------------------------------
 # Pydantic models
 # ---------------------------------------------------------
