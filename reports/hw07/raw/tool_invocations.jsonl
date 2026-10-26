@@ -1,0 +1,9 @@
+{"run_id": "task-A", "iteration": 1, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Cardiovascular", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:07:13"}
+{"run_id": "task-A", "iteration": 2, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5006}, "ok": true, "error": null, "ts": "2026-10-23T22:07:14"}
+{"run_id": "task-B", "iteration": 1, "event": "tool_call", "tool": "organization_trial_summary", "inputs": {"organization_id": 2}, "ok": true, "error": null, "ts": "2026-10-23T22:07:18"}
+{"run_id": "task-B", "iteration": 2, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:07:20"}
+{"run_id": "task-C", "iteration": 1, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Diabetes Prevention Lifestyle Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:07:24"}
+{"run_id": "task-C", "iteration": 2, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Hypertension Medication Adherence Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:07:26"}
+{"run_id": "task-C", "iteration": 3, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5011}, "ok": true, "error": null, "ts": "2026-10-23T22:07:27"}
+{"run_id": "task-C", "iteration": 4, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5014}, "ok": true, "error": null, "ts": "2026-10-23T22:07:28"}
+{"run_id": "recover-999999", "iteration": 1, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 999999}, "ok": false, "error": "Clinical trial not found", "ts": "2026-10-23T22:08:05"}

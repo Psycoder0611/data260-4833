@@ -18,3 +18,6 @@ reports/hw06/screenshots/.DS_Store
 reports/hw07/screenshots/.DS_Store
 reports/hw07/.demo_state.json
 reports/hw07/screenshots/.resized_*
+
+# HW7 Part 4: the 123 MB public trip file is never committed
+data/bay_wheels_raw/

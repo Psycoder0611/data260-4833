@@ -44,3 +44,14 @@ DEMO_USERS = (
     ("writer_user", "Writer#4833", "writer"),
     ("moderator_user", "Moderator#4833", "moderator"),
 )
+
+# Local model (Ollama, same as HW1/HW6) and agent-loop limits
+MODEL_NAME = os.getenv("HW7_MODEL", "qwen3:8b")
+OLLAMA_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
+MAX_REPLY_TOKENS = int(os.getenv("HW7_MAX_REPLY_TOKENS", "600"))
+TEMPERATURE = float(os.getenv("HW7_TEMPERATURE", "0.0"))
+MAX_ITERATIONS = 8  # hard ceiling on model turns per run
+MAX_FAILED_REPAIRS = 2  # stop cleanly after this many failed repairs
+
+RAW_DIR = REPO_ROOT / "reports" / "hw07" / "raw"
+TOOL_LOG_PATH = RAW_DIR / "tool_invocations.jsonl"

@@ -1,0 +1,75 @@
+{
+  "runs": 21,
+  "original": {
+    "task_success": 7,
+    "unsupported_claims": 0,
+    "retry_rate": 0.0,
+    "tool_calls": 42,
+    "tokens": 23572,
+    "latency_ms": 114658.3,
+    "verifier_vs_part2_to_review": 7
+  },
+  "reflexion": {
+    "task_success": 21,
+    "unsupported_claims": 0,
+    "retry_rate": 0.6667,
+    "tool_calls": 92,
+    "tokens": 61438,
+    "latency_ms": 250965.3,
+    "verifier_vs_part2_to_review": 7
+  },
+  "stop_reasons": {
+    "success": 21
+  },
+  "rejected_but_part2_ok": [
+    {
+      "run_id": "p3-draft-01-B",
+      "attempt": 0,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-04-B",
+      "attempt": 0,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-07-B",
+      "attempt": 0,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-10-B",
+      "attempt": 0,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-13-B",
+      "attempt": 0,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-16-B",
+      "attempt": 0,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-19-B",
+      "attempt": 0,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "csv_sql": {
+    "input": {
+      "additionalProperties": false,
+      "properties": {
+        "sql": {
+          "description": "One read-only SELECT over table trips or view rides",
+          "title": "Sql",
+          "type": "string"
+        }
+      },
+      "required": [
+        "sql"
+      ],
+      "title": "CsvSqlInput",
+      "type": "object"
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "error": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "ts": {
+          "type": "string"
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "rows": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "row_count": {
+              "type": "number"
+            },
+            "source": {
+              "const": "uploaded.csv"
+            }
+          },
+          "required": [
+            "rows",
+            "row_count",
+            "source"
+          ]
+        }
+      },
+      "required": [
+        "success"
+      ]
+    }
+  },
+  "policy_retriever": {
+    "input": {
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "description": "Pricing page URL",
+          "title": "Url",
+          "type": "string"
+        },
+        "query": {
+          "description": "What to look for on the page",
+          "title": "Query",
+          "type": "string"
+        },
+        "k": {
+          "anyOf": [
+            {
+              "maximum": 10,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": 5,
+          "description": "Passages to return",
+          "title": "K"
+        }
+      },
+      "required": [
+        "url",
+        "query"
+      ],
+      "title": "PolicyInput",
+      "type": "object"
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "error": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "ts": {
+          "type": "string"
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "passages": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  },
+                  "source": {
+                    "type": "string"
+                  },
+                  "score": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "text",
+                  "source",
+                  "score"
+                ]
+              }
+            }
+          },
+          "required": [
+            "passages"
+          ]
+        }
+      },
+      "required": [
+        "success"
+      ]
+    }
+  },
+  "calculator": {
+    "input": {
+      "additionalProperties": false,
+      "properties": {
+        "expression": {
+          "description": "Arithmetic using digits and + - * / ( ) .",
+          "title": "Expression",
+          "type": "string"
+        },
+        "units": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Optional unit label",
+          "title": "Units"
+        }
+      },
+      "required": [
+        "expression"
+      ],
+      "title": "CalculatorInput",
+      "type": "object"
+    },
+    "output": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "error": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "ts": {
+          "type": "string"
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "value": {
+              "type": "number"
+            },
+            "units": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "value"
+          ]
+        }
+      },
+      "required": [
+        "success"
+      ]
+    }
+  }
+}

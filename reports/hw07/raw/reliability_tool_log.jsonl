@@ -1,0 +1,56 @@
+{"run_id": "rel-00-A", "iteration": 1, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Cardiovascular", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:08:46"}
+{"run_id": "rel-00-A", "iteration": 2, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5006}, "ok": true, "error": null, "ts": "2026-10-23T22:08:48"}
+{"run_id": "rel-01-B", "iteration": 1, "event": "tool_call", "tool": "organization_trial_summary", "inputs": {"organization_id": 2}, "ok": true, "error": null, "ts": "2026-10-23T22:08:51"}
+{"run_id": "rel-01-B", "iteration": 2, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:08:53"}
+{"run_id": "rel-02-C", "iteration": 1, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Diabetes Prevention Lifestyle Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:08:57"}
+{"run_id": "rel-02-C", "iteration": 2, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Hypertension Medication Adherence Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:08:59"}
+{"run_id": "rel-02-C", "iteration": 3, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5011}, "ok": true, "error": null, "ts": "2026-10-23T22:09:00"}
+{"run_id": "rel-02-C", "iteration": 4, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5014}, "ok": true, "error": null, "ts": "2026-10-23T22:09:01"}
+{"run_id": "rel-03-A", "iteration": 1, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Cardiovascular", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:09:05"}
+{"run_id": "rel-03-A", "iteration": 2, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5006}, "ok": true, "error": null, "ts": "2026-10-23T22:09:07"}
+{"run_id": "rel-04-B", "iteration": 1, "event": "tool_call", "tool": "organization_trial_summary", "inputs": {"organization_id": 2}, "ok": true, "error": null, "ts": "2026-10-23T22:09:11"}
+{"run_id": "rel-04-B", "iteration": 2, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:09:12"}
+{"run_id": "rel-05-C", "iteration": 1, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Diabetes Prevention Lifestyle Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:09:16"}
+{"run_id": "rel-05-C", "iteration": 2, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Hypertension Medication Adherence Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:09:18"}
+{"run_id": "rel-05-C", "iteration": 3, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5011}, "ok": true, "error": null, "ts": "2026-10-23T22:09:19"}
+{"run_id": "rel-05-C", "iteration": 4, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5014}, "ok": true, "error": null, "ts": "2026-10-23T22:09:21"}
+{"run_id": "rel-06-A", "iteration": 1, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Cardiovascular", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:09:24"}
+{"run_id": "rel-06-A", "iteration": 2, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5006}, "ok": true, "error": null, "ts": "2026-10-23T22:09:25"}
+{"run_id": "rel-07-B", "iteration": 1, "event": "tool_call", "tool": "organization_trial_summary", "inputs": {"organization_id": 2}, "ok": true, "error": null, "ts": "2026-10-23T22:09:29"}
+{"run_id": "rel-07-B", "iteration": 2, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:09:31"}
+{"run_id": "rel-08-C", "iteration": 1, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Diabetes Prevention Lifestyle Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:09:35"}
+{"run_id": "rel-08-C", "iteration": 2, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Hypertension Medication Adherence Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:09:37"}
+{"run_id": "rel-08-C", "iteration": 3, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5011}, "ok": true, "error": null, "ts": "2026-10-23T22:09:38"}
+{"run_id": "rel-08-C", "iteration": 4, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5014}, "ok": true, "error": null, "ts": "2026-10-23T22:09:39"}
+{"run_id": "rel-09-A", "iteration": 1, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Cardiovascular", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:09:43"}
+{"run_id": "rel-09-A", "iteration": 2, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5006}, "ok": true, "error": null, "ts": "2026-10-23T22:09:44"}
+{"run_id": "rel-10-B", "iteration": 1, "event": "tool_call", "tool": "organization_trial_summary", "inputs": {"organization_id": 2}, "ok": true, "error": null, "ts": "2026-10-23T22:09:48"}
+{"run_id": "rel-10-B", "iteration": 2, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:09:49"}
+{"run_id": "rel-11-C", "iteration": 1, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Diabetes Prevention Lifestyle Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:09:54"}
+{"run_id": "rel-11-C", "iteration": 2, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Hypertension Medication Adherence Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:09:55"}
+{"run_id": "rel-11-C", "iteration": 3, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5011}, "ok": true, "error": null, "ts": "2026-10-23T22:09:57"}
+{"run_id": "rel-11-C", "iteration": 4, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5014}, "ok": true, "error": null, "ts": "2026-10-23T22:09:58"}
+{"run_id": "rel-12-A", "iteration": 1, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Cardiovascular", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:10:02"}
+{"run_id": "rel-12-A", "iteration": 2, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5006}, "ok": true, "error": null, "ts": "2026-10-23T22:10:03"}
+{"run_id": "rel-13-B", "iteration": 1, "event": "tool_call", "tool": "organization_trial_summary", "inputs": {"organization_id": 2}, "ok": true, "error": null, "ts": "2026-10-23T22:10:07"}
+{"run_id": "rel-13-B", "iteration": 2, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:10:08"}
+{"run_id": "rel-14-C", "iteration": 1, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Diabetes Prevention Lifestyle Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:10:13"}
+{"run_id": "rel-14-C", "iteration": 2, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Hypertension Medication Adherence Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:10:14"}
+{"run_id": "rel-14-C", "iteration": 3, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5011}, "ok": true, "error": null, "ts": "2026-10-23T22:10:16"}
+{"run_id": "rel-14-C", "iteration": 4, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5014}, "ok": true, "error": null, "ts": "2026-10-23T22:10:17"}
+{"run_id": "rel-15-A", "iteration": 1, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Cardiovascular", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:10:21"}
+{"run_id": "rel-15-A", "iteration": 2, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5006}, "ok": true, "error": null, "ts": "2026-10-23T22:10:22"}
+{"run_id": "rel-16-B", "iteration": 1, "event": "tool_call", "tool": "organization_trial_summary", "inputs": {"organization_id": 2}, "ok": true, "error": null, "ts": "2026-10-23T22:10:26"}
+{"run_id": "rel-16-B", "iteration": 2, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:10:27"}
+{"run_id": "rel-17-C", "iteration": 1, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Diabetes Prevention Lifestyle Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:10:31"}
+{"run_id": "rel-17-C", "iteration": 2, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Hypertension Medication Adherence Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:10:33"}
+{"run_id": "rel-17-C", "iteration": 3, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5011}, "ok": true, "error": null, "ts": "2026-10-23T22:10:34"}
+{"run_id": "rel-17-C", "iteration": 4, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5014}, "ok": true, "error": null, "ts": "2026-10-23T22:10:36"}
+{"run_id": "rel-18-A", "iteration": 1, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Cardiovascular", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:10:39"}
+{"run_id": "rel-18-A", "iteration": 2, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5006}, "ok": true, "error": null, "ts": "2026-10-23T22:10:41"}
+{"run_id": "rel-19-B", "iteration": 1, "event": "tool_call", "tool": "organization_trial_summary", "inputs": {"organization_id": 2}, "ok": true, "error": null, "ts": "2026-10-23T22:10:44"}
+{"run_id": "rel-19-B", "iteration": 2, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:10:46"}
+{"run_id": "rel-20-C", "iteration": 1, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Diabetes Prevention Lifestyle Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:10:50"}
+{"run_id": "rel-20-C", "iteration": 2, "event": "tool_call", "tool": "search_trials", "inputs": {"query": "Hypertension Medication Adherence Study", "limit": 1}, "ok": true, "error": null, "ts": "2026-10-23T22:10:52"}
+{"run_id": "rel-20-C", "iteration": 3, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5011}, "ok": true, "error": null, "ts": "2026-10-23T22:10:53"}
+{"run_id": "rel-20-C", "iteration": 4, "event": "tool_call", "tool": "get_trial_details", "inputs": {"trial_id": 5014}, "ok": true, "error": null, "ts": "2026-10-23T22:10:55"}

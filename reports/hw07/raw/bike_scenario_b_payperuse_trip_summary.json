@@ -1,0 +1,40 @@
+{
+  "label": "scenario_b_payperuse",
+  "path": "data/bike_scenarios/scenario_b_payperuse.csv",
+  "rows": 600,
+  "riders": 81,
+  "target_rider": "R001",
+  "target_rides": 4,
+  "target_kinds": {
+    "classic": 3,
+    "ebike": 1
+  },
+  "bike_types_in_file": {
+    "electric_bike": 493,
+    "classic_bike": 107
+  },
+  "rows_per_week": {
+    "35": 124,
+    "36": 159,
+    "37": 113,
+    "38": 153,
+    "39": 51
+  },
+  "rows_missing_station_name": 81,
+  "sha256": "3e6806aae9e9d5a8e3fb00eb6f109b1966d638554a2c2bfeabff96045e771f1d",
+  "kinds": {
+    "ebike": 493,
+    "classic": 107
+  },
+  "source_file": "202609-lyftbikes-tripdata.csv",
+  "source_sha256": "3979bb9c57e52aed01e6be9fbc17cca73920fc55ebd0db922c7d6febaf585ca9",
+  "source_filter_counts": {
+    "raw_rows": 607780,
+    "type:electric_bike": 497793,
+    "dropped_member": 458913,
+    "type:classic_bike": 109987,
+    "eligible_rows": 148867
+  },
+  "seed": 4834,
+  "construction": "Real casual-rider trips from the public file, values unchanged. synthetic_rider_id is added: R001 gets rows chosen by rule (4 short trips: 3 classic 5-12 min, 1 ebike 5-10 min, different weeks); every other row gets a random id R002-R081."
+}

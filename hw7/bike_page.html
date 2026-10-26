@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bay Wheels plan advisor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#0f2a3d; --navy-2:#173a52; --fog:#edf1f3; --paper:#ffffff;
+    --ink:#14232e; --muted:#5f7280; --rule:#d3dce1;
+    --orange:#e4572e; --orange-soft:#fbe3da; --teal:#2a7f8a; --teal-soft:#d6e8ea;
+    --ok:#1f7a4d; --bad:#b3261e;
+    --display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+    --text:"Instrument Sans","Avenir Next","Segoe UI",system-ui,sans-serif;
+  }
+  * { box-sizing:border-box; }
+  html { background:var(--fog); }
+  body { margin:0; color:var(--ink); font:15px/1.5 var(--text); }
+  :focus-visible { outline:3px solid var(--orange); outline-offset:2px; }
+
+  /* top band: title + the three inputs */
+  .band { background:var(--navy); color:#fff; padding:22px clamp(16px,4vw,48px) 26px; }
+  .band-top { display:flex; justify-content:space-between; align-items:baseline;
+              gap:8px 32px; flex-wrap:wrap; margin-bottom:18px; }
+  .band h1 { margin:0; font:800 clamp(24px,3.2vw,34px)/1.05 var(--display);
+             letter-spacing:-.02em; }
+  .band h1 span { font-weight:500; opacity:.7; }
+  form { display:grid; grid-template-columns:1.1fr 1.5fr .6fr auto; gap:14px;
+         align-items:end; }
+  label { display:block; font-size:13px; color:#b9cbd6; margin-bottom:4px; }
+  input[type=text], input[type=file] {
+    width:100%; padding:9px 11px; font:inherit; font-size:14px; color:#fff;
+    background:var(--navy-2); border:1px solid #2c5470; border-radius:6px; }
+  input[type=file]::file-selector-button {
+    margin-right:10px; padding:4px 10px; border:0; border-radius:4px;
+    background:#e6eef2; color:var(--navy); font:inherit; font-size:13px; cursor:pointer; }
+  button#run { padding:10px 30px; font:700 15px var(--text); color:#fff;
+    background:var(--orange); border:0; border-radius:6px; cursor:pointer; }
+  button#run:hover { background:#f0643a; }
+  button#run:disabled { opacity:.55; cursor:progress; }
+
+  /* two columns, one rule between them */
+  main { display:grid; grid-template-columns:minmax(300px,5fr) 7fr;
+         }
+  .route, .verdict { min-width:0; }
+  .line, .why, .src { overflow-wrap:anywhere; }
+  .route { padding:26px clamp(16px,3vw,40px) 40px; }
+  .verdict { padding:26px clamp(16px,3vw,48px) 48px; background:var(--paper);
+             border-left:1px solid var(--rule); min-height:70vh; }
+  h2 { margin:0 0 14px; font:700 20px/1.2 var(--display); letter-spacing:-.01em; }
+  h3 { margin:26px 0 8px; font:700 16px/1.2 var(--display); }
+  .hint { color:var(--muted); }
+
+  /* route: a transit-style line with one stop per step */
+  ol.stops { list-style:none; margin:0; padding:0; position:relative; }
+  ol.stops::before { content:""; position:absolute; left:9px; top:10px; bottom:10px;
+                     width:3px; background:var(--rule); border-radius:2px; }
+  .stop { position:relative; padding:0 0 18px 38px; }
+  .stop::before { content:""; position:absolute; left:2px; top:3px; width:17px; height:17px;
+                  border-radius:50%; background:var(--navy); border:3px solid var(--fog); }
+  .stop.rejected::before { background:var(--fog); border:3px solid var(--orange); }
+  .stop.error::before { background:var(--bad); }
+  .stop.final::before { background:var(--orange); }
+  .stop .name { font:700 16px/1.25 var(--display); }
+  .stop .took { color:var(--muted); font-size:13px; margin-left:6px; font-weight:400;
+                font-family:var(--text); }
+  .stop .why { color:var(--muted); font-size:13.5px; margin:1px 0 4px; }
+  .stop .line { font-size:13.5px; margin:2px 0; }
+  .stop .line b { font-weight:600; }
+  .stop.rejected .name { color:#a93a18; }
+  details { margin-top:4px; }
+  summary { cursor:pointer; color:var(--teal); font-size:13px; }
+  pre { margin:6px 0 0; padding:8px 10px; background:#e3eaee; border-radius:6px;
+        font:12px/1.4 ui-monospace,Menlo,monospace; white-space:pre-wrap;
+        word-break:break-word; max-height:220px; overflow:auto; }
+
+  /* verdict */
+  .facts { display:flex; flex-wrap:wrap; gap:6px 28px; margin:0 0 22px; padding:0 0 14px;
+           border-bottom:1px solid var(--rule); }
+  .fact b { font:700 20px var(--display); font-variant-numeric:tabular-nums; }
+  .fact span { display:block; font-size:12.5px; color:var(--muted); }
+  .answer { font:800 clamp(30px,4.4vw,52px)/1 var(--display); letter-spacing:-.025em;
+            margin:0 0 6px; }
+  .answer.pay { color:var(--teal); } .answer.member { color:var(--orange); }
+  .sub { color:var(--muted); margin:0 0 22px; }
+
+  .lane { display:grid; grid-template-columns:150px 1fr; gap:4px 14px; align-items:center;
+          margin:10px 0; }
+  .lane .who2 { font-weight:600; }
+  .lane .who2 small { display:block; font-weight:400; color:var(--muted); font-size:12.5px; }
+  .track { height:36px; background:var(--fog); border-radius:4px; position:relative; }
+  .fill { height:100%; border-radius:4px; width:0; transition:width .9s cubic-bezier(.2,.7,.2,1);
+          display:flex; align-items:center; justify-content:flex-end; padding-right:10px;
+          color:#fff; font:700 16px var(--display); font-variant-numeric:tabular-nums;
+          min-width:78px; }
+  .fill.win { background:var(--orange); } .fill.lose { background:#8aa0ad; }
+  .fill.win.pay { background:var(--teal); }
+  .gap { color:var(--muted); font-size:13.5px; margin:4px 0 0 164px; }
+
+  .be { position:relative; height:62px; margin:30px 0 4px 164px; }
+  .be .axis { position:absolute; left:0; right:0; top:26px; height:4px; background:var(--rule);
+              border-radius:2px; }
+  .be .mark { position:absolute; top:0; transform:translateX(-50%); text-align:center;
+              font-size:12.5px; line-height:1.2; white-space:nowrap; }
+  .be .mark i { display:block; width:3px; height:30px; margin:2px auto 0;
+                background:var(--ink); }
+  .be .mark.actual i { background:var(--orange); height:38px; }
+  .be .mark.actual { top:-8px; color:var(--orange); font-weight:600; }
+  .be .mark b { font-family:var(--display); font-size:15px; }
+
+  table { border-collapse:collapse; width:100%; font-variant-numeric:tabular-nums; }
+  th, td { padding:6px 10px 6px 0; border-bottom:1px solid var(--rule); text-align:left; }
+  th { font-weight:600; color:var(--muted); font-size:13px; }
+  td.n, th.n { text-align:right; padding-right:0; padding-left:10px; }
+  .why-text { max-width:68ch; }
+  ul { margin:0; padding-left:18px; } li { margin:3px 0; max-width:72ch; }
+  .src { font-size:13.5px; word-break:break-all; }
+  .checks { display:flex; flex-wrap:wrap; gap:6px 22px; font-size:13.5px; }
+  .pass { color:var(--ok); font-weight:600; } .fail { color:var(--bad); font-weight:600; }
+  .empty { color:var(--muted); max-width:44ch; }
+  .err { color:var(--bad); }
+
+  @media (max-width:900px) {
+    form { grid-template-columns:1fr; }
+    main { grid-template-columns:1fr; }
+    .verdict { border-left:0; border-top:1px solid var(--rule); }
+    .lane { grid-template-columns:1fr; } .gap, .be { margin-left:0; }
+  }
+  @media (prefers-reduced-motion:reduce) { .fill { transition:none; } }
+</style>
+</head>
+<body>
+<header class="band">
+  <div class="band-top">
+    <h1>Bay Wheels plan advisor <span>membership or pay per ride?</span></h1>
+  </div>
+  <form id="f">
+    <div><label for="csv">Trip CSV</label>
+         <input id="csv" name="csv" type="file" accept=".csv" required></div>
+    <div><label for="url">Pricing page URL</label>
+         <input id="url" name="url" type="text" value="https://lyftbikes.com/pricing" required></div>
+    <div><label for="rider">Rider ID (synthetic)</label>
+         <input id="rider" name="rider" type="text" value="R001" required></div>
+    <button id="run" type="submit">Run</button>
+  </form>
+</header>
+
+<main>
+  <section class="route" aria-live="polite">
+    <h2>What the agent did</h2>
+    <div id="timeline"><p class="empty">Pick a trip CSV and press Run. Each tool call shows up
+      here as a stop on the route.</p></div>
+  </section>
+  <section class="verdict" aria-live="polite">
+    <h2>Recommendation</h2>
+    <div id="result"><p class="empty">The decision, the cost comparison and the sources
+      appear here when the run finishes.</p></div>
+  </section>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g,
+  c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const money = (v) => (typeof v === 'number') ? '$' + v.toFixed(2) : '-';
+const clip = (s, n) => { s = String(s); return s.length > n ? s.slice(0, n - 1) + '…' : s; };
+
+function inputLine(e) {
+  const i = e.inputs || {};
+  if (e.tool === 'calculator') return `<b>Calculates</b> ${esc(clip(i.expression, 90))}`;
+  if (e.tool === 'csv_sql') return `<b>Queries</b> ${esc(clip(i.sql, 110))}`;
+  if (e.tool === 'policy_retriever') return `<b>Reads</b> ${esc(clip(i.url, 60))}`;
+  return esc(clip(JSON.stringify(i), 110));
+}
+function outputLine(e) {
+  const o = e.full_summary;
+  if (!e.success) return `<b>Error</b> ${esc(clip(e.observation, 160))}`;
+  return `<b>Got</b> ${esc(o)}`;
+}
+function summarize(e) {
+  try {
+    const d = JSON.parse(e.observation.endsWith('[cut]') ? '{}' : e.observation).data || {};
+    if (d.value !== undefined) return '= ' + d.value;
+    if (d.rows) return d.row_count + ' rows' + (d.rows[0] ? ' (' + Object.keys(d.rows[0]).join(', ') + ')' : '');
+    if (d.passages) return d.passages.length + ' pricing snippets';
+  } catch (_) {}
+  if (e.tool === 'csv_sql') return 'rows returned';
+  if (e.tool === 'policy_retriever') return 'pricing snippets';
+  return 'result';
+}
+
+function renderStep(e) {
+  if (e.kind === 'repair')
+    return `<li class="stop rejected"><div class="name">Reply rejected</div>
+      <div class="why">${esc(e.message)}</div></li>`;
+  if (e.kind === 'error')
+    return `<li class="stop error"><div class="name">Model error</div>
+      <div class="why">${esc(e.message)}</div></li>`;
+  if (e.kind === 'final')
+    return `<li class="stop final"><div class="name">Final answer</div>
+      <div class="why">${esc(e.answer.decision)}</div></li>`;
+  e.full_summary = summarize(e);
+  return `<li class="stop${e.success ? '' : ' error'}">
+    <div class="name">${esc(e.tool)}<span class="took">step ${e.step}, ${Math.round(e.tool_ms)} ms</span></div>
+    <div class="why">${esc(e.thought || '')}</div>
+    <div class="line">${inputLine(e)}</div><div class="line">${outputLine(e)}</div>
+    <details><summary>Show the full call</summary>
+      <pre>${esc(JSON.stringify(e.inputs, null, 1))}</pre>
+      <pre>${esc(e.observation)}</pre></details></li>`;
+}
+
+function renderResult(r) {
+  const checks = r.checks || {};
+  const mark = (ok) => ok ? '<span class="pass">pass</span>' : '<span class="fail">fail</span>';
+  let html = `<div class="facts">
+    <div class="fact"><b>${r.steps}</b><span>steps</span></div>
+    <div class="fact"><b>${r.total_seconds.toFixed(1)} s</b><span>total time</span></div>
+    <div class="fact"><b>${esc(r.stop_reason)}</b><span>stop reason</span></div>
+    <div class="fact"><b>${r.tool_calls}</b><span>tool calls</span></div>
+    <div class="fact"><b>${r.repairs}</b><span>replies rejected</span></div></div>`;
+  if (!r.decision) return html + '<p class="err">No final decision was produced.</p>';
+
+  const member = r.decision.startsWith('Buy');
+  const pay = r.pay_per_use_total, mem = r.membership_total;
+  const top = Math.max(pay, mem);
+  const lane = (label, note, value, win) => `<div class="lane">
+    <div class="who2">${label}<small>${note}</small></div>
+    <div class="track"><div class="fill ${win ? 'win' : 'lose'}${win && !member ? ' pay' : ''}"
+      data-w="${(100 * value / top).toFixed(1)}">${money(value)}</div></div></div>`;
+  const actual = r.actual_rides ?? 0, be = Number(r.break_even_rides);
+  const scale = Math.max(actual, be) * 1.12 || 1;
+  const pct = (x) => (100 * x / scale).toFixed(1);
+
+  html += `<p class="answer ${member ? 'member' : 'pay'}">${esc(r.decision)}</p>
+    <p class="sub">Rider ${esc(r.rider_id)} took ${actual} rides in this file.</p>` +
+    lane('Pay per ride', 'unlock + per minute', pay, !member) +
+    lane('Monthly membership', `${money(r.membership_fee)} fee + ${money(r.membership_residual)} extra`, mem, member) +
+    `<p class="gap">${mem < pay ? 'Membership' : 'Pay per ride'} is cheaper by ${money(Math.abs(pay - mem))}.</p>
+    <div class="be" aria-label="Break-even">
+      <div class="axis"></div>
+      <div class="mark" style="left:${pct(be)}%"><b>${be.toFixed(1)}</b> rides<i></i>break-even</div>
+      <div class="mark actual" style="left:${pct(actual)}%"><b>${actual}</b> rides<i></i>this rider</div>
+    </div>
+    <h3>Week by week</h3>
+    <table><tr><th>Week</th><th class="n">Rides</th><th class="n">Average minutes</th>
+      <th class="n">Pay-per-ride spend</th></tr>` +
+    (r.weekly || []).map(w => `<tr><td>${esc(w.week)}</td><td class="n">${w.rides}</td>
+      <td class="n">${w.avg_min}</td><td class="n">${money(w.pay_spend)}</td></tr>`).join('') +
+    `</table>
+    <h3>Why</h3><p class="why-text">${esc(r.justification)}</p>
+    <h3>Pricing source</h3>` +
+    (r.citations || []).map(c => `<p class="src">${esc(c.url)}<br><span class="hint">Captured
+      ${esc(c.access_ts)} UTC. SHA-256 ${esc(c.sha256.slice(0, 16))}...</span></p>`).join('') +
+    `<h3>Assumptions and caveats</h3><ul>` +
+    (r.assumptions || []).map(a => `<li>${esc(a)}</li>`).join('') +
+    `<li>The rider grouping is synthetic. The public data has no rider IDs.</li>
+     <li>The month pass is applied once, with no tax, and ride minutes are not rounded up.</li>
+     <li>The plan columns on the pricing page are matched by their order.</li></ul>
+    <h3>Checks outside the agent</h3>
+    <div class="checks"><span>Numbers came from the calculator: ${mark(checks.numbers_from_calculator)}</span>
+      <span>Decision matches the totals: ${mark(checks.decision_matches_totals)}</span>
+      <span>Matches the reference calculation: ${mark(checks.matches_reference)}</span></div>`;
+  return html;
+}
+
+function grow() {
+  requestAnimationFrame(() => document.querySelectorAll('.fill').forEach(
+    el => { el.style.width = el.dataset.w + '%'; }));
+}
+
+$('f').addEventListener('submit', async (ev) => {
+  ev.preventDefault();
+  $('run').disabled = true; $('run').textContent = 'Running';
+  $('timeline').innerHTML = '<p class="empty">Starting the agent...</p>';
+  $('result').innerHTML = '<p class="empty">Waiting for the agent...</p>';
+  const res = await fetch('/api/run', { method: 'POST', body: new FormData($('f')) });
+  const start = await res.json();
+  const reset = () => { $('run').disabled = false; $('run').textContent = 'Run'; };
+  if (!res.ok) {
+    $('timeline').innerHTML = '';
+    $('result').innerHTML = `<p class="err">${esc(start.detail || 'The request failed.')}</p>`;
+    return reset();
+  }
+  const timer = setInterval(async () => {
+    const job = await (await fetch('/api/job/' + start.job_id)).json();
+    $('timeline').innerHTML = job.events.length
+      ? '<ol class="stops">' + job.events.map(renderStep).join('') + '</ol>'
+      : '<p class="empty">Starting the agent...</p>';
+    if (job.status !== 'running') {
+      clearInterval(timer); reset();
+      $('result').innerHTML = job.status === 'error'
+        ? `<p class="err">${esc(job.error)}</p>` : renderResult(job.result);
+      grow();
+    }
+  }, 700);
+});
+</script>
+</body>
+</html>

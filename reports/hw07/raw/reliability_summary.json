@@ -1,0 +1,36 @@
+{
+  "attempts": 21,
+  "tool_call_attempts": 56,
+  "well_formed_before_repair": 56,
+  "well_formed_after_repair": 56,
+  "rate_before_repair": 1.0,
+  "rate_after_repair": 1.0,
+  "failures_by_class": {
+    "malformed_arguments": 0,
+    "unknown_tool": 0,
+    "text_when_tool_required": 0,
+    "lost_multi_step_chain": 0
+  },
+  "chains_completed": 21,
+  "answers_correct": 21,
+  "by_case": {
+    "A": {
+      "attempts": 7,
+      "chain_ok": 7,
+      "answer_ok": 7
+    },
+    "B": {
+      "attempts": 7,
+      "chain_ok": 7,
+      "answer_ok": 7
+    },
+    "C": {
+      "attempts": 7,
+      "chain_ok": 7,
+      "answer_ok": 7
+    }
+  },
+  "avg_tool_calls": 2.67,
+  "total_tokens": 37684,
+  "avg_model_latency_ms": 6288.2
+}

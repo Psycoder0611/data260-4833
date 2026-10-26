@@ -1,0 +1,92 @@
+[
+  {
+    "command": "ls -la",
+    "expected": "allow",
+    "allow": true,
+    "reason": "matches SAFE_PREFIXES",
+    "destructive": false,
+    "executed": true,
+    "ok": true
+  },
+  {
+    "command": "pwd",
+    "expected": "allow",
+    "allow": true,
+    "reason": "matches SAFE_PREFIXES",
+    "destructive": false,
+    "executed": true,
+    "ok": true
+  },
+  {
+    "command": "cat settings.py",
+    "expected": "allow",
+    "allow": true,
+    "reason": "matches SAFE_PREFIXES",
+    "destructive": false,
+    "executed": true,
+    "ok": true
+  },
+  {
+    "command": "grep -n DEBUG settings.py",
+    "expected": "allow",
+    "allow": true,
+    "reason": "matches SAFE_PREFIXES",
+    "destructive": false,
+    "executed": true,
+    "ok": true
+  },
+  {
+    "command": "wc -l app.py",
+    "expected": "allow",
+    "allow": true,
+    "reason": "matches SAFE_PREFIXES",
+    "destructive": false,
+    "executed": true,
+    "ok": true
+  },
+  {
+    "command": "rm -rf /tmp/anything",
+    "expected": "block",
+    "allow": false,
+    "reason": "destructive (recursive deletion)",
+    "destructive": true,
+    "executed": false,
+    "ok": true
+  },
+  {
+    "command": "sudo ls",
+    "expected": "block",
+    "allow": false,
+    "reason": "destructive (privilege escalation)",
+    "destructive": true,
+    "executed": false,
+    "ok": true
+  },
+  {
+    "command": "chmod 777 settings.py",
+    "expected": "block",
+    "allow": false,
+    "reason": "destructive (permission or ownership change)",
+    "destructive": true,
+    "executed": false,
+    "ok": true
+  },
+  {
+    "command": "echo hello > /etc/hosts",
+    "expected": "block",
+    "allow": false,
+    "reason": "destructive (redirection to a root path)",
+    "destructive": true,
+    "executed": false,
+    "ok": true
+  },
+  {
+    "command": "dd if=/dev/zero of=/dev/sda",
+    "expected": "block",
+    "allow": false,
+    "reason": "destructive (raw device write)",
+    "destructive": true,
+    "executed": false,
+    "ok": true
+  }
+]

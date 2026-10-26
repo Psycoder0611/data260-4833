@@ -1,0 +1,40 @@
+{
+  "stop_reason": "final_answer",
+  "steps": 4,
+  "calls": [
+    {
+      "step": 1,
+      "tool": "glob_files",
+      "inputs": {
+        "pattern": "**/*.py"
+      },
+      "success": true
+    },
+    {
+      "step": 2,
+      "tool": "search_in_files",
+      "inputs": {
+        "pattern": "DEBUG",
+        "file_pattern": "*.py"
+      },
+      "success": true
+    },
+    {
+      "step": 3,
+      "tool": "read_file",
+      "inputs": {
+        "path": "settings.py",
+        "max_lines": 1000
+      },
+      "success": true
+    }
+  ],
+  "answer": "The file `settings.py` contains the following lines:\n\n```\nDEBUG = True\nLOG_LEVEL = \"info\"\n```",
+  "total_seconds": 7.87,
+  "checks": {
+    "order glob -> search -> read": true,
+    "answer names settings.py": true,
+    "answer shows 'DEBUG = True'": true,
+    "answer shows the whole file (LOG_LEVEL line)": true
+  }
+}

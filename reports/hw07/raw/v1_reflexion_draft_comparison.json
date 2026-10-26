@@ -1,0 +1,342 @@
+{
+  "runs": 21,
+  "original": {
+    "task_success": 7,
+    "unsupported_claims": 0,
+    "retry_rate": 0.0,
+    "tool_calls": 42,
+    "tokens": 23572,
+    "latency_ms": 115860.2,
+    "false_rejections_to_review": 14
+  },
+  "reflexion": {
+    "task_success": 7,
+    "unsupported_claims": 0,
+    "retry_rate": 0.6667,
+    "tool_calls": 106,
+    "tokens": 73161,
+    "latency_ms": 327367.1,
+    "false_rejections_to_review": 42
+  },
+  "stop_reasons": {
+    "success": 7,
+    "human_review": 14
+  },
+  "rejected_but_facts_correct": [
+    {
+      "run_id": "p3-draft-01-B",
+      "attempt": 0,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-01-B",
+      "attempt": 1,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-01-B",
+      "attempt": 2,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-02-C",
+      "attempt": 0,
+      "failed": [
+        "details looked up for both trials",
+        "answer names the larger trial with both capacities"
+      ]
+    },
+    {
+      "run_id": "p3-draft-02-C",
+      "attempt": 1,
+      "failed": [
+        "details looked up for both trials",
+        "answer names the larger trial with both capacities"
+      ]
+    },
+    {
+      "run_id": "p3-draft-02-C",
+      "attempt": 2,
+      "failed": [
+        "details looked up for both trials",
+        "answer names the larger trial with both capacities"
+      ]
+    },
+    {
+      "run_id": "p3-draft-04-B",
+      "attempt": 0,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-04-B",
+      "attempt": 1,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-04-B",
+      "attempt": 2,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-05-C",
+      "attempt": 0,
+      "failed": [
+        "details looked up for both trials",
+        "answer names the larger trial with both capacities"
+      ]
+    },
+    {
+      "run_id": "p3-draft-05-C",
+      "attempt": 1,
+      "failed": [
+        "details looked up for both trials",
+        "answer names the larger trial with both capacities"
+      ]
+    },
+    {
+      "run_id": "p3-draft-05-C",
+      "attempt": 2,
+      "failed": [
+        "details looked up for both trials",
+        "answer names the larger trial with both capacities"
+      ]
+    },
+    {
+      "run_id": "p3-draft-07-B",
+      "attempt": 0,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-07-B",
+      "attempt": 1,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-07-B",
+      "attempt": 2,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-08-C",
+      "attempt": 0,
+      "failed": [
+        "details looked up for both trials",
+        "answer names the larger trial with both capacities"
+      ]
+    },
+    {
+      "run_id": "p3-draft-08-C",
+      "attempt": 1,
+      "failed": [
+        "details looked up for both trials",
+        "answer names the larger trial with both capacities"
+      ]
+    },
+    {
+      "run_id": "p3-draft-08-C",
+      "attempt": 2,
+      "failed": [
+        "details looked up for both trials",
+        "answer names the larger trial with both capacities"
+      ]
+    },
+    {
+      "run_id": "p3-draft-10-B",
+      "attempt": 0,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-10-B",
+      "attempt": 1,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-10-B",
+      "attempt": 2,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-11-C",
+      "attempt": 0,
+      "failed": [
+        "details looked up for both trials",
+        "answer names the larger trial with both capacities"
+      ]
+    },
+    {
+      "run_id": "p3-draft-11-C",
+      "attempt": 1,
+      "failed": [
+        "details looked up for both trials",
+        "answer names the larger trial with both capacities"
+      ]
+    },
+    {
+      "run_id": "p3-draft-11-C",
+      "attempt": 2,
+      "failed": [
+        "details looked up for both trials",
+        "answer names the larger trial with both capacities"
+      ]
+    },
+    {
+      "run_id": "p3-draft-13-B",
+      "attempt": 0,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-13-B",
+      "attempt": 1,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-13-B",
+      "attempt": 2,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-14-C",
+      "attempt": 0,
+      "failed": [
+        "details looked up for both trials",
+        "answer names the larger trial with both capacities"
+      ]
+    },
+    {
+      "run_id": "p3-draft-14-C",
+      "attempt": 1,
+      "failed": [
+        "details looked up for both trials",
+        "answer names the larger trial with both capacities"
+      ]
+    },
+    {
+      "run_id": "p3-draft-14-C",
+      "attempt": 2,
+      "failed": [
+        "details looked up for both trials",
+        "answer names the larger trial with both capacities"
+      ]
+    },
+    {
+      "run_id": "p3-draft-16-B",
+      "attempt": 0,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-16-B",
+      "attempt": 1,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-16-B",
+      "attempt": 2,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-17-C",
+      "attempt": 0,
+      "failed": [
+        "details looked up for both trials",
+        "answer names the larger trial with both capacities"
+      ]
+    },
+    {
+      "run_id": "p3-draft-17-C",
+      "attempt": 1,
+      "failed": [
+        "details looked up for both trials",
+        "answer names the larger trial with both capacities"
+      ]
+    },
+    {
+      "run_id": "p3-draft-17-C",
+      "attempt": 2,
+      "failed": [
+        "details looked up for both trials",
+        "answer names the larger trial with both capacities"
+      ]
+    },
+    {
+      "run_id": "p3-draft-19-B",
+      "attempt": 0,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-19-B",
+      "attempt": 1,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-19-B",
+      "attempt": 2,
+      "failed": [
+        "one example trial found by search and named"
+      ]
+    },
+    {
+      "run_id": "p3-draft-20-C",
+      "attempt": 0,
+      "failed": [
+        "details looked up for both trials",
+        "answer names the larger trial with both capacities"
+      ]
+    },
+    {
+      "run_id": "p3-draft-20-C",
+      "attempt": 1,
+      "failed": [
+        "details looked up for both trials",
+        "answer names the larger trial with both capacities"
+      ]
+    },
+    {
+      "run_id": "p3-draft-20-C",
+      "attempt": 2,
+      "failed": [
+        "details looked up for both trials",
+        "answer names the larger trial with both capacities"
+      ]
+    }
+  ]
+}
