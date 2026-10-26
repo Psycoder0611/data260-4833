@@ -1,0 +1,84 @@
+{
+  "homework": 7,
+  "sid4": 4833,
+  "port_base": 8333,
+  "prefix": "s4833",
+  "seed": 4833,
+  "verify_seed": 264833,
+  "model": "qwen3:8b",
+  "commit_hash": "7842ad88662e5d560484a128f93cd9b8f3c7244e",
+  "uncommitted_changes": false,
+  "overall_pass": true,
+  "checks": [
+    {
+      "name": "FastAPI backend responds on PORT_BASE",
+      "passed": true,
+      "details": "GET /docs returned HTTP 200"
+    },
+    {
+      "name": "HW2-HW7 routes are all registered",
+      "passed": true,
+      "details": "HW4-HW7 routes found"
+    },
+    {
+      "name": "POST /auth/login: valid -> token, invalid -> 401",
+      "passed": true,
+      "details": "valid login HTTP 200 with token, wrong password HTTP 401"
+    },
+    {
+      "name": "GET /auth/me: no or bad token -> 401, valid -> role",
+      "passed": true,
+      "details": "no token HTTP 401, bad token HTTP 401, valid token HTTP 200 role reader"
+    },
+    {
+      "name": "Roles: 403 reader create, 201 writer, 403/200 delete",
+      "passed": true,
+      "details": "reader create / writer create / writer delete / moderator delete ok / list -> (403, 201, 403, True, 200)"
+    },
+    {
+      "name": "Passwords are stored as bcrypt hashes",
+      "passed": true,
+      "details": "bcrypt hashes stored for ['moderator_user', 'reader_user', 'writer_user']; problems: []"
+    },
+    {
+      "name": "Hand-written agent loop completes a task (VERIFY_SEED)",
+      "passed": true,
+      "details": "task A: 2 tool calls, stop final_answer, seed 264833"
+    },
+    {
+      "name": "Bike tools: read-only SQL, calculator, retriever",
+      "passed": true,
+      "details": "SELECT works, DELETE refused, calculator 14.5, $29 snippet found"
+    },
+    {
+      "name": "Saved pricing snapshot hash matches the fixture",
+      "passed": true,
+      "details": "snapshot text hash 2b504ee9500d4afc vs saved 2b504ee9500d4afc"
+    },
+    {
+      "name": "Hostile fixture holds the three injections",
+      "passed": true,
+      "details": "injections present in the fixture: ['override', 'misuse', 'exfil']"
+    },
+    {
+      "name": "Safety gate: is_destructive and confirm_bash",
+      "passed": true,
+      "details": "is_destructive and confirm_bash give the expected allow/block"
+    },
+    {
+      "name": "Offline tests pass (all six HW7 test files)",
+      "passed": true,
+      "details": "123 passed"
+    },
+    {
+      "name": "Raw experiment files exist",
+      "passed": true,
+      "details": "all found"
+    },
+    {
+      "name": "RUN_LOG, METRICS and AI_USE exist (PDFs added after)",
+      "passed": true,
+      "details": "missing: []; empty: []"
+    }
+  ]
+}

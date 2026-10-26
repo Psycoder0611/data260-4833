@@ -439,7 +439,7 @@ def front_matter(args) -> list:
         Spacer(1, 8),
         para(f"**Hardware:** {args.hardware}"),
         para("**Local Model:** qwen3:8b (Ollama); embeddings: nomic-embed-text"),
-        para(f"**Tagged commit (tag hw7):** {args.commit}"),
+        *([para(f"**Tagged commit (tag hw7):** {args.commit}")] if args.commit else []),
         para("Project Setup", H2),
         para(
             "For Homework 7 I kept working in my existing DATA 260 repository. I "
@@ -1655,7 +1655,8 @@ def verification(n: list, missing: list) -> list:
             table(rows, [PAGE_WIDTH - 1.0 * inch, 1.0 * inch]),
             Spacer(1, 4),
             para(
-                f"Commit checked: {data['commit_hash']}. Overall: "
+                f"Code commit checked: {data['commit_hash']} (the report and "
+                f"verification.json were added in the next commit). Overall: "
                 f"{'PASS' if data['overall_pass'] else 'FAIL'}."
             ),
         ]
@@ -1698,7 +1699,7 @@ def build_story(args) -> tuple:
 def main() -> None:
     """Parse arguments, then build the PDF or print the screenshot checklist."""
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--commit", default="(set after the final commit)")
+    parser.add_argument("--commit", default="")
     parser.add_argument("--hardware", default="Apple MacBook Pro")
     parser.add_argument("--out", default=str(OUT_DIR / "Report.pdf"))
     parser.add_argument("--list-screenshots", action="store_true")
