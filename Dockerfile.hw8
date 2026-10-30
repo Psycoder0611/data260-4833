@@ -1,0 +1,16 @@
+# HW8: image for the Kafka worker and the FastAPI wrapper (same code, two commands).
+# The repository's original Dockerfile (HW1 nginx page) is left untouched.
+FROM python:3.12-slim
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1
+
+WORKDIR /app
+
+COPY hw8/requirements-docker.txt /tmp/requirements-docker.txt
+RUN pip install --no-cache-dir -r /tmp/requirements-docker.txt
+
+COPY hw8 /app/hw8
+
+# The compose file sets the command for each service.
+CMD ["python", "-m", "hw8.entity_worker"]

@@ -1,0 +1,68 @@
+{
+  "topics": [
+    "s4833_entity_requests",
+    "s4833_entity_responses"
+  ],
+  "create": {
+    "correlation_id": "c3304a37-8181-4433-8ead-4f30bf173e03",
+    "response": {
+      "correlation_id": "c3304a37-8181-4433-8ead-4f30bf173e03",
+      "operation": "CREATE_CLINICAL_TRIAL",
+      "success": true,
+      "clinical_trial_id": "ec7ff5a2-028d-471d-be66-4d808433c394",
+      "entity_id": "ec7ff5a2-028d-471d-be66-4d808433c394",
+      "message": "Clinical trial created"
+    }
+  },
+  "get": {
+    "correlation_id": "b81b8f7c-8b96-4ad6-8bfe-972644ecaaba",
+    "response": {
+      "correlation_id": "b81b8f7c-8b96-4ad6-8bfe-972644ecaaba",
+      "operation": "GET_CLINICAL_TRIAL",
+      "success": true,
+      "entity": {
+        "clinical_trial_id": "ec7ff5a2-028d-471d-be66-4d808433c394",
+        "trialTitle": "Cardiovascular Outcomes Study",
+        "sponsor": "Acme Pharma",
+        "trial_code": "CT-2026-801",
+        "participant_capacity": 240,
+        "submitterEmail": "study.office@acme.example",
+        "category": "Cardiology",
+        "description": "Phase II trial of a new blood pressure treatment.",
+        "created_at": "2026-10-28T04:44:15+00:00",
+        "entity_id": "ec7ff5a2-028d-471d-be66-4d808433c394"
+      }
+    }
+  },
+  "correlation_ids_preserved": true,
+  "entity_matches": true,
+  "errors": {
+    "unknown operation": {
+      "sent": "19693413-a79b-4384-bd71-0b5ef412f96a",
+      "response": {
+        "correlation_id": "19693413-a79b-4384-bd71-0b5ef412f96a",
+        "operation": "DELETE_EVERYTHING",
+        "success": false,
+        "error": "Unknown operation"
+      }
+    },
+    "unknown id": {
+      "sent": "1960c297-7cef-403e-aa31-cdbdde1dc1fa",
+      "response": {
+        "correlation_id": "1960c297-7cef-403e-aa31-cdbdde1dc1fa",
+        "operation": "GET_CLINICAL_TRIAL",
+        "success": false,
+        "error": "Clinical trial not found"
+      }
+    },
+    "invalid data": {
+      "sent": "6d5de897-b6d3-4863-b908-d5a84ff85b08",
+      "response": {
+        "correlation_id": "6d5de897-b6d3-4863-b908-d5a84ff85b08",
+        "operation": "CREATE_CLINICAL_TRIAL",
+        "success": false,
+        "error": "Invalid data: trial_code is required; participant_capacity is required; submitterEmail is required; category is required; trialTitle must not be empty; sponsor must be 2 to 255 characters"
+      }
+    }
+  }
+}

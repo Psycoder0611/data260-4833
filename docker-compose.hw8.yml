@@ -1,0 +1,102 @@
+name: s4833-hw8
+
+# HW8: Kafka (KRaft, one broker) + topic setup + entity worker + FastAPI wrapper.
+#
+#   docker compose -f docker-compose.hw8.yml up -d --build
+#   docker compose -f docker-compose.hw8.yml ps
+#
+# Host scripts (homework_demo.py, planner.py, writer.py, ...) reach Kafka on
+# localhost:9092. The worker and api containers reach it as kafka:19092.
+# The repository's docker-compose.yml (HW6 MongoDB) is left untouched.
+
+services:
+  kafka:
+    image: apache/kafka:3.9.2
+    container_name: s4833-kafka
+    ports:
+      - "127.0.0.1:9092:9092"
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://:19092,HOST://:9092,CONTROLLER://:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:19092,HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_NUM_PARTITIONS: 1
+      # Topics are created by kafka-init with the exact partition counts below.
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/kafka/bin/kafka-broker-api-versions.sh --bootstrap-server localhost:9092 > /dev/null 2>&1"]
+      interval: 5s
+      timeout: 10s
+      retries: 20
+      start_period: 10s
+
+  kafka-init:
+    image: apache/kafka:3.9.2
+    container_name: s4833-kafka-init
+    depends_on:
+      kafka:
+        condition: service_healthy
+    restart: "no"
+    entrypoint: ["/bin/bash", "-c"]
+    command:
+      - |
+        set -e
+        T=/opt/kafka/bin/kafka-topics.sh
+        B=kafka:19092
+        echo "Creating HW8 topics..."
+        $$T --create --if-not-exists --topic s4833_entity_requests  --partitions 1 --replication-factor 1 --bootstrap-server $$B
+        $$T --create --if-not-exists --topic s4833_entity_responses --partitions 1 --replication-factor 1 --bootstrap-server $$B
+        $$T --create --if-not-exists --topic s4833_inbox            --partitions 1 --replication-factor 1 --bootstrap-server $$B
+        $$T --create --if-not-exists --topic s4833_tasks            --partitions 2 --replication-factor 1 --bootstrap-server $$B
+        $$T --create --if-not-exists --topic s4833_drafts           --partitions 1 --replication-factor 1 --bootstrap-server $$B
+        $$T --create --if-not-exists --topic s4833_final            --partitions 1 --replication-factor 1 --bootstrap-server $$B
+        $$T --create --if-not-exists --topic s4833_dead_letter      --partitions 1 --replication-factor 1 --bootstrap-server $$B
+        echo "Topics:"
+        $$T --describe --bootstrap-server $$B | grep -E "^Topic: s4833"
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.hw8
+    image: s4833-hw8
+    container_name: s4833-worker
+    command: ["python", "-m", "hw8.entity_worker"]
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:19092
+      HW8_TRACE: "1"
+    volumes:
+      - ./reports/hw08/raw:/app/reports/hw08/raw
+    depends_on:
+      kafka:
+        condition: service_healthy
+      kafka-init:
+        condition: service_completed_successfully
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.hw8
+    image: s4833-hw8
+    container_name: s4833-api
+    command: ["uvicorn", "hw8.api:app", "--host", "0.0.0.0", "--port", "8333"]
+    ports:
+      - "127.0.0.1:8333:8333"
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:19092
+      # Set HW8_API_VERBOSE=0 before the JMeter runs so logging does not skew timings.
+      HW8_API_VERBOSE: "${HW8_API_VERBOSE:-1}"
+    depends_on:
+      kafka:
+        condition: service_healthy
+      kafka-init:
+        condition: service_completed_successfully
+    restart: unless-stopped

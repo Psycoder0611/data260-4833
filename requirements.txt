@@ -34,3 +34,6 @@ python-multipart==0.0.31
 ruff==0.15.6
 pre-commit==4.6.2
 beautifulsoup4==4.14.3
+
+# HW8
+aiokafka==0.14.0

@@ -21,3 +21,7 @@ reports/hw07/screenshots/.resized_*
 
 # HW7 Part 4: the 123 MB public trip file is never committed
 data/bay_wheels_raw/
+
+# HW8
+reports/hw08/state/
+jmeter.log

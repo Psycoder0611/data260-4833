@@ -1,0 +1,5 @@
+# Used only when building Dockerfile.hw8: send nothing but the hw8 package.
+*
+!hw8
+**/__pycache__
+**/*.pyc

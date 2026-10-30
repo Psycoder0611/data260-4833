@@ -1,0 +1,77 @@
+{
+  "homework": 8,
+  "sid4": 4833,
+  "port_base": 8333,
+  "prefix": "s4833",
+  "seed": 4833,
+  "verify_seed": 264833,
+  "domain": "Clinical Trial Listings",
+  "model": "qwen3:8b (Ollama) for the pipeline runs; stub text in this smoke test",
+  "commit_hash": "6149ed6dbd48592767af4266438a646725c81dc8",
+  "uncommitted_changes": true,
+  "timestamp": "2026-10-29 15:21:56 PDT",
+  "quick_mode": false,
+  "overall_pass": true,
+  "checks": [
+    {
+      "name": "Kafka is up and the 7 HW8 topics have the right partitions",
+      "passed": true,
+      "details": "partitions {'s4833_inbox': 1, 's4833_final': 1, 's4833_tasks': 2, 's4833_entity_responses': 1, 's4833_entity_requests': 1, 's4833_drafts': 1, 's4833_dead_letter': 1}"
+    },
+    {
+      "name": "CREATE then GET round-trip through Kafka (worker, correlation_id kept)",
+      "passed": true,
+      "details": "existing worker answered; created 72613f6b-5688-4822-8fc9-0f6f7b0f63ec, GET returned it, ids preserved=True"
+    },
+    {
+      "name": "Errors are clean and carry the original correlation_id",
+      "passed": true,
+      "details": "{'unknown operation': True, 'unknown id': True, 'invalid data': True}"
+    },
+    {
+      "name": "FastAPI wrapper on PORT_BASE: Kafka route and direct route",
+      "passed": true,
+      "details": "API already running at http://127.0.0.1:8333; Kafka route success=True, direct route success=True"
+    },
+    {
+      "name": "Pipeline: one question reaches s4833_final with the same correlation_id",
+      "passed": true,
+      "details": "final status=approved, correlation_id on every topic={'s4833_inbox': True, 's4833_tasks': True, 's4833_drafts': True, 's4833_final': True}"
+    },
+    {
+      "name": "Duplicate delivery: replayed correlation_id is skipped",
+      "passed": true,
+      "details": "with idempotency: 1 draft, 1 duplicate skipped (without: 2 drafts)"
+    },
+    {
+      "name": "Consumer death: message redelivered, offset committed only after success",
+      "passed": true,
+      "details": "redelivered=True, draft produced=True, offset 109 -> 110"
+    },
+    {
+      "name": "Poison message: bounded retries, dead-letter topic, next message flows",
+      "passed": true,
+      "details": "attempts=3, dead-letter messages=1, next message processed=True"
+    },
+    {
+      "name": "Ordering: entity key keeps related messages in one partition, in order",
+      "passed": true,
+      "details": "keyed: 0 inversions, 0 entities split; unkeyed: 3 inversions, 5 entities split"
+    },
+    {
+      "name": "Offline unit tests pass",
+      "passed": true,
+      "details": "54 passed in 51.26s"
+    },
+    {
+      "name": "JMeter plans present (100 threads, ramp 10, loop 1)",
+      "passed": true,
+      "details": "both plans: 100 threads, 10 s ramp-up, 1 loop"
+    },
+    {
+      "name": "Evidence files present (RUN_LOG, METRICS, AI_USE, raw/)",
+      "passed": true,
+      "details": "all present"
+    }
+  ]
+}

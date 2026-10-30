@@ -1,0 +1,1094 @@
+===== HW8 PART 1 HOMEWORK_DEMO RUN START: Tue Oct 27 21:44:15 PDT 2026 =====
+Student: Trapti Kulshrestha | SID4 4833 | HW8 Part 1 homework_demo
+2026-10-27 21:44:15
+21:44:15.606 [CLIENT] Listening for responses on topic: s4833_entity_responses
+
+=== STEP 1: create one correlation_id for the CREATE request ===
+21:44:15.606 [DEMO] correlation_id for CREATE = c3304a37-8181-4433-8ead-4f30bf173e03
+
+=== STEPS 2-6: CREATE request -> worker -> response ===
+21:44:15.615 [CLIENT] REQUEST SENT topic=s4833_entity_requests partition=0 offset=0 correlation_id=c3304a37-8181-4433-8ead-4f30bf173e03
+21:44:15.615 [CLIENT] REQUEST {"correlation_id": "c3304a37-8181-4433-8ead-4f30bf173e03", "reply_to": "s4833_entity_responses", "operation": "CREATE_CLINICAL_TRIAL", "data": {"trialTitle": "Cardiovascular Outcomes Study", "sponsor": "Acme Pharma", "trial_code": "CT-2026-801", "participant_capacity": 240, "submitterEmail": "study.office@acme.example", "category": "Cardiology", "description": "Phase II trial of a new blood pressure treatment."}}
+21:44:15.621 [CLIENT] RESPONSE RECEIVED topic=s4833_entity_responses partition=0 offset=0 correlation_id=c3304a37-8181-4433-8ead-4f30bf173e03
+21:44:15.621 [CLIENT] RESPONSE {"correlation_id": "c3304a37-8181-4433-8ead-4f30bf173e03", "operation": "CREATE_CLINICAL_TRIAL", "success": true, "clinical_trial_id": "ec7ff5a2-028d-471d-be66-4d808433c394", "entity_id": "ec7ff5a2-028d-471d-be66-4d808433c394", "message": "Clinical trial created"}
+
+  SEQUENCE: CREATE_CLINICAL_TRIAL correlation_id=c3304a37-8181-4433-8ead-4f30bf173e03
+   1. [CLIENT] request sent      -> s4833_entity_requests partition 0 offset 0  (CREATE_CLINICAL_TRIAL)
+   2. [WORKER] request received  <- s4833_entity_requests partition 0 offset 0
+   3. [WORKER] processing        CREATE_CLINICAL_TRIAL
+   4. [WORKER] response sent     -> s4833_entity_responses partition 0 offset 0  (success=True)
+   5. [CLIENT] response received <- s4833_entity_responses partition 0 offset 0  (success=True)
+
+  CREATE response:
+{
+  "correlation_id": "c3304a37-8181-4433-8ead-4f30bf173e03",
+  "operation": "CREATE_CLINICAL_TRIAL",
+  "success": true,
+  "clinical_trial_id": "ec7ff5a2-028d-471d-be66-4d808433c394",
+  "entity_id": "ec7ff5a2-028d-471d-be66-4d808433c394",
+  "message": "Clinical trial created"
+}
+
+=== STEP 7: extract the generated id ===
+21:44:15.923 [DEMO] clinical_trial_id = ec7ff5a2-028d-471d-be66-4d808433c394
+
+=== STEPS 8-9: GET request with that id (its own correlation_id) ===
+21:44:15.924 [DEMO] correlation_id for GET = b81b8f7c-8b96-4ad6-8bfe-972644ecaaba
+21:44:15.926 [CLIENT] REQUEST SENT topic=s4833_entity_requests partition=0 offset=1 correlation_id=b81b8f7c-8b96-4ad6-8bfe-972644ecaaba
+21:44:15.926 [CLIENT] REQUEST {"correlation_id": "b81b8f7c-8b96-4ad6-8bfe-972644ecaaba", "reply_to": "s4833_entity_responses", "operation": "GET_CLINICAL_TRIAL", "data": {"clinical_trial_id": "ec7ff5a2-028d-471d-be66-4d808433c394"}}
+21:44:15.928 [CLIENT] RESPONSE RECEIVED topic=s4833_entity_responses partition=0 offset=1 correlation_id=b81b8f7c-8b96-4ad6-8bfe-972644ecaaba
+21:44:15.929 [CLIENT] RESPONSE {"correlation_id": "b81b8f7c-8b96-4ad6-8bfe-972644ecaaba", "operation": "GET_CLINICAL_TRIAL", "success": true, "entity": {"clinical_trial_id": "ec7ff5a2-028d-471d-be66-4d808433c394", "trialTitle": "Cardiovascular Outcomes Study", "sponsor": "Acme Pharma", "trial_code": "CT-2026-801", "participant_capacity": 240, "submitterEmail": "study.office@acme.example", "category": "Cardiology", "description": "Phase II trial of a new blood pressure treatment.", "created_at": "2026-10-28T04:44:15+00:00", "entity_id": "ec7ff5a2-028d-471d-be66-4d808433c394"}}
+
+  SEQUENCE: GET_CLINICAL_TRIAL correlation_id=b81b8f7c-8b96-4ad6-8bfe-972644ecaaba
+   1. [CLIENT] request sent      -> s4833_entity_requests partition 0 offset 1  (GET_CLINICAL_TRIAL)
+   2. [WORKER] request received  <- s4833_entity_requests partition 0 offset 1
+   3. [WORKER] processing        GET_CLINICAL_TRIAL
+   4. [WORKER] response sent     -> s4833_entity_responses partition 0 offset 1  (success=True)
+   5. [CLIENT] response received <- s4833_entity_responses partition 0 offset 1  (success=True)
+
+=== STEP 10: retrieved entity and correlation_id check ===
+{
+  "correlation_id": "b81b8f7c-8b96-4ad6-8bfe-972644ecaaba",
+  "operation": "GET_CLINICAL_TRIAL",
+  "success": true,
+  "entity": {
+    "clinical_trial_id": "ec7ff5a2-028d-471d-be66-4d808433c394",
+    "trialTitle": "Cardiovascular Outcomes Study",
+    "sponsor": "Acme Pharma",
+    "trial_code": "CT-2026-801",
+    "participant_capacity": 240,
+    "submitterEmail": "study.office@acme.example",
+    "category": "Cardiology",
+    "description": "Phase II trial of a new blood pressure treatment.",
+    "created_at": "2026-10-28T04:44:15+00:00",
+    "entity_id": "ec7ff5a2-028d-471d-be66-4d808433c394"
+  }
+}
+21:44:16.229 [DEMO] CREATE correlation_id preserved: sent=c3304a37-8181-4433-8ead-4f30bf173e03 received=c3304a37-8181-4433-8ead-4f30bf173e03 -> YES
+21:44:16.229 [DEMO] GET    correlation_id preserved: sent=b81b8f7c-8b96-4ad6-8bfe-972644ecaaba received=b81b8f7c-8b96-4ad6-8bfe-972644ecaaba -> YES
+21:44:16.229 [DEMO] retrieved entity matches what was created: YES
+
+=== EXTRA: clean errors, each with its own correlation_id ===
+21:44:16.231 [CLIENT] REQUEST SENT topic=s4833_entity_requests partition=0 offset=2 correlation_id=19693413-a79b-4384-bd71-0b5ef412f96a
+21:44:16.231 [CLIENT] REQUEST {"correlation_id": "19693413-a79b-4384-bd71-0b5ef412f96a", "reply_to": "s4833_entity_responses", "operation": "DELETE_EVERYTHING", "data": {}}
+21:44:16.235 [CLIENT] RESPONSE RECEIVED topic=s4833_entity_responses partition=0 offset=2 correlation_id=19693413-a79b-4384-bd71-0b5ef412f96a
+21:44:16.236 [CLIENT] RESPONSE {"correlation_id": "19693413-a79b-4384-bd71-0b5ef412f96a", "operation": "DELETE_EVERYTHING", "success": false, "error": "Unknown operation"}
+
+  unknown operation: sent correlation_id=19693413-a79b-4384-bd71-0b5ef412f96a
+{
+  "correlation_id": "19693413-a79b-4384-bd71-0b5ef412f96a",
+  "operation": "DELETE_EVERYTHING",
+  "success": false,
+  "error": "Unknown operation"
+}
+21:44:16.237 [CLIENT] REQUEST SENT topic=s4833_entity_requests partition=0 offset=3 correlation_id=1960c297-7cef-403e-aa31-cdbdde1dc1fa
+21:44:16.237 [CLIENT] REQUEST {"correlation_id": "1960c297-7cef-403e-aa31-cdbdde1dc1fa", "reply_to": "s4833_entity_responses", "operation": "GET_CLINICAL_TRIAL", "data": {"clinical_trial_id": "does-not-exist"}}
+21:44:16.243 [CLIENT] RESPONSE RECEIVED topic=s4833_entity_responses partition=0 offset=3 correlation_id=1960c297-7cef-403e-aa31-cdbdde1dc1fa
+21:44:16.243 [CLIENT] RESPONSE {"correlation_id": "1960c297-7cef-403e-aa31-cdbdde1dc1fa", "operation": "GET_CLINICAL_TRIAL", "success": false, "error": "Clinical trial not found"}
+
+  unknown id: sent correlation_id=1960c297-7cef-403e-aa31-cdbdde1dc1fa
+{
+  "correlation_id": "1960c297-7cef-403e-aa31-cdbdde1dc1fa",
+  "operation": "GET_CLINICAL_TRIAL",
+  "success": false,
+  "error": "Clinical trial not found"
+}
+21:44:16.246 [CLIENT] REQUEST SENT topic=s4833_entity_requests partition=0 offset=4 correlation_id=6d5de897-b6d3-4863-b908-d5a84ff85b08
+21:44:16.246 [CLIENT] REQUEST {"correlation_id": "6d5de897-b6d3-4863-b908-d5a84ff85b08", "reply_to": "s4833_entity_responses", "operation": "CREATE_CLINICAL_TRIAL", "data": {"trialTitle": "", "sponsor": "X"}}
+21:44:16.251 [CLIENT] RESPONSE RECEIVED topic=s4833_entity_responses partition=0 offset=4 correlation_id=6d5de897-b6d3-4863-b908-d5a84ff85b08
+21:44:16.251 [CLIENT] RESPONSE {"correlation_id": "6d5de897-b6d3-4863-b908-d5a84ff85b08", "operation": "CREATE_CLINICAL_TRIAL", "success": false, "error": "Invalid data: trial_code is required; participant_capacity is required; submitterEmail is required; category is required; trialTitle must not be empty; sponsor must be 2 to 255 characters"}
+
+  invalid data: sent correlation_id=6d5de897-b6d3-4863-b908-d5a84ff85b08
+{
+  "correlation_id": "6d5de897-b6d3-4863-b908-d5a84ff85b08",
+  "operation": "CREATE_CLINICAL_TRIAL",
+  "success": false,
+  "error": "Invalid data: trial_code is required; participant_capacity is required; submitterEmail is required; category is required; trialTitle must not be empty; sponsor must be 2 to 255 characters"
+}
+
+saved /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/raw/part1_demo.json
+===== HW8 PART 1 HOMEWORK_DEMO RUN END: Tue Oct 27 21:44:16 PDT 2026 =====
+===== HW8 PART 2 SEND_QUESTION RUN START: Wed Oct 28 11:35:21 PDT 2026 =====
+Student: Trapti Kulshrestha | SID4 4833 | HW8 Part 2 send_question
+2026-10-28 11:35:21
+11:35:21.816 [YOU] SENT topic=s4833_inbox partition=0 offset=0 correlation_id=67e7b75e-51a6-4009-ae59-613e8bc232ac
+11:35:21.816 [YOU] MESSAGE {"correlation_id": "67e7b75e-51a6-4009-ae59-613e8bc232ac", "stage": "question", "question": "What should a sponsor check before publishing a Phase II cardiology clinical trial listing?", "created_at": "2026-10-28T18:35:21+00:00"}
+11:39:22.427 [YOU] TIMEOUT no final message for correlation_id=67e7b75e-51a6-4009-ae59-613e8bc232ac after 240s
+===== HW8 PART 2 SEND_QUESTION RUN END: Wed Oct 28 11:39:22 PDT 2026 =====
+===== HW8 PART 2 SEND_QUESTION RUN START: Wed Oct 28 14:02:27 PDT 2026 =====
+Student: Trapti Kulshrestha | SID4 4833 | HW8 Part 2 send_question
+2026-10-28 14:02:27
+14:02:27.391 [YOU] SENT topic=s4833_inbox partition=0 offset=1 correlation_id=d3d547c8-2944-462e-8778-1db0cf8ff002
+14:02:27.392 [YOU] MESSAGE {"correlation_id": "d3d547c8-2944-462e-8778-1db0cf8ff002", "stage": "question", "question": "What should a sponsor check before publishing a Phase II cardiology clinical trial listing?", "created_at": "2026-10-28T21:02:27+00:00"}
+14:02:41.707 [YOU] FINAL RECEIVED from topic=s4833_final correlation_id=d3d547c8-2944-462e-8778-1db0cf8ff002
+{
+  "correlation_id": "d3d547c8-2944-462e-8778-1db0cf8ff002",
+  "stage": "final",
+  "status": "approved",
+  "answer": "Before publishing a Phase II cardiology clinical trial listing, the sponsor should verify the trial protocol complies with relevant regulatory guidelines. They must also confirm that informed consent documents are finalized and approved. Additionally, the sponsor should ensure all required data fields in the listing are accurately populated and up-to-date. These steps help maintain the integrity and transparency of the trial, ensuring it meets ethical and regulatory standards before public disclosure.",
+  "score": 8,
+  "feedback": "The draft addresses key considerations but could include more specific regulatory guidelines and data fields relevant to cardiology trials.",
+  "question": "What should a sponsor check before publishing a Phase II cardiology clinical trial listing?",
+  "reviewed_by": "REVIEWER",
+  "created_at": "2026-10-28T21:02:40+00:00"
+}
+14:02:41.710 [JOURNEY] message journey for correlation_id=d3d547c8-2944-462e-8778-1db0cf8ff002
+14:02:42.720 [JOURNEY] s4833_inbox partition=0 offset=1 key=d3d547c8-2944-462e-8778-1db0cf8ff002 fields=[stage,question,created_at]
+14:02:43.729 [JOURNEY] s4833_tasks partition=1 offset=0 key=d3d547c8-2944-462e-8778-1db0cf8ff002 fields=[stage,question,plan,planned_by,created_at]
+14:02:44.744 [JOURNEY] s4833_drafts partition=0 offset=0 key=d3d547c8-2944-462e-8778-1db0cf8ff002 fields=[stage,question,plan,draft,written_by,created_at]
+14:02:45.751 [JOURNEY] s4833_final partition=0 offset=0 key=d3d547c8-2944-462e-8778-1db0cf8ff002 fields=[stage,status,answer,score,feedback,question,reviewed_by,created_at]
+===== HW8 PART 2 SEND_QUESTION RUN END: Wed Oct 28 14:02:45 PDT 2026 =====
+===== HW8 PART 3 DUPLICATE RUN START: Wed Oct 28 14:08:57 PDT 2026 =====
+Student: Trapti Kulshrestha | SID4 4833 | HW8 Part 3 duplicate
+2026-10-28 14:08:57
+topics ready (partitions): {'s4833_inbox': 1, 's4833_final': 1, 's4833_tasks': 2, 's4833_entity_responses': 1, 's4833_entity_requests': 1, 's4833_drafts': 1, 's4833_dead_letter': 1}
+
+--- Duplicate delivery - BEFORE the fix ---
+  $ python writer.py --instance A --group s4833_t3_dup_before_1028140857 --offset-reset latest --llm stub --state-db /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/state/dup_before_1028140857.db --no-idempotency
+    | 14:08:57.254 [WRITER-A] Consumer is ready and listening... group=s4833_t3_dup_before_1028140857 topic=s4833_tasks partitions=[0, 1] commit_mode=after idempotent=False max_attempts=3 dead_letter=True key_mode=correlation
+14:08:57.262 [TEST] original sent -> topic=s4833_tasks partition=0 offset=0 correlation_id=dup-before-1028140857
+    | 14:08:57.262 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=0 correlation_id=dup-before-1028140857
+    | 14:08:57.262 [WRITER-A] PROCESSING correlation_id=dup-before-1028140857 attempt=1/3
+    | 14:08:57.265 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=1 correlation_id=dup-before-1028140857
+    | 14:08:57.267 [WRITER-A] COMMITTED offset=1 partition=0
+14:08:57.320 [TEST] REPLAY of the same message sent -> topic=s4833_tasks partition=0 offset=1 correlation_id=dup-before-1028140857
+    | 14:08:57.319 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=1 correlation_id=dup-before-1028140857
+    | 14:08:57.320 [WRITER-A] PROCESSING correlation_id=dup-before-1028140857 attempt=1/3
+    | 14:08:57.321 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=2 correlation_id=dup-before-1028140857
+    | 14:08:57.322 [WRITER-A] COMMITTED offset=2 partition=0
+14:09:00.382 [TEST] RESULT before: messages sent=2, drafts produced=2, duplicates skipped=0
+    | 14:09:00.386 [WRITER-A] stopped (processed 2 messages)
+
+--- Duplicate delivery - AFTER the fix ---
+  $ python writer.py --instance A --group s4833_t3_dup_after_1028140857 --offset-reset latest --llm stub --state-db /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/state/dup_after_1028140857.db
+    | 14:09:00.721 [WRITER-A] Consumer is ready and listening... group=s4833_t3_dup_after_1028140857 topic=s4833_tasks partitions=[0, 1] commit_mode=after idempotent=True max_attempts=3 dead_letter=True key_mode=correlation
+14:09:00.782 [TEST] original sent -> topic=s4833_tasks partition=1 offset=1 correlation_id=dup-after-1028140857
+    | 14:09:00.782 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=1 correlation_id=dup-after-1028140857
+    | 14:09:00.782 [WRITER-A] PROCESSING correlation_id=dup-after-1028140857 attempt=1/3
+    | 14:09:00.786 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=3 correlation_id=dup-after-1028140857
+    | 14:09:00.789 [WRITER-A] COMMITTED offset=2 partition=1
+14:09:00.842 [TEST] REPLAY of the same message sent -> topic=s4833_tasks partition=1 offset=2 correlation_id=dup-after-1028140857
+    | 14:09:00.842 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=2 correlation_id=dup-after-1028140857
+    | 14:09:00.843 [WRITER-A] DUPLICATE correlation_id=dup-after-1028140857 already processed -> skipped, no new output (duplicates skipped so far: 1)
+    | 14:09:00.845 [WRITER-A] COMMITTED offset=3 partition=1
+14:09:03.911 [TEST] RESULT after: messages sent=2, drafts produced=1, duplicates skipped=1
+    | 14:09:03.930 [WRITER-A] stopped (processed 1 messages)
+
+saved reports/hw08/raw/part3_duplicate.json
+===== HW8 PART 3 DUPLICATE RUN END: Wed Oct 28 14:09:04 PDT 2026 =====
+===== HW8 PART 3 DEATH RUN START: Wed Oct 28 14:09:19 PDT 2026 =====
+Student: Trapti Kulshrestha | SID4 4833 | HW8 Part 3 death
+2026-10-28 14:09:19
+topics ready (partitions): {'s4833_inbox': 1, 's4833_final': 1, 's4833_tasks': 2, 's4833_entity_responses': 1, 's4833_entity_requests': 1, 's4833_drafts': 1, 's4833_dead_letter': 1}
+
+--- Consumer killed mid-work - BEFORE the fix (on_receive) ---
+  $ python writer.py --instance A --group s4833_t3_death_before_1028140919 --offset-reset latest --llm stub --state-db /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/state/death_before_1028140919.db --commit-mode on_receive
+    | 14:09:19.905 [WRITER-A] Consumer is ready and listening... group=s4833_t3_death_before_1028140919 topic=s4833_tasks partitions=[0, 1] commit_mode=on_receive idempotent=True max_attempts=3 dead_letter=True key_mode=correlation
+14:09:19.916 [TEST] warm-up sent -> topic=s4833_tasks partition=1 offset=3 correlation_id=warmup-before-1028140919
+    | 14:09:19.916 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=3 correlation_id=warmup-before-1028140919
+    | 14:09:19.917 [WRITER-A] COMMITTED offset=4 partition=1 (before processing)
+    | 14:09:19.918 [WRITER-A] PROCESSING correlation_id=warmup-before-1028140919 attempt=1/3
+    | 14:09:19.921 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=4 correlation_id=warmup-before-1028140919
+14:09:19.975 [TEST] victim sent -> topic=s4833_tasks partition=1 offset=4 correlation_id=victim-before-1028140919
+    | 14:09:19.975 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=4 correlation_id=victim-before-1028140919
+    | 14:09:19.976 [WRITER-A] COMMITTED offset=5 partition=1 (before processing)
+    | 14:09:19.976 [WRITER-A] PROCESSING correlation_id=victim-before-1028140919 attempt=1/3
+14:09:21.039 [TEST] KILLING the Writer with SIGKILL while it is processing victim-before-1028140919; committed offsets at that moment: {0: None, 1: 5}
+14:09:22.256 [TEST] drafts produced before the restart: ['warmup-before-1028140919']
+14:09:22.256 [TEST] RESTARTING the Writer (same group)
+  $ python writer.py --instance A --group s4833_t3_death_before_1028140919 --offset-reset latest --llm stub --state-db /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/state/death_before_1028140919.db --commit-mode on_receive
+    | 14:09:25.985 [WRITER-A] Consumer is ready and listening... group=s4833_t3_death_before_1028140919 topic=s4833_tasks partitions=[0, 1] commit_mode=on_receive idempotent=True max_attempts=3 dead_letter=True key_mode=correlation
+14:09:41.098 [TEST] RESULT before: victim redelivered after restart=False, drafts now=['warmup-before-1028140919'], final committed offsets={0: None, 1: 5}
+    | 14:09:41.101 [WRITER-A] stopped (processed 0 messages)
+
+--- Consumer killed mid-work - AFTER the fix (after) ---
+  $ python writer.py --instance A --group s4833_t3_death_after_1028140919 --offset-reset latest --llm stub --state-db /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/state/death_after_1028140919.db --commit-mode after
+    | 14:09:41.439 [WRITER-A] Consumer is ready and listening... group=s4833_t3_death_after_1028140919 topic=s4833_tasks partitions=[0, 1] commit_mode=after idempotent=True max_attempts=3 dead_letter=True key_mode=correlation
+14:09:41.499 [TEST] warm-up sent -> topic=s4833_tasks partition=0 offset=2 correlation_id=warmup-after-1028140919
+    | 14:09:41.499 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=2 correlation_id=warmup-after-1028140919
+    | 14:09:41.499 [WRITER-A] PROCESSING correlation_id=warmup-after-1028140919 attempt=1/3
+    | 14:09:41.503 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=5 correlation_id=warmup-after-1028140919
+    | 14:09:41.504 [WRITER-A] COMMITTED offset=3 partition=0
+14:09:41.558 [TEST] victim sent -> topic=s4833_tasks partition=0 offset=3 correlation_id=victim-after-1028140919
+    | 14:09:41.558 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=3 correlation_id=victim-after-1028140919
+    | 14:09:41.558 [WRITER-A] PROCESSING correlation_id=victim-after-1028140919 attempt=1/3
+14:09:42.623 [TEST] KILLING the Writer with SIGKILL while it is processing victim-after-1028140919; committed offsets at that moment: {0: 3, 1: None}
+14:09:43.839 [TEST] drafts produced before the restart: ['warmup-after-1028140919']
+14:09:43.839 [TEST] RESTARTING the Writer (same group)
+  $ python writer.py --instance A --group s4833_t3_death_after_1028140919 --offset-reset latest --llm stub --state-db /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/state/death_after_1028140919.db --commit-mode after
+    | 14:09:47.515 [WRITER-A] Consumer is ready and listening... group=s4833_t3_death_after_1028140919 topic=s4833_tasks partitions=[0, 1] commit_mode=after idempotent=True max_attempts=3 dead_letter=True key_mode=correlation
+    | 14:09:47.516 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=3 correlation_id=victim-after-1028140919
+    | 14:09:47.517 [WRITER-A] PROCESSING correlation_id=victim-after-1028140919 attempt=1/3
+    | 14:09:55.525 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=6 correlation_id=victim-after-1028140919
+    | 14:09:55.529 [WRITER-A] COMMITTED offset=4 partition=0
+14:09:58.595 [TEST] RESULT after: victim redelivered after restart=True, drafts now=['warmup-after-1028140919', 'victim-after-1028140919'], final committed offsets={0: 4, 1: None}
+    | 14:09:58.598 [WRITER-A] stopped (processed 1 messages)
+
+saved reports/hw08/raw/part3_death.json
+===== HW8 PART 3 DEATH RUN END: Wed Oct 28 14:09:58 PDT 2026 =====
+===== HW8 PART 3 POISON RUN START: Wed Oct 28 14:10:20 PDT 2026 =====
+Student: Trapti Kulshrestha | SID4 4833 | HW8 Part 3 poison
+2026-10-28 14:10:20
+topics ready (partitions): {'s4833_inbox': 1, 's4833_final': 1, 's4833_tasks': 2, 's4833_entity_responses': 1, 's4833_entity_requests': 1, 's4833_drafts': 1, 's4833_dead_letter': 1}
+
+--- Poison message - BEFORE the fix ---
+  $ python writer.py --instance A --group s4833_t3_poison_before_1028141020 --offset-reset latest --llm stub --state-db /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/state/poison_before_1028141020.db --max-attempts 0 --no-dead-letter
+    | 14:10:20.842 [WRITER-A] Consumer is ready and listening... group=s4833_t3_poison_before_1028141020 topic=s4833_tasks partitions=[0, 1] commit_mode=after idempotent=True max_attempts=unbounded dead_letter=False key_mode=correlation
+    | 14:10:20.854 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=5 correlation_id=warmup-before-1028141020
+    | 14:10:20.854 [WRITER-A] PROCESSING correlation_id=warmup-before-1028141020 attempt=1/unbounded
+    | 14:10:20.858 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=7 correlation_id=warmup-before-1028141020
+    | 14:10:20.859 [WRITER-A] COMMITTED offset=6 partition=1
+14:10:20.911 [TEST] poison message sent -> topic=s4833_tasks partition=1 offset=6 correlation_id=poison-before-1028141020
+    | 14:10:20.912 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=6 correlation_id=poison-before-1028141020
+    | 14:10:20.912 [WRITER-A] PROCESSING correlation_id=poison-before-1028141020 attempt=1/unbounded
+    | 14:10:20.912 [WRITER-A] FAILED correlation_id=poison-before-1028141020 attempt=1/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:10:20.912 [WRITER-A] RETRY in 0.5s
+14:10:20.917 [TEST] good message sent behind it -> topic=s4833_tasks partition=1 offset=7 correlation_id=after-poison-before-1028141020
+    | 14:10:21.413 [WRITER-A] PROCESSING correlation_id=poison-before-1028141020 attempt=2/unbounded
+    | 14:10:21.413 [WRITER-A] FAILED correlation_id=poison-before-1028141020 attempt=2/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:10:21.413 [WRITER-A] RETRY in 1.0s
+    | 14:10:22.414 [WRITER-A] PROCESSING correlation_id=poison-before-1028141020 attempt=3/unbounded
+    | 14:10:22.415 [WRITER-A] FAILED correlation_id=poison-before-1028141020 attempt=3/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:10:22.415 [WRITER-A] RETRY in 1.0s
+    | 14:10:23.416 [WRITER-A] PROCESSING correlation_id=poison-before-1028141020 attempt=4/unbounded
+    | 14:10:23.416 [WRITER-A] FAILED correlation_id=poison-before-1028141020 attempt=4/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:10:23.416 [WRITER-A] RETRY in 1.0s
+    | 14:10:24.417 [WRITER-A] PROCESSING correlation_id=poison-before-1028141020 attempt=5/unbounded
+    | 14:10:24.418 [WRITER-A] FAILED correlation_id=poison-before-1028141020 attempt=5/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:10:24.418 [WRITER-A] RETRY in 1.0s
+    | 14:10:25.418 [WRITER-A] PROCESSING correlation_id=poison-before-1028141020 attempt=6/unbounded
+    | 14:10:25.418 [WRITER-A] FAILED correlation_id=poison-before-1028141020 attempt=6/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:10:25.418 [WRITER-A] RETRY in 1.0s
+    | 14:10:26.419 [WRITER-A] PROCESSING correlation_id=poison-before-1028141020 attempt=7/unbounded
+    | 14:10:26.420 [WRITER-A] FAILED correlation_id=poison-before-1028141020 attempt=7/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:10:26.420 [WRITER-A] RETRY in 1.0s
+    | 14:10:27.421 [WRITER-A] PROCESSING correlation_id=poison-before-1028141020 attempt=8/unbounded
+    | 14:10:27.421 [WRITER-A] FAILED correlation_id=poison-before-1028141020 attempt=8/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:10:27.421 [WRITER-A] RETRY in 1.0s
+    | 14:10:28.422 [WRITER-A] PROCESSING correlation_id=poison-before-1028141020 attempt=9/unbounded
+    | 14:10:28.422 [WRITER-A] FAILED correlation_id=poison-before-1028141020 attempt=9/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:10:28.422 [WRITER-A] RETRY in 1.0s
+    | 14:10:29.424 [WRITER-A] PROCESSING correlation_id=poison-before-1028141020 attempt=10/unbounded
+    | 14:10:29.424 [WRITER-A] FAILED correlation_id=poison-before-1028141020 attempt=10/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:10:29.424 [WRITER-A] RETRY in 1.0s
+    | 14:10:30.425 [WRITER-A] PROCESSING correlation_id=poison-before-1028141020 attempt=11/unbounded
+    | 14:10:30.425 [WRITER-A] FAILED correlation_id=poison-before-1028141020 attempt=11/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:10:30.425 [WRITER-A] RETRY in 1.0s
+    | 14:10:31.426 [WRITER-A] PROCESSING correlation_id=poison-before-1028141020 attempt=12/unbounded
+    | 14:10:31.427 [WRITER-A] FAILED correlation_id=poison-before-1028141020 attempt=12/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:10:31.427 [WRITER-A] RETRY in 1.0s
+    | 14:10:32.428 [WRITER-A] PROCESSING correlation_id=poison-before-1028141020 attempt=13/unbounded
+    | 14:10:32.428 [WRITER-A] FAILED correlation_id=poison-before-1028141020 attempt=13/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:10:32.428 [WRITER-A] RETRY in 1.0s
+    | 14:10:33.430 [WRITER-A] PROCESSING correlation_id=poison-before-1028141020 attempt=14/unbounded
+    | 14:10:33.430 [WRITER-A] FAILED correlation_id=poison-before-1028141020 attempt=14/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:10:33.430 [WRITER-A] RETRY in 1.0s
+    | 14:10:34.431 [WRITER-A] PROCESSING correlation_id=poison-before-1028141020 attempt=15/unbounded
+    | 14:10:34.431 [WRITER-A] FAILED correlation_id=poison-before-1028141020 attempt=15/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:10:34.431 [WRITER-A] RETRY in 1.0s
+    | 14:10:35.432 [WRITER-A] PROCESSING correlation_id=poison-before-1028141020 attempt=16/unbounded
+    | 14:10:35.432 [WRITER-A] FAILED correlation_id=poison-before-1028141020 attempt=16/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:10:35.432 [WRITER-A] RETRY in 1.0s
+    | 14:10:36.434 [WRITER-A] PROCESSING correlation_id=poison-before-1028141020 attempt=17/unbounded
+    | 14:10:36.434 [WRITER-A] FAILED correlation_id=poison-before-1028141020 attempt=17/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:10:36.434 [WRITER-A] RETRY in 1.0s
+    | 14:10:37.435 [WRITER-A] PROCESSING correlation_id=poison-before-1028141020 attempt=18/unbounded
+    | 14:10:37.435 [WRITER-A] FAILED correlation_id=poison-before-1028141020 attempt=18/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:10:37.435 [WRITER-A] RETRY in 1.0s
+14:10:37.954 [TEST] RESULT before: failed attempts=14, dead-letter messages=0, good message processed=False, committed offsets={0: None, 1: 6}
+    | 14:10:37.958 [WRITER-A] stopped (processed 1 messages)
+
+--- Poison message - AFTER the fix ---
+  $ python writer.py --instance A --group s4833_t3_poison_after_1028141020 --offset-reset latest --llm stub --state-db /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/state/poison_after_1028141020.db
+    | 14:10:38.306 [WRITER-A] Consumer is ready and listening... group=s4833_t3_poison_after_1028141020 topic=s4833_tasks partitions=[0, 1] commit_mode=after idempotent=True max_attempts=3 dead_letter=True key_mode=correlation
+    | 14:10:38.313 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=4 correlation_id=warmup-after-1028141020
+    | 14:10:38.313 [WRITER-A] PROCESSING correlation_id=warmup-after-1028141020 attempt=1/3
+    | 14:10:38.319 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=8 correlation_id=warmup-after-1028141020
+    | 14:10:38.320 [WRITER-A] COMMITTED offset=5 partition=0
+14:10:38.370 [TEST] poison message sent -> topic=s4833_tasks partition=0 offset=5 correlation_id=poison-after-1028141020
+    | 14:10:38.370 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=5 correlation_id=poison-after-1028141020
+    | 14:10:38.371 [WRITER-A] PROCESSING correlation_id=poison-after-1028141020 attempt=1/3
+    | 14:10:38.371 [WRITER-A] FAILED correlation_id=poison-after-1028141020 attempt=1/3 error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:10:38.371 [WRITER-A] RETRY in 0.5s
+14:10:38.375 [TEST] good message sent behind it -> topic=s4833_tasks partition=0 offset=6 correlation_id=after-poison-after-1028141020
+    | 14:10:38.872 [WRITER-A] PROCESSING correlation_id=poison-after-1028141020 attempt=2/3
+    | 14:10:38.872 [WRITER-A] FAILED correlation_id=poison-after-1028141020 attempt=2/3 error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:10:38.872 [WRITER-A] RETRY in 1.0s
+    | 14:10:39.873 [WRITER-A] PROCESSING correlation_id=poison-after-1028141020 attempt=3/3
+    | 14:10:39.874 [WRITER-A] FAILED correlation_id=poison-after-1028141020 attempt=3/3 error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:10:39.879 [WRITER-A] DEAD LETTER after 3 attempts -> topic=s4833_dead_letter partition=0 offset=1 correlation_id=poison-after-1028141020
+    | 14:10:39.880 [WRITER-A] DEAD LETTER MESSAGE {"correlation_id": "poison-after-1028141020", "failed_stage": "writer", "error": "ValueError: plan must be a non-empty list of non-empty strings", "attempts": 3, "source_topic": "s4833_tasks", "source_partition": 0, "source_offset": 5, "original": "{\"correlation_id\": \"poison-after-1028141020\", \"stage\": \"plan\", \"question\": \"failure test poison-after-1028141020\", \"plan\": 12345, \"test_run\": \"1028141020\"}", "failed_at": "2026-10-28T21:10:39+00:00"}
+    | 14:10:39.882 [WRITER-A] COMMITTED offset=6 partition=0 (after dead-lettering)
+    | 14:10:39.986 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=6 correlation_id=after-poison-after-1028141020
+    | 14:10:39.987 [WRITER-A] PROCESSING correlation_id=after-poison-after-1028141020 attempt=1/3
+    | 14:10:39.989 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=9 correlation_id=after-poison-after-1028141020
+    | 14:10:39.993 [WRITER-A] COMMITTED offset=7 partition=0
+14:10:45.040 [TEST] RESULT after: failed attempts=3, dead-letter messages=1, good message processed=True, committed offsets={0: 7, 1: None}
+    | 14:10:45.044 [WRITER-A] stopped (processed 2 messages)
+
+saved reports/hw08/raw/part3_poison.json
+===== HW8 PART 3 POISON RUN END: Wed Oct 28 14:10:45 PDT 2026 =====
+===== HW8 PART 3 ORDERING RUN START: Wed Oct 28 14:11:22 PDT 2026 =====
+Student: Trapti Kulshrestha | SID4 4833 | HW8 Part 3 ordering
+2026-10-28 14:11:22
+topics ready (partitions): {'s4833_inbox': 1, 's4833_final': 1, 's4833_tasks': 2, 's4833_entity_responses': 1, 's4833_entity_requests': 1, 's4833_drafts': 1, 's4833_dead_letter': 1}
+
+--- Ordering - WITHOUT a message key ---
+  $ python writer.py --instance A --group s4833_t3_order_unkeyed_1028141122 --offset-reset latest --llm stub --state-db /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/state/order_unkeyed_1028141122.db --record-path /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/raw/part3_ordering_unkeyed_processed.jsonl
+  $ python writer.py --instance B --group s4833_t3_order_unkeyed_1028141122 --offset-reset latest --llm stub --state-db /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/state/order_unkeyed_1028141122.db --record-path /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/raw/part3_ordering_unkeyed_processed.jsonl
+    | 14:11:22.955 [WRITER-B] Consumer is ready and listening... group=s4833_t3_order_unkeyed_1028141122 topic=s4833_tasks partitions=[0, 1] commit_mode=after idempotent=True max_attempts=3 dead_letter=True key_mode=correlation
+    | Heartbeat failed for group s4833_t3_order_unkeyed_1028141122 because it is rebalancing
+    | 14:11:24.966 [WRITER-A] Consumer is ready and listening... group=s4833_t3_order_unkeyed_1028141122 topic=s4833_tasks partitions=[0] commit_mode=after idempotent=True max_attempts=3 dead_letter=True key_mode=correlation
+    | 14:11:25.958 [WRITER-B] ASSIGNMENT CHANGED group=s4833_t3_order_unkeyed_1028141122 topic=s4833_tasks partitions=[1] commit_mode=after idempotent=True max_attempts=3 dead_letter=True key_mode=correlation
+14:11:25.999 [TEST] Writer-A has partitions [0], Writer-B has partitions [1] (same group s4833_t3_order_unkeyed_1028141122)
+14:11:26.010 [TEST] SENT #00 entity=CT-2026-110 seq=1 key=None -> partition=0 offset=7
+    | 14:11:26.010 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=7 correlation_id=ord-ord-unkeyed-1028141122-00
+    | 14:11:26.010 [WRITER-A] PROCESSING correlation_id=ord-ord-unkeyed-1028141122-00 attempt=1/3
+14:11:26.017 [TEST] SENT #01 entity=CT-2026-106 seq=1 key=None -> partition=1 offset=8
+    | 14:11:26.017 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=8 correlation_id=ord-ord-unkeyed-1028141122-01
+    | 14:11:26.017 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141122-01 attempt=1/3
+14:11:26.023 [TEST] SENT #02 entity=CT-2026-108 seq=1 key=None -> partition=0 offset=8
+14:11:26.028 [TEST] SENT #03 entity=CT-2026-108 seq=2 key=None -> partition=0 offset=9
+14:11:26.034 [TEST] SENT #04 entity=CT-2026-109 seq=1 key=None -> partition=0 offset=10
+14:11:26.039 [TEST] SENT #05 entity=CT-2026-107 seq=1 key=None -> partition=1 offset=9
+14:11:26.045 [TEST] SENT #06 entity=CT-2026-110 seq=2 key=None -> partition=1 offset=10
+14:11:26.050 [TEST] SENT #07 entity=CT-2026-107 seq=2 key=None -> partition=1 offset=11
+14:11:26.059 [TEST] SENT #08 entity=CT-2026-107 seq=3 key=None -> partition=1 offset=12
+14:11:26.065 [TEST] SENT #09 entity=CT-2026-110 seq=3 key=None -> partition=1 offset=13
+14:11:26.070 [TEST] SENT #10 entity=CT-2026-108 seq=3 key=None -> partition=1 offset=14
+14:11:26.076 [TEST] SENT #11 entity=CT-2026-109 seq=2 key=None -> partition=1 offset=15
+14:11:26.081 [TEST] SENT #12 entity=CT-2026-107 seq=4 key=None -> partition=0 offset=11
+14:11:26.087 [TEST] SENT #13 entity=CT-2026-110 seq=4 key=None -> partition=1 offset=16
+14:11:26.092 [TEST] SENT #14 entity=CT-2026-106 seq=2 key=None -> partition=0 offset=12
+14:11:26.104 [TEST] SENT #15 entity=CT-2026-109 seq=3 key=None -> partition=1 offset=17
+14:11:26.115 [TEST] SENT #16 entity=CT-2026-106 seq=3 key=None -> partition=0 offset=13
+14:11:26.120 [TEST] SENT #17 entity=CT-2026-108 seq=4 key=None -> partition=0 offset=14
+14:11:26.126 [TEST] SENT #18 entity=CT-2026-106 seq=4 key=None -> partition=1 offset=18
+14:11:26.132 [TEST] SENT #19 entity=CT-2026-109 seq=4 key=None -> partition=1 offset=19
+    | 14:11:26.229 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=10 correlation_id=ord-ord-unkeyed-1028141122-01
+    | 14:11:26.231 [WRITER-B] COMMITTED offset=9 partition=1
+    | 14:11:26.232 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=9 correlation_id=ord-ord-unkeyed-1028141122-05
+    | 14:11:26.232 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141122-05 attempt=1/3
+    | 14:11:26.380 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=11 correlation_id=ord-ord-unkeyed-1028141122-05
+    | 14:11:26.383 [WRITER-B] COMMITTED offset=10 partition=1
+    | 14:11:26.383 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=10 correlation_id=ord-ord-unkeyed-1028141122-06
+    | 14:11:26.384 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141122-06 attempt=1/3
+    | 14:11:26.400 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=12 correlation_id=ord-ord-unkeyed-1028141122-00
+    | 14:11:26.404 [WRITER-A] COMMITTED offset=8 partition=0
+    | 14:11:26.406 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=8 correlation_id=ord-ord-unkeyed-1028141122-02
+    | 14:11:26.406 [WRITER-A] PROCESSING correlation_id=ord-ord-unkeyed-1028141122-02 attempt=1/3
+    | 14:11:26.534 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=13 correlation_id=ord-ord-unkeyed-1028141122-06
+    | 14:11:26.538 [WRITER-B] COMMITTED offset=11 partition=1
+    | 14:11:26.538 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=11 correlation_id=ord-ord-unkeyed-1028141122-07
+    | 14:11:26.538 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141122-07 attempt=1/3
+    | 14:11:26.545 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=14 correlation_id=ord-ord-unkeyed-1028141122-02
+    | 14:11:26.548 [WRITER-A] COMMITTED offset=9 partition=0
+    | 14:11:26.548 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=9 correlation_id=ord-ord-unkeyed-1028141122-03
+    | 14:11:26.549 [WRITER-A] PROCESSING correlation_id=ord-ord-unkeyed-1028141122-03 attempt=1/3
+    | 14:11:26.723 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=15 correlation_id=ord-ord-unkeyed-1028141122-07
+    | 14:11:26.726 [WRITER-B] COMMITTED offset=12 partition=1
+    | 14:11:26.726 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=12 correlation_id=ord-ord-unkeyed-1028141122-08
+    | 14:11:26.726 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141122-08 attempt=1/3
+    | 14:11:26.903 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=16 correlation_id=ord-ord-unkeyed-1028141122-03
+    | 14:11:26.905 [WRITER-A] COMMITTED offset=10 partition=0
+    | 14:11:26.905 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=10 correlation_id=ord-ord-unkeyed-1028141122-04
+    | 14:11:26.905 [WRITER-A] PROCESSING correlation_id=ord-ord-unkeyed-1028141122-04 attempt=1/3
+    | 14:11:27.132 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=17 correlation_id=ord-ord-unkeyed-1028141122-08
+    | 14:11:27.136 [WRITER-B] COMMITTED offset=13 partition=1
+    | 14:11:27.136 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=13 correlation_id=ord-ord-unkeyed-1028141122-09
+    | 14:11:27.136 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141122-09 attempt=1/3
+    | 14:11:27.274 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=18 correlation_id=ord-ord-unkeyed-1028141122-04
+    | 14:11:27.278 [WRITER-A] COMMITTED offset=11 partition=0
+    | 14:11:27.278 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=11 correlation_id=ord-ord-unkeyed-1028141122-12
+    | 14:11:27.278 [WRITER-A] PROCESSING correlation_id=ord-ord-unkeyed-1028141122-12 attempt=1/3
+    | 14:11:27.312 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=19 correlation_id=ord-ord-unkeyed-1028141122-09
+    | 14:11:27.315 [WRITER-B] COMMITTED offset=14 partition=1
+    | 14:11:27.315 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=14 correlation_id=ord-ord-unkeyed-1028141122-10
+    | 14:11:27.315 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141122-10 attempt=1/3
+    | 14:11:27.572 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=20 correlation_id=ord-ord-unkeyed-1028141122-12
+    | 14:11:27.576 [WRITER-A] COMMITTED offset=12 partition=0
+    | 14:11:27.576 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=12 correlation_id=ord-ord-unkeyed-1028141122-14
+    | 14:11:27.576 [WRITER-A] PROCESSING correlation_id=ord-ord-unkeyed-1028141122-14 attempt=1/3
+    | 14:11:27.674 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=21 correlation_id=ord-ord-unkeyed-1028141122-10
+    | 14:11:27.678 [WRITER-B] COMMITTED offset=15 partition=1
+    | 14:11:27.678 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=15 correlation_id=ord-ord-unkeyed-1028141122-11
+    | 14:11:27.678 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141122-11 attempt=1/3
+    | 14:11:27.876 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=22 correlation_id=ord-ord-unkeyed-1028141122-14
+    | 14:11:27.880 [WRITER-A] COMMITTED offset=13 partition=0
+    | 14:11:27.880 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=13 correlation_id=ord-ord-unkeyed-1028141122-16
+    | 14:11:27.880 [WRITER-A] PROCESSING correlation_id=ord-ord-unkeyed-1028141122-16 attempt=1/3
+    | 14:11:28.027 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=23 correlation_id=ord-ord-unkeyed-1028141122-11
+    | 14:11:28.030 [WRITER-B] COMMITTED offset=16 partition=1
+    | 14:11:28.030 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=16 correlation_id=ord-ord-unkeyed-1028141122-13
+    | 14:11:28.030 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141122-13 attempt=1/3
+    | 14:11:28.094 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=24 correlation_id=ord-ord-unkeyed-1028141122-16
+    | 14:11:28.097 [WRITER-A] COMMITTED offset=14 partition=0
+    | 14:11:28.097 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=14 correlation_id=ord-ord-unkeyed-1028141122-17
+    | 14:11:28.097 [WRITER-A] PROCESSING correlation_id=ord-ord-unkeyed-1028141122-17 attempt=1/3
+    | 14:11:28.219 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=25 correlation_id=ord-ord-unkeyed-1028141122-13
+    | 14:11:28.222 [WRITER-B] COMMITTED offset=17 partition=1
+    | 14:11:28.222 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=17 correlation_id=ord-ord-unkeyed-1028141122-15
+    | 14:11:28.222 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141122-15 attempt=1/3
+    | 14:11:28.281 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=26 correlation_id=ord-ord-unkeyed-1028141122-17
+    | 14:11:28.284 [WRITER-A] COMMITTED offset=15 partition=0
+    | 14:11:28.375 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=27 correlation_id=ord-ord-unkeyed-1028141122-15
+    | 14:11:28.379 [WRITER-B] COMMITTED offset=18 partition=1
+    | 14:11:28.379 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=18 correlation_id=ord-ord-unkeyed-1028141122-18
+    | 14:11:28.379 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141122-18 attempt=1/3
+    | 14:11:28.506 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=28 correlation_id=ord-ord-unkeyed-1028141122-18
+    | 14:11:28.509 [WRITER-B] COMMITTED offset=19 partition=1
+    | 14:11:28.509 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=19 correlation_id=ord-ord-unkeyed-1028141122-19
+    | 14:11:28.509 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141122-19 attempt=1/3
+    | 14:11:28.890 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=29 correlation_id=ord-ord-unkeyed-1028141122-19
+    | 14:11:28.892 [WRITER-B] COMMITTED offset=20 partition=1
+    | 14:11:29.143 [WRITER-A] stopped (processed 8 messages)
+    | 14:11:29.363 [WRITER-B] stopped (processed 12 messages)
+
+  Processing order (unkeyed): finish order -> writer/partition entity#seq
+    1. writer B partition 1 CT-2026-106 #1
+    2. writer B partition 1 CT-2026-107 #1
+    3. writer A partition 0 CT-2026-110 #1
+    4. writer B partition 1 CT-2026-110 #2
+    5. writer A partition 0 CT-2026-108 #1
+    6. writer B partition 1 CT-2026-107 #2
+    7. writer A partition 0 CT-2026-108 #2
+    8. writer B partition 1 CT-2026-107 #3
+    9. writer A partition 0 CT-2026-109 #1
+   10. writer B partition 1 CT-2026-110 #3
+   11. writer A partition 0 CT-2026-107 #4
+   12. writer B partition 1 CT-2026-108 #3
+   13. writer A partition 0 CT-2026-106 #2
+   14. writer B partition 1 CT-2026-109 #2
+   15. writer A partition 0 CT-2026-106 #3
+   16. writer B partition 1 CT-2026-110 #4
+   17. writer A partition 0 CT-2026-108 #4
+   18. writer B partition 1 CT-2026-109 #3
+   19. writer B partition 1 CT-2026-106 #4
+   20. writer B partition 1 CT-2026-109 #4
+
+  Per-entity result (unkeyed):
+   CT-2026-106: partitions [0, 1] writers ['A', 'B'] processed seq [1, 2, 3, 4] -> in order
+   CT-2026-107: partitions [0, 1] writers ['A', 'B'] processed seq [1, 2, 3, 4] -> in order
+   CT-2026-108: partitions [0, 1] writers ['A', 'B'] processed seq [1, 2, 3, 4] -> in order
+   CT-2026-109: partitions [0, 1] writers ['A', 'B'] processed seq [1, 2, 3, 4] -> in order
+   CT-2026-110: partitions [0, 1] writers ['A', 'B'] processed seq [1, 2, 3, 4] -> in order
+  TOTAL (unkeyed): entities out of order=0, entities spread over both partitions=5, order inversions=0
+
+--- Ordering - WITH a message key ---
+  $ python writer.py --instance A --group s4833_t3_order_keyed_1028141122 --offset-reset latest --llm stub --state-db /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/state/order_keyed_1028141122.db --record-path /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/raw/part3_ordering_keyed_processed.jsonl
+  $ python writer.py --instance B --group s4833_t3_order_keyed_1028141122 --offset-reset latest --llm stub --state-db /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/state/order_keyed_1028141122.db --record-path /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/raw/part3_ordering_keyed_processed.jsonl
+    | 14:11:29.692 [WRITER-B] Consumer is ready and listening... group=s4833_t3_order_keyed_1028141122 topic=s4833_tasks partitions=[1] commit_mode=after idempotent=True max_attempts=3 dead_letter=True key_mode=correlation
+    | 14:11:29.692 [WRITER-A] Consumer is ready and listening... group=s4833_t3_order_keyed_1028141122 topic=s4833_tasks partitions=[0] commit_mode=after idempotent=True max_attempts=3 dead_letter=True key_mode=correlation
+14:11:29.694 [TEST] Writer-A has partitions [0], Writer-B has partitions [1] (same group s4833_t3_order_keyed_1028141122)
+14:11:29.699 [TEST] SENT #00 entity=CT-2026-110 seq=1 key=CT-2026-110 -> partition=0 offset=15
+    | 14:11:29.699 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=15 correlation_id=ord-ord-keyed-1028141122-00
+    | 14:11:29.699 [WRITER-A] PROCESSING correlation_id=ord-ord-keyed-1028141122-00 attempt=1/3
+14:11:29.704 [TEST] SENT #01 entity=CT-2026-106 seq=1 key=CT-2026-106 -> partition=0 offset=16
+14:11:29.710 [TEST] SENT #02 entity=CT-2026-108 seq=1 key=CT-2026-108 -> partition=1 offset=20
+    | 14:11:29.710 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=20 correlation_id=ord-ord-keyed-1028141122-02
+    | 14:11:29.710 [WRITER-B] PROCESSING correlation_id=ord-ord-keyed-1028141122-02 attempt=1/3
+14:11:29.715 [TEST] SENT #03 entity=CT-2026-108 seq=2 key=CT-2026-108 -> partition=1 offset=21
+14:11:29.720 [TEST] SENT #04 entity=CT-2026-109 seq=1 key=CT-2026-109 -> partition=1 offset=22
+14:11:29.725 [TEST] SENT #05 entity=CT-2026-107 seq=1 key=CT-2026-107 -> partition=1 offset=23
+14:11:29.730 [TEST] SENT #06 entity=CT-2026-110 seq=2 key=CT-2026-110 -> partition=0 offset=17
+14:11:29.735 [TEST] SENT #07 entity=CT-2026-107 seq=2 key=CT-2026-107 -> partition=1 offset=24
+14:11:29.741 [TEST] SENT #08 entity=CT-2026-107 seq=3 key=CT-2026-107 -> partition=1 offset=25
+14:11:29.746 [TEST] SENT #09 entity=CT-2026-110 seq=3 key=CT-2026-110 -> partition=0 offset=18
+14:11:29.751 [TEST] SENT #10 entity=CT-2026-108 seq=3 key=CT-2026-108 -> partition=1 offset=26
+14:11:29.756 [TEST] SENT #11 entity=CT-2026-109 seq=2 key=CT-2026-109 -> partition=1 offset=27
+14:11:29.762 [TEST] SENT #12 entity=CT-2026-107 seq=4 key=CT-2026-107 -> partition=1 offset=28
+14:11:29.767 [TEST] SENT #13 entity=CT-2026-110 seq=4 key=CT-2026-110 -> partition=0 offset=19
+14:11:29.771 [TEST] SENT #14 entity=CT-2026-106 seq=2 key=CT-2026-106 -> partition=0 offset=20
+14:11:29.777 [TEST] SENT #15 entity=CT-2026-109 seq=3 key=CT-2026-109 -> partition=1 offset=29
+14:11:29.782 [TEST] SENT #16 entity=CT-2026-106 seq=3 key=CT-2026-106 -> partition=0 offset=21
+14:11:29.787 [TEST] SENT #17 entity=CT-2026-108 seq=4 key=CT-2026-108 -> partition=1 offset=30
+14:11:29.793 [TEST] SENT #18 entity=CT-2026-106 seq=4 key=CT-2026-106 -> partition=0 offset=22
+14:11:29.802 [TEST] SENT #19 entity=CT-2026-109 seq=4 key=CT-2026-109 -> partition=1 offset=31
+    | 14:11:29.852 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=30 correlation_id=ord-ord-keyed-1028141122-02
+    | 14:11:29.853 [WRITER-B] COMMITTED offset=21 partition=1
+    | 14:11:29.855 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=21 correlation_id=ord-ord-keyed-1028141122-03
+    | 14:11:29.855 [WRITER-B] PROCESSING correlation_id=ord-ord-keyed-1028141122-03 attempt=1/3
+    | 14:11:30.091 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=31 correlation_id=ord-ord-keyed-1028141122-00
+    | 14:11:30.094 [WRITER-A] COMMITTED offset=16 partition=0
+    | 14:11:30.096 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=16 correlation_id=ord-ord-keyed-1028141122-01
+    | 14:11:30.096 [WRITER-A] PROCESSING correlation_id=ord-ord-keyed-1028141122-01 attempt=1/3
+    | 14:11:30.210 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=32 correlation_id=ord-ord-keyed-1028141122-03
+    | 14:11:30.214 [WRITER-B] COMMITTED offset=22 partition=1
+    | 14:11:30.214 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=22 correlation_id=ord-ord-keyed-1028141122-04
+    | 14:11:30.214 [WRITER-B] PROCESSING correlation_id=ord-ord-keyed-1028141122-04 attempt=1/3
+    | 14:11:30.305 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=33 correlation_id=ord-ord-keyed-1028141122-01
+    | 14:11:30.308 [WRITER-A] COMMITTED offset=17 partition=0
+    | 14:11:30.309 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=17 correlation_id=ord-ord-keyed-1028141122-06
+    | 14:11:30.309 [WRITER-A] PROCESSING correlation_id=ord-ord-keyed-1028141122-06 attempt=1/3
+    | 14:11:30.463 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=34 correlation_id=ord-ord-keyed-1028141122-06
+    | 14:11:30.466 [WRITER-A] COMMITTED offset=18 partition=0
+    | 14:11:30.466 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=18 correlation_id=ord-ord-keyed-1028141122-09
+    | 14:11:30.466 [WRITER-A] PROCESSING correlation_id=ord-ord-keyed-1028141122-09 attempt=1/3
+    | 14:11:30.585 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=35 correlation_id=ord-ord-keyed-1028141122-04
+    | 14:11:30.589 [WRITER-B] COMMITTED offset=23 partition=1
+    | 14:11:30.589 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=23 correlation_id=ord-ord-keyed-1028141122-05
+    | 14:11:30.589 [WRITER-B] PROCESSING correlation_id=ord-ord-keyed-1028141122-05 attempt=1/3
+    | 14:11:30.645 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=36 correlation_id=ord-ord-keyed-1028141122-09
+    | 14:11:30.648 [WRITER-A] COMMITTED offset=19 partition=0
+    | 14:11:30.648 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=19 correlation_id=ord-ord-keyed-1028141122-13
+    | 14:11:30.648 [WRITER-A] PROCESSING correlation_id=ord-ord-keyed-1028141122-13 attempt=1/3
+    | 14:11:30.740 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=37 correlation_id=ord-ord-keyed-1028141122-05
+    | 14:11:30.744 [WRITER-B] COMMITTED offset=24 partition=1
+    | 14:11:30.744 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=24 correlation_id=ord-ord-keyed-1028141122-07
+    | 14:11:30.744 [WRITER-B] PROCESSING correlation_id=ord-ord-keyed-1028141122-07 attempt=1/3
+    | 14:11:30.834 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=38 correlation_id=ord-ord-keyed-1028141122-13
+    | 14:11:30.837 [WRITER-A] COMMITTED offset=20 partition=0
+    | 14:11:30.837 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=20 correlation_id=ord-ord-keyed-1028141122-14
+    | 14:11:30.837 [WRITER-A] PROCESSING correlation_id=ord-ord-keyed-1028141122-14 attempt=1/3
+    | 14:11:30.926 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=39 correlation_id=ord-ord-keyed-1028141122-07
+    | 14:11:30.929 [WRITER-B] COMMITTED offset=25 partition=1
+    | 14:11:30.929 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=25 correlation_id=ord-ord-keyed-1028141122-08
+    | 14:11:30.929 [WRITER-B] PROCESSING correlation_id=ord-ord-keyed-1028141122-08 attempt=1/3
+    | 14:11:31.141 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=40 correlation_id=ord-ord-keyed-1028141122-14
+    | 14:11:31.144 [WRITER-A] COMMITTED offset=21 partition=0
+    | 14:11:31.145 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=21 correlation_id=ord-ord-keyed-1028141122-16
+    | 14:11:31.145 [WRITER-A] PROCESSING correlation_id=ord-ord-keyed-1028141122-16 attempt=1/3
+    | 14:11:31.334 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=41 correlation_id=ord-ord-keyed-1028141122-08
+    | 14:11:31.337 [WRITER-B] COMMITTED offset=26 partition=1
+    | 14:11:31.337 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=26 correlation_id=ord-ord-keyed-1028141122-10
+    | 14:11:31.337 [WRITER-B] PROCESSING correlation_id=ord-ord-keyed-1028141122-10 attempt=1/3
+    | 14:11:31.360 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=42 correlation_id=ord-ord-keyed-1028141122-16
+    | 14:11:31.362 [WRITER-A] COMMITTED offset=22 partition=0
+    | 14:11:31.362 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=22 correlation_id=ord-ord-keyed-1028141122-18
+    | 14:11:31.363 [WRITER-A] PROCESSING correlation_id=ord-ord-keyed-1028141122-18 attempt=1/3
+    | 14:11:31.490 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=43 correlation_id=ord-ord-keyed-1028141122-18
+    | 14:11:31.493 [WRITER-A] COMMITTED offset=23 partition=0
+    | 14:11:31.695 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=44 correlation_id=ord-ord-keyed-1028141122-10
+    | 14:11:31.698 [WRITER-B] COMMITTED offset=27 partition=1
+    | 14:11:31.698 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=27 correlation_id=ord-ord-keyed-1028141122-11
+    | 14:11:31.698 [WRITER-B] PROCESSING correlation_id=ord-ord-keyed-1028141122-11 attempt=1/3
+    | 14:11:32.045 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=45 correlation_id=ord-ord-keyed-1028141122-11
+    | 14:11:32.048 [WRITER-B] COMMITTED offset=28 partition=1
+    | 14:11:32.048 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=28 correlation_id=ord-ord-keyed-1028141122-12
+    | 14:11:32.048 [WRITER-B] PROCESSING correlation_id=ord-ord-keyed-1028141122-12 attempt=1/3
+    | 14:11:32.339 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=46 correlation_id=ord-ord-keyed-1028141122-12
+    | 14:11:32.342 [WRITER-B] COMMITTED offset=29 partition=1
+    | 14:11:32.343 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=29 correlation_id=ord-ord-keyed-1028141122-15
+    | 14:11:32.343 [WRITER-B] PROCESSING correlation_id=ord-ord-keyed-1028141122-15 attempt=1/3
+    | 14:11:32.501 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=47 correlation_id=ord-ord-keyed-1028141122-15
+    | 14:11:32.505 [WRITER-B] COMMITTED offset=30 partition=1
+    | 14:11:32.505 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=30 correlation_id=ord-ord-keyed-1028141122-17
+    | 14:11:32.505 [WRITER-B] PROCESSING correlation_id=ord-ord-keyed-1028141122-17 attempt=1/3
+    | 14:11:32.690 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=48 correlation_id=ord-ord-keyed-1028141122-17
+    | 14:11:32.694 [WRITER-B] COMMITTED offset=31 partition=1
+    | 14:11:32.695 [WRITER-B] RECEIVED topic=s4833_tasks partition=1 offset=31 correlation_id=ord-ord-keyed-1028141122-19
+    | 14:11:32.695 [WRITER-B] PROCESSING correlation_id=ord-ord-keyed-1028141122-19 attempt=1/3
+    | 14:11:33.080 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=49 correlation_id=ord-ord-keyed-1028141122-19
+    | 14:11:33.083 [WRITER-B] COMMITTED offset=32 partition=1
+    | 14:11:33.318 [WRITER-A] stopped (processed 8 messages)
+    | 14:11:33.549 [WRITER-B] stopped (processed 12 messages)
+
+  Processing order (keyed): finish order -> writer/partition entity#seq
+    1. writer B partition 1 CT-2026-108 #1
+    2. writer A partition 0 CT-2026-110 #1
+    3. writer B partition 1 CT-2026-108 #2
+    4. writer A partition 0 CT-2026-106 #1
+    5. writer A partition 0 CT-2026-110 #2
+    6. writer B partition 1 CT-2026-109 #1
+    7. writer A partition 0 CT-2026-110 #3
+    8. writer B partition 1 CT-2026-107 #1
+    9. writer A partition 0 CT-2026-110 #4
+   10. writer B partition 1 CT-2026-107 #2
+   11. writer A partition 0 CT-2026-106 #2
+   12. writer B partition 1 CT-2026-107 #3
+   13. writer A partition 0 CT-2026-106 #3
+   14. writer A partition 0 CT-2026-106 #4
+   15. writer B partition 1 CT-2026-108 #3
+   16. writer B partition 1 CT-2026-109 #2
+   17. writer B partition 1 CT-2026-107 #4
+   18. writer B partition 1 CT-2026-109 #3
+   19. writer B partition 1 CT-2026-108 #4
+   20. writer B partition 1 CT-2026-109 #4
+
+  Per-entity result (keyed):
+   CT-2026-106: partitions [0] writers ['A'] processed seq [1, 2, 3, 4] -> in order
+   CT-2026-107: partitions [1] writers ['B'] processed seq [1, 2, 3, 4] -> in order
+   CT-2026-108: partitions [1] writers ['B'] processed seq [1, 2, 3, 4] -> in order
+   CT-2026-109: partitions [1] writers ['B'] processed seq [1, 2, 3, 4] -> in order
+   CT-2026-110: partitions [0] writers ['A'] processed seq [1, 2, 3, 4] -> in order
+  TOTAL (keyed): entities out of order=0, entities spread over both partitions=0, order inversions=0
+
+saved reports/hw08/raw/part3_ordering.json
+===== HW8 PART 3 ORDERING RUN END: Wed Oct 28 14:11:33 PDT 2026 =====
+===== HW8 PART 3 POISON RUN START: Wed Oct 28 14:16:21 PDT 2026 =====
+Student: Trapti Kulshrestha | SID4 4833 | HW8 Part 3 poison
+2026-10-28 14:16:21
+topics ready (partitions): {'s4833_inbox': 1, 's4833_final': 1, 's4833_tasks': 2, 's4833_entity_responses': 1, 's4833_entity_requests': 1, 's4833_drafts': 1, 's4833_dead_letter': 1}
+
+--- Poison message - BEFORE the fix ---
+  $ python writer.py --instance A --group s4833_t3_poison_before_1028141621 --offset-reset latest --llm stub --state-db /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/state/poison_before_1028141621.db --max-attempts 0 --no-dead-letter
+    | 14:16:21.462 [WRITER-A] Consumer is ready and listening... group=s4833_t3_poison_before_1028141621 topic=s4833_tasks partitions=[0, 1] commit_mode=after idempotent=True max_attempts=unbounded dead_letter=False key_mode=correlation
+    | 14:16:21.469 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=32 correlation_id=warmup-before-1028141621
+    | 14:16:21.469 [WRITER-A] PROCESSING correlation_id=warmup-before-1028141621 attempt=1/unbounded
+    | 14:16:21.472 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=50 correlation_id=warmup-before-1028141621
+    | 14:16:21.474 [WRITER-A] COMMITTED offset=33 partition=1
+14:16:21.527 [TEST] poison message sent -> topic=s4833_tasks partition=1 offset=33 correlation_id=poison-before-1028141621
+    | 14:16:21.527 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=33 correlation_id=poison-before-1028141621
+    | 14:16:21.527 [WRITER-A] PROCESSING correlation_id=poison-before-1028141621 attempt=1/unbounded
+    | 14:16:21.527 [WRITER-A] FAILED correlation_id=poison-before-1028141621 attempt=1/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:16:21.527 [WRITER-A] RETRY in 0.5s
+14:16:21.532 [TEST] good message sent behind it -> topic=s4833_tasks partition=1 offset=34 correlation_id=after-poison-before-1028141621
+    | 14:16:22.028 [WRITER-A] PROCESSING correlation_id=poison-before-1028141621 attempt=2/unbounded
+    | 14:16:22.028 [WRITER-A] FAILED correlation_id=poison-before-1028141621 attempt=2/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:16:22.028 [WRITER-A] RETRY in 1.0s
+    | 14:16:23.029 [WRITER-A] PROCESSING correlation_id=poison-before-1028141621 attempt=3/unbounded
+    | 14:16:23.030 [WRITER-A] FAILED correlation_id=poison-before-1028141621 attempt=3/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:16:23.030 [WRITER-A] RETRY in 1.0s
+    | 14:16:24.030 [WRITER-A] PROCESSING correlation_id=poison-before-1028141621 attempt=4/unbounded
+    | 14:16:24.031 [WRITER-A] FAILED correlation_id=poison-before-1028141621 attempt=4/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:16:24.031 [WRITER-A] RETRY in 1.0s
+    | 14:16:25.032 [WRITER-A] PROCESSING correlation_id=poison-before-1028141621 attempt=5/unbounded
+    | 14:16:25.032 [WRITER-A] FAILED correlation_id=poison-before-1028141621 attempt=5/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:16:25.032 [WRITER-A] RETRY in 1.0s
+    | 14:16:26.033 [WRITER-A] PROCESSING correlation_id=poison-before-1028141621 attempt=6/unbounded
+    | 14:16:26.034 [WRITER-A] FAILED correlation_id=poison-before-1028141621 attempt=6/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:16:26.034 [WRITER-A] RETRY in 1.0s
+    | 14:16:27.035 [WRITER-A] PROCESSING correlation_id=poison-before-1028141621 attempt=7/unbounded
+    | 14:16:27.035 [WRITER-A] FAILED correlation_id=poison-before-1028141621 attempt=7/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:16:27.035 [WRITER-A] RETRY in 1.0s
+    | 14:16:28.036 [WRITER-A] PROCESSING correlation_id=poison-before-1028141621 attempt=8/unbounded
+    | 14:16:28.036 [WRITER-A] FAILED correlation_id=poison-before-1028141621 attempt=8/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:16:28.036 [WRITER-A] RETRY in 1.0s
+    | 14:16:29.038 [WRITER-A] PROCESSING correlation_id=poison-before-1028141621 attempt=9/unbounded
+    | 14:16:29.038 [WRITER-A] FAILED correlation_id=poison-before-1028141621 attempt=9/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:16:29.038 [WRITER-A] RETRY in 1.0s
+    | 14:16:30.039 [WRITER-A] PROCESSING correlation_id=poison-before-1028141621 attempt=10/unbounded
+    | 14:16:30.039 [WRITER-A] FAILED correlation_id=poison-before-1028141621 attempt=10/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:16:30.039 [WRITER-A] RETRY in 1.0s
+    | 14:16:31.041 [WRITER-A] PROCESSING correlation_id=poison-before-1028141621 attempt=11/unbounded
+    | 14:16:31.041 [WRITER-A] FAILED correlation_id=poison-before-1028141621 attempt=11/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:16:31.041 [WRITER-A] RETRY in 1.0s
+    | 14:16:32.042 [WRITER-A] PROCESSING correlation_id=poison-before-1028141621 attempt=12/unbounded
+    | 14:16:32.042 [WRITER-A] FAILED correlation_id=poison-before-1028141621 attempt=12/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:16:32.042 [WRITER-A] RETRY in 1.0s
+    | 14:16:33.043 [WRITER-A] PROCESSING correlation_id=poison-before-1028141621 attempt=13/unbounded
+    | 14:16:33.043 [WRITER-A] FAILED correlation_id=poison-before-1028141621 attempt=13/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:16:33.043 [WRITER-A] RETRY in 1.0s
+    | 14:16:34.045 [WRITER-A] PROCESSING correlation_id=poison-before-1028141621 attempt=14/unbounded
+    | 14:16:34.045 [WRITER-A] FAILED correlation_id=poison-before-1028141621 attempt=14/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:16:34.045 [WRITER-A] RETRY in 1.0s
+    | 14:16:35.046 [WRITER-A] PROCESSING correlation_id=poison-before-1028141621 attempt=15/unbounded
+    | 14:16:35.046 [WRITER-A] FAILED correlation_id=poison-before-1028141621 attempt=15/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:16:35.046 [WRITER-A] RETRY in 1.0s
+    | 14:16:36.047 [WRITER-A] PROCESSING correlation_id=poison-before-1028141621 attempt=16/unbounded
+    | 14:16:36.047 [WRITER-A] FAILED correlation_id=poison-before-1028141621 attempt=16/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:16:36.047 [WRITER-A] RETRY in 1.0s
+    | 14:16:37.049 [WRITER-A] PROCESSING correlation_id=poison-before-1028141621 attempt=17/unbounded
+    | 14:16:37.049 [WRITER-A] FAILED correlation_id=poison-before-1028141621 attempt=17/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:16:37.049 [WRITER-A] RETRY in 1.0s
+    | 14:16:38.050 [WRITER-A] PROCESSING correlation_id=poison-before-1028141621 attempt=18/unbounded
+    | 14:16:38.050 [WRITER-A] FAILED correlation_id=poison-before-1028141621 attempt=18/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:16:38.050 [WRITER-A] RETRY in 1.0s
+14:16:38.565 [TEST] RESULT before: failed attempts=14, dead-letter messages=0, good message processed=False, committed offsets={0: None, 1: 33}
+    | 14:16:38.571 [WRITER-A] stopped (processed 1 messages)
+
+--- Poison message - AFTER the fix ---
+  $ python writer.py --instance A --group s4833_t3_poison_after_1028141621 --offset-reset latest --llm stub --state-db /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/state/poison_after_1028141621.db
+    | 14:16:38.919 [WRITER-A] Consumer is ready and listening... group=s4833_t3_poison_after_1028141621 topic=s4833_tasks partitions=[0, 1] commit_mode=after idempotent=True max_attempts=3 dead_letter=True key_mode=correlation
+    | 14:16:38.927 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=23 correlation_id=warmup-after-1028141621
+    | 14:16:38.927 [WRITER-A] PROCESSING correlation_id=warmup-after-1028141621 attempt=1/3
+    | 14:16:38.931 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=51 correlation_id=warmup-after-1028141621
+    | 14:16:38.933 [WRITER-A] COMMITTED offset=24 partition=0
+    | 14:16:38.985 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=24 correlation_id=poison-after-1028141621
+14:16:38.986 [TEST] poison message sent -> topic=s4833_tasks partition=0 offset=24 correlation_id=poison-after-1028141621
+    | 14:16:38.986 [WRITER-A] PROCESSING correlation_id=poison-after-1028141621 attempt=1/3
+    | 14:16:38.986 [WRITER-A] FAILED correlation_id=poison-after-1028141621 attempt=1/3 error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:16:38.986 [WRITER-A] RETRY in 0.5s
+14:16:38.991 [TEST] good message sent behind it -> topic=s4833_tasks partition=0 offset=25 correlation_id=after-poison-after-1028141621
+    | 14:16:39.487 [WRITER-A] PROCESSING correlation_id=poison-after-1028141621 attempt=2/3
+    | 14:16:39.487 [WRITER-A] FAILED correlation_id=poison-after-1028141621 attempt=2/3 error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:16:39.487 [WRITER-A] RETRY in 1.0s
+    | 14:16:40.488 [WRITER-A] PROCESSING correlation_id=poison-after-1028141621 attempt=3/3
+    | 14:16:40.489 [WRITER-A] FAILED correlation_id=poison-after-1028141621 attempt=3/3 error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:16:40.493 [WRITER-A] DEAD LETTER after 3 attempts -> topic=s4833_dead_letter partition=0 offset=2 correlation_id=poison-after-1028141621
+    | 14:16:40.493 [WRITER-A] DEAD LETTER MESSAGE {"correlation_id": "poison-after-1028141621", "failed_stage": "writer", "error": "ValueError: plan must be a non-empty list of non-empty strings", "attempts": 3, "source_topic": "s4833_tasks", "source_partition": 0, "source_offset": 24, "original": "{\"correlation_id\": \"poison-after-1028141621\", \"stage\": \"plan\", \"question\": \"failure test poison-after-1028141621\", \"plan\": 12345, \"test_run\": \"1028141621\"}", "failed_at": "2026-10-28T21:16:40+00:00"}
+    | 14:16:40.496 [WRITER-A] COMMITTED offset=25 partition=0 (after dead-lettering)
+    | 14:16:40.600 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=25 correlation_id=after-poison-after-1028141621
+    | 14:16:40.600 [WRITER-A] PROCESSING correlation_id=after-poison-after-1028141621 attempt=1/3
+    | 14:16:40.603 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=52 correlation_id=after-poison-after-1028141621
+    | 14:16:40.607 [WRITER-A] COMMITTED offset=26 partition=0
+14:16:45.663 [TEST] RESULT after: failed attempts=3, dead-letter messages=1, good message processed=True, committed offsets={0: 26, 1: None}
+    | 14:16:45.668 [WRITER-A] stopped (processed 2 messages)
+
+saved reports/hw08/raw/part3_poison.json
+===== HW8 PART 3 POISON RUN END: Wed Oct 28 14:16:45 PDT 2026 =====
+===== HW8 PART 3 POISON RUN START: Wed Oct 28 14:18:06 PDT 2026 =====
+Student: Trapti Kulshrestha | SID4 4833 | HW8 Part 3 poison
+2026-10-28 14:18:06
+topics ready (partitions): {'s4833_inbox': 1, 's4833_final': 1, 's4833_tasks': 2, 's4833_entity_responses': 1, 's4833_entity_requests': 1, 's4833_drafts': 1, 's4833_dead_letter': 1}
+
+--- Poison message - BEFORE the fix ---
+  $ python writer.py --instance A --group s4833_t3_poison_before_1028141806 --offset-reset latest --llm stub --state-db /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/state/poison_before_1028141806.db --max-attempts 0 --no-dead-letter
+    | 14:18:06.828 [WRITER-A] Consumer is ready and listening... group=s4833_t3_poison_before_1028141806 topic=s4833_tasks partitions=[0, 1] commit_mode=after idempotent=True max_attempts=unbounded dead_letter=False key_mode=correlation
+    | 14:18:06.877 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=26 correlation_id=warmup-before-1028141806
+    | 14:18:06.877 [WRITER-A] PROCESSING correlation_id=warmup-before-1028141806 attempt=1/unbounded
+    | 14:18:06.881 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=53 correlation_id=warmup-before-1028141806
+    | 14:18:06.883 [WRITER-A] COMMITTED offset=27 partition=0
+14:18:06.934 [TEST] poison message sent -> topic=s4833_tasks partition=0 offset=27 correlation_id=poison-before-1028141806
+    | 14:18:06.934 [WRITER-A] RECEIVED topic=s4833_tasks partition=0 offset=27 correlation_id=poison-before-1028141806
+    | 14:18:06.934 [WRITER-A] PROCESSING correlation_id=poison-before-1028141806 attempt=1/unbounded
+    | 14:18:06.934 [WRITER-A] FAILED correlation_id=poison-before-1028141806 attempt=1/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:18:06.935 [WRITER-A] RETRY in 0.5s
+14:18:06.940 [TEST] good message sent behind it -> topic=s4833_tasks partition=0 offset=28 correlation_id=after-poison-before-1028141806
+    | 14:18:07.435 [WRITER-A] PROCESSING correlation_id=poison-before-1028141806 attempt=2/unbounded
+    | 14:18:07.436 [WRITER-A] FAILED correlation_id=poison-before-1028141806 attempt=2/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:18:07.436 [WRITER-A] RETRY in 1.0s
+    | 14:18:08.436 [WRITER-A] PROCESSING correlation_id=poison-before-1028141806 attempt=3/unbounded
+    | 14:18:08.436 [WRITER-A] FAILED correlation_id=poison-before-1028141806 attempt=3/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:18:08.436 [WRITER-A] RETRY in 1.0s
+    | 14:18:09.437 [WRITER-A] PROCESSING correlation_id=poison-before-1028141806 attempt=4/unbounded
+    | 14:18:09.437 [WRITER-A] FAILED correlation_id=poison-before-1028141806 attempt=4/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:18:09.437 [WRITER-A] RETRY in 1.0s
+    | 14:18:10.439 [WRITER-A] PROCESSING correlation_id=poison-before-1028141806 attempt=5/unbounded
+    | 14:18:10.439 [WRITER-A] FAILED correlation_id=poison-before-1028141806 attempt=5/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:18:10.439 [WRITER-A] RETRY in 1.0s
+    | 14:18:11.440 [WRITER-A] PROCESSING correlation_id=poison-before-1028141806 attempt=6/unbounded
+    | 14:18:11.440 [WRITER-A] FAILED correlation_id=poison-before-1028141806 attempt=6/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:18:11.440 [WRITER-A] RETRY in 1.0s
+    | 14:18:12.442 [WRITER-A] PROCESSING correlation_id=poison-before-1028141806 attempt=7/unbounded
+    | 14:18:12.442 [WRITER-A] FAILED correlation_id=poison-before-1028141806 attempt=7/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:18:12.442 [WRITER-A] RETRY in 1.0s
+    | 14:18:13.443 [WRITER-A] PROCESSING correlation_id=poison-before-1028141806 attempt=8/unbounded
+    | 14:18:13.443 [WRITER-A] FAILED correlation_id=poison-before-1028141806 attempt=8/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:18:13.443 [WRITER-A] RETRY in 1.0s
+    | 14:18:14.444 [WRITER-A] PROCESSING correlation_id=poison-before-1028141806 attempt=9/unbounded
+    | 14:18:14.444 [WRITER-A] FAILED correlation_id=poison-before-1028141806 attempt=9/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:18:14.444 [WRITER-A] RETRY in 1.0s
+    | 14:18:15.445 [WRITER-A] PROCESSING correlation_id=poison-before-1028141806 attempt=10/unbounded
+    | 14:18:15.445 [WRITER-A] FAILED correlation_id=poison-before-1028141806 attempt=10/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:18:15.445 [WRITER-A] RETRY in 1.0s
+    | 14:18:16.446 [WRITER-A] PROCESSING correlation_id=poison-before-1028141806 attempt=11/unbounded
+    | 14:18:16.446 [WRITER-A] FAILED correlation_id=poison-before-1028141806 attempt=11/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:18:16.446 [WRITER-A] RETRY in 1.0s
+    | 14:18:17.447 [WRITER-A] PROCESSING correlation_id=poison-before-1028141806 attempt=12/unbounded
+    | 14:18:17.447 [WRITER-A] FAILED correlation_id=poison-before-1028141806 attempt=12/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:18:17.447 [WRITER-A] RETRY in 1.0s
+    | 14:18:18.448 [WRITER-A] PROCESSING correlation_id=poison-before-1028141806 attempt=13/unbounded
+    | 14:18:18.449 [WRITER-A] FAILED correlation_id=poison-before-1028141806 attempt=13/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:18:18.449 [WRITER-A] RETRY in 1.0s
+    | 14:18:19.450 [WRITER-A] PROCESSING correlation_id=poison-before-1028141806 attempt=14/unbounded
+    | 14:18:19.450 [WRITER-A] FAILED correlation_id=poison-before-1028141806 attempt=14/unbounded error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:18:19.450 [WRITER-A] RETRY in 1.0s
+    | 14:18:19.947 [WRITER-A] stopped (processed 1 messages)
+14:18:24.205 [TEST] RESULT before: failed attempts=14, dead-letter messages=0, good message processed=False, committed offsets={0: 27, 1: None}
+
+--- Poison message - AFTER the fix ---
+  $ python writer.py --instance A --group s4833_t3_poison_after_1028141806 --offset-reset latest --llm stub --state-db /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/state/poison_after_1028141806.db
+    | 14:18:24.325 [WRITER-A] Consumer is ready and listening... group=s4833_t3_poison_after_1028141806 topic=s4833_tasks partitions=[0, 1] commit_mode=after idempotent=True max_attempts=3 dead_letter=True key_mode=correlation
+    | 14:18:24.332 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=35 correlation_id=warmup-after-1028141806
+    | 14:18:24.333 [WRITER-A] PROCESSING correlation_id=warmup-after-1028141806 attempt=1/3
+    | 14:18:24.336 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=54 correlation_id=warmup-after-1028141806
+    | 14:18:24.337 [WRITER-A] COMMITTED offset=36 partition=1
+14:18:24.391 [TEST] poison message sent -> topic=s4833_tasks partition=1 offset=36 correlation_id=poison-after-1028141806
+    | 14:18:24.391 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=36 correlation_id=poison-after-1028141806
+    | 14:18:24.391 [WRITER-A] PROCESSING correlation_id=poison-after-1028141806 attempt=1/3
+    | 14:18:24.391 [WRITER-A] FAILED correlation_id=poison-after-1028141806 attempt=1/3 error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:18:24.392 [WRITER-A] RETRY in 0.5s
+14:18:24.397 [TEST] good message sent behind it -> topic=s4833_tasks partition=1 offset=37 correlation_id=after-poison-after-1028141806
+    | 14:18:24.893 [WRITER-A] PROCESSING correlation_id=poison-after-1028141806 attempt=2/3
+    | 14:18:24.893 [WRITER-A] FAILED correlation_id=poison-after-1028141806 attempt=2/3 error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:18:24.893 [WRITER-A] RETRY in 1.0s
+    | 14:18:25.894 [WRITER-A] PROCESSING correlation_id=poison-after-1028141806 attempt=3/3
+    | 14:18:25.894 [WRITER-A] FAILED correlation_id=poison-after-1028141806 attempt=3/3 error=ValueError: plan must be a non-empty list of non-empty strings
+    | 14:18:25.899 [WRITER-A] DEAD LETTER after 3 attempts -> topic=s4833_dead_letter partition=0 offset=3 correlation_id=poison-after-1028141806
+    | 14:18:25.900 [WRITER-A] DEAD LETTER MESSAGE {"correlation_id": "poison-after-1028141806", "failed_stage": "writer", "error": "ValueError: plan must be a non-empty list of non-empty strings", "attempts": 3, "source_topic": "s4833_tasks", "source_partition": 1, "source_offset": 36, "original": "{\"correlation_id\": \"poison-after-1028141806\", \"stage\": \"plan\", \"question\": \"failure test poison-after-1028141806\", \"plan\": 12345, \"test_run\": \"1028141806\"}", "failed_at": "2026-10-28T21:18:25+00:00"}
+    | 14:18:25.902 [WRITER-A] COMMITTED offset=37 partition=1 (after dead-lettering)
+    | 14:18:26.006 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=37 correlation_id=after-poison-after-1028141806
+    | 14:18:26.006 [WRITER-A] PROCESSING correlation_id=after-poison-after-1028141806 attempt=1/3
+    | 14:18:26.008 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=55 correlation_id=after-poison-after-1028141806
+    | 14:18:26.011 [WRITER-A] COMMITTED offset=38 partition=1
+    | 14:18:27.034 [WRITER-A] stopped (processed 2 messages)
+14:18:31.285 [TEST] RESULT after: failed attempts=3, dead-letter messages=1, good message processed=True, committed offsets={0: None, 1: 38}
+
+saved reports/hw08/raw/part3_poison.json
+===== HW8 PART 3 POISON RUN END: Wed Oct 28 14:18:31 PDT 2026 =====
+===== HW8 PART 3 ORDERING RUN START: Wed Oct 28 14:19:31 PDT 2026 =====
+Student: Trapti Kulshrestha | SID4 4833 | HW8 Part 3 ordering
+2026-10-28 14:19:31
+topics ready (partitions): {'s4833_inbox': 1, 's4833_final': 1, 's4833_tasks': 2, 's4833_entity_responses': 1, 's4833_entity_requests': 1, 's4833_drafts': 1, 's4833_dead_letter': 1}
+
+--- Ordering - WITHOUT a message key ---
+  $ python writer.py --instance A --group s4833_t3_order_unkeyed_1028141931 --offset-reset latest --llm stub --state-db /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/state/order_unkeyed_1028141931.db --record-path /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/raw/part3_ordering_unkeyed_processed.jsonl
+  $ python writer.py --instance B --group s4833_t3_order_unkeyed_1028141931 --offset-reset latest --llm stub --state-db /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/state/order_unkeyed_1028141931.db --record-path /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/raw/part3_ordering_unkeyed_processed.jsonl
+    | 14:19:31.844 [WRITER-B] Consumer is ready and listening... group=s4833_t3_order_unkeyed_1028141931 topic=s4833_tasks partitions=[0] commit_mode=after idempotent=True max_attempts=3 dead_letter=True key_mode=correlation
+    | 14:19:31.844 [WRITER-A] Consumer is ready and listening... group=s4833_t3_order_unkeyed_1028141931 topic=s4833_tasks partitions=[1] commit_mode=after idempotent=True max_attempts=3 dead_letter=True key_mode=correlation
+14:19:31.847 [TEST] Writer-A has partitions [1], Writer-B has partitions [0] (same group s4833_t3_order_unkeyed_1028141931)
+14:19:31.853 [TEST] SENT #00 entity=CT-2026-110 seq=1 key=None -> partition=0 offset=29
+    | 14:19:31.853 [WRITER-B] RECEIVED topic=s4833_tasks partition=0 offset=29 correlation_id=ord-ord-unkeyed-1028141931-00
+    | 14:19:31.853 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141931-00 attempt=1/3
+14:19:31.859 [TEST] SENT #01 entity=CT-2026-106 seq=1 key=None -> partition=0 offset=30
+14:19:31.864 [TEST] SENT #02 entity=CT-2026-108 seq=1 key=None -> partition=1 offset=38
+    | 14:19:31.864 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=38 correlation_id=ord-ord-unkeyed-1028141931-02
+    | 14:19:31.864 [WRITER-A] PROCESSING correlation_id=ord-ord-unkeyed-1028141931-02 attempt=1/3
+14:19:31.869 [TEST] SENT #03 entity=CT-2026-108 seq=2 key=None -> partition=0 offset=31
+14:19:31.874 [TEST] SENT #04 entity=CT-2026-109 seq=1 key=None -> partition=1 offset=39
+14:19:31.879 [TEST] SENT #05 entity=CT-2026-107 seq=1 key=None -> partition=0 offset=32
+14:19:31.885 [TEST] SENT #06 entity=CT-2026-110 seq=2 key=None -> partition=0 offset=33
+14:19:31.890 [TEST] SENT #07 entity=CT-2026-107 seq=2 key=None -> partition=0 offset=34
+14:19:31.895 [TEST] SENT #08 entity=CT-2026-107 seq=3 key=None -> partition=1 offset=40
+14:19:31.900 [TEST] SENT #09 entity=CT-2026-110 seq=3 key=None -> partition=0 offset=35
+14:19:31.905 [TEST] SENT #10 entity=CT-2026-108 seq=3 key=None -> partition=0 offset=36
+14:19:31.911 [TEST] SENT #11 entity=CT-2026-109 seq=2 key=None -> partition=1 offset=41
+14:19:31.920 [TEST] SENT #12 entity=CT-2026-107 seq=4 key=None -> partition=0 offset=37
+14:19:31.928 [TEST] SENT #13 entity=CT-2026-110 seq=4 key=None -> partition=0 offset=38
+14:19:31.936 [TEST] SENT #14 entity=CT-2026-106 seq=2 key=None -> partition=1 offset=42
+14:19:31.942 [TEST] SENT #15 entity=CT-2026-109 seq=3 key=None -> partition=0 offset=39
+14:19:31.948 [TEST] SENT #16 entity=CT-2026-106 seq=3 key=None -> partition=1 offset=43
+14:19:31.954 [TEST] SENT #17 entity=CT-2026-108 seq=4 key=None -> partition=0 offset=40
+14:19:31.958 [TEST] SENT #18 entity=CT-2026-106 seq=4 key=None -> partition=0 offset=41
+14:19:31.963 [TEST] SENT #19 entity=CT-2026-109 seq=4 key=None -> partition=1 offset=44
+    | 14:19:32.005 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=56 correlation_id=ord-ord-unkeyed-1028141931-02
+    | 14:19:32.007 [WRITER-A] COMMITTED offset=39 partition=1
+    | 14:19:32.008 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=39 correlation_id=ord-ord-unkeyed-1028141931-04
+    | 14:19:32.008 [WRITER-A] PROCESSING correlation_id=ord-ord-unkeyed-1028141931-04 attempt=1/3
+    | 14:19:32.244 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=57 correlation_id=ord-ord-unkeyed-1028141931-00
+    | 14:19:32.248 [WRITER-B] COMMITTED offset=30 partition=0
+    | 14:19:32.249 [WRITER-B] RECEIVED topic=s4833_tasks partition=0 offset=30 correlation_id=ord-ord-unkeyed-1028141931-01
+    | 14:19:32.250 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141931-01 attempt=1/3
+    | 14:19:32.375 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=58 correlation_id=ord-ord-unkeyed-1028141931-04
+    | 14:19:32.378 [WRITER-A] COMMITTED offset=40 partition=1
+    | 14:19:32.378 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=40 correlation_id=ord-ord-unkeyed-1028141931-08
+    | 14:19:32.379 [WRITER-A] PROCESSING correlation_id=ord-ord-unkeyed-1028141931-08 attempt=1/3
+    | 14:19:32.459 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=59 correlation_id=ord-ord-unkeyed-1028141931-01
+    | 14:19:32.463 [WRITER-B] COMMITTED offset=31 partition=0
+    | 14:19:32.463 [WRITER-B] RECEIVED topic=s4833_tasks partition=0 offset=31 correlation_id=ord-ord-unkeyed-1028141931-03
+    | 14:19:32.463 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141931-03 attempt=1/3
+    | 14:19:32.786 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=60 correlation_id=ord-ord-unkeyed-1028141931-08
+    | 14:19:32.789 [WRITER-A] COMMITTED offset=41 partition=1
+    | 14:19:32.789 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=41 correlation_id=ord-ord-unkeyed-1028141931-11
+    | 14:19:32.789 [WRITER-A] PROCESSING correlation_id=ord-ord-unkeyed-1028141931-11 attempt=1/3
+    | 14:19:32.815 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=61 correlation_id=ord-ord-unkeyed-1028141931-03
+    | 14:19:32.817 [WRITER-B] COMMITTED offset=32 partition=0
+    | 14:19:32.817 [WRITER-B] RECEIVED topic=s4833_tasks partition=0 offset=32 correlation_id=ord-ord-unkeyed-1028141931-05
+    | 14:19:32.817 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141931-05 attempt=1/3
+    | 14:19:32.966 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=62 correlation_id=ord-ord-unkeyed-1028141931-05
+    | 14:19:32.970 [WRITER-B] COMMITTED offset=33 partition=0
+    | 14:19:32.970 [WRITER-B] RECEIVED topic=s4833_tasks partition=0 offset=33 correlation_id=ord-ord-unkeyed-1028141931-06
+    | 14:19:32.971 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141931-06 attempt=1/3
+    | 14:19:33.121 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=63 correlation_id=ord-ord-unkeyed-1028141931-06
+    | 14:19:33.125 [WRITER-B] COMMITTED offset=34 partition=0
+    | 14:19:33.126 [WRITER-B] RECEIVED topic=s4833_tasks partition=0 offset=34 correlation_id=ord-ord-unkeyed-1028141931-07
+    | 14:19:33.126 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141931-07 attempt=1/3
+    | 14:19:33.137 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=64 correlation_id=ord-ord-unkeyed-1028141931-11
+    | 14:19:33.141 [WRITER-A] COMMITTED offset=42 partition=1
+    | 14:19:33.141 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=42 correlation_id=ord-ord-unkeyed-1028141931-14
+    | 14:19:33.141 [WRITER-A] PROCESSING correlation_id=ord-ord-unkeyed-1028141931-14 attempt=1/3
+    | 14:19:33.312 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=65 correlation_id=ord-ord-unkeyed-1028141931-07
+    | 14:19:33.315 [WRITER-B] COMMITTED offset=35 partition=0
+    | 14:19:33.315 [WRITER-B] RECEIVED topic=s4833_tasks partition=0 offset=35 correlation_id=ord-ord-unkeyed-1028141931-09
+    | 14:19:33.315 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141931-09 attempt=1/3
+    | 14:19:33.445 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=66 correlation_id=ord-ord-unkeyed-1028141931-14
+    | 14:19:33.448 [WRITER-A] COMMITTED offset=43 partition=1
+    | 14:19:33.448 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=43 correlation_id=ord-ord-unkeyed-1028141931-16
+    | 14:19:33.448 [WRITER-A] PROCESSING correlation_id=ord-ord-unkeyed-1028141931-16 attempt=1/3
+    | 14:19:33.496 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=67 correlation_id=ord-ord-unkeyed-1028141931-09
+    | 14:19:33.499 [WRITER-B] COMMITTED offset=36 partition=0
+    | 14:19:33.499 [WRITER-B] RECEIVED topic=s4833_tasks partition=0 offset=36 correlation_id=ord-ord-unkeyed-1028141931-10
+    | 14:19:33.499 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141931-10 attempt=1/3
+    | 14:19:33.665 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=68 correlation_id=ord-ord-unkeyed-1028141931-16
+    | 14:19:33.668 [WRITER-A] COMMITTED offset=44 partition=1
+    | 14:19:33.669 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=44 correlation_id=ord-ord-unkeyed-1028141931-19
+    | 14:19:33.669 [WRITER-A] PROCESSING correlation_id=ord-ord-unkeyed-1028141931-19 attempt=1/3
+    | 14:19:33.860 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=69 correlation_id=ord-ord-unkeyed-1028141931-10
+    | 14:19:33.863 [WRITER-B] COMMITTED offset=37 partition=0
+    | 14:19:33.863 [WRITER-B] RECEIVED topic=s4833_tasks partition=0 offset=37 correlation_id=ord-ord-unkeyed-1028141931-12
+    | 14:19:33.863 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141931-12 attempt=1/3
+    | 14:19:34.054 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=70 correlation_id=ord-ord-unkeyed-1028141931-19
+    | 14:19:34.057 [WRITER-A] COMMITTED offset=45 partition=1
+    | 14:19:34.156 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=71 correlation_id=ord-ord-unkeyed-1028141931-12
+    | 14:19:34.159 [WRITER-B] COMMITTED offset=38 partition=0
+    | 14:19:34.159 [WRITER-B] RECEIVED topic=s4833_tasks partition=0 offset=38 correlation_id=ord-ord-unkeyed-1028141931-13
+    | 14:19:34.159 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141931-13 attempt=1/3
+    | 14:19:34.348 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=72 correlation_id=ord-ord-unkeyed-1028141931-13
+    | 14:19:34.351 [WRITER-B] COMMITTED offset=39 partition=0
+    | 14:19:34.351 [WRITER-B] RECEIVED topic=s4833_tasks partition=0 offset=39 correlation_id=ord-ord-unkeyed-1028141931-15
+    | 14:19:34.351 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141931-15 attempt=1/3
+    | 14:19:34.507 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=73 correlation_id=ord-ord-unkeyed-1028141931-15
+    | 14:19:34.510 [WRITER-B] COMMITTED offset=40 partition=0
+    | 14:19:34.510 [WRITER-B] RECEIVED topic=s4833_tasks partition=0 offset=40 correlation_id=ord-ord-unkeyed-1028141931-17
+    | 14:19:34.510 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141931-17 attempt=1/3
+    | 14:19:34.691 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=74 correlation_id=ord-ord-unkeyed-1028141931-17
+    | 14:19:34.693 [WRITER-B] COMMITTED offset=41 partition=0
+    | 14:19:34.694 [WRITER-B] RECEIVED topic=s4833_tasks partition=0 offset=41 correlation_id=ord-ord-unkeyed-1028141931-18
+    | 14:19:34.694 [WRITER-B] PROCESSING correlation_id=ord-ord-unkeyed-1028141931-18 attempt=1/3
+    | 14:19:34.819 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=75 correlation_id=ord-ord-unkeyed-1028141931-18
+    | 14:19:34.822 [WRITER-B] COMMITTED offset=42 partition=0
+    | 14:19:34.975 [WRITER-A] stopped (processed 7 messages)
+    | 14:19:35.203 [WRITER-B] stopped (processed 13 messages)
+
+  Processing order (unkeyed): finish order -> writer/partition entity#seq
+    1. writer A partition 1 CT-2026-108 #1
+    2. writer B partition 0 CT-2026-110 #1
+    3. writer A partition 1 CT-2026-109 #1
+    4. writer B partition 0 CT-2026-106 #1
+    5. writer A partition 1 CT-2026-107 #3
+    6. writer B partition 0 CT-2026-108 #2
+    7. writer B partition 0 CT-2026-107 #1
+    8. writer B partition 0 CT-2026-110 #2
+    9. writer A partition 1 CT-2026-109 #2
+   10. writer B partition 0 CT-2026-107 #2
+   11. writer A partition 1 CT-2026-106 #2
+   12. writer B partition 0 CT-2026-110 #3
+   13. writer A partition 1 CT-2026-106 #3
+   14. writer B partition 0 CT-2026-108 #3
+   15. writer A partition 1 CT-2026-109 #4
+   16. writer B partition 0 CT-2026-107 #4
+   17. writer B partition 0 CT-2026-110 #4
+   18. writer B partition 0 CT-2026-109 #3
+   19. writer B partition 0 CT-2026-108 #4
+   20. writer B partition 0 CT-2026-106 #4
+
+  Per-entity result (unkeyed):
+   CT-2026-106: partitions [0, 1] writers ['A', 'B'] processed seq [1, 2, 3, 4] -> in order
+   CT-2026-107: partitions [0, 1] writers ['A', 'B'] processed seq [3, 1, 2, 4] -> OUT OF ORDER
+   CT-2026-108: partitions [0, 1] writers ['A', 'B'] processed seq [1, 2, 3, 4] -> in order
+   CT-2026-109: partitions [0, 1] writers ['A', 'B'] processed seq [1, 2, 4, 3] -> OUT OF ORDER
+   CT-2026-110: partitions [0] writers ['B'] processed seq [1, 2, 3, 4] -> in order
+  TOTAL (unkeyed): entities out of order=2, entities spread over both partitions=4, order inversions=2
+
+--- Ordering - WITH a message key ---
+  $ python writer.py --instance A --group s4833_t3_order_keyed_1028141931 --offset-reset latest --llm stub --state-db /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/state/order_keyed_1028141931.db --record-path /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/raw/part3_ordering_keyed_processed.jsonl
+  $ python writer.py --instance B --group s4833_t3_order_keyed_1028141931 --offset-reset latest --llm stub --state-db /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/state/order_keyed_1028141931.db --record-path /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw08/raw/part3_ordering_keyed_processed.jsonl
+    | 14:19:35.532 [WRITER-A] Consumer is ready and listening... group=s4833_t3_order_keyed_1028141931 topic=s4833_tasks partitions=[1] commit_mode=after idempotent=True max_attempts=3 dead_letter=True key_mode=correlation
+    | 14:19:35.532 [WRITER-B] Consumer is ready and listening... group=s4833_t3_order_keyed_1028141931 topic=s4833_tasks partitions=[0] commit_mode=after idempotent=True max_attempts=3 dead_letter=True key_mode=correlation
+14:19:35.537 [TEST] Writer-A has partitions [1], Writer-B has partitions [0] (same group s4833_t3_order_keyed_1028141931)
+14:19:35.543 [TEST] SENT #00 entity=CT-2026-110 seq=1 key=CT-2026-110 -> partition=0 offset=42
+    | 14:19:35.543 [WRITER-B] RECEIVED topic=s4833_tasks partition=0 offset=42 correlation_id=ord-ord-keyed-1028141931-00
+    | 14:19:35.543 [WRITER-B] PROCESSING correlation_id=ord-ord-keyed-1028141931-00 attempt=1/3
+14:19:35.548 [TEST] SENT #01 entity=CT-2026-106 seq=1 key=CT-2026-106 -> partition=0 offset=43
+14:19:35.553 [TEST] SENT #02 entity=CT-2026-108 seq=1 key=CT-2026-108 -> partition=1 offset=45
+    | 14:19:35.553 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=45 correlation_id=ord-ord-keyed-1028141931-02
+    | 14:19:35.553 [WRITER-A] PROCESSING correlation_id=ord-ord-keyed-1028141931-02 attempt=1/3
+14:19:35.559 [TEST] SENT #03 entity=CT-2026-108 seq=2 key=CT-2026-108 -> partition=1 offset=46
+14:19:35.564 [TEST] SENT #04 entity=CT-2026-109 seq=1 key=CT-2026-109 -> partition=1 offset=47
+14:19:35.569 [TEST] SENT #05 entity=CT-2026-107 seq=1 key=CT-2026-107 -> partition=1 offset=48
+14:19:35.574 [TEST] SENT #06 entity=CT-2026-110 seq=2 key=CT-2026-110 -> partition=0 offset=44
+14:19:35.580 [TEST] SENT #07 entity=CT-2026-107 seq=2 key=CT-2026-107 -> partition=1 offset=49
+14:19:35.585 [TEST] SENT #08 entity=CT-2026-107 seq=3 key=CT-2026-107 -> partition=1 offset=50
+14:19:35.590 [TEST] SENT #09 entity=CT-2026-110 seq=3 key=CT-2026-110 -> partition=0 offset=45
+14:19:35.595 [TEST] SENT #10 entity=CT-2026-108 seq=3 key=CT-2026-108 -> partition=1 offset=51
+14:19:35.601 [TEST] SENT #11 entity=CT-2026-109 seq=2 key=CT-2026-109 -> partition=1 offset=52
+14:19:35.606 [TEST] SENT #12 entity=CT-2026-107 seq=4 key=CT-2026-107 -> partition=1 offset=53
+14:19:35.611 [TEST] SENT #13 entity=CT-2026-110 seq=4 key=CT-2026-110 -> partition=0 offset=46
+14:19:35.616 [TEST] SENT #14 entity=CT-2026-106 seq=2 key=CT-2026-106 -> partition=0 offset=47
+14:19:35.621 [TEST] SENT #15 entity=CT-2026-109 seq=3 key=CT-2026-109 -> partition=1 offset=54
+14:19:35.626 [TEST] SENT #16 entity=CT-2026-106 seq=3 key=CT-2026-106 -> partition=0 offset=48
+14:19:35.631 [TEST] SENT #17 entity=CT-2026-108 seq=4 key=CT-2026-108 -> partition=1 offset=55
+14:19:35.636 [TEST] SENT #18 entity=CT-2026-106 seq=4 key=CT-2026-106 -> partition=0 offset=49
+14:19:35.641 [TEST] SENT #19 entity=CT-2026-109 seq=4 key=CT-2026-109 -> partition=1 offset=56
+    | 14:19:35.693 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=76 correlation_id=ord-ord-keyed-1028141931-02
+    | 14:19:35.695 [WRITER-A] COMMITTED offset=46 partition=1
+    | 14:19:35.696 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=46 correlation_id=ord-ord-keyed-1028141931-03
+    | 14:19:35.696 [WRITER-A] PROCESSING correlation_id=ord-ord-keyed-1028141931-03 attempt=1/3
+    | 14:19:35.934 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=77 correlation_id=ord-ord-keyed-1028141931-00
+    | 14:19:35.937 [WRITER-B] COMMITTED offset=43 partition=0
+    | 14:19:35.939 [WRITER-B] RECEIVED topic=s4833_tasks partition=0 offset=43 correlation_id=ord-ord-keyed-1028141931-01
+    | 14:19:35.939 [WRITER-B] PROCESSING correlation_id=ord-ord-keyed-1028141931-01 attempt=1/3
+    | 14:19:36.052 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=78 correlation_id=ord-ord-keyed-1028141931-03
+    | 14:19:36.054 [WRITER-A] COMMITTED offset=47 partition=1
+    | 14:19:36.054 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=47 correlation_id=ord-ord-keyed-1028141931-04
+    | 14:19:36.054 [WRITER-A] PROCESSING correlation_id=ord-ord-keyed-1028141931-04 attempt=1/3
+    | 14:19:36.149 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=79 correlation_id=ord-ord-keyed-1028141931-01
+    | 14:19:36.152 [WRITER-B] COMMITTED offset=44 partition=0
+    | 14:19:36.153 [WRITER-B] RECEIVED topic=s4833_tasks partition=0 offset=44 correlation_id=ord-ord-keyed-1028141931-06
+    | 14:19:36.153 [WRITER-B] PROCESSING correlation_id=ord-ord-keyed-1028141931-06 attempt=1/3
+    | 14:19:36.304 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=80 correlation_id=ord-ord-keyed-1028141931-06
+    | 14:19:36.308 [WRITER-B] COMMITTED offset=45 partition=0
+    | 14:19:36.308 [WRITER-B] RECEIVED topic=s4833_tasks partition=0 offset=45 correlation_id=ord-ord-keyed-1028141931-09
+    | 14:19:36.308 [WRITER-B] PROCESSING correlation_id=ord-ord-keyed-1028141931-09 attempt=1/3
+    | 14:19:36.423 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=81 correlation_id=ord-ord-keyed-1028141931-04
+    | 14:19:36.427 [WRITER-A] COMMITTED offset=48 partition=1
+    | 14:19:36.427 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=48 correlation_id=ord-ord-keyed-1028141931-05
+    | 14:19:36.427 [WRITER-A] PROCESSING correlation_id=ord-ord-keyed-1028141931-05 attempt=1/3
+    | 14:19:36.486 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=82 correlation_id=ord-ord-keyed-1028141931-09
+    | 14:19:36.490 [WRITER-B] COMMITTED offset=46 partition=0
+    | 14:19:36.490 [WRITER-B] RECEIVED topic=s4833_tasks partition=0 offset=46 correlation_id=ord-ord-keyed-1028141931-13
+    | 14:19:36.490 [WRITER-B] PROCESSING correlation_id=ord-ord-keyed-1028141931-13 attempt=1/3
+    | 14:19:36.576 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=83 correlation_id=ord-ord-keyed-1028141931-05
+    | 14:19:36.580 [WRITER-A] COMMITTED offset=49 partition=1
+    | 14:19:36.580 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=49 correlation_id=ord-ord-keyed-1028141931-07
+    | 14:19:36.580 [WRITER-A] PROCESSING correlation_id=ord-ord-keyed-1028141931-07 attempt=1/3
+    | 14:19:36.679 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=84 correlation_id=ord-ord-keyed-1028141931-13
+    | 14:19:36.683 [WRITER-B] COMMITTED offset=47 partition=0
+    | 14:19:36.683 [WRITER-B] RECEIVED topic=s4833_tasks partition=0 offset=47 correlation_id=ord-ord-keyed-1028141931-14
+    | 14:19:36.683 [WRITER-B] PROCESSING correlation_id=ord-ord-keyed-1028141931-14 attempt=1/3
+    | 14:19:36.761 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=85 correlation_id=ord-ord-keyed-1028141931-07
+    | 14:19:36.764 [WRITER-A] COMMITTED offset=50 partition=1
+    | 14:19:36.764 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=50 correlation_id=ord-ord-keyed-1028141931-08
+    | 14:19:36.764 [WRITER-A] PROCESSING correlation_id=ord-ord-keyed-1028141931-08 attempt=1/3
+    | 14:19:36.983 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=86 correlation_id=ord-ord-keyed-1028141931-14
+    | 14:19:36.985 [WRITER-B] COMMITTED offset=48 partition=0
+    | 14:19:36.985 [WRITER-B] RECEIVED topic=s4833_tasks partition=0 offset=48 correlation_id=ord-ord-keyed-1028141931-16
+    | 14:19:36.985 [WRITER-B] PROCESSING correlation_id=ord-ord-keyed-1028141931-16 attempt=1/3
+    | 14:19:37.169 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=87 correlation_id=ord-ord-keyed-1028141931-08
+    | 14:19:37.171 [WRITER-A] COMMITTED offset=51 partition=1
+    | 14:19:37.171 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=51 correlation_id=ord-ord-keyed-1028141931-10
+    | 14:19:37.171 [WRITER-A] PROCESSING correlation_id=ord-ord-keyed-1028141931-10 attempt=1/3
+    | 14:19:37.198 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=88 correlation_id=ord-ord-keyed-1028141931-16
+    | 14:19:37.200 [WRITER-B] COMMITTED offset=49 partition=0
+    | 14:19:37.200 [WRITER-B] RECEIVED topic=s4833_tasks partition=0 offset=49 correlation_id=ord-ord-keyed-1028141931-18
+    | 14:19:37.200 [WRITER-B] PROCESSING correlation_id=ord-ord-keyed-1028141931-18 attempt=1/3
+    | 14:19:37.325 [WRITER-B] SENT topic=s4833_drafts partition=0 offset=89 correlation_id=ord-ord-keyed-1028141931-18
+    | 14:19:37.327 [WRITER-B] COMMITTED offset=50 partition=0
+    | 14:19:37.532 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=90 correlation_id=ord-ord-keyed-1028141931-10
+    | 14:19:37.534 [WRITER-A] COMMITTED offset=52 partition=1
+    | 14:19:37.534 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=52 correlation_id=ord-ord-keyed-1028141931-11
+    | 14:19:37.534 [WRITER-A] PROCESSING correlation_id=ord-ord-keyed-1028141931-11 attempt=1/3
+    | 14:19:37.885 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=91 correlation_id=ord-ord-keyed-1028141931-11
+    | 14:19:37.888 [WRITER-A] COMMITTED offset=53 partition=1
+    | 14:19:37.888 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=53 correlation_id=ord-ord-keyed-1028141931-12
+    | 14:19:37.888 [WRITER-A] PROCESSING correlation_id=ord-ord-keyed-1028141931-12 attempt=1/3
+    | 14:19:38.183 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=92 correlation_id=ord-ord-keyed-1028141931-12
+    | 14:19:38.186 [WRITER-A] COMMITTED offset=54 partition=1
+    | 14:19:38.187 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=54 correlation_id=ord-ord-keyed-1028141931-15
+    | 14:19:38.187 [WRITER-A] PROCESSING correlation_id=ord-ord-keyed-1028141931-15 attempt=1/3
+    | 14:19:38.341 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=93 correlation_id=ord-ord-keyed-1028141931-15
+    | 14:19:38.344 [WRITER-A] COMMITTED offset=55 partition=1
+    | 14:19:38.344 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=55 correlation_id=ord-ord-keyed-1028141931-17
+    | 14:19:38.344 [WRITER-A] PROCESSING correlation_id=ord-ord-keyed-1028141931-17 attempt=1/3
+    | 14:19:38.529 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=94 correlation_id=ord-ord-keyed-1028141931-17
+    | 14:19:38.533 [WRITER-A] COMMITTED offset=56 partition=1
+    | 14:19:38.533 [WRITER-A] RECEIVED topic=s4833_tasks partition=1 offset=56 correlation_id=ord-ord-keyed-1028141931-19
+    | 14:19:38.533 [WRITER-A] PROCESSING correlation_id=ord-ord-keyed-1028141931-19 attempt=1/3
+    | 14:19:38.916 [WRITER-A] SENT topic=s4833_drafts partition=0 offset=95 correlation_id=ord-ord-keyed-1028141931-19
+    | 14:19:38.920 [WRITER-A] COMMITTED offset=57 partition=1
+    | 14:19:39.156 [WRITER-A] stopped (processed 12 messages)
+    | 14:19:39.378 [WRITER-B] stopped (processed 8 messages)
+
+  Processing order (keyed): finish order -> writer/partition entity#seq
+    1. writer A partition 1 CT-2026-108 #1
+    2. writer B partition 0 CT-2026-110 #1
+    3. writer A partition 1 CT-2026-108 #2
+    4. writer B partition 0 CT-2026-106 #1
+    5. writer B partition 0 CT-2026-110 #2
+    6. writer A partition 1 CT-2026-109 #1
+    7. writer B partition 0 CT-2026-110 #3
+    8. writer A partition 1 CT-2026-107 #1
+    9. writer B partition 0 CT-2026-110 #4
+   10. writer A partition 1 CT-2026-107 #2
+   11. writer B partition 0 CT-2026-106 #2
+   12. writer A partition 1 CT-2026-107 #3
+   13. writer B partition 0 CT-2026-106 #3
+   14. writer B partition 0 CT-2026-106 #4
+   15. writer A partition 1 CT-2026-108 #3
+   16. writer A partition 1 CT-2026-109 #2
+   17. writer A partition 1 CT-2026-107 #4
+   18. writer A partition 1 CT-2026-109 #3
+   19. writer A partition 1 CT-2026-108 #4
+   20. writer A partition 1 CT-2026-109 #4
+
+  Per-entity result (keyed):
+   CT-2026-106: partitions [0] writers ['B'] processed seq [1, 2, 3, 4] -> in order
+   CT-2026-107: partitions [1] writers ['A'] processed seq [1, 2, 3, 4] -> in order
+   CT-2026-108: partitions [1] writers ['A'] processed seq [1, 2, 3, 4] -> in order
+   CT-2026-109: partitions [1] writers ['A'] processed seq [1, 2, 3, 4] -> in order
+   CT-2026-110: partitions [0] writers ['B'] processed seq [1, 2, 3, 4] -> in order
+  TOTAL (keyed): entities out of order=0, entities spread over both partitions=0, order inversions=0
+
+saved reports/hw08/raw/part3_ordering.json
+===== HW8 PART 3 ORDERING RUN END: Wed Oct 28 14:19:39 PDT 2026 =====

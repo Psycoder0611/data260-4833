@@ -1,0 +1,598 @@
+{
+  "unkeyed": {
+    "analysis": {
+      "messages_processed": 20,
+      "entities": {
+        "CT-2026-106": {
+          "processed_order": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "in_order": true,
+          "inversions": 0,
+          "partitions": [
+            0,
+            1
+          ],
+          "instances": [
+            "A",
+            "B"
+          ]
+        },
+        "CT-2026-107": {
+          "processed_order": [
+            3,
+            1,
+            2,
+            4
+          ],
+          "in_order": false,
+          "inversions": 1,
+          "partitions": [
+            0,
+            1
+          ],
+          "instances": [
+            "A",
+            "B"
+          ]
+        },
+        "CT-2026-108": {
+          "processed_order": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "in_order": true,
+          "inversions": 0,
+          "partitions": [
+            0,
+            1
+          ],
+          "instances": [
+            "A",
+            "B"
+          ]
+        },
+        "CT-2026-109": {
+          "processed_order": [
+            1,
+            2,
+            4,
+            3
+          ],
+          "in_order": false,
+          "inversions": 1,
+          "partitions": [
+            0,
+            1
+          ],
+          "instances": [
+            "A",
+            "B"
+          ]
+        },
+        "CT-2026-110": {
+          "processed_order": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "in_order": true,
+          "inversions": 0,
+          "partitions": [
+            0
+          ],
+          "instances": [
+            "B"
+          ]
+        }
+      },
+      "entities_out_of_order": 2,
+      "entities_in_more_than_one_partition": 4,
+      "total_inversions": 2,
+      "all_related_messages_in_order": false
+    },
+    "sent": [
+      {
+        "index": 0,
+        "correlation_id": "ord-ord-unkeyed-1028141931-00",
+        "entity": "CT-2026-110",
+        "seq": 1,
+        "key": "",
+        "partition": 0,
+        "offset": 29,
+        "work_ms": 378
+      },
+      {
+        "index": 1,
+        "correlation_id": "ord-ord-unkeyed-1028141931-01",
+        "entity": "CT-2026-106",
+        "seq": 1,
+        "key": "",
+        "partition": 0,
+        "offset": 30,
+        "work_ms": 202
+      },
+      {
+        "index": 2,
+        "correlation_id": "ord-ord-unkeyed-1028141931-02",
+        "entity": "CT-2026-108",
+        "seq": 1,
+        "key": "",
+        "partition": 1,
+        "offset": 38,
+        "work_ms": 132
+      },
+      {
+        "index": 3,
+        "correlation_id": "ord-ord-unkeyed-1028141931-03",
+        "entity": "CT-2026-108",
+        "seq": 2,
+        "key": "",
+        "partition": 0,
+        "offset": 31,
+        "work_ms": 347
+      },
+      {
+        "index": 4,
+        "correlation_id": "ord-ord-unkeyed-1028141931-04",
+        "entity": "CT-2026-109",
+        "seq": 1,
+        "key": "",
+        "partition": 1,
+        "offset": 39,
+        "work_ms": 362
+      },
+      {
+        "index": 5,
+        "correlation_id": "ord-ord-unkeyed-1028141931-05",
+        "entity": "CT-2026-107",
+        "seq": 1,
+        "key": "",
+        "partition": 0,
+        "offset": 32,
+        "work_ms": 141
+      },
+      {
+        "index": 6,
+        "correlation_id": "ord-ord-unkeyed-1028141931-06",
+        "entity": "CT-2026-110",
+        "seq": 2,
+        "key": "",
+        "partition": 0,
+        "offset": 33,
+        "work_ms": 145
+      },
+      {
+        "index": 7,
+        "correlation_id": "ord-ord-unkeyed-1028141931-07",
+        "entity": "CT-2026-107",
+        "seq": 2,
+        "key": "",
+        "partition": 0,
+        "offset": 34,
+        "work_ms": 176
+      },
+      {
+        "index": 8,
+        "correlation_id": "ord-ord-unkeyed-1028141931-08",
+        "entity": "CT-2026-107",
+        "seq": 3,
+        "key": "",
+        "partition": 1,
+        "offset": 40,
+        "work_ms": 400
+      },
+      {
+        "index": 9,
+        "correlation_id": "ord-ord-unkeyed-1028141931-09",
+        "entity": "CT-2026-110",
+        "seq": 3,
+        "key": "",
+        "partition": 0,
+        "offset": 35,
+        "work_ms": 171
+      },
+      {
+        "index": 10,
+        "correlation_id": "ord-ord-unkeyed-1028141931-10",
+        "entity": "CT-2026-108",
+        "seq": 3,
+        "key": "",
+        "partition": 0,
+        "offset": 36,
+        "work_ms": 353
+      },
+      {
+        "index": 11,
+        "correlation_id": "ord-ord-unkeyed-1028141931-11",
+        "entity": "CT-2026-109",
+        "seq": 2,
+        "key": "",
+        "partition": 1,
+        "offset": 41,
+        "work_ms": 341
+      },
+      {
+        "index": 12,
+        "correlation_id": "ord-ord-unkeyed-1028141931-12",
+        "entity": "CT-2026-107",
+        "seq": 4,
+        "key": "",
+        "partition": 0,
+        "offset": 37,
+        "work_ms": 287
+      },
+      {
+        "index": 13,
+        "correlation_id": "ord-ord-unkeyed-1028141931-13",
+        "entity": "CT-2026-110",
+        "seq": 4,
+        "key": "",
+        "partition": 0,
+        "offset": 38,
+        "work_ms": 181
+      },
+      {
+        "index": 14,
+        "correlation_id": "ord-ord-unkeyed-1028141931-14",
+        "entity": "CT-2026-106",
+        "seq": 2,
+        "key": "",
+        "partition": 1,
+        "offset": 42,
+        "work_ms": 296
+      },
+      {
+        "index": 15,
+        "correlation_id": "ord-ord-unkeyed-1028141931-15",
+        "entity": "CT-2026-109",
+        "seq": 3,
+        "key": "",
+        "partition": 0,
+        "offset": 39,
+        "work_ms": 149
+      },
+      {
+        "index": 16,
+        "correlation_id": "ord-ord-unkeyed-1028141931-16",
+        "entity": "CT-2026-106",
+        "seq": 3,
+        "key": "",
+        "partition": 1,
+        "offset": 43,
+        "work_ms": 207
+      },
+      {
+        "index": 17,
+        "correlation_id": "ord-ord-unkeyed-1028141931-17",
+        "entity": "CT-2026-108",
+        "seq": 4,
+        "key": "",
+        "partition": 0,
+        "offset": 40,
+        "work_ms": 176
+      },
+      {
+        "index": 18,
+        "correlation_id": "ord-ord-unkeyed-1028141931-18",
+        "entity": "CT-2026-106",
+        "seq": 4,
+        "key": "",
+        "partition": 0,
+        "offset": 41,
+        "work_ms": 118
+      },
+      {
+        "index": 19,
+        "correlation_id": "ord-ord-unkeyed-1028141931-19",
+        "entity": "CT-2026-109",
+        "seq": 4,
+        "key": "",
+        "partition": 1,
+        "offset": 44,
+        "work_ms": 375
+      }
+    ]
+  },
+  "keyed": {
+    "analysis": {
+      "messages_processed": 20,
+      "entities": {
+        "CT-2026-106": {
+          "processed_order": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "in_order": true,
+          "inversions": 0,
+          "partitions": [
+            0
+          ],
+          "instances": [
+            "B"
+          ]
+        },
+        "CT-2026-107": {
+          "processed_order": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "in_order": true,
+          "inversions": 0,
+          "partitions": [
+            1
+          ],
+          "instances": [
+            "A"
+          ]
+        },
+        "CT-2026-108": {
+          "processed_order": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "in_order": true,
+          "inversions": 0,
+          "partitions": [
+            1
+          ],
+          "instances": [
+            "A"
+          ]
+        },
+        "CT-2026-109": {
+          "processed_order": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "in_order": true,
+          "inversions": 0,
+          "partitions": [
+            1
+          ],
+          "instances": [
+            "A"
+          ]
+        },
+        "CT-2026-110": {
+          "processed_order": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "in_order": true,
+          "inversions": 0,
+          "partitions": [
+            0
+          ],
+          "instances": [
+            "B"
+          ]
+        }
+      },
+      "entities_out_of_order": 0,
+      "entities_in_more_than_one_partition": 0,
+      "total_inversions": 0,
+      "all_related_messages_in_order": true
+    },
+    "sent": [
+      {
+        "index": 0,
+        "correlation_id": "ord-ord-keyed-1028141931-00",
+        "entity": "CT-2026-110",
+        "seq": 1,
+        "key": "CT-2026-110",
+        "partition": 0,
+        "offset": 42,
+        "work_ms": 378
+      },
+      {
+        "index": 1,
+        "correlation_id": "ord-ord-keyed-1028141931-01",
+        "entity": "CT-2026-106",
+        "seq": 1,
+        "key": "CT-2026-106",
+        "partition": 0,
+        "offset": 43,
+        "work_ms": 202
+      },
+      {
+        "index": 2,
+        "correlation_id": "ord-ord-keyed-1028141931-02",
+        "entity": "CT-2026-108",
+        "seq": 1,
+        "key": "CT-2026-108",
+        "partition": 1,
+        "offset": 45,
+        "work_ms": 132
+      },
+      {
+        "index": 3,
+        "correlation_id": "ord-ord-keyed-1028141931-03",
+        "entity": "CT-2026-108",
+        "seq": 2,
+        "key": "CT-2026-108",
+        "partition": 1,
+        "offset": 46,
+        "work_ms": 347
+      },
+      {
+        "index": 4,
+        "correlation_id": "ord-ord-keyed-1028141931-04",
+        "entity": "CT-2026-109",
+        "seq": 1,
+        "key": "CT-2026-109",
+        "partition": 1,
+        "offset": 47,
+        "work_ms": 362
+      },
+      {
+        "index": 5,
+        "correlation_id": "ord-ord-keyed-1028141931-05",
+        "entity": "CT-2026-107",
+        "seq": 1,
+        "key": "CT-2026-107",
+        "partition": 1,
+        "offset": 48,
+        "work_ms": 141
+      },
+      {
+        "index": 6,
+        "correlation_id": "ord-ord-keyed-1028141931-06",
+        "entity": "CT-2026-110",
+        "seq": 2,
+        "key": "CT-2026-110",
+        "partition": 0,
+        "offset": 44,
+        "work_ms": 145
+      },
+      {
+        "index": 7,
+        "correlation_id": "ord-ord-keyed-1028141931-07",
+        "entity": "CT-2026-107",
+        "seq": 2,
+        "key": "CT-2026-107",
+        "partition": 1,
+        "offset": 49,
+        "work_ms": 176
+      },
+      {
+        "index": 8,
+        "correlation_id": "ord-ord-keyed-1028141931-08",
+        "entity": "CT-2026-107",
+        "seq": 3,
+        "key": "CT-2026-107",
+        "partition": 1,
+        "offset": 50,
+        "work_ms": 400
+      },
+      {
+        "index": 9,
+        "correlation_id": "ord-ord-keyed-1028141931-09",
+        "entity": "CT-2026-110",
+        "seq": 3,
+        "key": "CT-2026-110",
+        "partition": 0,
+        "offset": 45,
+        "work_ms": 171
+      },
+      {
+        "index": 10,
+        "correlation_id": "ord-ord-keyed-1028141931-10",
+        "entity": "CT-2026-108",
+        "seq": 3,
+        "key": "CT-2026-108",
+        "partition": 1,
+        "offset": 51,
+        "work_ms": 353
+      },
+      {
+        "index": 11,
+        "correlation_id": "ord-ord-keyed-1028141931-11",
+        "entity": "CT-2026-109",
+        "seq": 2,
+        "key": "CT-2026-109",
+        "partition": 1,
+        "offset": 52,
+        "work_ms": 341
+      },
+      {
+        "index": 12,
+        "correlation_id": "ord-ord-keyed-1028141931-12",
+        "entity": "CT-2026-107",
+        "seq": 4,
+        "key": "CT-2026-107",
+        "partition": 1,
+        "offset": 53,
+        "work_ms": 287
+      },
+      {
+        "index": 13,
+        "correlation_id": "ord-ord-keyed-1028141931-13",
+        "entity": "CT-2026-110",
+        "seq": 4,
+        "key": "CT-2026-110",
+        "partition": 0,
+        "offset": 46,
+        "work_ms": 181
+      },
+      {
+        "index": 14,
+        "correlation_id": "ord-ord-keyed-1028141931-14",
+        "entity": "CT-2026-106",
+        "seq": 2,
+        "key": "CT-2026-106",
+        "partition": 0,
+        "offset": 47,
+        "work_ms": 296
+      },
+      {
+        "index": 15,
+        "correlation_id": "ord-ord-keyed-1028141931-15",
+        "entity": "CT-2026-109",
+        "seq": 3,
+        "key": "CT-2026-109",
+        "partition": 1,
+        "offset": 54,
+        "work_ms": 149
+      },
+      {
+        "index": 16,
+        "correlation_id": "ord-ord-keyed-1028141931-16",
+        "entity": "CT-2026-106",
+        "seq": 3,
+        "key": "CT-2026-106",
+        "partition": 0,
+        "offset": 48,
+        "work_ms": 207
+      },
+      {
+        "index": 17,
+        "correlation_id": "ord-ord-keyed-1028141931-17",
+        "entity": "CT-2026-108",
+        "seq": 4,
+        "key": "CT-2026-108",
+        "partition": 1,
+        "offset": 55,
+        "work_ms": 176
+      },
+      {
+        "index": 18,
+        "correlation_id": "ord-ord-keyed-1028141931-18",
+        "entity": "CT-2026-106",
+        "seq": 4,
+        "key": "CT-2026-106",
+        "partition": 0,
+        "offset": 49,
+        "work_ms": 118
+      },
+      {
+        "index": 19,
+        "correlation_id": "ord-ord-keyed-1028141931-19",
+        "entity": "CT-2026-109",
+        "seq": 4,
+        "key": "CT-2026-109",
+        "partition": 1,
+        "offset": 56,
+        "work_ms": 375
+      }
+    ]
+  },
+  "run_id": "1028141931",
+  "verify_seed": 264833
+}
