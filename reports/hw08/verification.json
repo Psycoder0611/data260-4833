@@ -7,9 +7,9 @@
   "verify_seed": 264833,
   "domain": "Clinical Trial Listings",
   "model": "qwen3:8b (Ollama) for the pipeline runs; stub text in this smoke test",
-  "commit_hash": "6149ed6dbd48592767af4266438a646725c81dc8",
+  "commit_hash": "09ba4a063fab5379a9dc0a83b0b9195ece904097",
   "uncommitted_changes": true,
-  "timestamp": "2026-10-29 15:21:56 PDT",
+  "timestamp": "2026-10-29 20:15:58 PDT",
   "quick_mode": false,
   "overall_pass": true,
   "checks": [
@@ -21,7 +21,7 @@
     {
       "name": "CREATE then GET round-trip through Kafka (worker, correlation_id kept)",
       "passed": true,
-      "details": "existing worker answered; created 72613f6b-5688-4822-8fc9-0f6f7b0f63ec, GET returned it, ids preserved=True"
+      "details": "existing worker answered; created 7db4f240-ac97-4671-afc6-913033aae732, GET returned it, ids preserved=True"
     },
     {
       "name": "Errors are clean and carry the original correlation_id",
@@ -46,7 +46,7 @@
     {
       "name": "Consumer death: message redelivered, offset committed only after success",
       "passed": true,
-      "details": "redelivered=True, draft produced=True, offset 109 -> 110"
+      "details": "redelivered=True, draft produced=True, offset 142 -> 143"
     },
     {
       "name": "Poison message: bounded retries, dead-letter topic, next message flows",
@@ -56,12 +56,12 @@
     {
       "name": "Ordering: entity key keeps related messages in one partition, in order",
       "passed": true,
-      "details": "keyed: 0 inversions, 0 entities split; unkeyed: 3 inversions, 5 entities split"
+      "details": "keyed: 0 inversions, 0 entities split; unkeyed: 3 inversions, 4 entities split"
     },
     {
       "name": "Offline unit tests pass",
       "passed": true,
-      "details": "54 passed in 51.26s"
+      "details": "54 passed in 51.29s"
     },
     {
       "name": "JMeter plans present (100 threads, ramp 10, loop 1)",
