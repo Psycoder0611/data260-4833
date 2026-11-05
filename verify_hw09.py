@@ -95,7 +95,8 @@ def check_services() -> Result:
 
     vector = OllamaEmbedder().embed("hello")
     engine = db.make_engine()
-    columns = db.get_view_count(engine, 1)
+    trial = db.get_trial_by_code(engine, CODE)
+    columns = db.get_view_count(engine, trial["id"]) if trial else None
     return len(vector) == config.EMBED_DIM and columns is not None, (
         f"Redis modules {modules}; embedding dim {len(vector)}; view_count column readable"
     )
