@@ -1,0 +1,52 @@
+{
+  "query": "What is the participant capacity of trial CT-2026-101?",
+  "trial_code": "CT-2026-101",
+  "original": 80,
+  "first": {
+    "query": "What is the participant capacity of trial CT-2026-101?",
+    "answer": "The participant capacity for trial CT-2026-101, titled \"Cardiac Rehabilitation Outcomes Trial\" and sponsored by the Stanford Clinical Trials Center, is 80. The category for this trial is listed as \"not set.\" This information is directly retrieved from the listings database.",
+    "is_cached": false,
+    "similarity": 0.0,
+    "latency_ms": 6908.0,
+    "lookup_ms": 29.3,
+    "agent_ms": 6875.3,
+    "status": "approved",
+    "data_version": "b7cb8cefbc08",
+    "invalidated": false
+  },
+  "updated_to": 120,
+  "stale_hit": {
+    "query": "What is the participant capacity of trial CT-2026-101?",
+    "answer": "The participant capacity for trial CT-2026-101, titled \"Cardiac Rehabilitation Outcomes Trial\" and sponsored by the Stanford Clinical Trials Center, is 80. The category for this trial is listed as \"not set.\" This information is directly retrieved from the listings database.",
+    "is_cached": true,
+    "similarity": 1.0,
+    "latency_ms": 18.8,
+    "lookup_ms": 18.8,
+    "matched_query": "What is the participant capacity of trial CT-2026-101?",
+    "data_version": "b7cb8cefbc08",
+    "invalidated": false
+  },
+  "after_invalidation": {
+    "query": "What is the participant capacity of trial CT-2026-101?",
+    "answer": "The participant capacity for trial CT-2026-101, titled \"Cardiac Rehabilitation Outcomes Trial\" sponsored by the Stanford Clinical Trials Center, is 120. This information is directly retrieved from the listings database. The category for this trial is listed as \"not set.\"",
+    "is_cached": false,
+    "similarity": 1.0,
+    "latency_ms": 6351.7,
+    "lookup_ms": 18.1,
+    "agent_ms": 6329.1,
+    "status": "approved",
+    "data_version": "ccd4c7330a44",
+    "invalidated": true
+  },
+  "warm_hit": {
+    "query": "What is the participant capacity of trial CT-2026-101?",
+    "answer": "The participant capacity for trial CT-2026-101, titled \"Cardiac Rehabilitation Outcomes Trial\" sponsored by the Stanford Clinical Trials Center, is 120. This information is directly retrieved from the listings database. The category for this trial is listed as \"not set.\"",
+    "is_cached": true,
+    "similarity": 1.0,
+    "latency_ms": 27.5,
+    "lookup_ms": 26.4,
+    "matched_query": "What is the participant capacity of trial CT-2026-101?",
+    "data_version": "ccd4c7330a44",
+    "invalidated": false
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "trial_code": "CT-2026-101",
+  "trial_id": 5010,
+  "redis_key": "s4833:views:clinical_trial:5010",
+  "accesses": [
+    {
+      "access": 1,
+      "total": 1,
+      "synced": false
+    },
+    {
+      "access": 2,
+      "total": 2,
+      "synced": false
+    },
+    {
+      "access": 3,
+      "total": 3,
+      "synced": false
+    },
+    {
+      "access": 4,
+      "total": 4,
+      "synced": false
+    },
+    {
+      "access": 5,
+      "total": 5,
+      "synced": false
+    },
+    {
+      "access": 6,
+      "total": 6,
+      "synced": false
+    },
+    {
+      "access": 7,
+      "total": 7,
+      "synced": false
+    },
+    {
+      "access": 8,
+      "total": 8,
+      "synced": false
+    },
+    {
+      "access": 9,
+      "total": 9,
+      "synced": false
+    },
+    {
+      "access": 10,
+      "total": 10,
+      "synced": true
+    },
+    {
+      "access": 11,
+      "total": 11,
+      "synced": false
+    },
+    {
+      "access": 12,
+      "total": 12,
+      "synced": false
+    },
+    {
+      "access": 13,
+      "total": 13,
+      "synced": false
+    },
+    {
+      "access": 14,
+      "total": 14,
+      "synced": false
+    },
+    {
+      "access": 15,
+      "total": 15,
+      "synced": false
+    },
+    {
+      "access": 16,
+      "total": 16,
+      "synced": false
+    },
+    {
+      "access": 17,
+      "total": 17,
+      "synced": false
+    },
+    {
+      "access": 18,
+      "total": 18,
+      "synced": false
+    },
+    {
+      "access": 19,
+      "total": 19,
+      "synced": false
+    },
+    {
+      "access": 20,
+      "total": 20,
+      "synced": true
+    },
+    {
+      "access": 21,
+      "total": 21,
+      "synced": false
+    },
+    {
+      "access": 22,
+      "total": 22,
+      "synced": false
+    },
+    {
+      "access": 23,
+      "total": 23,
+      "synced": false
+    },
+    {
+      "access": 24,
+      "total": 24,
+      "synced": false
+    },
+    {
+      "access": 25,
+      "total": 25,
+      "synced": false
+    }
+  ],
+  "redis_value": 25,
+  "database_view_count": 20
+}

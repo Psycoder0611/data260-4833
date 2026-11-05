@@ -1,0 +1,50 @@
+[
+ {
+  "id": "tr01",
+  "question": "How many characters can a trial description contain at most?"
+ },
+ {
+  "id": "tr02",
+  "question": "What is the maximum description length for a trial listing?"
+ },
+ {
+  "id": "tr03",
+  "question": "How long may a trial title be?"
+ },
+ {
+  "id": "tr04",
+  "question": "What are the minimum and maximum lengths for a trial title?"
+ },
+ {
+  "id": "tr05",
+  "question": "Which topic receives messages that keep failing?"
+ },
+ {
+  "id": "tr06",
+  "question": "Where do poison messages end up after the retries are used up?"
+ },
+ {
+  "id": "tr07",
+  "question": "What is the participant capacity of trial CT-2026-102?"
+ },
+ {
+  "id": "tr08",
+  "question": "How many participants can enroll in trial CT-2026-102?"
+ },
+ {
+  "id": "tr09",
+  "question": "How long can the sponsor of a trial be, in characters?"
+ },
+ {
+  "id": "tr10",
+  "question": "What phase is trial CT-2026-101 in?"
+ },
+ {
+  "id": "tr11",
+  "question": "Who is the principal investigator of trial CT-2026-104?"
+ },
+ {
+  "id": "tr12",
+  "question": "What is the capital of Japan?"
+ }
+]

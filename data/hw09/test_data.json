@@ -1,0 +1,66 @@
+[
+ {
+  "id": "te01",
+  "question": "What is the longest description a trial listing can have, in characters?"
+ },
+ {
+  "id": "te02",
+  "question": "What is the maximum length of a trial title?"
+ },
+ {
+  "id": "te03",
+  "question": "How long can a trial code be?"
+ },
+ {
+  "id": "te04",
+  "question": "Where are messages sent that keep failing after every retry?"
+ },
+ {
+  "id": "te05",
+  "question": "How many participants can join trial CT-2026-102?"
+ },
+ {
+  "id": "te06",
+  "question": "What is the capacity of trial CT-2026-103?"
+ },
+ {
+  "id": "te07",
+  "question": "What is the name of trial CT-2026-105?"
+ },
+ {
+  "id": "te08",
+  "question": "Which phase does trial CT-2026-102 belong to?"
+ },
+ {
+  "id": "te09",
+  "question": "Who is the principal investigator for trial CT-2026-101?"
+ },
+ {
+  "id": "te10",
+  "question": "When does enrollment start for trial CT-2026-104?"
+ },
+ {
+  "id": "te11",
+  "question": "How many attempts does an agent make before a message is dead-lettered?"
+ },
+ {
+  "id": "te12",
+  "question": "When does an agent commit a Kafka offset?"
+ },
+ {
+  "id": "te13",
+  "question": "Which fields must be provided to create a trial listing?"
+ },
+ {
+  "id": "te14",
+  "question": "What review score does the Reviewer need to approve a draft?"
+ },
+ {
+  "id": "te15",
+  "question": "What is the capital of Australia?"
+ },
+ {
+  "id": "te16",
+  "question": "How do I convert Celsius to Fahrenheit?"
+ }
+]

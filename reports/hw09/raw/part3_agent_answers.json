@@ -1,0 +1,322 @@
+{
+  "What is the participant capacity of trial CT-2026-101?": {
+    "answer": "The participant capacity for trial CT-2026-101, titled \"Cardiac Rehabilitation Outcomes Trial\" and sponsored by the Stanford Clinical Trials Center, is 80. The category for this trial is listed as \"not set.\" This information is directly retrieved from the listings database.",
+    "score": 10,
+    "status": "approved",
+    "agent_ms": 8910.1,
+    "data_version": "b7cb8cefbc08",
+    "entity": "CT-2026-101"
+  },
+  "What is the title of trial CT-2026-103?": {
+    "answer": "The title of trial CT-2026-103 is \"Oncology Immunotherapy Phase II\".",
+    "score": 10,
+    "status": "approved",
+    "agent_ms": 4737.9,
+    "data_version": "574cf5d89028",
+    "entity": "CT-2026-103"
+  },
+  "What is the participant capacity of trial CT-2026-105?": {
+    "answer": "The participant capacity for trial CT-2026-105, titled \"Hypertension Medication Adherence Study\" sponsored by Stanford Clinical Trials Center, is 90.",
+    "score": 10,
+    "status": "approved",
+    "agent_ms": 5048.7,
+    "data_version": "5034cfbaa449",
+    "entity": "CT-2026-105"
+  },
+  "Which fields are required when creating a trial listing?": {
+    "answer": "When creating a trial listing, the required fields include the trial title, unique identifier, primary sponsor, and trial status. Additionally, the study type and a brief summary of the trial are necessary. These elements ensure clarity and completeness in the listing, making it easier for potential participants and researchers to understand the trial's purpose and structure. Including these details also helps in maintaining accurate and standardized records for clinical research.",
+    "score": 8,
+    "status": "approved",
+    "agent_ms": 6174.4,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "How long can a trial description be?": {
+    "answer": "The maximum length for a trial description typically depends on the platform's guidelines, which usually range from 500 to 1,500 words. Reviewing example descriptions can help ensure your writing style aligns with expected standards. Focus on clarity and conciseness to effectively communicate the trial's purpose, eligibility, and key details within the allowed limit. Always prioritize essential information to maintain readability and engagement for potential participants.",
+    "score": 7,
+    "status": "approved",
+    "agent_ms": 6218.0,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "How long can a trial title be?": {
+    "answer": "The length of a trial title typically follows guidelines from trial registries, which usually limit titles to 100-200 characters. This ensures clarity and ease of search while maintaining conciseness. It's important to include essential elements like the condition, intervention, and study design within these limits. Avoid unnecessary words or jargon to keep the title focused and informative. Always check the specific registry's requirements for precise character limits, as they may vary slightly. A well-crafted title helps in accurate indexing and visibility of the trial.",
+    "score": 9,
+    "status": "approved",
+    "agent_ms": 7407.4,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "What is the minimum participant capacity for a trial?": {
+    "answer": "The minimum participant capacity for a trial is typically specified in its official documentation or enrollment criteria. You should check the trial's summary section for details on the number of participants required. If the exact number is not clearly stated, refer to the enrollment criteria, which may mention the minimum number needed to achieve statistical significance. Always consult the trial's official sources for the most accurate and up-to-date information.",
+    "score": 7,
+    "status": "approved",
+    "agent_ms": 6002.8,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "How long can a trial code be?": {
+    "answer": "The length of a trial code depends on the specific registry's guidelines. For example, the WHO International Clinical Trials Registry Platform (ICTRP) typically allows codes up to 15 characters. However, some registries may have different limits. It's important to review the unique identifier format used by the registry, such as the WHO Unique Trial Number (UTN), which usually follows a specific structure. Always confirm the maximum allowed characters for the code with the relevant registry to ensure compliance.",
+    "score": 9,
+    "status": "approved",
+    "agent_ms": 7223.4,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "Which operations does the trial worker support?": {
+    "answer": "The trial worker supports operations such as patient recruitment, data collection, and monitoring of study procedures. They are authorized to conduct baseline assessments, administer study interventions, and record participant data according to the protocol. Trial workers may also assist in scheduling visits and ensuring compliance with study guidelines. Their role is essential in maintaining data integrity and ensuring the smooth execution of the trial. Specific operations depend on the study's design and the worker's assigned responsibilities as outlined in the protocol.",
+    "score": 9,
+    "status": "approved",
+    "agent_ms": 6670.7,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "How many attempts does an agent make before a message goes to the dead-letter topic?": {
+    "answer": "The number of attempts an agent makes before a message is sent to the dead-letter topic depends on the configured retry limit. Typically, if the retry limit is set to 3, the agent will attempt to deliver the message up to 3 times. Once the limit is reached, the message is moved to the dead-letter topic. The exact number of attempts is determined by the threshold setting, which defines how many failed deliveries trigger the dead-lettering process.",
+    "score": 9,
+    "status": "approved",
+    "agent_ms": 6716.9,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "How many participants can enroll in clinical trial CT-2026-101?": {
+    "answer": "The clinical trial CT-2026-101, titled \"Cardiac Rehabilitation Outcomes Trial,\" has a participant capacity of 80. According to the listings database, the maximum number of participants that can enroll in this trial is 80. This information is directly provided by the sponsor, Stanford Clinical Trials Center, and is categorized as \"not set.\" Therefore, the trial is designed to enroll up to 80 participants.",
+    "score": 10,
+    "status": "approved",
+    "agent_ms": 6970.1,
+    "data_version": "b7cb8cefbc08",
+    "entity": "CT-2026-101"
+  },
+  "What is trial CT-2026-103 called?": {
+    "answer": "The trial CT-2026-103 is called \"Oncology Immunotherapy Phase II\".",
+    "score": 10,
+    "status": "approved",
+    "agent_ms": 4938.2,
+    "data_version": "574cf5d89028",
+    "entity": "CT-2026-103"
+  },
+  "What is the maximum number of participants for trial CT-2026-105?": {
+    "answer": "The maximum number of participants for trial CT-2026-105, titled \"Hypertension Medication Adherence Study,\" is 90. This information is directly listed in the participant capacity field of the trial's entry in the database. The sponsor of the trial is the Stanford Clinical Trials Center, and the category is marked as \"not set.\"",
+    "score": 10,
+    "status": "approved",
+    "agent_ms": 6434.6,
+    "data_version": "5034cfbaa449",
+    "entity": "CT-2026-105"
+  },
+  "What do I have to fill in to create a new trial listing?": {
+    "answer": "To create a new trial listing, you need to provide the trial title and a unique ID. Next, enter the principal investigator's details, including their name, contact information, and affiliation. Finally, submit all required documents and metadata, such as the study protocol, informed consent form, and any other relevant files. Ensure all information is accurate and complete to facilitate the review and approval process.",
+    "score": 9,
+    "status": "approved",
+    "agent_ms": 5989.5,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "What is the maximum length of the description of a trial?": {
+    "answer": "The maximum length for a trial description typically depends on the platform's guidelines. Most platforms allow between 500 to 1,500 words, though some may set a character limit. It's important to check the specific platform's rules to ensure compliance. Generally, the description should be concise, informative, and highlight key details such as the study purpose, eligibility criteria, and contact information. Always confirm the exact limit to avoid submission issues.",
+    "score": 8,
+    "status": "approved",
+    "agent_ms": 6213.8,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "What is the maximum number of characters in a trial title?": {
+    "answer": "The maximum number of characters allowed in a trial title typically depends on the specific trial registry or platform being used. For example, ClinicalTrials.gov allows up to 100 characters for the title. However, some platforms may have different limits, so it's important to check the guidelines of the specific registry or platform where the trial will be listed. Always confirm the exact character limit to ensure the title is properly formatted and meets submission requirements.",
+    "score": 7,
+    "status": "approved",
+    "agent_ms": 6767.2,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "What is the smallest participant capacity a trial may have?": {
+    "answer": "The smallest participant capacity for a clinical trial typically ranges from as few as 10 to 50 participants, depending on the study's design and objectives. Some small-scale trials, particularly in early-phase research or rare disease studies, may enroll as few as 10 individuals. Trial registries and protocols often specify the minimum required participants, which can vary by condition, treatment, and study phase. While there is no universal minimum, the lowest documented capacity across trials is generally around 10 to 20 participants.",
+    "score": 8,
+    "status": "approved",
+    "agent_ms": 7221.3,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "What is the maximum length of a trial code?": {
+    "answer": "The maximum length of a trial code typically depends on the specific registry's guidelines. For example, the World Health Organization's International Clinical Trials Registry Platform (ICTRP) allows trial codes to be up to 30 characters long. These codes may include letters, numbers, and certain special characters. It is important to consult the official documentation of the specific registry to confirm the exact format and length restrictions for trial codes. Always adhere to the registry's rules to ensure proper identification and tracking of clinical trials.",
+    "score": 9,
+    "status": "approved",
+    "agent_ms": 6679.4,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "What requests can the entity worker handle?": {
+    "answer": "The entity worker can handle requests for extracting entities from user queries, such as identifying key terms like diseases, medications, or procedures. It also processes requests for classifying and tagging these entities to categorize their types. Additionally, the worker supports extracting relationships between entities and their attributes, helping to structure and understand the context of clinical trial data effectively.",
+    "score": 9,
+    "status": "approved",
+    "agent_ms": 5622.0,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "After how many failed tries is a message sent to the dead-letter topic?": {
+    "answer": "The number of failed attempts before a message is sent to the dead-letter topic depends on the configured retry limit. Typically, if a message fails to be delivered after reaching the maximum retry count, it is forwarded to the dead-letter topic. The exact number of failed tries is determined by the system's dead-letter threshold setting, which is often set to the maximum number of retries allowed. Once this limit is exceeded, the message is moved to the dead-letter topic for further inspection or handling.",
+    "score": 8,
+    "status": "approved",
+    "agent_ms": 7161.3,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "What is the participant capacity of trial CT-2026-102?": {
+    "answer": "The participant capacity for trial CT-2026-102, titled \"Diabetes Prevention Lifestyle Study,\" is 200. This trial is sponsored by the Stanford Clinical Trials Center and falls under the \"not set\" category. The capacity indicates the maximum number of participants that can be enrolled in the study.",
+    "score": 10,
+    "status": "approved",
+    "agent_ms": 6599.8,
+    "data_version": "7bdcc86490f5",
+    "entity": "CT-2026-102"
+  },
+  "What is the title of trial CT-2026-104?": {
+    "answer": "The title of trial CT-2026-104 is \"Pediatric Asthma Inhaler Comparison.\" This trial, sponsored by the Stanford Clinical Trials Center, involves 150 participants and is categorized as \"not set.\" The title directly corresponds to the trial ID, confirming its accuracy.",
+    "score": 10,
+    "status": "approved",
+    "agent_ms": 6376.0,
+    "data_version": "00700b209ad1",
+    "entity": "CT-2026-104"
+  },
+  "What is the participant capacity of trial CT-2026-103?": {
+    "answer": "The participant capacity for trial CT-2026-103, titled \"Oncology Immunotherapy Phase II\" sponsored by the Stanford Clinical Trials Center, is 60. This information is directly retrieved from the listings database.",
+    "score": 10,
+    "status": "approved",
+    "agent_ms": 5550.3,
+    "data_version": "574cf5d89028",
+    "entity": "CT-2026-103"
+  },
+  "Which fields are optional when creating a trial listing?": {
+    "answer": "When creating a trial listing, optional fields typically include the trial's start and end dates, contact information for the research team, and additional details about the study design. These fields are not required to submit a basic listing but can enhance the visibility and clarity of the trial. Always check the specific form for any field marked as optional, and refer to guidelines or support resources if you're unsure about a particular field's requirement.",
+    "score": 7,
+    "status": "approved",
+    "agent_ms": 6273.3,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "What is the minimum length of a trial description?": {
+    "answer": "The minimum length of a trial description typically depends on the specific trial registry's guidelines. Most registries do not specify a strict minimum word count but encourage sufficient detail to convey the trial's purpose, design, and key elements. Reviewing examples from the registry shows that descriptions are usually a few sentences to a paragraph, ensuring clarity and completeness. While there is no universal minimum, providing enough information to understand the trial's objectives and methodology is essential. Always follow the registry's specific instructions for the most accurate requirements.",
+    "score": 9,
+    "status": "approved",
+    "agent_ms": 7090.8,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "How long can a trial category be?": {
+    "answer": "The maximum length for a trial category typically depends on the specific trial database's specifications. Most databases allow up to 255 characters for category fields, though some may permit longer entries. It's important to check the database's documentation for exact limits, as they can vary. Generally, categories are limited to a reasonable number of words to ensure clarity and consistency. Always verify the specific guidelines of the database in use to avoid formatting issues.",
+    "score": 9,
+    "status": "approved",
+    "agent_ms": 6318.0,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "What is the maximum participant capacity for a trial?": {
+    "answer": "The maximum participant capacity for a trial is typically outlined in its official documentation or recruitment criteria. You should review the trial's enrollment limits, which are often specified in the study protocol or information sheet. If a maximum number is mentioned, it will be clearly stated there. If not, the trial may not have a set limit, or it may be determined by the research team based on available resources and study objectives. Always refer to the official sources for the most accurate and up-to-date information.",
+    "score": 7,
+    "status": "approved",
+    "agent_ms": 6996.6,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "How long can a submitter email address be?": {
+    "answer": "The maximum length for a submitter email address is 254 characters. This limit is based on standard email format specifications and is enforced by the system to ensure compatibility and proper processing. There are no additional restrictions beyond this character limit. Submitters should ensure their email addresses adhere to this limit when providing contact information for clinical trial submissions.",
+    "score": 10,
+    "status": "approved",
+    "agent_ms": 5636.6,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "Which topic does the worker send its responses to?": {
+    "answer": "The worker sends its responses to the \"trial_response\" topic. This was determined by checking the worker's configuration, which specifies \"trial_response\" as the designated output topic. Additionally, the trial listing system's routing rules direct all responses from workers to this topic. The worker's role as a responder aligns with this primary topic, ensuring all communications are properly routed for processing.",
+    "score": 10,
+    "status": "approved",
+    "agent_ms": 6011.7,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "How many seconds does an agent wait before the second attempt?": {
+    "answer": "The agent waits for 30 seconds before attempting the second try. This delay is defined in the system's retry settings under the \"second attempt delay\" parameter. The value is specified in seconds as required.",
+    "score": 10,
+    "status": "approved",
+    "agent_ms": 4496.2,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "What is the capital of France?": {
+    "answer": "The country in question is France. The capital city of France is Paris. Therefore, the answer is Paris.",
+    "score": 10,
+    "status": "approved",
+    "agent_ms": 3475.7,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "How do I bake sourdough bread?": {
+    "answer": "To bake sourdough bread, start by mixing flour, water, and a sourdough starter to form a shaggy dough. Let the dough ferment at room temperature for 4-12 hours, allowing it to rise and develop flavor. After fermentation, shape the dough into a loaf and bake at 450\u00b0F (230\u00b0C) for 25-30 minutes, or until golden and crisp. This process creates a delicious, crusty sourdough loaf with a tangy flavor.",
+    "score": 8,
+    "status": "approved",
+    "agent_ms": 8838.4,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "Who won the 2018 football World Cup?": {
+    "answer": "The 2018 FIFA World Cup was won by France. They defeated Croatia 4-2 in the final, which took place on July 15, 2018, in Moscow. France's victory marked their second World Cup title, with the team led by stars such as Kylian Mbapp\u00e9 and Antoine Griezmann. The tournament was hosted by Russia and saw a total of 32 teams compete across 64 matches. France's win was celebrated as a historic moment in football history.",
+    "score": 10,
+    "status": "approved",
+    "agent_ms": 7281.5,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "Explain how photosynthesis works.": {
+    "answer": "Photosynthesis is the process by which plants convert sunlight into energy. Plants absorb sunlight using a green pigment called chlorophyll. During this process, they take in water from the soil and carbon dioxide from the air. Using sunlight as an energy source, plants combine these reactants to produce glucose, which they use for growth, and oxygen, which is released into the atmosphere as a byproduct. This process occurs primarily in the leaves of plants and is essential for life on Earth.",
+    "score": 9,
+    "status": "approved",
+    "agent_ms": 8001.2,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "What is the boiling point of water in Fahrenheit?": {
+    "answer": "The boiling point of water in Fahrenheit is 212 degrees. This is the standard temperature at which water turns into vapor at sea level. The Fahrenheit scale is commonly used in the United States for measuring temperature. At 212\u00b0F, water reaches its boiling point under normal atmospheric conditions. This temperature is widely recognized in everyday contexts and scientific measurements.",
+    "score": 10,
+    "status": "approved",
+    "agent_ms": 5621.5,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "Recommend a good laptop for programming.": {
+    "answer": "A good laptop for programming should have at least 8GB RAM and an Intel i5 or AMD Ryzen 5 processor for smooth performance. Choose a 13-15 inch display with high resolution for better code readability. Look for a model with long battery life to stay productive during long coding sessions. A comfortable keyboard is also essential for extended use. Brands like Dell, Lenovo, and Apple offer reliable options that meet these criteria.",
+    "score": 7,
+    "status": "approved",
+    "agent_ms": 7584.3,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "How do I change a flat tire?": {
+    "answer": "To change a flat tire, first park your car on a flat surface and engage the parking brake. Next, loosen the lug nuts slightly before lifting the car with a jack. Once the tire is off the ground, remove the lug nuts completely and take off the flat tire. Replace it with the spare tire and hand-tighten the lug nuts. Lower the car and fully tighten the lug nuts in a star pattern to ensure even pressure. Make sure the spare is properly secured and drive carefully to a safe location for a full tire replacement.",
+    "score": 10,
+    "status": "approved",
+    "agent_ms": 7373.3,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "What is the plot of Hamlet?": {
+    "answer": "In *Hamlet*, the prince seeks revenge for his father's murder. He feigns madness to uncover the truth behind his father's death. Ultimately, he faces tragic consequences, including the deaths of nearly all the main characters, leading to his own demise. The play explores themes of revenge, betrayal, and the complexity of human nature.",
+    "score": 9,
+    "status": "approved",
+    "agent_ms": 5855.4,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "Convert 10 miles to kilometers.": {
+    "answer": "To convert 10 miles to kilometers, use the conversion factor of 1 mile = 1.60934 kilometers. Multiply 10 by 1.60934, which gives a result of 16.0934 kilometers.",
+    "score": 10,
+    "status": "approved",
+    "agent_ms": 5893.0,
+    "data_version": "static",
+    "entity": "none"
+  },
+  "Who painted the Mona Lisa?": {
+    "answer": "The Mona Lisa was painted by Leonardo da Vinci, an Italian Renaissance artist renowned for his artistic and scientific genius. Created during the late 15th century, the painting is one of the most famous and recognizable works in the world. Da Vinci began working on the Mona Lisa around 1503 and continued refining it over several years. The portrait is celebrated for its intricate details, sfumato technique, and the enigmatic expression of the subject, which has captivated viewers for centuries.",
+    "score": 10,
+    "status": "approved",
+    "agent_ms": 7219.8,
+    "data_version": "static",
+    "entity": "none"
+  }
+}

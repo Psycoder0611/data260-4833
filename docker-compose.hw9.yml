@@ -1,0 +1,21 @@
+name: s4833-hw9
+
+# HW9: Redis Stack (Redis + the RediSearch vector index module).
+#
+#   docker compose -f docker-compose.hw9.yml up -d
+#   docker compose -f docker-compose.hw9.yml ps
+#
+# Host scripts reach it on localhost:6379. The HW8 Kafka stack is separate and is
+# not needed for HW9 (the cache calls the HW8 agent logic in-process).
+
+services:
+  redis:
+    image: redis/redis-stack-server:latest
+    container_name: s4833-redis
+    ports:
+      - "127.0.0.1:6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10

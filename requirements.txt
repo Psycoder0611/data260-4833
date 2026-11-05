@@ -37,3 +37,7 @@ beautifulsoup4==4.14.3
 
 # HW8
 aiokafka==0.14.0
+
+# HW9
+redis==8.1.0
+fakeredis==2.40.0

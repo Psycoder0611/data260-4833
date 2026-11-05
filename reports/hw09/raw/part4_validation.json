@@ -1,0 +1,86 @@
+{
+  "baseline_flags": {
+    "va01": false,
+    "va02": false,
+    "va03": false,
+    "va04": false,
+    "va05": false,
+    "va06": false,
+    "va07": false,
+    "va08": false,
+    "va09": false,
+    "va10": true,
+    "va11": false,
+    "va12": true
+  },
+  "candidates": [
+    {
+      "lesson_id": "lesson_001",
+      "topic": "field_limits",
+      "status": "kept",
+      "improved": [
+        "va01",
+        "va02"
+      ],
+      "regressed": [],
+      "unrelated_ok": true,
+      "correct_before": 2,
+      "correct_after": 4
+    },
+    {
+      "lesson_id": "lesson_002",
+      "topic": "message_handling",
+      "status": "kept",
+      "improved": [
+        "va04"
+      ],
+      "regressed": [],
+      "unrelated_ok": true,
+      "correct_before": 4,
+      "correct_after": 5
+    },
+    {
+      "lesson_id": "lesson_003",
+      "topic": "trial_records",
+      "status": "kept",
+      "improved": [
+        "va05"
+      ],
+      "regressed": [],
+      "unrelated_ok": true,
+      "correct_before": 5,
+      "correct_after": 6
+    },
+    {
+      "lesson_id": "lesson_004",
+      "topic": "unavailable_data",
+      "status": "kept",
+      "improved": [
+        "va08",
+        "va09"
+      ],
+      "regressed": [],
+      "unrelated_ok": true,
+      "correct_before": 6,
+      "correct_after": 8
+    },
+    {
+      "lesson_id": "lesson_005",
+      "topic": "controlled_test",
+      "status": "rejected",
+      "improved": [],
+      "regressed": [
+        "va10"
+      ],
+      "unrelated_ok": true,
+      "correct_before": 8,
+      "correct_after": 7
+    }
+  ],
+  "kept": [
+    "lesson_001",
+    "lesson_002",
+    "lesson_003",
+    "lesson_004"
+  ]
+}

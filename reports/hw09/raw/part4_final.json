@@ -1,0 +1,1945 @@
+{
+  "table": [
+    {
+      "variant": "Baseline",
+      "correct": 5,
+      "incorrect": 11,
+      "avg_attempts": 1,
+      "avg_latency_ms": 2391.8
+    },
+    {
+      "variant": "Evaluator Repair",
+      "correct": 16,
+      "incorrect": 0,
+      "avg_attempts": 1.69,
+      "avg_latency_ms": 3615.2
+    },
+    {
+      "variant": "Lesson Memory",
+      "correct": 16,
+      "incorrect": 0,
+      "avg_attempts": 1.31,
+      "avg_latency_ms": 2711.0
+    },
+    {
+      "variant": "Validated Improvement",
+      "correct": 16,
+      "incorrect": 0,
+      "avg_attempts": 1.31,
+      "avg_latency_ms": 2838.5
+    }
+  ],
+  "detail": {
+    "Baseline": [
+      {
+        "question": "What is the longest description a trial listing can have, in characters?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The longest description a trial listing can have is 10,000 characters. This limit includes spaces and punctuation. It ensures clarity while keeping the description concise.",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['2000'].",
+            "feedback": "Reference (ref_description_len): A trial description is optional and can be at most 2000 characters long. State this value exactly.",
+            "topic": "field_limits",
+            "entry_id": "ref_description_len",
+            "lessons_loaded": [],
+            "answer_ms": 1636.1
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The longest description a trial listing can have is 10,000 characters. This limit includes spaces and punctuation. It ensures clarity while keeping the description concise.",
+        "final_result": "REVISE",
+        "first_result": "REVISE",
+        "topic": "field_limits",
+        "entry_id": "ref_description_len",
+        "correct": false,
+        "latency_ms": 1636.6,
+        "id": "te01"
+      },
+      {
+        "question": "What is the maximum length of a trial title?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The maximum length of a trial title is typically 100 characters, including spaces. This limit ensures clarity and consistency across clinical trial registries. Specific values may vary slightly depending on the registry's requirements.",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['255'].",
+            "feedback": "Reference (ref_title_len): A trial title must be 2 to 255 characters long. State this value exactly.",
+            "topic": "field_limits",
+            "entry_id": "ref_title_len",
+            "lessons_loaded": [],
+            "answer_ms": 1979.6
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The maximum length of a trial title is typically 100 characters, including spaces. This limit ensures clarity and consistency across clinical trial registries. Specific values may vary slightly depending on the registry's requirements.",
+        "final_result": "REVISE",
+        "first_result": "REVISE",
+        "topic": "field_limits",
+        "entry_id": "ref_title_len",
+        "correct": false,
+        "latency_ms": 1979.9,
+        "id": "te02"
+      },
+      {
+        "question": "How long can a trial code be?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "A trial code can be up to 12 characters long. It typically includes a combination of letters and numbers. Specific examples include codes like \"NCT01234567\" or \"ISRCTN12345678\".",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['100'].",
+            "feedback": "Reference (ref_code_len): A trial code must be 3 to 100 characters long. State this value exactly.",
+            "topic": "field_limits",
+            "entry_id": "ref_code_len",
+            "lessons_loaded": [],
+            "answer_ms": 2521.8
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "A trial code can be up to 12 characters long. It typically includes a combination of letters and numbers. Specific examples include codes like \"NCT01234567\" or \"ISRCTN12345678\".",
+        "final_result": "REVISE",
+        "first_result": "REVISE",
+        "topic": "field_limits",
+        "entry_id": "ref_code_len",
+        "correct": false,
+        "latency_ms": 2522.1,
+        "id": "te03"
+      },
+      {
+        "question": "Where are messages sent that keep failing after every retry?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Messages that keep failing after every retry are sent to the \"Dead Letter Queue\" (DLQ). The DLQ is a specific queue where messages are moved when they cannot be processed successfully after a predefined number of retries. The exact location of the DLQ depends on the messaging system in use, such as RabbitMQ, Kafka, or AWS SQS.",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['s4833_dead_letter'].",
+            "feedback": "Reference (ref_dead_letter_topic): Messages that keep failing are published to the topic s4833_dead_letter. State this value exactly.",
+            "topic": "message_handling",
+            "entry_id": "ref_dead_letter_topic",
+            "lessons_loaded": [],
+            "answer_ms": 3254.2
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "Messages that keep failing after every retry are sent to the \"Dead Letter Queue\" (DLQ). The DLQ is a specific queue where messages are moved when they cannot be processed successfully after a predefined number of retries. The exact location of the DLQ depends on the messaging system in use, such as RabbitMQ, Kafka, or AWS SQS.",
+        "final_result": "REVISE",
+        "first_result": "REVISE",
+        "topic": "message_handling",
+        "entry_id": "ref_dead_letter_topic",
+        "correct": false,
+        "latency_ms": 3254.4,
+        "id": "te04"
+      },
+      {
+        "question": "How many participants can join trial CT-2026-102?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The trial CT-2026-102 can include up to 200 participants. This number is specified in the trial's protocol and is the maximum enrollment target. The exact number of participants may vary depending on recruitment rates and study progress.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "trial_records",
+            "entry_id": "ref_ct102_capacity",
+            "lessons_loaded": [],
+            "answer_ms": 2535.6
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The trial CT-2026-102 can include up to 200 participants. This number is specified in the trial's protocol and is the maximum enrollment target. The exact number of participants may vary depending on recruitment rates and study progress.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "trial_records",
+        "entry_id": "ref_ct102_capacity",
+        "correct": true,
+        "latency_ms": 2535.9,
+        "id": "te05"
+      },
+      {
+        "question": "What is the capacity of trial CT-2026-103?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The capacity of trial CT-2026-103 is 30 participants. This includes 15 participants in the experimental group and 15 in the control group. The trial is designed to evaluate the efficacy and safety of the investigational drug.",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['60'].",
+            "feedback": "Reference (ref_ct103_capacity): Trial CT-2026-103 has a participant capacity of 60. State this value exactly.",
+            "topic": "trial_records",
+            "entry_id": "ref_ct103_capacity",
+            "lessons_loaded": [],
+            "answer_ms": 2694.4
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The capacity of trial CT-2026-103 is 30 participants. This includes 15 participants in the experimental group and 15 in the control group. The trial is designed to evaluate the efficacy and safety of the investigational drug.",
+        "final_result": "REVISE",
+        "first_result": "REVISE",
+        "topic": "trial_records",
+        "entry_id": "ref_ct103_capacity",
+        "correct": false,
+        "latency_ms": 2694.8,
+        "id": "te06"
+      },
+      {
+        "question": "What is the name of trial CT-2026-105?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The trial CT-2026-105 is named \"A Study to Evaluate the Safety and Efficacy of XYZ-123 in Patients With Advanced Solid Tumors.\"",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['hypertension medication'].",
+            "feedback": "Reference (ref_ct105_title): Trial CT-2026-105 is titled \"Hypertension Medication Adherence Study\". State this value exactly.",
+            "topic": "trial_records",
+            "entry_id": "ref_ct105_title",
+            "lessons_loaded": [],
+            "answer_ms": 1903.0
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The trial CT-2026-105 is named \"A Study to Evaluate the Safety and Efficacy of XYZ-123 in Patients With Advanced Solid Tumors.\"",
+        "final_result": "REVISE",
+        "first_result": "REVISE",
+        "topic": "trial_records",
+        "entry_id": "ref_ct105_title",
+        "correct": false,
+        "latency_ms": 1903.2,
+        "id": "te07"
+      },
+      {
+        "question": "Which phase does trial CT-2026-102 belong to?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The trial CT-2026-102 belongs to Phase III. It is a multicenter, randomized, double-blind, placebo-controlled study. The trial involves 1,200 participants across 50 sites.",
+            "result": "REVISE",
+            "explanation": "The listings data has no such value, but the answer gives one.",
+            "feedback": "Reference (ref_no_phase): The listings data has no phase for a trial. Do not guess. Say that the information is not available.",
+            "topic": "unavailable_data",
+            "entry_id": "ref_no_phase",
+            "lessons_loaded": [],
+            "answer_ms": 2052.2
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The trial CT-2026-102 belongs to Phase III. It is a multicenter, randomized, double-blind, placebo-controlled study. The trial involves 1,200 participants across 50 sites.",
+        "final_result": "REVISE",
+        "first_result": "REVISE",
+        "topic": "unavailable_data",
+        "entry_id": "ref_no_phase",
+        "correct": false,
+        "latency_ms": 2052.3,
+        "id": "te08"
+      },
+      {
+        "question": "Who is the principal investigator for trial CT-2026-101?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The principal investigator for trial CT-2026-101 is Dr. Emily J. Thompson, MD. She is based at the Department of Oncology at St. Mary's Hospital. Her contact information is emily.thompson@stmarys.org.",
+            "result": "REVISE",
+            "explanation": "The listings data has no such value, but the answer gives one.",
+            "feedback": "Reference (ref_no_investigator): The listings data does not record a principal investigator. Do not guess. Say that the information is not available.",
+            "topic": "unavailable_data",
+            "entry_id": "ref_no_investigator",
+            "lessons_loaded": [],
+            "answer_ms": 2319.8
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The principal investigator for trial CT-2026-101 is Dr. Emily J. Thompson, MD. She is based at the Department of Oncology at St. Mary's Hospital. Her contact information is emily.thompson@stmarys.org.",
+        "final_result": "REVISE",
+        "first_result": "REVISE",
+        "topic": "unavailable_data",
+        "entry_id": "ref_no_investigator",
+        "correct": false,
+        "latency_ms": 2320.0,
+        "id": "te09"
+      },
+      {
+        "question": "When does enrollment start for trial CT-2026-104?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Enrollment for trial CT-2026-104 started on January 15, 2023. The trial is expected to enroll up to 120 participants. The enrollment period is scheduled to end on December 31, 2024.",
+            "result": "REVISE",
+            "explanation": "The listings data has no such value, but the answer gives one.",
+            "feedback": "Reference (ref_no_dates): The listings data has no start date or enrollment deadline. Do not guess. Say that the information is not available.",
+            "topic": "unavailable_data",
+            "entry_id": "ref_no_dates",
+            "lessons_loaded": [],
+            "answer_ms": 2476.5
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "Enrollment for trial CT-2026-104 started on January 15, 2023. The trial is expected to enroll up to 120 participants. The enrollment period is scheduled to end on December 31, 2024.",
+        "final_result": "REVISE",
+        "first_result": "REVISE",
+        "topic": "unavailable_data",
+        "entry_id": "ref_no_dates",
+        "correct": false,
+        "latency_ms": 2476.6,
+        "id": "te10"
+      },
+      {
+        "question": "How many attempts does an agent make before a message is dead-lettered?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The agent makes a maximum of 3 attempts before a message is dead-lettered. If the message is not processed successfully within these attempts, it is moved to the dead-letter queue. Each attempt is spaced by a configurable interval, typically 10 seconds.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "message_handling",
+            "entry_id": "ref_max_attempts",
+            "lessons_loaded": [],
+            "answer_ms": 2188.1
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The agent makes a maximum of 3 attempts before a message is dead-lettered. If the message is not processed successfully within these attempts, it is moved to the dead-letter queue. Each attempt is spaced by a configurable interval, typically 10 seconds.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "message_handling",
+        "entry_id": "ref_max_attempts",
+        "correct": true,
+        "latency_ms": 2188.5,
+        "id": "te11"
+      },
+      {
+        "question": "When does an agent commit a Kafka offset?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "An agent commits a Kafka offset after successfully processing a message and acknowledging its consumption. The offset is committed to the Kafka log at the end of the processing step, typically after the message has been fully handled and no further action is required. This ensures that the agent's progress is recorded and messages are not reprocessed.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "message_handling",
+            "entry_id": "ref_offset_commit",
+            "lessons_loaded": [],
+            "answer_ms": 2601.2
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "An agent commits a Kafka offset after successfully processing a message and acknowledging its consumption. The offset is committed to the Kafka log at the end of the processing step, typically after the message has been fully handled and no further action is required. This ensures that the agent's progress is recorded and messages are not reprocessed.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "message_handling",
+        "entry_id": "ref_offset_commit",
+        "correct": true,
+        "latency_ms": 2601.3,
+        "id": "te12"
+      },
+      {
+        "question": "Which fields must be provided to create a trial listing?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "To create a trial listing, the following fields must be provided: trial ID, title, sponsor, condition, phase, and start date. Additionally, the primary contact information and a brief description of the trial are required. Specific values include the exact trial identifier, full name of the sponsor, medical condition being studied, trial phase (e.g., Phase III), and the actual start date in YYYY-MM-DD format.",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['code'].",
+            "feedback": "Reference (ref_required_fields): Creating a trial listing requires six fields: trialTitle, sponsor, trial_code, participant_capacity, submitterEmail and category. State this value exactly.",
+            "topic": "creation_rules",
+            "entry_id": "ref_required_fields",
+            "lessons_loaded": [],
+            "answer_ms": 3511.8
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "To create a trial listing, the following fields must be provided: trial ID, title, sponsor, condition, phase, and start date. Additionally, the primary contact information and a brief description of the trial are required. Specific values include the exact trial identifier, full name of the sponsor, medical condition being studied, trial phase (e.g., Phase III), and the actual start date in YYYY-MM-DD format.",
+        "final_result": "REVISE",
+        "first_result": "REVISE",
+        "topic": "creation_rules",
+        "entry_id": "ref_required_fields",
+        "correct": false,
+        "latency_ms": 3512.0,
+        "id": "te13"
+      },
+      {
+        "question": "What review score does the Reviewer need to approve a draft?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The Reviewer needs to achieve a review score of at least 85% to approve a draft. This score is calculated based on the completeness and quality of the feedback provided. A score below 85% indicates that the draft requires further revisions before approval.",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['6', 'six'].",
+            "feedback": "Reference (ref_approval_score): The Reviewer approves a draft when its score is at least 6 out of 10. State this value exactly.",
+            "topic": "message_handling",
+            "entry_id": "ref_approval_score",
+            "lessons_loaded": [],
+            "answer_ms": 2318.7
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The Reviewer needs to achieve a review score of at least 85% to approve a draft. This score is calculated based on the completeness and quality of the feedback provided. A score below 85% indicates that the draft requires further revisions before approval.",
+        "final_result": "REVISE",
+        "first_result": "REVISE",
+        "topic": "message_handling",
+        "entry_id": "ref_approval_score",
+        "correct": false,
+        "latency_ms": 2319.1,
+        "id": "te14"
+      },
+      {
+        "question": "What is the capital of Australia?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The capital of Australia is Canberra. It is located in the Australian Capital Territory. Canberra was chosen as the capital in 1908 to resolve a dispute between Sydney and Melbourne.",
+            "result": "PASS",
+            "explanation": "Unrelated question; the answer adds no listing facts.",
+            "feedback": "",
+            "topic": null,
+            "entry_id": null,
+            "lessons_loaded": [],
+            "answer_ms": 1648.4
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The capital of Australia is Canberra. It is located in the Australian Capital Territory. Canberra was chosen as the capital in 1908 to resolve a dispute between Sydney and Melbourne.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": null,
+        "entry_id": null,
+        "correct": true,
+        "latency_ms": 1648.6,
+        "id": "te15"
+      },
+      {
+        "question": "How do I convert Celsius to Fahrenheit?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "To convert Celsius to Fahrenheit, multiply the Celsius temperature by 9/5 and then add 32. For example, 20\u00b0C is equal to (20 \u00d7 9/5) + 32 = 68\u00b0F. This formula works for any Celsius temperature.",
+            "result": "PASS",
+            "explanation": "Unrelated question; the answer adds no listing facts.",
+            "feedback": "",
+            "topic": null,
+            "entry_id": null,
+            "lessons_loaded": [],
+            "answer_ms": 2623.5
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "To convert Celsius to Fahrenheit, multiply the Celsius temperature by 9/5 and then add 32. For example, 20\u00b0C is equal to (20 \u00d7 9/5) + 32 = 68\u00b0F. This formula works for any Celsius temperature.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": null,
+        "entry_id": null,
+        "correct": true,
+        "latency_ms": 2623.7,
+        "id": "te16"
+      }
+    ],
+    "Evaluator Repair": [
+      {
+        "question": "What is the longest description a trial listing can have, in characters?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The longest description a trial listing can have is 10,000 characters. This limit includes spaces and punctuation. It ensures clarity while keeping the description concise.",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['2000'].",
+            "feedback": "Reference (ref_description_len): A trial description is optional and can be at most 2000 characters long. State this value exactly.",
+            "topic": "field_limits",
+            "entry_id": "ref_description_len",
+            "lessons_loaded": [],
+            "answer_ms": 1366.7
+          },
+          {
+            "attempt": 2,
+            "answer": "The longest description a trial listing can have is 2000 characters. This limit includes spaces and punctuation. It ensures clarity while keeping the description concise.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "field_limits",
+            "entry_id": "ref_description_len",
+            "lessons_loaded": [],
+            "answer_ms": 1388.5
+          }
+        ],
+        "attempt_count": 2,
+        "final_answer": "The longest description a trial listing can have is 2000 characters. This limit includes spaces and punctuation. It ensures clarity while keeping the description concise.",
+        "final_result": "PASS",
+        "first_result": "REVISE",
+        "topic": "field_limits",
+        "entry_id": "ref_description_len",
+        "correct": true,
+        "latency_ms": 2755.5,
+        "id": "te01"
+      },
+      {
+        "question": "What is the maximum length of a trial title?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The maximum length of a trial title is typically 100 characters, including spaces. This limit ensures clarity and consistency across clinical trial registries. Specific values may vary slightly depending on the registry's requirements.",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['255'].",
+            "feedback": "Reference (ref_title_len): A trial title must be 2 to 255 characters long. State this value exactly.",
+            "topic": "field_limits",
+            "entry_id": "ref_title_len",
+            "lessons_loaded": [],
+            "answer_ms": 1676.8
+          },
+          {
+            "attempt": 2,
+            "answer": "The maximum length of a trial title is 255 characters. This limit applies to ensure compatibility with clinical trial registries. The minimum length is 2 characters.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "field_limits",
+            "entry_id": "ref_title_len",
+            "lessons_loaded": [],
+            "answer_ms": 1480.0
+          }
+        ],
+        "attempt_count": 2,
+        "final_answer": "The maximum length of a trial title is 255 characters. This limit applies to ensure compatibility with clinical trial registries. The minimum length is 2 characters.",
+        "final_result": "PASS",
+        "first_result": "REVISE",
+        "topic": "field_limits",
+        "entry_id": "ref_title_len",
+        "correct": true,
+        "latency_ms": 3157.0,
+        "id": "te02"
+      },
+      {
+        "question": "How long can a trial code be?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "A trial code can be up to 12 characters long. It typically includes a combination of letters and numbers. Specific examples include codes like \"NCT01234567\" or \"ISRCTN12345678\".",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['100'].",
+            "feedback": "Reference (ref_code_len): A trial code must be 3 to 100 characters long. State this value exactly.",
+            "topic": "field_limits",
+            "entry_id": "ref_code_len",
+            "lessons_loaded": [],
+            "answer_ms": 2158.1
+          },
+          {
+            "attempt": 2,
+            "answer": "A trial code must be 3 to 100 characters long. It can include letters, numbers, and special characters. Examples of trial codes include \"NCT01234567\" or \"ISRCTN12345678\".",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "field_limits",
+            "entry_id": "ref_code_len",
+            "lessons_loaded": [],
+            "answer_ms": 2427.4
+          }
+        ],
+        "attempt_count": 2,
+        "final_answer": "A trial code must be 3 to 100 characters long. It can include letters, numbers, and special characters. Examples of trial codes include \"NCT01234567\" or \"ISRCTN12345678\".",
+        "final_result": "PASS",
+        "first_result": "REVISE",
+        "topic": "field_limits",
+        "entry_id": "ref_code_len",
+        "correct": true,
+        "latency_ms": 4585.8,
+        "id": "te03"
+      },
+      {
+        "question": "Where are messages sent that keep failing after every retry?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Messages that keep failing after every retry are sent to the \"Dead Letter Queue\" (DLQ). The DLQ is a specific queue where messages are moved when they cannot be processed successfully after a predefined number of retries. The exact location of the DLQ depends on the messaging system in use, such as RabbitMQ, Kafka, or AWS SQS.",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['s4833_dead_letter'].",
+            "feedback": "Reference (ref_dead_letter_topic): Messages that keep failing are published to the topic s4833_dead_letter. State this value exactly.",
+            "topic": "message_handling",
+            "entry_id": "ref_dead_letter_topic",
+            "lessons_loaded": [],
+            "answer_ms": 2796.6
+          },
+          {
+            "attempt": 2,
+            "answer": "Messages that keep failing after every retry are sent to the \"Dead Letter Queue\" (DLQ), specifically to the topic **s4833_dead_letter**. This topic is the designated location for messages that cannot be processed successfully after a predefined number of retries. The exact topic name is **s4833_dead_letter**.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "message_handling",
+            "entry_id": "ref_dead_letter_topic",
+            "lessons_loaded": [],
+            "answer_ms": 2833.0
+          }
+        ],
+        "attempt_count": 2,
+        "final_answer": "Messages that keep failing after every retry are sent to the \"Dead Letter Queue\" (DLQ), specifically to the topic **s4833_dead_letter**. This topic is the designated location for messages that cannot be processed successfully after a predefined number of retries. The exact topic name is **s4833_dead_letter**.",
+        "final_result": "PASS",
+        "first_result": "REVISE",
+        "topic": "message_handling",
+        "entry_id": "ref_dead_letter_topic",
+        "correct": true,
+        "latency_ms": 5629.9,
+        "id": "te04"
+      },
+      {
+        "question": "How many participants can join trial CT-2026-102?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The trial CT-2026-102 can include up to 200 participants. This number is specified in the trial's protocol and is the maximum enrollment target. The exact number of participants may vary depending on recruitment rates and study progress.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "trial_records",
+            "entry_id": "ref_ct102_capacity",
+            "lessons_loaded": [],
+            "answer_ms": 2098.5
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The trial CT-2026-102 can include up to 200 participants. This number is specified in the trial's protocol and is the maximum enrollment target. The exact number of participants may vary depending on recruitment rates and study progress.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "trial_records",
+        "entry_id": "ref_ct102_capacity",
+        "correct": true,
+        "latency_ms": 2098.7,
+        "id": "te05"
+      },
+      {
+        "question": "What is the capacity of trial CT-2026-103?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The capacity of trial CT-2026-103 is 30 participants. This includes 15 participants in the experimental group and 15 in the control group. The trial is designed to evaluate the efficacy and safety of the investigational drug.",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['60'].",
+            "feedback": "Reference (ref_ct103_capacity): Trial CT-2026-103 has a participant capacity of 60. State this value exactly.",
+            "topic": "trial_records",
+            "entry_id": "ref_ct103_capacity",
+            "lessons_loaded": [],
+            "answer_ms": 2302.0
+          },
+          {
+            "attempt": 2,
+            "answer": "The capacity of trial CT-2026-103 is 60 participants. This includes 30 participants in the experimental group and 30 in the control group. The trial is designed to evaluate the efficacy and safety of the investigational drug.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "trial_records",
+            "entry_id": "ref_ct103_capacity",
+            "lessons_loaded": [],
+            "answer_ms": 2294.8
+          }
+        ],
+        "attempt_count": 2,
+        "final_answer": "The capacity of trial CT-2026-103 is 60 participants. This includes 30 participants in the experimental group and 30 in the control group. The trial is designed to evaluate the efficacy and safety of the investigational drug.",
+        "final_result": "PASS",
+        "first_result": "REVISE",
+        "topic": "trial_records",
+        "entry_id": "ref_ct103_capacity",
+        "correct": true,
+        "latency_ms": 4597.2,
+        "id": "te06"
+      },
+      {
+        "question": "What is the name of trial CT-2026-105?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The trial CT-2026-105 is named \"A Study to Evaluate the Safety and Efficacy of XYZ-123 in Patients With Advanced Solid Tumors.\"",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['hypertension medication'].",
+            "feedback": "Reference (ref_ct105_title): Trial CT-2026-105 is titled \"Hypertension Medication Adherence Study\". State this value exactly.",
+            "topic": "trial_records",
+            "entry_id": "ref_ct105_title",
+            "lessons_loaded": [],
+            "answer_ms": 1569.3
+          },
+          {
+            "attempt": 2,
+            "answer": "The trial CT-2026-105 is titled \"Hypertension Medication Adherence Study\".",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "trial_records",
+            "entry_id": "ref_ct105_title",
+            "lessons_loaded": [],
+            "answer_ms": 1212.7
+          }
+        ],
+        "attempt_count": 2,
+        "final_answer": "The trial CT-2026-105 is titled \"Hypertension Medication Adherence Study\".",
+        "final_result": "PASS",
+        "first_result": "REVISE",
+        "topic": "trial_records",
+        "entry_id": "ref_ct105_title",
+        "correct": true,
+        "latency_ms": 2782.3,
+        "id": "te07"
+      },
+      {
+        "question": "Which phase does trial CT-2026-102 belong to?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The trial CT-2026-102 belongs to Phase III. It is a multicenter, randomized, double-blind, placebo-controlled study. The trial involves 1,200 participants across 50 sites.",
+            "result": "REVISE",
+            "explanation": "The listings data has no such value, but the answer gives one.",
+            "feedback": "Reference (ref_no_phase): The listings data has no phase for a trial. Do not guess. Say that the information is not available.",
+            "topic": "unavailable_data",
+            "entry_id": "ref_no_phase",
+            "lessons_loaded": [],
+            "answer_ms": 2050.3
+          },
+          {
+            "attempt": 2,
+            "answer": "The phase for trial CT-2026-102 is not available in the listings data. The information cannot be determined from the provided reference. Please consult the official trial documentation for accurate details.",
+            "result": "PASS",
+            "explanation": "The answer says the value is not available, as the reference requires.",
+            "feedback": "",
+            "topic": "unavailable_data",
+            "entry_id": "ref_no_phase",
+            "lessons_loaded": [],
+            "answer_ms": 1860.9
+          }
+        ],
+        "attempt_count": 2,
+        "final_answer": "The phase for trial CT-2026-102 is not available in the listings data. The information cannot be determined from the provided reference. Please consult the official trial documentation for accurate details.",
+        "final_result": "PASS",
+        "first_result": "REVISE",
+        "topic": "unavailable_data",
+        "entry_id": "ref_no_phase",
+        "correct": true,
+        "latency_ms": 3911.4,
+        "id": "te08"
+      },
+      {
+        "question": "Who is the principal investigator for trial CT-2026-101?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The principal investigator for trial CT-2026-101 is Dr. Emily J. Thompson, MD. She is based at the Department of Oncology at St. Mary's Hospital. Her contact information is emily.thompson@stmarys.org.",
+            "result": "REVISE",
+            "explanation": "The listings data has no such value, but the answer gives one.",
+            "feedback": "Reference (ref_no_investigator): The listings data does not record a principal investigator. Do not guess. Say that the information is not available.",
+            "topic": "unavailable_data",
+            "entry_id": "ref_no_investigator",
+            "lessons_loaded": [],
+            "answer_ms": 2311.3
+          },
+          {
+            "attempt": 2,
+            "answer": "The principal investigator for trial CT-2026-101 is not recorded in the listings data, so this information is not available.",
+            "result": "PASS",
+            "explanation": "The answer says the value is not available, as the reference requires.",
+            "feedback": "",
+            "topic": "unavailable_data",
+            "entry_id": "ref_no_investigator",
+            "lessons_loaded": [],
+            "answer_ms": 1362.4
+          }
+        ],
+        "attempt_count": 2,
+        "final_answer": "The principal investigator for trial CT-2026-101 is not recorded in the listings data, so this information is not available.",
+        "final_result": "PASS",
+        "first_result": "REVISE",
+        "topic": "unavailable_data",
+        "entry_id": "ref_no_investigator",
+        "correct": true,
+        "latency_ms": 3673.9,
+        "id": "te09"
+      },
+      {
+        "question": "When does enrollment start for trial CT-2026-104?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Enrollment for trial CT-2026-104 started on January 15, 2023. The trial is expected to enroll up to 120 participants. The enrollment period is scheduled to end on December 31, 2024.",
+            "result": "REVISE",
+            "explanation": "The listings data has no such value, but the answer gives one.",
+            "feedback": "Reference (ref_no_dates): The listings data has no start date or enrollment deadline. Do not guess. Say that the information is not available.",
+            "topic": "unavailable_data",
+            "entry_id": "ref_no_dates",
+            "lessons_loaded": [],
+            "answer_ms": 2477.3
+          },
+          {
+            "attempt": 2,
+            "answer": "The start date for enrollment of trial CT-2026-104 is not available in the listings data. The enrollment deadline is also not provided. Please check the official trial documentation for the most accurate and detailed information.",
+            "result": "PASS",
+            "explanation": "The answer says the value is not available, as the reference requires.",
+            "feedback": "",
+            "topic": "unavailable_data",
+            "entry_id": "ref_no_dates",
+            "lessons_loaded": [],
+            "answer_ms": 2016.0
+          }
+        ],
+        "attempt_count": 2,
+        "final_answer": "The start date for enrollment of trial CT-2026-104 is not available in the listings data. The enrollment deadline is also not provided. Please check the official trial documentation for the most accurate and detailed information.",
+        "final_result": "PASS",
+        "first_result": "REVISE",
+        "topic": "unavailable_data",
+        "entry_id": "ref_no_dates",
+        "correct": true,
+        "latency_ms": 4493.7,
+        "id": "te10"
+      },
+      {
+        "question": "How many attempts does an agent make before a message is dead-lettered?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The agent makes a maximum of 3 attempts before a message is dead-lettered. If the message is not processed successfully within these attempts, it is moved to the dead-letter queue. Each attempt is spaced by a configurable interval, typically 10 seconds.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "message_handling",
+            "entry_id": "ref_max_attempts",
+            "lessons_loaded": [],
+            "answer_ms": 2166.2
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The agent makes a maximum of 3 attempts before a message is dead-lettered. If the message is not processed successfully within these attempts, it is moved to the dead-letter queue. Each attempt is spaced by a configurable interval, typically 10 seconds.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "message_handling",
+        "entry_id": "ref_max_attempts",
+        "correct": true,
+        "latency_ms": 2166.3,
+        "id": "te11"
+      },
+      {
+        "question": "When does an agent commit a Kafka offset?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "An agent commits a Kafka offset after successfully processing a message and acknowledging its consumption. The offset is committed to the Kafka log at the end of the processing step, typically after the message has been fully handled and no further action is required. This ensures that the agent's progress is recorded and messages are not reprocessed.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "message_handling",
+            "entry_id": "ref_offset_commit",
+            "lessons_loaded": [],
+            "answer_ms": 2712.1
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "An agent commits a Kafka offset after successfully processing a message and acknowledging its consumption. The offset is committed to the Kafka log at the end of the processing step, typically after the message has been fully handled and no further action is required. This ensures that the agent's progress is recorded and messages are not reprocessed.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "message_handling",
+        "entry_id": "ref_offset_commit",
+        "correct": true,
+        "latency_ms": 2712.3,
+        "id": "te12"
+      },
+      {
+        "question": "Which fields must be provided to create a trial listing?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "To create a trial listing, the following fields must be provided: trial ID, title, sponsor, condition, phase, and start date. Additionally, the primary contact information and a brief description of the trial are required. Specific values include the exact trial identifier, full name of the sponsor, medical condition being studied, trial phase (e.g., Phase III), and the actual start date in YYYY-MM-DD format.",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['code'].",
+            "feedback": "Reference (ref_required_fields): Creating a trial listing requires six fields: trialTitle, sponsor, trial_code, participant_capacity, submitterEmail and category. State this value exactly.",
+            "topic": "creation_rules",
+            "entry_id": "ref_required_fields",
+            "lessons_loaded": [],
+            "answer_ms": 3457.3
+          },
+          {
+            "attempt": 2,
+            "answer": "To create a trial listing, the following six fields must be provided: trialTitle, sponsor, trial_code, participant_capacity, submitterEmail, and category. These fields are required as per the reference, and specific values include the full title of the trial, the official sponsor name, the unique trial identifier, the number of participants, the email address of the submitter, and the trial category.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "creation_rules",
+            "entry_id": "ref_required_fields",
+            "lessons_loaded": [],
+            "answer_ms": 3382.3
+          }
+        ],
+        "attempt_count": 2,
+        "final_answer": "To create a trial listing, the following six fields must be provided: trialTitle, sponsor, trial_code, participant_capacity, submitterEmail, and category. These fields are required as per the reference, and specific values include the full title of the trial, the official sponsor name, the unique trial identifier, the number of participants, the email address of the submitter, and the trial category.",
+        "final_result": "PASS",
+        "first_result": "REVISE",
+        "topic": "creation_rules",
+        "entry_id": "ref_required_fields",
+        "correct": true,
+        "latency_ms": 6840.0,
+        "id": "te13"
+      },
+      {
+        "question": "What review score does the Reviewer need to approve a draft?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The Reviewer needs to achieve a review score of at least 85% to approve a draft. This score is calculated based on the completeness and quality of the feedback provided. A score below 85% indicates that the draft requires further revisions before approval.",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['6', 'six'].",
+            "feedback": "Reference (ref_approval_score): The Reviewer approves a draft when its score is at least 6 out of 10. State this value exactly.",
+            "topic": "message_handling",
+            "entry_id": "ref_approval_score",
+            "lessons_loaded": [],
+            "answer_ms": 2162.4
+          },
+          {
+            "attempt": 2,
+            "answer": "The Reviewer needs to achieve a review score of at least 6 out of 10 to approve a draft. This score is based on the completeness and quality of the feedback provided. A score below 6 indicates that the draft requires further revisions before approval.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "message_handling",
+            "entry_id": "ref_approval_score",
+            "lessons_loaded": [],
+            "answer_ms": 2276.3
+          }
+        ],
+        "attempt_count": 2,
+        "final_answer": "The Reviewer needs to achieve a review score of at least 6 out of 10 to approve a draft. This score is based on the completeness and quality of the feedback provided. A score below 6 indicates that the draft requires further revisions before approval.",
+        "final_result": "PASS",
+        "first_result": "REVISE",
+        "topic": "message_handling",
+        "entry_id": "ref_approval_score",
+        "correct": true,
+        "latency_ms": 4439.1,
+        "id": "te14"
+      },
+      {
+        "question": "What is the capital of Australia?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The capital of Australia is Canberra. It is located in the Australian Capital Territory. Canberra was chosen as the capital in 1908 to resolve a dispute between Sydney and Melbourne.",
+            "result": "PASS",
+            "explanation": "Unrelated question; the answer adds no listing facts.",
+            "feedback": "",
+            "topic": null,
+            "entry_id": null,
+            "lessons_loaded": [],
+            "answer_ms": 1506.2
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The capital of Australia is Canberra. It is located in the Australian Capital Territory. Canberra was chosen as the capital in 1908 to resolve a dispute between Sydney and Melbourne.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": null,
+        "entry_id": null,
+        "correct": true,
+        "latency_ms": 1506.4,
+        "id": "te15"
+      },
+      {
+        "question": "How do I convert Celsius to Fahrenheit?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "To convert Celsius to Fahrenheit, multiply the Celsius temperature by 9/5 and then add 32. For example, 20\u00b0C is equal to (20 \u00d7 9/5) + 32 = 68\u00b0F. This formula works for any Celsius temperature.",
+            "result": "PASS",
+            "explanation": "Unrelated question; the answer adds no listing facts.",
+            "feedback": "",
+            "topic": null,
+            "entry_id": null,
+            "lessons_loaded": [],
+            "answer_ms": 2493.0
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "To convert Celsius to Fahrenheit, multiply the Celsius temperature by 9/5 and then add 32. For example, 20\u00b0C is equal to (20 \u00d7 9/5) + 32 = 68\u00b0F. This formula works for any Celsius temperature.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": null,
+        "entry_id": null,
+        "correct": true,
+        "latency_ms": 2493.2,
+        "id": "te16"
+      }
+    ],
+    "Lesson Memory": [
+      {
+        "question": "What is the longest description a trial listing can have, in characters?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The longest description a trial listing can have is 2000 characters. This limit is fixed by the platform and cannot be exceeded. The description is optional.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "field_limits",
+            "entry_id": "ref_description_len",
+            "lessons_loaded": [
+              "lesson_001",
+              "lesson_005"
+            ],
+            "answer_ms": 1501.9
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The longest description a trial listing can have is 2000 characters. This limit is fixed by the platform and cannot be exceeded. The description is optional.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "field_limits",
+        "entry_id": "ref_description_len",
+        "correct": true,
+        "latency_ms": 1503.4,
+        "id": "te01"
+      },
+      {
+        "question": "What is the maximum length of a trial title?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The maximum length of a trial title is 255 characters. This limit is fixed by the platform and cannot be exceeded. Ensure that the title adheres to this constraint when creating or updating a trial listing.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "field_limits",
+            "entry_id": "ref_title_len",
+            "lessons_loaded": [
+              "lesson_001",
+              "lesson_003",
+              "lesson_005"
+            ],
+            "answer_ms": 1871.2
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The maximum length of a trial title is 255 characters. This limit is fixed by the platform and cannot be exceeded. Ensure that the title adheres to this constraint when creating or updating a trial listing.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "field_limits",
+        "entry_id": "ref_title_len",
+        "correct": true,
+        "latency_ms": 1872.3,
+        "id": "te02"
+      },
+      {
+        "question": "How long can a trial code be?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The length of a trial code is not specified by the platform, so it can be as long as needed. However, it is recommended to keep it concise and relevant. Always check the specific guidelines of the platform you are using for any additional constraints.",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['100'].",
+            "feedback": "Reference (ref_code_len): A trial code must be 3 to 100 characters long. State this value exactly.",
+            "topic": "field_limits",
+            "entry_id": "ref_code_len",
+            "lessons_loaded": [
+              "lesson_001"
+            ],
+            "answer_ms": 2379.4
+          },
+          {
+            "attempt": 2,
+            "answer": "A trial code must be 3 to 100 characters long. This range is fixed by the platform and cannot be exceeded. Always ensure the code fits within this limit when creating a trial listing.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "field_limits",
+            "entry_id": "ref_code_len",
+            "lessons_loaded": [
+              "lesson_001"
+            ],
+            "answer_ms": 1879.9
+          }
+        ],
+        "attempt_count": 2,
+        "final_answer": "A trial code must be 3 to 100 characters long. This range is fixed by the platform and cannot be exceeded. Always ensure the code fits within this limit when creating a trial listing.",
+        "final_result": "PASS",
+        "first_result": "REVISE",
+        "topic": "field_limits",
+        "entry_id": "ref_code_len",
+        "correct": true,
+        "latency_ms": 4260.6,
+        "id": "te03"
+      },
+      {
+        "question": "Where are messages sent that keep failing after every retry?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Messages that keep failing after every retry are sent to the topic s4833_dead_letter. This is according to the specified message-handling rules. The dead letter topic is used to capture messages that cannot be processed successfully.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "message_handling",
+            "entry_id": "ref_dead_letter_topic",
+            "lessons_loaded": [
+              "lesson_002"
+            ],
+            "answer_ms": 2118.8
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "Messages that keep failing after every retry are sent to the topic s4833_dead_letter. This is according to the specified message-handling rules. The dead letter topic is used to capture messages that cannot be processed successfully.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "message_handling",
+        "entry_id": "ref_dead_letter_topic",
+        "correct": true,
+        "latency_ms": 2120.1,
+        "id": "te04"
+      },
+      {
+        "question": "How many participants can join trial CT-2026-102?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The trial CT-2026-102 can have up to 200 participants. This is the maximum number of participants allowed for this trial. The exact stored value for the participant capacity is 200.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "trial_records",
+            "entry_id": "ref_ct102_capacity",
+            "lessons_loaded": [
+              "lesson_003"
+            ],
+            "answer_ms": 2202.2
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The trial CT-2026-102 can have up to 200 participants. This is the maximum number of participants allowed for this trial. The exact stored value for the participant capacity is 200.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "trial_records",
+        "entry_id": "ref_ct102_capacity",
+        "correct": true,
+        "latency_ms": 2204.2,
+        "id": "te05"
+      },
+      {
+        "question": "What is the capacity of trial CT-2026-103?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The capacity of trial CT-2026-103 is confidential and cannot be shared.",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['60'].",
+            "feedback": "Reference (ref_ct103_capacity): Trial CT-2026-103 has a participant capacity of 60. State this value exactly.",
+            "topic": "trial_records",
+            "entry_id": "ref_ct103_capacity",
+            "lessons_loaded": [
+              "lesson_003",
+              "lesson_005"
+            ],
+            "answer_ms": 1176.0
+          },
+          {
+            "attempt": 2,
+            "answer": "The capacity of trial CT-2026-103 is 60. This information is confidential and cannot be shared.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "trial_records",
+            "entry_id": "ref_ct103_capacity",
+            "lessons_loaded": [
+              "lesson_003",
+              "lesson_005"
+            ],
+            "answer_ms": 1384.2
+          }
+        ],
+        "attempt_count": 2,
+        "final_answer": "The capacity of trial CT-2026-103 is 60. This information is confidential and cannot be shared.",
+        "final_result": "PASS",
+        "first_result": "REVISE",
+        "topic": "trial_records",
+        "entry_id": "ref_ct103_capacity",
+        "correct": true,
+        "latency_ms": 2561.6,
+        "id": "te06"
+      },
+      {
+        "question": "What is the name of trial CT-2026-105?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The name of trial CT-2026-105 is \"Efficacy and Safety Study of Xeloda in Patients with Advanced Colorectal Cancer.\"",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['hypertension medication'].",
+            "feedback": "Reference (ref_ct105_title): Trial CT-2026-105 is titled \"Hypertension Medication Adherence Study\". State this value exactly.",
+            "topic": "trial_records",
+            "entry_id": "ref_ct105_title",
+            "lessons_loaded": [
+              "lesson_001"
+            ],
+            "answer_ms": 1624.5
+          },
+          {
+            "attempt": 2,
+            "answer": "The name of trial CT-2026-105 is \"Hypertension Medication Adherence Study\". This title adheres to the platform's requirement of being between 2 and 255 characters.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "trial_records",
+            "entry_id": "ref_ct105_title",
+            "lessons_loaded": [
+              "lesson_001"
+            ],
+            "answer_ms": 2044.7
+          }
+        ],
+        "attempt_count": 2,
+        "final_answer": "The name of trial CT-2026-105 is \"Hypertension Medication Adherence Study\". This title adheres to the platform's requirement of being between 2 and 255 characters.",
+        "final_result": "PASS",
+        "first_result": "REVISE",
+        "topic": "trial_records",
+        "entry_id": "ref_ct105_title",
+        "correct": true,
+        "latency_ms": 3670.6,
+        "id": "te07"
+      },
+      {
+        "question": "Which phase does trial CT-2026-102 belong to?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The phase information for trial CT-2026-102 is not available in the listings data.",
+            "result": "PASS",
+            "explanation": "The answer says the value is not available, as the reference requires.",
+            "feedback": "",
+            "topic": "unavailable_data",
+            "entry_id": "ref_no_phase",
+            "lessons_loaded": [
+              "lesson_003",
+              "lesson_004"
+            ],
+            "answer_ms": 1057.1
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The phase information for trial CT-2026-102 is not available in the listings data.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "unavailable_data",
+        "entry_id": "ref_no_phase",
+        "correct": true,
+        "latency_ms": 1058.3,
+        "id": "te08"
+      },
+      {
+        "question": "Who is the principal investigator for trial CT-2026-101?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The principal investigator for trial CT-2026-101 is not available in the listings data.",
+            "result": "PASS",
+            "explanation": "The answer says the value is not available, as the reference requires.",
+            "feedback": "",
+            "topic": "unavailable_data",
+            "entry_id": "ref_no_investigator",
+            "lessons_loaded": [
+              "lesson_004"
+            ],
+            "answer_ms": 1123.0
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The principal investigator for trial CT-2026-101 is not available in the listings data.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "unavailable_data",
+        "entry_id": "ref_no_investigator",
+        "correct": true,
+        "latency_ms": 1123.8,
+        "id": "te09"
+      },
+      {
+        "question": "When does enrollment start for trial CT-2026-104?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The enrollment start date for trial CT-2026-104 is not available in the listings data.",
+            "result": "PASS",
+            "explanation": "The answer says the value is not available, as the reference requires.",
+            "feedback": "",
+            "topic": "unavailable_data",
+            "entry_id": "ref_no_dates",
+            "lessons_loaded": [
+              "lesson_004"
+            ],
+            "answer_ms": 1294.5
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The enrollment start date for trial CT-2026-104 is not available in the listings data.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "unavailable_data",
+        "entry_id": "ref_no_dates",
+        "correct": true,
+        "latency_ms": 1295.7,
+        "id": "te10"
+      },
+      {
+        "question": "How many attempts does an agent make before a message is dead-lettered?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The agent makes a maximum of 3 attempts before a message is dead-lettered. If the message is not processed successfully within these attempts, it is moved to the dead-letter queue. Each attempt is spaced by a configurable interval, typically 10 seconds.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "message_handling",
+            "entry_id": "ref_max_attempts",
+            "lessons_loaded": [],
+            "answer_ms": 2145.7
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The agent makes a maximum of 3 attempts before a message is dead-lettered. If the message is not processed successfully within these attempts, it is moved to the dead-letter queue. Each attempt is spaced by a configurable interval, typically 10 seconds.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "message_handling",
+        "entry_id": "ref_max_attempts",
+        "correct": true,
+        "latency_ms": 2146.1,
+        "id": "te11"
+      },
+      {
+        "question": "When does an agent commit a Kafka offset?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "An agent commits a Kafka offset after successfully processing a message and acknowledging it to the Kafka broker. The offset is committed to ensure that the message is not reprocessed if there is a failure. The exact timing depends on the configuration, but it typically occurs after the message is fully handled and the agent is confirmed to have processed it.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "message_handling",
+            "entry_id": "ref_offset_commit",
+            "lessons_loaded": [
+              "lesson_002"
+            ],
+            "answer_ms": 2840.3
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "An agent commits a Kafka offset after successfully processing a message and acknowledging it to the Kafka broker. The offset is committed to ensure that the message is not reprocessed if there is a failure. The exact timing depends on the configuration, but it typically occurs after the message is fully handled and the agent is confirmed to have processed it.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "message_handling",
+        "entry_id": "ref_offset_commit",
+        "correct": true,
+        "latency_ms": 2841.9,
+        "id": "te12"
+      },
+      {
+        "question": "Which fields must be provided to create a trial listing?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "To create a trial listing, the title and sponsor name are required fields. The title must be between 2 and 255 characters, and the sponsor name must also be between 2 and 255 characters. The description is optional and can be up to 2000 characters.",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['code'].",
+            "feedback": "Reference (ref_required_fields): Creating a trial listing requires six fields: trialTitle, sponsor, trial_code, participant_capacity, submitterEmail and category. State this value exactly.",
+            "topic": "creation_rules",
+            "entry_id": "ref_required_fields",
+            "lessons_loaded": [
+              "lesson_001"
+            ],
+            "answer_ms": 3037.4
+          },
+          {
+            "attempt": 2,
+            "answer": "To create a trial listing, the required fields are trialTitle, sponsor, trial_code, participant_capacity, submitterEmail, and category. The trialTitle must be between 2 and 255 characters, and the sponsor name must also be between 2 and 255 characters. The description is optional and can be up to 2000 characters.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "creation_rules",
+            "entry_id": "ref_required_fields",
+            "lessons_loaded": [
+              "lesson_001"
+            ],
+            "answer_ms": 4357.9
+          }
+        ],
+        "attempt_count": 2,
+        "final_answer": "To create a trial listing, the required fields are trialTitle, sponsor, trial_code, participant_capacity, submitterEmail, and category. The trialTitle must be between 2 and 255 characters, and the sponsor name must also be between 2 and 255 characters. The description is optional and can be up to 2000 characters.",
+        "final_result": "PASS",
+        "first_result": "REVISE",
+        "topic": "creation_rules",
+        "entry_id": "ref_required_fields",
+        "correct": true,
+        "latency_ms": 7396.7,
+        "id": "te13"
+      },
+      {
+        "question": "What review score does the Reviewer need to approve a draft?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The Reviewer needs to achieve a review score of at least 85% to approve a draft. This score is calculated based on the completeness and quality of the feedback provided. A score below 85% indicates that the draft requires further revisions before approval.",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['6', 'six'].",
+            "feedback": "Reference (ref_approval_score): The Reviewer approves a draft when its score is at least 6 out of 10. State this value exactly.",
+            "topic": "message_handling",
+            "entry_id": "ref_approval_score",
+            "lessons_loaded": [],
+            "answer_ms": 2454.1
+          },
+          {
+            "attempt": 2,
+            "answer": "The Reviewer needs to achieve a review score of at least 6 out of 10 to approve a draft. This score is based on the completeness and quality of the feedback provided. A score below 6 indicates that the draft requires further revisions before approval.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "message_handling",
+            "entry_id": "ref_approval_score",
+            "lessons_loaded": [],
+            "answer_ms": 2328.1
+          }
+        ],
+        "attempt_count": 2,
+        "final_answer": "The Reviewer needs to achieve a review score of at least 6 out of 10 to approve a draft. This score is based on the completeness and quality of the feedback provided. A score below 6 indicates that the draft requires further revisions before approval.",
+        "final_result": "PASS",
+        "first_result": "REVISE",
+        "topic": "message_handling",
+        "entry_id": "ref_approval_score",
+        "correct": true,
+        "latency_ms": 4782.7,
+        "id": "te14"
+      },
+      {
+        "question": "What is the capital of Australia?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The capital of Australia is Canberra. It is located in the Australian Capital Territory. Canberra was chosen as the capital in 1908 to resolve a dispute between Sydney and Melbourne.",
+            "result": "PASS",
+            "explanation": "Unrelated question; the answer adds no listing facts.",
+            "feedback": "",
+            "topic": null,
+            "entry_id": null,
+            "lessons_loaded": [],
+            "answer_ms": 1742.0
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The capital of Australia is Canberra. It is located in the Australian Capital Territory. Canberra was chosen as the capital in 1908 to resolve a dispute between Sydney and Melbourne.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": null,
+        "entry_id": null,
+        "correct": true,
+        "latency_ms": 1742.4,
+        "id": "te15"
+      },
+      {
+        "question": "How do I convert Celsius to Fahrenheit?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "To convert Celsius to Fahrenheit, multiply the Celsius temperature by 9/5 and then add 32. For example, 20\u00b0C is equal to (20 \u00d7 9/5) + 32 = 68\u00b0F. This formula works for any Celsius temperature.",
+            "result": "PASS",
+            "explanation": "Unrelated question; the answer adds no listing facts.",
+            "feedback": "",
+            "topic": null,
+            "entry_id": null,
+            "lessons_loaded": [],
+            "answer_ms": 2795.2
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "To convert Celsius to Fahrenheit, multiply the Celsius temperature by 9/5 and then add 32. For example, 20\u00b0C is equal to (20 \u00d7 9/5) + 32 = 68\u00b0F. This formula works for any Celsius temperature.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": null,
+        "entry_id": null,
+        "correct": true,
+        "latency_ms": 2795.5,
+        "id": "te16"
+      }
+    ],
+    "Validated Improvement": [
+      {
+        "question": "What is the longest description a trial listing can have, in characters?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The longest description a trial listing can have is 2000 characters. This limit is fixed by the platform and applies to the optional trial description field. Ensure you do not exceed this limit when providing details about the trial.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "field_limits",
+            "entry_id": "ref_description_len",
+            "lessons_loaded": [
+              "lesson_001"
+            ],
+            "answer_ms": 2480.5
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The longest description a trial listing can have is 2000 characters. This limit is fixed by the platform and applies to the optional trial description field. Ensure you do not exceed this limit when providing details about the trial.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "field_limits",
+        "entry_id": "ref_description_len",
+        "correct": true,
+        "latency_ms": 2482.0,
+        "id": "te01"
+      },
+      {
+        "question": "What is the maximum length of a trial title?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The maximum length of a trial title is 255 characters. This limit is fixed by the platform and must be adhered to when entering trial titles.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "field_limits",
+            "entry_id": "ref_title_len",
+            "lessons_loaded": [
+              "lesson_001",
+              "lesson_003"
+            ],
+            "answer_ms": 1785.9
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The maximum length of a trial title is 255 characters. This limit is fixed by the platform and must be adhered to when entering trial titles.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "field_limits",
+        "entry_id": "ref_title_len",
+        "correct": true,
+        "latency_ms": 1787.1,
+        "id": "te02"
+      },
+      {
+        "question": "How long can a trial code be?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The length of a trial code is not specified by the platform, so it can be as long as needed. However, it is recommended to keep it concise and relevant. Always check the specific guidelines of the platform you are using for any additional constraints.",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['100'].",
+            "feedback": "Reference (ref_code_len): A trial code must be 3 to 100 characters long. State this value exactly.",
+            "topic": "field_limits",
+            "entry_id": "ref_code_len",
+            "lessons_loaded": [
+              "lesson_001"
+            ],
+            "answer_ms": 2461.7
+          },
+          {
+            "attempt": 2,
+            "answer": "A trial code must be 3 to 100 characters long. This range is fixed by the platform and cannot be exceeded. Always ensure the code fits within this limit when creating a trial listing.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "field_limits",
+            "entry_id": "ref_code_len",
+            "lessons_loaded": [
+              "lesson_001"
+            ],
+            "answer_ms": 2193.3
+          }
+        ],
+        "attempt_count": 2,
+        "final_answer": "A trial code must be 3 to 100 characters long. This range is fixed by the platform and cannot be exceeded. Always ensure the code fits within this limit when creating a trial listing.",
+        "final_result": "PASS",
+        "first_result": "REVISE",
+        "topic": "field_limits",
+        "entry_id": "ref_code_len",
+        "correct": true,
+        "latency_ms": 4656.2,
+        "id": "te03"
+      },
+      {
+        "question": "Where are messages sent that keep failing after every retry?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "Messages that keep failing after every retry are sent to the topic s4833_dead_letter. This is according to the specified message-handling rules. The dead letter topic is used to capture messages that cannot be processed successfully.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "message_handling",
+            "entry_id": "ref_dead_letter_topic",
+            "lessons_loaded": [
+              "lesson_002"
+            ],
+            "answer_ms": 1962.5
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "Messages that keep failing after every retry are sent to the topic s4833_dead_letter. This is according to the specified message-handling rules. The dead letter topic is used to capture messages that cannot be processed successfully.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "message_handling",
+        "entry_id": "ref_dead_letter_topic",
+        "correct": true,
+        "latency_ms": 1963.7,
+        "id": "te04"
+      },
+      {
+        "question": "How many participants can join trial CT-2026-102?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The trial CT-2026-102 can have up to 200 participants. This is the maximum number of participants allowed for this trial. The exact stored value for the participant capacity is 200.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "trial_records",
+            "entry_id": "ref_ct102_capacity",
+            "lessons_loaded": [
+              "lesson_003"
+            ],
+            "answer_ms": 2118.8
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The trial CT-2026-102 can have up to 200 participants. This is the maximum number of participants allowed for this trial. The exact stored value for the participant capacity is 200.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "trial_records",
+        "entry_id": "ref_ct102_capacity",
+        "correct": true,
+        "latency_ms": 2119.9,
+        "id": "te05"
+      },
+      {
+        "question": "What is the capacity of trial CT-2026-103?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The capacity of trial CT-2026-103 is not provided in the stored values. Please check if there was a mistake in the trial identifier. The stored value for trial CT-2026-102 is 200 participants.",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['60'].",
+            "feedback": "Reference (ref_ct103_capacity): Trial CT-2026-103 has a participant capacity of 60. State this value exactly.",
+            "topic": "trial_records",
+            "entry_id": "ref_ct103_capacity",
+            "lessons_loaded": [
+              "lesson_003"
+            ],
+            "answer_ms": 2500.5
+          },
+          {
+            "attempt": 2,
+            "answer": "The capacity of trial CT-2026-103 is 60 participants. This value is explicitly provided in the stored values. The stored value for trial CT-2026-102 is 200 participants.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "trial_records",
+            "entry_id": "ref_ct103_capacity",
+            "lessons_loaded": [
+              "lesson_003"
+            ],
+            "answer_ms": 2680.4
+          }
+        ],
+        "attempt_count": 2,
+        "final_answer": "The capacity of trial CT-2026-103 is 60 participants. This value is explicitly provided in the stored values. The stored value for trial CT-2026-102 is 200 participants.",
+        "final_result": "PASS",
+        "first_result": "REVISE",
+        "topic": "trial_records",
+        "entry_id": "ref_ct103_capacity",
+        "correct": true,
+        "latency_ms": 5182.6,
+        "id": "te06"
+      },
+      {
+        "question": "What is the name of trial CT-2026-105?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The name of trial CT-2026-105 is \"Efficacy and Safety Study of Xeloda in Patients with Advanced Colorectal Cancer.\"",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['hypertension medication'].",
+            "feedback": "Reference (ref_ct105_title): Trial CT-2026-105 is titled \"Hypertension Medication Adherence Study\". State this value exactly.",
+            "topic": "trial_records",
+            "entry_id": "ref_ct105_title",
+            "lessons_loaded": [
+              "lesson_001"
+            ],
+            "answer_ms": 1712.0
+          },
+          {
+            "attempt": 2,
+            "answer": "The name of trial CT-2026-105 is \"Hypertension Medication Adherence Study\". This title adheres to the platform's requirement of being between 2 and 255 characters.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "trial_records",
+            "entry_id": "ref_ct105_title",
+            "lessons_loaded": [
+              "lesson_001"
+            ],
+            "answer_ms": 2012.6
+          }
+        ],
+        "attempt_count": 2,
+        "final_answer": "The name of trial CT-2026-105 is \"Hypertension Medication Adherence Study\". This title adheres to the platform's requirement of being between 2 and 255 characters.",
+        "final_result": "PASS",
+        "first_result": "REVISE",
+        "topic": "trial_records",
+        "entry_id": "ref_ct105_title",
+        "correct": true,
+        "latency_ms": 3726.0,
+        "id": "te07"
+      },
+      {
+        "question": "Which phase does trial CT-2026-102 belong to?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The phase information for trial CT-2026-102 is not available in the listings data.",
+            "result": "PASS",
+            "explanation": "The answer says the value is not available, as the reference requires.",
+            "feedback": "",
+            "topic": "unavailable_data",
+            "entry_id": "ref_no_phase",
+            "lessons_loaded": [
+              "lesson_003",
+              "lesson_004"
+            ],
+            "answer_ms": 1129.6
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The phase information for trial CT-2026-102 is not available in the listings data.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "unavailable_data",
+        "entry_id": "ref_no_phase",
+        "correct": true,
+        "latency_ms": 1130.7,
+        "id": "te08"
+      },
+      {
+        "question": "Who is the principal investigator for trial CT-2026-101?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The principal investigator for trial CT-2026-101 is not available in the listings data.",
+            "result": "PASS",
+            "explanation": "The answer says the value is not available, as the reference requires.",
+            "feedback": "",
+            "topic": "unavailable_data",
+            "entry_id": "ref_no_investigator",
+            "lessons_loaded": [
+              "lesson_004"
+            ],
+            "answer_ms": 1066.6
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The principal investigator for trial CT-2026-101 is not available in the listings data.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "unavailable_data",
+        "entry_id": "ref_no_investigator",
+        "correct": true,
+        "latency_ms": 1067.8,
+        "id": "te09"
+      },
+      {
+        "question": "When does enrollment start for trial CT-2026-104?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The enrollment start date for trial CT-2026-104 is not available in the listings data.",
+            "result": "PASS",
+            "explanation": "The answer says the value is not available, as the reference requires.",
+            "feedback": "",
+            "topic": "unavailable_data",
+            "entry_id": "ref_no_dates",
+            "lessons_loaded": [
+              "lesson_004"
+            ],
+            "answer_ms": 1148.2
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The enrollment start date for trial CT-2026-104 is not available in the listings data.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "unavailable_data",
+        "entry_id": "ref_no_dates",
+        "correct": true,
+        "latency_ms": 1149.4,
+        "id": "te10"
+      },
+      {
+        "question": "How many attempts does an agent make before a message is dead-lettered?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The agent makes a maximum of 3 attempts before a message is dead-lettered. If the message is not processed successfully within these attempts, it is moved to the dead-letter queue. Each attempt is spaced by a configurable interval, typically 10 seconds.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "message_handling",
+            "entry_id": "ref_max_attempts",
+            "lessons_loaded": [],
+            "answer_ms": 2230.3
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The agent makes a maximum of 3 attempts before a message is dead-lettered. If the message is not processed successfully within these attempts, it is moved to the dead-letter queue. Each attempt is spaced by a configurable interval, typically 10 seconds.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "message_handling",
+        "entry_id": "ref_max_attempts",
+        "correct": true,
+        "latency_ms": 2230.6,
+        "id": "te11"
+      },
+      {
+        "question": "When does an agent commit a Kafka offset?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "An agent commits a Kafka offset after successfully processing a message and acknowledging it to the Kafka broker. The offset is committed to ensure that the message is not reprocessed if there is a failure. The exact timing depends on the configuration, but it typically occurs after the message is fully handled and the agent is confirmed to have processed it.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "message_handling",
+            "entry_id": "ref_offset_commit",
+            "lessons_loaded": [
+              "lesson_002"
+            ],
+            "answer_ms": 2829.0
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "An agent commits a Kafka offset after successfully processing a message and acknowledging it to the Kafka broker. The offset is committed to ensure that the message is not reprocessed if there is a failure. The exact timing depends on the configuration, but it typically occurs after the message is fully handled and the agent is confirmed to have processed it.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": "message_handling",
+        "entry_id": "ref_offset_commit",
+        "correct": true,
+        "latency_ms": 2830.1,
+        "id": "te12"
+      },
+      {
+        "question": "Which fields must be provided to create a trial listing?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "To create a trial listing, the title and sponsor name are required fields. The title must be between 2 and 255 characters, and the sponsor name must also be between 2 and 255 characters. The description is optional and can be up to 2000 characters.",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['code'].",
+            "feedback": "Reference (ref_required_fields): Creating a trial listing requires six fields: trialTitle, sponsor, trial_code, participant_capacity, submitterEmail and category. State this value exactly.",
+            "topic": "creation_rules",
+            "entry_id": "ref_required_fields",
+            "lessons_loaded": [
+              "lesson_001"
+            ],
+            "answer_ms": 2701.9
+          },
+          {
+            "attempt": 2,
+            "answer": "To create a trial listing, the required fields are trialTitle, sponsor, trial_code, participant_capacity, submitterEmail, and category. The trialTitle must be between 2 and 255 characters, and the sponsor name must also be between 2 and 255 characters. The description is optional and can be up to 2000 characters.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "creation_rules",
+            "entry_id": "ref_required_fields",
+            "lessons_loaded": [
+              "lesson_001"
+            ],
+            "answer_ms": 3202.5
+          }
+        ],
+        "attempt_count": 2,
+        "final_answer": "To create a trial listing, the required fields are trialTitle, sponsor, trial_code, participant_capacity, submitterEmail, and category. The trialTitle must be between 2 and 255 characters, and the sponsor name must also be between 2 and 255 characters. The description is optional and can be up to 2000 characters.",
+        "final_result": "PASS",
+        "first_result": "REVISE",
+        "topic": "creation_rules",
+        "entry_id": "ref_required_fields",
+        "correct": true,
+        "latency_ms": 5905.8,
+        "id": "te13"
+      },
+      {
+        "question": "What review score does the Reviewer need to approve a draft?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The Reviewer needs to achieve a review score of at least 85% to approve a draft. This score is calculated based on the completeness and quality of the feedback provided. A score below 85% indicates that the draft requires further revisions before approval.",
+            "result": "REVISE",
+            "explanation": "The answer does not contain the reference value ['6', 'six'].",
+            "feedback": "Reference (ref_approval_score): The Reviewer approves a draft when its score is at least 6 out of 10. State this value exactly.",
+            "topic": "message_handling",
+            "entry_id": "ref_approval_score",
+            "lessons_loaded": [],
+            "answer_ms": 2366.4
+          },
+          {
+            "attempt": 2,
+            "answer": "The Reviewer needs to achieve a review score of at least 6 out of 10 to approve a draft. This score is based on the completeness and quality of the feedback provided. A score below 6 indicates that the draft requires further revisions before approval.",
+            "result": "PASS",
+            "explanation": "The answer contains the value from the reference.",
+            "feedback": "",
+            "topic": "message_handling",
+            "entry_id": "ref_approval_score",
+            "lessons_loaded": [],
+            "answer_ms": 2429.2
+          }
+        ],
+        "attempt_count": 2,
+        "final_answer": "The Reviewer needs to achieve a review score of at least 6 out of 10 to approve a draft. This score is based on the completeness and quality of the feedback provided. A score below 6 indicates that the draft requires further revisions before approval.",
+        "final_result": "PASS",
+        "first_result": "REVISE",
+        "topic": "message_handling",
+        "entry_id": "ref_approval_score",
+        "correct": true,
+        "latency_ms": 4796.0,
+        "id": "te14"
+      },
+      {
+        "question": "What is the capital of Australia?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "The capital of Australia is Canberra. It is located in the Australian Capital Territory. Canberra was chosen as the capital in 1908 to resolve a dispute between Sydney and Melbourne.",
+            "result": "PASS",
+            "explanation": "Unrelated question; the answer adds no listing facts.",
+            "feedback": "",
+            "topic": null,
+            "entry_id": null,
+            "lessons_loaded": [],
+            "answer_ms": 1759.6
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "The capital of Australia is Canberra. It is located in the Australian Capital Territory. Canberra was chosen as the capital in 1908 to resolve a dispute between Sydney and Melbourne.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": null,
+        "entry_id": null,
+        "correct": true,
+        "latency_ms": 1759.9,
+        "id": "te15"
+      },
+      {
+        "question": "How do I convert Celsius to Fahrenheit?",
+        "attempts": [
+          {
+            "attempt": 1,
+            "answer": "To convert Celsius to Fahrenheit, multiply the Celsius temperature by 9/5 and then add 32. For example, 20\u00b0C is equal to (20 \u00d7 9/5) + 32 = 68\u00b0F. This formula works for any Celsius temperature.",
+            "result": "PASS",
+            "explanation": "Unrelated question; the answer adds no listing facts.",
+            "feedback": "",
+            "topic": null,
+            "entry_id": null,
+            "lessons_loaded": [],
+            "answer_ms": 2628.0
+          }
+        ],
+        "attempt_count": 1,
+        "final_answer": "To convert Celsius to Fahrenheit, multiply the Celsius temperature by 9/5 and then add 32. For example, 20\u00b0C is equal to (20 \u00d7 9/5) + 32 = 68\u00b0F. This formula works for any Celsius temperature.",
+        "final_result": "PASS",
+        "first_result": "PASS",
+        "topic": null,
+        "entry_id": null,
+        "correct": true,
+        "latency_ms": 2628.3,
+        "id": "te16"
+      }
+    ]
+  }
+}

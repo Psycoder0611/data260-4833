@@ -1,0 +1,56 @@
+{
+  "question": "What is the maximum number of characters allowed in a trial description?",
+  "without_lessons": {
+    "question": "What is the maximum number of characters allowed in a trial description?",
+    "attempts": [
+      {
+        "attempt": 1,
+        "answer": "The maximum number of characters allowed in a trial description is 1,000. This limit ensures clarity and conciseness in trial listings. It applies to both the title and the description fields.",
+        "result": "REVISE",
+        "explanation": "The answer does not contain the reference value ['2000'].",
+        "feedback": "Reference (ref_description_len): A trial description is optional and can be at most 2000 characters long. State this value exactly.",
+        "topic": "field_limits",
+        "entry_id": "ref_description_len",
+        "lessons_loaded": [],
+        "answer_ms": 2032.6
+      }
+    ],
+    "attempt_count": 1,
+    "final_answer": "The maximum number of characters allowed in a trial description is 1,000. This limit ensures clarity and conciseness in trial listings. It applies to both the title and the description fields.",
+    "final_result": "REVISE",
+    "first_result": "REVISE",
+    "topic": "field_limits",
+    "entry_id": "ref_description_len",
+    "correct": false,
+    "latency_ms": 2033.0
+  },
+  "with_lessons": {
+    "question": "What is the maximum number of characters allowed in a trial description?",
+    "attempts": [
+      {
+        "attempt": 1,
+        "answer": "The maximum number of characters allowed in a trial description is 2000. This limit is fixed by the platform and applies to the optional trial description field. Ensure your description does not exceed this limit to avoid submission issues.",
+        "result": "PASS",
+        "explanation": "The answer contains the value from the reference.",
+        "feedback": "",
+        "topic": "field_limits",
+        "entry_id": "ref_description_len",
+        "lessons_loaded": [
+          "lesson_001"
+        ],
+        "answer_ms": 2224.5
+      }
+    ],
+    "attempt_count": 1,
+    "final_answer": "The maximum number of characters allowed in a trial description is 2000. This limit is fixed by the platform and applies to the optional trial description field. Ensure your description does not exceed this limit to avoid submission issues.",
+    "final_result": "PASS",
+    "first_result": "PASS",
+    "topic": "field_limits",
+    "entry_id": "ref_description_len",
+    "correct": true,
+    "latency_ms": 2227.1
+  },
+  "loaded": [
+    "lesson_001"
+  ]
+}

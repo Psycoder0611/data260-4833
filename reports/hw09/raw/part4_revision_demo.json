@@ -1,0 +1,35 @@
+{
+  "question": "How many characters can a trial description contain at most?",
+  "attempts": [
+    {
+      "attempt": 1,
+      "answer": "A trial description can be fairly long.",
+      "result": "REVISE",
+      "explanation": "The answer does not contain the reference value ['2000'].",
+      "feedback": "Reference (ref_description_len): A trial description is optional and can be at most 2000 characters long. State this value exactly.",
+      "topic": "field_limits",
+      "entry_id": "ref_description_len",
+      "lessons_loaded": [],
+      "answer_ms": 0.0
+    },
+    {
+      "attempt": 2,
+      "answer": "A trial description is optional and can be at most 2000 characters long. This limit applies to the entire description text. The maximum allowed length is exactly 2000 characters.",
+      "result": "PASS",
+      "explanation": "The answer contains the value from the reference.",
+      "feedback": "",
+      "topic": "field_limits",
+      "entry_id": "ref_description_len",
+      "lessons_loaded": [],
+      "answer_ms": 2063.0
+    }
+  ],
+  "attempt_count": 2,
+  "final_answer": "A trial description is optional and can be at most 2000 characters long. This limit applies to the entire description text. The maximum allowed length is exactly 2000 characters.",
+  "final_result": "PASS",
+  "first_result": "REVISE",
+  "topic": "field_limits",
+  "entry_id": "ref_description_len",
+  "correct": true,
+  "latency_ms": 2063.7
+}

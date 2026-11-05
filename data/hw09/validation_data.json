@@ -1,0 +1,50 @@
+[
+ {
+  "id": "va01",
+  "question": "What is the maximum number of characters allowed in a trial description?"
+ },
+ {
+  "id": "va02",
+  "question": "How many characters can a trial title have?"
+ },
+ {
+  "id": "va03",
+  "question": "How long can the category of a trial be?"
+ },
+ {
+  "id": "va04",
+  "question": "Into which topic are poison messages moved?"
+ },
+ {
+  "id": "va05",
+  "question": "How many participants does trial CT-2026-102 accept?"
+ },
+ {
+  "id": "va06",
+  "question": "What is the participant capacity of trial CT-2026-104?"
+ },
+ {
+  "id": "va07",
+  "question": "What is the title of trial CT-2026-101?"
+ },
+ {
+  "id": "va08",
+  "question": "What phase is trial CT-2026-103 in?"
+ },
+ {
+  "id": "va09",
+  "question": "Who is the principal investigator of trial CT-2026-105?"
+ },
+ {
+  "id": "va10",
+  "question": "What character must a valid submitter email contain?"
+ },
+ {
+  "id": "va11",
+  "question": "What is the minimum participant capacity of a trial?"
+ },
+ {
+  "id": "va12",
+  "question": "Who painted Starry Night?"
+ }
+]

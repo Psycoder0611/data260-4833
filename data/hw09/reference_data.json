@@ -1,0 +1,765 @@
+{
+ "description": "Ground truth for the HW9 Part 4 evaluator: facts of the Clinical Trial Listings platform built in HW4 to HW8 (field limits from hw8/entity_service.py, retry and dead-letter rules from the HW8 agents, trial rows from the s4833_rel clinical_trials table). The Answering Agent never sees this file.",
+ "refusal_markers": [
+  "not available",
+  "no information",
+  "don't have",
+  "do not have",
+  "doesn't include",
+  "does not include",
+  "not listed",
+  "not provided",
+  "cannot find",
+  "can't find",
+  "unable to find",
+  "not specified",
+  "not recorded",
+  "not in the",
+  "no data",
+  "not stored",
+  "not part of"
+ ],
+ "domain_markers": [
+  "s4833",
+  "ct-2026",
+  "dead_letter",
+  "dead letter",
+  "dead-letter",
+  "trialtitle",
+  "participant_capacity",
+  "participant capacity",
+  "clinical trial",
+  "listing",
+  "kafka",
+  "2000",
+  "255"
+ ],
+ "topics": {
+  "field_limits": {
+   "failure_pattern": "The answer gives a wrong or missing length limit for a field of a trial listing.",
+   "instruction": "Field length limits of a trial listing are fixed by the platform. Use these exact values:"
+  },
+  "creation_rules": {
+   "failure_pattern": "The answer does not state the platform's rule for creating a trial listing.",
+   "instruction": "Use these exact creation rules:"
+  },
+  "message_handling": {
+   "failure_pattern": "The answer does not state how the platform's agents retry, commit and dead-letter messages.",
+   "instruction": "Use these exact message-handling rules:"
+  },
+  "trial_records": {
+   "failure_pattern": "The answer does not give the capacity or title that is stored for a trial.",
+   "instruction": "Use these exact stored values for trials:"
+  },
+  "unavailable_data": {
+   "failure_pattern": "The answer invents a value that the listings data does not contain.",
+   "instruction": "The listings data does not hold every detail of a trial. If a value that was asked for is not part of the listing (phase, principal investigator, start date, enrollment deadline, number enrolled so far), say clearly that it is not available instead of guessing."
+  }
+ },
+ "entries": [
+  {
+   "id": "ref_title_len",
+   "topic": "field_limits",
+   "kind": "fact",
+   "triggers": [
+    [
+     "title",
+     "long"
+    ],
+    [
+     "title",
+     "length"
+    ],
+    [
+     "title",
+     "characters"
+    ],
+    [
+     "title",
+     "short"
+    ]
+   ],
+   "fact": "A trial title must be 2 to 255 characters long.",
+   "must_include": [
+    [
+     "255"
+    ]
+   ]
+  },
+  {
+   "id": "ref_description_len",
+   "topic": "field_limits",
+   "kind": "fact",
+   "triggers": [
+    [
+     "description",
+     "long"
+    ],
+    [
+     "description",
+     "length"
+    ],
+    [
+     "description",
+     "characters"
+    ],
+    [
+     "description",
+     "maximum"
+    ]
+   ],
+   "fact": "A trial description is optional and can be at most 2000 characters long.",
+   "must_include": [
+    [
+     "2000"
+    ]
+   ]
+  },
+  {
+   "id": "ref_sponsor_len",
+   "topic": "field_limits",
+   "kind": "fact",
+   "triggers": [
+    [
+     "sponsor",
+     "long"
+    ],
+    [
+     "sponsor",
+     "length"
+    ],
+    [
+     "sponsor",
+     "characters"
+    ]
+   ],
+   "fact": "A sponsor name must be 2 to 255 characters long.",
+   "must_include": [
+    [
+     "255"
+    ]
+   ]
+  },
+  {
+   "id": "ref_code_len",
+   "topic": "field_limits",
+   "kind": "fact",
+   "triggers": [
+    [
+     "trial code",
+     "long"
+    ],
+    [
+     "trial code",
+     "length"
+    ],
+    [
+     "trial code",
+     "characters"
+    ]
+   ],
+   "fact": "A trial code must be 3 to 100 characters long.",
+   "must_include": [
+    [
+     "100"
+    ]
+   ]
+  },
+  {
+   "id": "ref_category_len",
+   "topic": "field_limits",
+   "kind": "fact",
+   "triggers": [
+    [
+     "category",
+     "long"
+    ],
+    [
+     "category",
+     "length"
+    ],
+    [
+     "category",
+     "characters"
+    ]
+   ],
+   "fact": "A category must be 2 to 100 characters long.",
+   "must_include": [
+    [
+     "100"
+    ]
+   ]
+  },
+  {
+   "id": "ref_required_fields",
+   "topic": "creation_rules",
+   "kind": "fact",
+   "triggers": [
+    [
+     "required",
+     "field"
+    ],
+    [
+     "fields",
+     "create"
+    ],
+    [
+     "mandatory"
+    ],
+    [
+     "must be provided"
+    ]
+   ],
+   "fact": "Creating a trial listing requires six fields: trialTitle, sponsor, trial_code, participant_capacity, submitterEmail and category.",
+   "must_include": [
+    [
+     "title"
+    ],
+    [
+     "sponsor"
+    ],
+    [
+     "code"
+    ],
+    [
+     "capacity"
+    ],
+    [
+     "email"
+    ],
+    [
+     "category"
+    ]
+   ]
+  },
+  {
+   "id": "ref_optional_fields",
+   "topic": "creation_rules",
+   "kind": "fact",
+   "triggers": [
+    [
+     "optional",
+     "field"
+    ],
+    [
+     "optional"
+    ]
+   ],
+   "fact": "Two fields are optional when creating a trial listing: description and organization_id.",
+   "must_include": [
+    [
+     "description"
+    ],
+    [
+     "organization"
+    ]
+   ]
+  },
+  {
+   "id": "ref_min_capacity",
+   "topic": "creation_rules",
+   "kind": "fact",
+   "triggers": [
+    [
+     "minimum",
+     "capacity"
+    ],
+    [
+     "smallest",
+     "capacity"
+    ],
+    [
+     "least",
+     "participants"
+    ]
+   ],
+   "fact": "participant_capacity must be an integer of at least 1.",
+   "must_include": [
+    [
+     "1",
+     "one"
+    ]
+   ]
+  },
+  {
+   "id": "ref_email_format",
+   "topic": "creation_rules",
+   "kind": "fact",
+   "triggers": [
+    [
+     "email",
+     "contain"
+    ],
+    [
+     "email",
+     "format"
+    ],
+    [
+     "email",
+     "valid"
+    ]
+   ],
+   "fact": "submitterEmail must be a valid email address, so it must contain an @ sign.",
+   "must_include": [
+    [
+     "@"
+    ]
+   ]
+  },
+  {
+   "id": "ref_max_attempts",
+   "topic": "message_handling",
+   "kind": "fact",
+   "triggers": [
+    [
+     "attempts",
+     "dead"
+    ],
+    [
+     "failed",
+     "tries"
+    ],
+    [
+     "how many",
+     "retr"
+    ],
+    [
+     "attempts",
+     "before"
+    ]
+   ],
+   "fact": "An agent tries a message at most 3 times before it is sent to the dead-letter topic.",
+   "must_include": [
+    [
+     "3",
+     "three"
+    ]
+   ]
+  },
+  {
+   "id": "ref_dead_letter_topic",
+   "topic": "message_handling",
+   "kind": "fact",
+   "triggers": [
+    [
+     "topic",
+     "fail"
+    ],
+    [
+     "poison"
+    ],
+    [
+     "dead-letter",
+     "topic"
+    ],
+    [
+     "dead letter",
+     "topic"
+    ],
+    [
+     "keep failing"
+    ]
+   ],
+   "fact": "Messages that keep failing are published to the topic s4833_dead_letter.",
+   "must_include": [
+    [
+     "s4833_dead_letter"
+    ]
+   ]
+  },
+  {
+   "id": "ref_offset_commit",
+   "topic": "message_handling",
+   "kind": "fact",
+   "triggers": [
+    [
+     "offset",
+     "commit"
+    ]
+   ],
+   "fact": "An agent commits the Kafka offset only after the message was processed successfully.",
+   "must_include": [
+    [
+     "after"
+    ],
+    [
+     "success",
+     "process",
+     "complet",
+     "finish"
+    ]
+   ]
+  },
+  {
+   "id": "ref_backoff",
+   "topic": "message_handling",
+   "kind": "fact",
+   "triggers": [
+    [
+     "backoff"
+    ],
+    [
+     "wait",
+     "second attempt"
+    ]
+   ],
+   "fact": "After the first failed attempt an agent waits 0.5 seconds before the second attempt.",
+   "must_include": [
+    [
+     "0.5"
+    ]
+   ]
+  },
+  {
+   "id": "ref_approval_score",
+   "topic": "message_handling",
+   "kind": "fact",
+   "triggers": [
+    [
+     "review",
+     "score"
+    ],
+    [
+     "approve",
+     "score"
+    ]
+   ],
+   "fact": "The Reviewer approves a draft when its score is at least 6 out of 10.",
+   "must_include": [
+    [
+     "6",
+     "six"
+    ]
+   ]
+  },
+  {
+   "id": "ref_tasks_partitions",
+   "topic": "message_handling",
+   "kind": "fact",
+   "triggers": [
+    [
+     "tasks",
+     "partitions"
+    ]
+   ],
+   "fact": "The topic s4833_tasks has 2 partitions.",
+   "must_include": [
+    [
+     "2",
+     "two"
+    ]
+   ]
+  },
+  {
+   "id": "ref_ct101_capacity",
+   "topic": "trial_records",
+   "kind": "fact",
+   "triggers": [
+    [
+     "ct-2026-101",
+     "capacity"
+    ],
+    [
+     "ct-2026-101",
+     "participants"
+    ],
+    [
+     "ct-2026-101",
+     "how many"
+    ]
+   ],
+   "fact": "Trial CT-2026-101 has a participant capacity of 80.",
+   "must_include": [
+    [
+     "80"
+    ]
+   ]
+  },
+  {
+   "id": "ref_ct101_title",
+   "topic": "trial_records",
+   "kind": "fact",
+   "triggers": [
+    [
+     "ct-2026-101",
+     "title"
+    ],
+    [
+     "ct-2026-101",
+     "name"
+    ],
+    [
+     "ct-2026-101",
+     "called"
+    ]
+   ],
+   "fact": "Trial CT-2026-101 is titled \"Cardiac Rehabilitation Outcomes Trial\".",
+   "must_include": [
+    [
+     "cardiac rehabilitation"
+    ]
+   ]
+  },
+  {
+   "id": "ref_ct102_capacity",
+   "topic": "trial_records",
+   "kind": "fact",
+   "triggers": [
+    [
+     "ct-2026-102",
+     "capacity"
+    ],
+    [
+     "ct-2026-102",
+     "participants"
+    ],
+    [
+     "ct-2026-102",
+     "how many"
+    ]
+   ],
+   "fact": "Trial CT-2026-102 has a participant capacity of 200.",
+   "must_include": [
+    [
+     "200"
+    ]
+   ]
+  },
+  {
+   "id": "ref_ct102_title",
+   "topic": "trial_records",
+   "kind": "fact",
+   "triggers": [
+    [
+     "ct-2026-102",
+     "title"
+    ],
+    [
+     "ct-2026-102",
+     "name"
+    ],
+    [
+     "ct-2026-102",
+     "called"
+    ]
+   ],
+   "fact": "Trial CT-2026-102 is titled \"Diabetes Prevention Lifestyle Study\".",
+   "must_include": [
+    [
+     "diabetes prevention"
+    ]
+   ]
+  },
+  {
+   "id": "ref_ct103_capacity",
+   "topic": "trial_records",
+   "kind": "fact",
+   "triggers": [
+    [
+     "ct-2026-103",
+     "capacity"
+    ],
+    [
+     "ct-2026-103",
+     "participants"
+    ],
+    [
+     "ct-2026-103",
+     "how many"
+    ]
+   ],
+   "fact": "Trial CT-2026-103 has a participant capacity of 60.",
+   "must_include": [
+    [
+     "60"
+    ]
+   ]
+  },
+  {
+   "id": "ref_ct103_title",
+   "topic": "trial_records",
+   "kind": "fact",
+   "triggers": [
+    [
+     "ct-2026-103",
+     "title"
+    ],
+    [
+     "ct-2026-103",
+     "name"
+    ],
+    [
+     "ct-2026-103",
+     "called"
+    ]
+   ],
+   "fact": "Trial CT-2026-103 is titled \"Oncology Immunotherapy Phase II\".",
+   "must_include": [
+    [
+     "oncology immunotherapy"
+    ]
+   ]
+  },
+  {
+   "id": "ref_ct104_capacity",
+   "topic": "trial_records",
+   "kind": "fact",
+   "triggers": [
+    [
+     "ct-2026-104",
+     "capacity"
+    ],
+    [
+     "ct-2026-104",
+     "participants"
+    ],
+    [
+     "ct-2026-104",
+     "how many"
+    ]
+   ],
+   "fact": "Trial CT-2026-104 has a participant capacity of 150.",
+   "must_include": [
+    [
+     "150"
+    ]
+   ]
+  },
+  {
+   "id": "ref_ct104_title",
+   "topic": "trial_records",
+   "kind": "fact",
+   "triggers": [
+    [
+     "ct-2026-104",
+     "title"
+    ],
+    [
+     "ct-2026-104",
+     "name"
+    ],
+    [
+     "ct-2026-104",
+     "called"
+    ]
+   ],
+   "fact": "Trial CT-2026-104 is titled \"Pediatric Asthma Inhaler Comparison\".",
+   "must_include": [
+    [
+     "pediatric asthma"
+    ]
+   ]
+  },
+  {
+   "id": "ref_ct105_capacity",
+   "topic": "trial_records",
+   "kind": "fact",
+   "triggers": [
+    [
+     "ct-2026-105",
+     "capacity"
+    ],
+    [
+     "ct-2026-105",
+     "participants"
+    ],
+    [
+     "ct-2026-105",
+     "how many"
+    ]
+   ],
+   "fact": "Trial CT-2026-105 has a participant capacity of 90.",
+   "must_include": [
+    [
+     "90"
+    ]
+   ]
+  },
+  {
+   "id": "ref_ct105_title",
+   "topic": "trial_records",
+   "kind": "fact",
+   "triggers": [
+    [
+     "ct-2026-105",
+     "title"
+    ],
+    [
+     "ct-2026-105",
+     "name"
+    ],
+    [
+     "ct-2026-105",
+     "called"
+    ]
+   ],
+   "fact": "Trial CT-2026-105 is titled \"Hypertension Medication Adherence Study\".",
+   "must_include": [
+    [
+     "hypertension medication"
+    ]
+   ]
+  },
+  {
+   "id": "ref_no_phase",
+   "topic": "unavailable_data",
+   "kind": "no_data",
+   "triggers": [
+    [
+     "phase"
+    ]
+   ],
+   "fact": "The listings data has no phase for a trial.",
+   "must_include": "REFUSAL"
+  },
+  {
+   "id": "ref_no_investigator",
+   "topic": "unavailable_data",
+   "kind": "no_data",
+   "triggers": [
+    [
+     "principal investigator"
+    ],
+    [
+     "investigator"
+    ]
+   ],
+   "fact": "The listings data does not record a principal investigator.",
+   "must_include": "REFUSAL"
+  },
+  {
+   "id": "ref_no_dates",
+   "topic": "unavailable_data",
+   "kind": "no_data",
+   "triggers": [
+    [
+     "enrollment",
+     "start"
+    ],
+    [
+     "start date"
+    ],
+    [
+     "deadline"
+    ]
+   ],
+   "fact": "The listings data has no start date or enrollment deadline.",
+   "must_include": "REFUSAL"
+  },
+  {
+   "id": "ref_no_enrolled",
+   "topic": "unavailable_data",
+   "kind": "no_data",
+   "triggers": [
+    [
+     "currently enrolled"
+    ],
+    [
+     "enrolled so far"
+    ]
+   ],
+   "fact": "The listings data does not record how many participants are enrolled so far.",
+   "must_include": "REFUSAL"
+  }
+ ]
+}

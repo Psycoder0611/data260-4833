@@ -1,0 +1,21 @@
+{
+  "threshold": 0.85,
+  "case": {
+    "id": "X03",
+    "type": "similar_different",
+    "query": "What is the participant capacity of trial CT-2026-103?",
+    "expected_hit": false,
+    "hit": true,
+    "similarity": 0.9654,
+    "matched_query": "What is the participant capacity of trial CT-2026-101?",
+    "cached_answer": "The participant capacity for trial CT-2026-101, titled \"Cardiac Rehabilitation Outcomes Trial\" and sponsored by the Stanford Clinical Trials Center, is 80. The category for this trial is listed as \"not set.\" This information is directly retrieved from the listings database.",
+    "latency_ms": 14.7
+  },
+  "correct_answer": "The participant capacity for trial CT-2026-103, titled \"Oncology Immunotherapy Phase II\" sponsored by the Stanford Clinical Trials Center, is 60. This information is directly retrieved from the listings database.",
+  "words_only_in_cached": [
+    "ct-2026-101"
+  ],
+  "words_only_in_incoming": [
+    "ct-2026-103"
+  ]
+}

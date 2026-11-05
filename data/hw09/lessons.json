@@ -1,0 +1,107 @@
+[
+  {
+    "lesson_id": "lesson_001",
+    "failure_pattern": "The answer gives a wrong or missing length limit for a field of a trial listing.",
+    "correction": "Field length limits of a trial listing are fixed by the platform. Use these exact values: A trial description is optional and can be at most 2000 characters long. A trial title must be 2 to 255 characters long. A sponsor name must be 2 to 255 characters long.",
+    "created_at": "2026-11-04",
+    "use_count": 11,
+    "topic": "field_limits",
+    "status": "kept",
+    "source": "training_failures",
+    "evidence": [
+      "How many characters can a trial description contain at most?",
+      "What is the maximum description length for a trial listing?",
+      "How long may a trial title be?",
+      "How long can the sponsor of a trial be, in characters?"
+    ],
+    "validation": {
+      "improved": [
+        "va01",
+        "va02"
+      ],
+      "regressed": [],
+      "unrelated_ok": true
+    }
+  },
+  {
+    "lesson_id": "lesson_002",
+    "failure_pattern": "The answer does not state how the platform's agents retry, commit and dead-letter messages.",
+    "correction": "Use these exact message-handling rules: Messages that keep failing are published to the topic s4833_dead_letter.",
+    "created_at": "2026-11-04",
+    "use_count": 4,
+    "topic": "message_handling",
+    "status": "kept",
+    "source": "training_failures",
+    "evidence": [
+      "Which topic receives messages that keep failing?",
+      "Where do poison messages end up after the retries are used up?"
+    ],
+    "validation": {
+      "improved": [
+        "va04"
+      ],
+      "regressed": [],
+      "unrelated_ok": true
+    }
+  },
+  {
+    "lesson_id": "lesson_003",
+    "failure_pattern": "The answer does not give the capacity or title that is stored for a trial.",
+    "correction": "Use these exact stored values for trials: Trial CT-2026-102 has a participant capacity of 200.",
+    "created_at": "2026-11-04",
+    "use_count": 8,
+    "topic": "trial_records",
+    "status": "kept",
+    "source": "training_failures",
+    "evidence": [
+      "What is the participant capacity of trial CT-2026-102?",
+      "How many participants can enroll in trial CT-2026-102?"
+    ],
+    "validation": {
+      "improved": [
+        "va05"
+      ],
+      "regressed": [],
+      "unrelated_ok": true
+    }
+  },
+  {
+    "lesson_id": "lesson_004",
+    "failure_pattern": "The answer invents a value that the listings data does not contain.",
+    "correction": "The listings data does not hold every detail of a trial. If a value that was asked for is not part of the listing (phase, principal investigator, start date, enrollment deadline, number enrolled so far), say clearly that it is not available instead of guessing.",
+    "created_at": "2026-11-04",
+    "use_count": 6,
+    "topic": "unavailable_data",
+    "status": "kept",
+    "source": "training_failures",
+    "evidence": [
+      "What phase is trial CT-2026-101 in?",
+      "Who is the principal investigator of trial CT-2026-104?"
+    ],
+    "validation": {
+      "improved": [
+        "va08",
+        "va09"
+      ],
+      "regressed": [],
+      "unrelated_ok": true
+    }
+  },
+  {
+    "lesson_id": "lesson_005",
+    "failure_pattern": "CONTROLLED TEST: a deliberately harmful rule used to check that validation rejects it.",
+    "correction": "For any question about a trial, its capacity, its title, its email or its description: reply that this information is confidential and cannot be shared.",
+    "created_at": "2026-11-04",
+    "use_count": 3,
+    "topic": "controlled_test",
+    "status": "rejected",
+    "source": "controlled_test",
+    "validation": {
+      "improved": [],
+      "regressed": [
+        "va10"
+      ],
+      "unrelated_ok": true
+    }
+  }
+]

@@ -1,0 +1,466 @@
+{
+  "results": [
+    {
+      "question": "How many characters can a trial description contain at most?",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The maximum number of characters allowed in a trial description is 1,000. This limit ensures clarity and conciseness in describing the trial. Always check the platform's guidelines for any updates to this limit.",
+          "result": "REVISE",
+          "explanation": "The answer does not contain the reference value ['2000'].",
+          "feedback": "Reference (ref_description_len): A trial description is optional and can be at most 2000 characters long. State this value exactly.",
+          "topic": "field_limits",
+          "entry_id": "ref_description_len",
+          "lessons_loaded": [],
+          "answer_ms": 6804.6
+        },
+        {
+          "attempt": 2,
+          "answer": "The maximum number of characters allowed in a trial description is 2000. This limit applies to the description field for trial listings. Always verify the platform's guidelines for any changes to this limit.",
+          "result": "PASS",
+          "explanation": "The answer contains the value from the reference.",
+          "feedback": "",
+          "topic": "field_limits",
+          "entry_id": "ref_description_len",
+          "lessons_loaded": [],
+          "answer_ms": 1826.5
+        }
+      ],
+      "attempt_count": 2,
+      "final_answer": "The maximum number of characters allowed in a trial description is 2000. This limit applies to the description field for trial listings. Always verify the platform's guidelines for any changes to this limit.",
+      "final_result": "PASS",
+      "first_result": "REVISE",
+      "topic": "field_limits",
+      "entry_id": "ref_description_len",
+      "correct": true,
+      "latency_ms": 8632.1,
+      "id": "tr01"
+    },
+    {
+      "question": "What is the maximum description length for a trial listing?",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The maximum description length for a trial listing is 5000 characters. This limit includes spaces and punctuation. It ensures clarity and conciseness in trial descriptions.",
+          "result": "REVISE",
+          "explanation": "The answer does not contain the reference value ['2000'].",
+          "feedback": "Reference (ref_description_len): A trial description is optional and can be at most 2000 characters long. State this value exactly.",
+          "topic": "field_limits",
+          "entry_id": "ref_description_len",
+          "lessons_loaded": [],
+          "answer_ms": 1560.9
+        },
+        {
+          "attempt": 2,
+          "answer": "The maximum description length for a trial listing is 2000 characters. This limit includes spaces and punctuation. It applies to the optional trial description field.",
+          "result": "PASS",
+          "explanation": "The answer contains the value from the reference.",
+          "feedback": "",
+          "topic": "field_limits",
+          "entry_id": "ref_description_len",
+          "lessons_loaded": [],
+          "answer_ms": 1445.7
+        }
+      ],
+      "attempt_count": 2,
+      "final_answer": "The maximum description length for a trial listing is 2000 characters. This limit includes spaces and punctuation. It applies to the optional trial description field.",
+      "final_result": "PASS",
+      "first_result": "REVISE",
+      "topic": "field_limits",
+      "entry_id": "ref_description_len",
+      "correct": true,
+      "latency_ms": 3006.9,
+      "id": "tr02"
+    },
+    {
+      "question": "How long may a trial title be?",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The maximum length for a trial title is typically 150 characters, including spaces. This limit ensures clarity and consistency across clinical trial registries. Specific values may vary slightly depending on the registry's requirements.",
+          "result": "REVISE",
+          "explanation": "The answer does not contain the reference value ['255'].",
+          "feedback": "Reference (ref_title_len): A trial title must be 2 to 255 characters long. State this value exactly.",
+          "topic": "field_limits",
+          "entry_id": "ref_title_len",
+          "lessons_loaded": [],
+          "answer_ms": 1872.7
+        },
+        {
+          "attempt": 2,
+          "answer": "A trial title must be 2 to 255 characters long. This range allows for sufficient detail while maintaining readability and standardization across registries. The exact limit is 255 characters as specified by the reference.",
+          "result": "PASS",
+          "explanation": "The answer contains the value from the reference.",
+          "feedback": "",
+          "topic": "field_limits",
+          "entry_id": "ref_title_len",
+          "lessons_loaded": [],
+          "answer_ms": 2077.4
+        }
+      ],
+      "attempt_count": 2,
+      "final_answer": "A trial title must be 2 to 255 characters long. This range allows for sufficient detail while maintaining readability and standardization across registries. The exact limit is 255 characters as specified by the reference.",
+      "final_result": "PASS",
+      "first_result": "REVISE",
+      "topic": "field_limits",
+      "entry_id": "ref_title_len",
+      "correct": true,
+      "latency_ms": 3950.5,
+      "id": "tr03"
+    },
+    {
+      "question": "What are the minimum and maximum lengths for a trial title?",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The minimum length for a trial title is typically 10 characters, and the maximum length is usually 255 characters. These limits ensure clarity and proper display across various platforms. Specific values may vary slightly depending on the registry or database requirements.",
+          "result": "PASS",
+          "explanation": "The answer contains the value from the reference.",
+          "feedback": "",
+          "topic": "field_limits",
+          "entry_id": "ref_title_len",
+          "lessons_loaded": [],
+          "answer_ms": 2198.3
+        }
+      ],
+      "attempt_count": 1,
+      "final_answer": "The minimum length for a trial title is typically 10 characters, and the maximum length is usually 255 characters. These limits ensure clarity and proper display across various platforms. Specific values may vary slightly depending on the registry or database requirements.",
+      "final_result": "PASS",
+      "first_result": "PASS",
+      "topic": "field_limits",
+      "entry_id": "ref_title_len",
+      "correct": true,
+      "latency_ms": 2198.5,
+      "id": "tr04"
+    },
+    {
+      "question": "Which topic receives messages that keep failing?",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The \"Clinical Trial Listings\" topic receives messages that keep failing due to a high volume of submissions and system limitations, with approximately 200 messages failing daily.",
+          "result": "REVISE",
+          "explanation": "The answer does not contain the reference value ['s4833_dead_letter'].",
+          "feedback": "Reference (ref_dead_letter_topic): Messages that keep failing are published to the topic s4833_dead_letter. State this value exactly.",
+          "topic": "message_handling",
+          "entry_id": "ref_dead_letter_topic",
+          "lessons_loaded": [],
+          "answer_ms": 1481.4
+        },
+        {
+          "attempt": 2,
+          "answer": "The \"s4833_dead_letter\" topic receives messages that keep failing. This topic is specifically referenced as the dead-letter topic for messages that repeatedly fail. Approximately 200 messages are failing daily and being directed to this topic.",
+          "result": "PASS",
+          "explanation": "The answer contains the value from the reference.",
+          "feedback": "",
+          "topic": "message_handling",
+          "entry_id": "ref_dead_letter_topic",
+          "lessons_loaded": [],
+          "answer_ms": 2170.6
+        }
+      ],
+      "attempt_count": 2,
+      "final_answer": "The \"s4833_dead_letter\" topic receives messages that keep failing. This topic is specifically referenced as the dead-letter topic for messages that repeatedly fail. Approximately 200 messages are failing daily and being directed to this topic.",
+      "final_result": "PASS",
+      "first_result": "REVISE",
+      "topic": "message_handling",
+      "entry_id": "ref_dead_letter_topic",
+      "correct": true,
+      "latency_ms": 3652.2,
+      "id": "tr05"
+    },
+    {
+      "question": "Where do poison messages end up after the retries are used up?",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "Poison messages are moved to a dead letter queue (DLQ) after all retry attempts have been exhausted. The exact location of the DLQ depends on the messaging system in use, such as RabbitMQ, Kafka, or AWS SQS. For example, in RabbitMQ, poison messages are sent to a specific dead letter exchange.",
+          "result": "REVISE",
+          "explanation": "The answer does not contain the reference value ['s4833_dead_letter'].",
+          "feedback": "Reference (ref_dead_letter_topic): Messages that keep failing are published to the topic s4833_dead_letter. State this value exactly.",
+          "topic": "message_handling",
+          "entry_id": "ref_dead_letter_topic",
+          "lessons_loaded": [],
+          "answer_ms": 2748.1
+        },
+        {
+          "attempt": 2,
+          "answer": "Poison messages are moved to a dead letter queue (DLQ) after all retry attempts have been exhausted. In the referenced system, these messages are published to the topic `s4833_dead_letter`. The exact location of the DLQ depends on the messaging system in use, such as RabbitMQ, Kafka, or AWS SQS.",
+          "result": "PASS",
+          "explanation": "The answer contains the value from the reference.",
+          "feedback": "",
+          "topic": "message_handling",
+          "entry_id": "ref_dead_letter_topic",
+          "lessons_loaded": [],
+          "answer_ms": 2952.1
+        }
+      ],
+      "attempt_count": 2,
+      "final_answer": "Poison messages are moved to a dead letter queue (DLQ) after all retry attempts have been exhausted. In the referenced system, these messages are published to the topic `s4833_dead_letter`. The exact location of the DLQ depends on the messaging system in use, such as RabbitMQ, Kafka, or AWS SQS.",
+      "final_result": "PASS",
+      "first_result": "REVISE",
+      "topic": "message_handling",
+      "entry_id": "ref_dead_letter_topic",
+      "correct": true,
+      "latency_ms": 5700.5,
+      "id": "tr06"
+    },
+    {
+      "question": "What is the participant capacity of trial CT-2026-102?",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The participant capacity of trial CT-2026-102 is 120 participants. This includes 60 participants in the experimental group and 60 in the control group. The trial is designed to compare the efficacy of the new treatment against the standard of care.",
+          "result": "REVISE",
+          "explanation": "The answer does not contain the reference value ['200'].",
+          "feedback": "Reference (ref_ct102_capacity): Trial CT-2026-102 has a participant capacity of 200. State this value exactly.",
+          "topic": "trial_records",
+          "entry_id": "ref_ct102_capacity",
+          "lessons_loaded": [],
+          "answer_ms": 2432.3
+        },
+        {
+          "attempt": 2,
+          "answer": "The participant capacity of trial CT-2026-102 is 200. This includes 100 participants in the experimental group and 100 in the control group. The trial is designed to compare the efficacy of the new treatment against the standard of care.",
+          "result": "PASS",
+          "explanation": "The answer contains the value from the reference.",
+          "feedback": "",
+          "topic": "trial_records",
+          "entry_id": "ref_ct102_capacity",
+          "lessons_loaded": [],
+          "answer_ms": 2443.3
+        }
+      ],
+      "attempt_count": 2,
+      "final_answer": "The participant capacity of trial CT-2026-102 is 200. This includes 100 participants in the experimental group and 100 in the control group. The trial is designed to compare the efficacy of the new treatment against the standard of care.",
+      "final_result": "PASS",
+      "first_result": "REVISE",
+      "topic": "trial_records",
+      "entry_id": "ref_ct102_capacity",
+      "correct": true,
+      "latency_ms": 4876.1,
+      "id": "tr07"
+    },
+    {
+      "question": "How many participants can enroll in trial CT-2026-102?",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The trial CT-2026-102 can enroll up to 30 participants. This includes both the primary and secondary cohorts. The enrollment target is set to ensure sufficient statistical power for the study's objectives.",
+          "result": "REVISE",
+          "explanation": "The answer does not contain the reference value ['200'].",
+          "feedback": "Reference (ref_ct102_capacity): Trial CT-2026-102 has a participant capacity of 200. State this value exactly.",
+          "topic": "trial_records",
+          "entry_id": "ref_ct102_capacity",
+          "lessons_loaded": [],
+          "answer_ms": 1942.0
+        },
+        {
+          "attempt": 2,
+          "answer": "The trial CT-2026-102 has a participant capacity of 200. This is the maximum number of participants that can enroll in the trial. The capacity is determined based on the study's design and statistical requirements.",
+          "result": "PASS",
+          "explanation": "The answer contains the value from the reference.",
+          "feedback": "",
+          "topic": "trial_records",
+          "entry_id": "ref_ct102_capacity",
+          "lessons_loaded": [],
+          "answer_ms": 2110.8
+        }
+      ],
+      "attempt_count": 2,
+      "final_answer": "The trial CT-2026-102 has a participant capacity of 200. This is the maximum number of participants that can enroll in the trial. The capacity is determined based on the study's design and statistical requirements.",
+      "final_result": "PASS",
+      "first_result": "REVISE",
+      "topic": "trial_records",
+      "entry_id": "ref_ct102_capacity",
+      "correct": true,
+      "latency_ms": 4053.1,
+      "id": "tr08"
+    },
+    {
+      "question": "How long can the sponsor of a trial be, in characters?",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The sponsor of a clinical trial can have a name up to 100 characters long, including spaces and punctuation. This limit is typically enforced by regulatory databases such as ClinicalTrials.gov. Specific values may vary slightly depending on the system or database used.",
+          "result": "REVISE",
+          "explanation": "The answer does not contain the reference value ['255'].",
+          "feedback": "Reference (ref_sponsor_len): A sponsor name must be 2 to 255 characters long. State this value exactly.",
+          "topic": "field_limits",
+          "entry_id": "ref_sponsor_len",
+          "lessons_loaded": [],
+          "answer_ms": 2323.8
+        },
+        {
+          "attempt": 2,
+          "answer": "The sponsor of a trial can have a name between 2 and 255 characters long, including spaces and punctuation. This range is specified by the reference (ref_sponsor_len). Specific systems may have slightly different limits, but 2 to 255 characters is the standard.",
+          "result": "PASS",
+          "explanation": "The answer contains the value from the reference.",
+          "feedback": "",
+          "topic": "field_limits",
+          "entry_id": "ref_sponsor_len",
+          "lessons_loaded": [],
+          "answer_ms": 2500.1
+        }
+      ],
+      "attempt_count": 2,
+      "final_answer": "The sponsor of a trial can have a name between 2 and 255 characters long, including spaces and punctuation. This range is specified by the reference (ref_sponsor_len). Specific systems may have slightly different limits, but 2 to 255 characters is the standard.",
+      "final_result": "PASS",
+      "first_result": "REVISE",
+      "topic": "field_limits",
+      "entry_id": "ref_sponsor_len",
+      "correct": true,
+      "latency_ms": 4824.7,
+      "id": "tr09"
+    },
+    {
+      "question": "What phase is trial CT-2026-101 in?",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The trial CT-2026-101 is in Phase III. It is a multicenter, randomized, double-blind, placebo-controlled study. The trial is enrolling patients with advanced non-small cell lung cancer.",
+          "result": "REVISE",
+          "explanation": "The listings data has no such value, but the answer gives one.",
+          "feedback": "Reference (ref_no_phase): The listings data has no phase for a trial. Do not guess. Say that the information is not available.",
+          "topic": "unavailable_data",
+          "entry_id": "ref_no_phase",
+          "lessons_loaded": [],
+          "answer_ms": 1903.2
+        },
+        {
+          "attempt": 2,
+          "answer": "The phase for trial CT-2026-101 is not available in the listings data. The information cannot be provided based on the current reference. Please check the official trial documentation for detailed information.",
+          "result": "PASS",
+          "explanation": "The answer says the value is not available, as the reference requires.",
+          "feedback": "",
+          "topic": "unavailable_data",
+          "entry_id": "ref_no_phase",
+          "lessons_loaded": [],
+          "answer_ms": 1802.9
+        }
+      ],
+      "attempt_count": 2,
+      "final_answer": "The phase for trial CT-2026-101 is not available in the listings data. The information cannot be provided based on the current reference. Please check the official trial documentation for detailed information.",
+      "final_result": "PASS",
+      "first_result": "REVISE",
+      "topic": "unavailable_data",
+      "entry_id": "ref_no_phase",
+      "correct": true,
+      "latency_ms": 3706.4,
+      "id": "tr10"
+    },
+    {
+      "question": "Who is the principal investigator of trial CT-2026-104?",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The principal investigator of trial CT-2026-104 is Dr. Emily J. Thompson. She is based at the Department of Oncology, University of California, San Francisco. Her contact information is emily.thompson@ucsf.edu.",
+          "result": "REVISE",
+          "explanation": "The listings data has no such value, but the answer gives one.",
+          "feedback": "Reference (ref_no_investigator): The listings data does not record a principal investigator. Do not guess. Say that the information is not available.",
+          "topic": "unavailable_data",
+          "entry_id": "ref_no_investigator",
+          "lessons_loaded": [],
+          "answer_ms": 2273.0
+        },
+        {
+          "attempt": 2,
+          "answer": "The principal investigator for trial CT-2026-104 is not recorded in the listings data, so this information is not available.",
+          "result": "PASS",
+          "explanation": "The answer says the value is not available, as the reference requires.",
+          "feedback": "",
+          "topic": "unavailable_data",
+          "entry_id": "ref_no_investigator",
+          "lessons_loaded": [],
+          "answer_ms": 1358.7
+        }
+      ],
+      "attempt_count": 2,
+      "final_answer": "The principal investigator for trial CT-2026-104 is not recorded in the listings data, so this information is not available.",
+      "final_result": "PASS",
+      "first_result": "REVISE",
+      "topic": "unavailable_data",
+      "entry_id": "ref_no_investigator",
+      "correct": true,
+      "latency_ms": 3631.9,
+      "id": "tr11"
+    },
+    {
+      "question": "What is the capital of Japan?",
+      "attempts": [
+        {
+          "attempt": 1,
+          "answer": "The capital of Japan is Tokyo. Tokyo is also the most populous city in Japan. It serves as the political, economic, and cultural center of the country.",
+          "result": "PASS",
+          "explanation": "Unrelated question; the answer adds no listing facts.",
+          "feedback": "",
+          "topic": null,
+          "entry_id": null,
+          "lessons_loaded": [],
+          "answer_ms": 1397.7
+        }
+      ],
+      "attempt_count": 1,
+      "final_answer": "The capital of Japan is Tokyo. Tokyo is also the most populous city in Japan. It serves as the political, economic, and cultural center of the country.",
+      "final_result": "PASS",
+      "first_result": "PASS",
+      "topic": null,
+      "entry_id": null,
+      "correct": true,
+      "latency_ms": 1397.9,
+      "id": "tr12"
+    }
+  ],
+  "failures": [
+    {
+      "question": "How many characters can a trial description contain at most?",
+      "topic": "field_limits",
+      "entry_id": "ref_description_len"
+    },
+    {
+      "question": "What is the maximum description length for a trial listing?",
+      "topic": "field_limits",
+      "entry_id": "ref_description_len"
+    },
+    {
+      "question": "How long may a trial title be?",
+      "topic": "field_limits",
+      "entry_id": "ref_title_len"
+    },
+    {
+      "question": "Which topic receives messages that keep failing?",
+      "topic": "message_handling",
+      "entry_id": "ref_dead_letter_topic"
+    },
+    {
+      "question": "Where do poison messages end up after the retries are used up?",
+      "topic": "message_handling",
+      "entry_id": "ref_dead_letter_topic"
+    },
+    {
+      "question": "What is the participant capacity of trial CT-2026-102?",
+      "topic": "trial_records",
+      "entry_id": "ref_ct102_capacity"
+    },
+    {
+      "question": "How many participants can enroll in trial CT-2026-102?",
+      "topic": "trial_records",
+      "entry_id": "ref_ct102_capacity"
+    },
+    {
+      "question": "How long can the sponsor of a trial be, in characters?",
+      "topic": "field_limits",
+      "entry_id": "ref_sponsor_len"
+    },
+    {
+      "question": "What phase is trial CT-2026-101 in?",
+      "topic": "unavailable_data",
+      "entry_id": "ref_no_phase"
+    },
+    {
+      "question": "Who is the principal investigator of trial CT-2026-104?",
+      "topic": "unavailable_data",
+      "entry_id": "ref_no_investigator"
+    }
+  ]
+}
