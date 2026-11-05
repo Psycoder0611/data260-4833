@@ -1,0 +1,69 @@
+# HW9 Part 3.1 - labeled cache test set (Clinical Trial Listings, SID4 4833)
+#
+# The cache is first filled with the 10 seed queries (their answers come from the
+# HW8 agents). Then each of the 40 cases is sent to the cache on its own:
+#   expected_hit: true   -> a good cache returns the seed's answer
+#   expected_hit: false  -> a good cache must NOT return it (the agent must answer)
+# Labels were written before any threshold was run and are not edited afterwards;
+# a labeling mistake found later is documented in the report instead of changed here.
+
+seed_queries:
+  - {id: S01, query: "What is the participant capacity of trial CT-2026-101?"}
+  - {id: S02, query: "What is the title of trial CT-2026-103?"}
+  - {id: S03, query: "What is the participant capacity of trial CT-2026-105?"}
+  - {id: S04, query: "Which fields are required when creating a trial listing?"}
+  - {id: S05, query: "How long can a trial description be?"}
+  - {id: S06, query: "How long can a trial title be?"}
+  - {id: S07, query: "What is the minimum participant capacity for a trial?"}
+  - {id: S08, query: "How long can a trial code be?"}
+  - {id: S09, query: "Which operations does the trial worker support?"}
+  - {id: S10, query: "How many attempts does an agent make before a message goes to the dead-letter topic?"}
+
+cases:
+  # ---- 10 exact duplicates (should hit) ----
+  - {id: D01, type: exact_duplicate, seed: S01, expected_hit: true, query: "What is the participant capacity of trial CT-2026-101?"}
+  - {id: D02, type: exact_duplicate, seed: S02, expected_hit: true, query: "What is the title of trial CT-2026-103?"}
+  - {id: D03, type: exact_duplicate, seed: S03, expected_hit: true, query: "What is the participant capacity of trial CT-2026-105?"}
+  - {id: D04, type: exact_duplicate, seed: S04, expected_hit: true, query: "Which fields are required when creating a trial listing?"}
+  - {id: D05, type: exact_duplicate, seed: S05, expected_hit: true, query: "How long can a trial description be?"}
+  - {id: D06, type: exact_duplicate, seed: S06, expected_hit: true, query: "How long can a trial title be?"}
+  - {id: D07, type: exact_duplicate, seed: S07, expected_hit: true, query: "What is the minimum participant capacity for a trial?"}
+  - {id: D08, type: exact_duplicate, seed: S08, expected_hit: true, query: "How long can a trial code be?"}
+  - {id: D09, type: exact_duplicate, seed: S09, expected_hit: true, query: "Which operations does the trial worker support?"}
+  - {id: D10, type: exact_duplicate, seed: S10, expected_hit: true, query: "How many attempts does an agent make before a message goes to the dead-letter topic?"}
+
+  # ---- 10 paraphrases that should hit (same meaning, different words) ----
+  - {id: P01, type: paraphrase, seed: S01, expected_hit: true, query: "How many participants can enroll in clinical trial CT-2026-101?"}
+  - {id: P02, type: paraphrase, seed: S02, expected_hit: true, query: "What is trial CT-2026-103 called?"}
+  - {id: P03, type: paraphrase, seed: S03, expected_hit: true, query: "What is the maximum number of participants for trial CT-2026-105?"}
+  - {id: P04, type: paraphrase, seed: S04, expected_hit: true, query: "What do I have to fill in to create a new trial listing?"}
+  - {id: P05, type: paraphrase, seed: S05, expected_hit: true, query: "What is the maximum length of the description of a trial?"}
+  - {id: P06, type: paraphrase, seed: S06, expected_hit: true, query: "What is the maximum number of characters in a trial title?"}
+  - {id: P07, type: paraphrase, seed: S07, expected_hit: true, query: "What is the smallest participant capacity a trial may have?"}
+  - {id: P08, type: paraphrase, seed: S08, expected_hit: true, query: "What is the maximum length of a trial code?"}
+  - {id: P09, type: paraphrase, seed: S09, expected_hit: true, query: "What requests can the entity worker handle?"}
+  - {id: P10, type: paraphrase, seed: S10, expected_hit: true, query: "After how many failed tries is a message sent to the dead-letter topic?"}
+
+  # ---- 10 superficially similar, different correct answer (should miss) ----
+  - {id: X01, type: similar_different, seed: S01, expected_hit: false, query: "What is the participant capacity of trial CT-2026-102?"}
+  - {id: X02, type: similar_different, seed: S02, expected_hit: false, query: "What is the title of trial CT-2026-104?"}
+  - {id: X03, type: similar_different, seed: S03, expected_hit: false, query: "What is the participant capacity of trial CT-2026-103?"}
+  - {id: X04, type: similar_different, seed: S04, expected_hit: false, query: "Which fields are optional when creating a trial listing?"}
+  - {id: X05, type: similar_different, seed: S05, expected_hit: false, query: "What is the minimum length of a trial description?"}
+  - {id: X06, type: similar_different, seed: S06, expected_hit: false, query: "How long can a trial category be?"}
+  - {id: X07, type: similar_different, seed: S07, expected_hit: false, query: "What is the maximum participant capacity for a trial?"}
+  - {id: X08, type: similar_different, seed: S08, expected_hit: false, query: "How long can a submitter email address be?"}
+  - {id: X09, type: similar_different, seed: S09, expected_hit: false, query: "Which topic does the worker send its responses to?"}
+  - {id: X10, type: similar_different, seed: S10, expected_hit: false, query: "How many seconds does an agent wait before the second attempt?"}
+
+  # ---- 10 unrelated questions (should miss) ----
+  - {id: U01, type: unrelated, seed: null, expected_hit: false, query: "What is the capital of France?"}
+  - {id: U02, type: unrelated, seed: null, expected_hit: false, query: "How do I bake sourdough bread?"}
+  - {id: U03, type: unrelated, seed: null, expected_hit: false, query: "Who won the 2018 football World Cup?"}
+  - {id: U04, type: unrelated, seed: null, expected_hit: false, query: "Explain how photosynthesis works."}
+  - {id: U05, type: unrelated, seed: null, expected_hit: false, query: "What is the boiling point of water in Fahrenheit?"}
+  - {id: U06, type: unrelated, seed: null, expected_hit: false, query: "Recommend a good laptop for programming."}
+  - {id: U07, type: unrelated, seed: null, expected_hit: false, query: "How do I change a flat tire?"}
+  - {id: U08, type: unrelated, seed: null, expected_hit: false, query: "What is the plot of Hamlet?"}
+  - {id: U09, type: unrelated, seed: null, expected_hit: false, query: "Convert 10 miles to kilometers."}
+  - {id: U10, type: unrelated, seed: null, expected_hit: false, query: "Who painted the Mona Lisa?"}
