@@ -432,7 +432,7 @@ def confusion_text() -> str:
     a, b = d["words_only_in_cached"], d["words_only_in_incoming"]
     text = f"The two queries share almost all of their words. The only words that differ are {a} in the cached query and {b} in the incoming one. "
     text += "A sentence embedding encodes the topic and the shape of the question, here 'ask for one field of one trial'. A change of a single token such as a trial number, or of one attribute word, moves the vector only a little, so the cosine similarity stays high even though the correct answer is different. "
-    text += "The model has no notion that CT-2026-101 and CT-2026-102 are different records or that title and capacity are different facts; to it they are small variations of the same sentence."
+    text += "The model has no notion that two trial codes such as CT-2026-101 and CT-2026-103 are different records or that title and capacity are different facts; to it they are small variations of the same sentence."
     return text
 
 
@@ -764,7 +764,7 @@ def build(canvas: bool, commit: str) -> Doc:
         for para in body.split("\n\n"):
             para = para.strip()
             if para and not para.startswith("<!--"):
-                d.p(para)
+                d.p(para.replace("`", ""))
 
     d.page_break()
     d.h1("Appendix: cache_cases.yaml")
