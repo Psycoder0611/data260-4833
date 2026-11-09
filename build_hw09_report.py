@@ -341,7 +341,7 @@ def sweep_data() -> Optional[Dict[str, Any]]:
 
 def sweep_rows() -> List[List[Any]]:
     """The filled threshold table (3.2)."""
-    rows: List[List[Any]] = [["Threshold", "Hit rate", "False-hit rate", "Mean latency (ms)", "Total cost"]]
+    rows: List[List[Any]] = [["Threshold", "Hit rate", "False-hit rate", "Mean est. end-to-end latency (ms)", "Total cost"]]
     data = sweep_data()
     for i, t in enumerate(config.THRESHOLDS):
         if not data:
@@ -582,7 +582,7 @@ def build(canvas: bool, commit: str) -> Doc:
         "HW9 is built on top of HW8 in the same repository, on a hw9-work branch made from the hw8 tag. The new code is in the hw9/ package and a few top-level scripts, so the earlier homework is unchanged. Redis Stack runs from docker-compose.hw9.yml; it is plain Redis plus the search module, which is what gives me a vector index. Kafka is not needed for HW9."
     )
     d.p(
-        "Two choices are worth stating. First, the cache sits in front of the HW8 agent pipeline, but on a miss I call the same Planner, Writer and Reviewer roles of HW8 (hw8/pipeline.py, qwen3:8b through the HW1 adapter, the same retry and the same approval rule of a review score of at least 6) one after the other inside the Python process instead of sending the question through Kafka. I did this because the cache is what is being measured, and running a Kafka broker and three agent processes for every one of the dozens of cache misses would only add noise. The agent logic is the same. Second, the Part 1 counter needs a place in the database, so migrate_hw09.py adds one column, view_count (INT, default 0), to the clinical_trials table of s4833_rel. models.py and the HW4 to HW8 code are untouched, and the script can drop the column again."
+        "Two choices are worth stating. First, the cache sits at the ingress in front of the HW8 agent pipeline. On a miss the request follows the HW8 agent path with the local model through the adapter, as the assignment describes: it reuses the same Planner, Writer and Reviewer implementation (hw8/pipeline.py), the local qwen3:8b adapter, the same retry behaviour and the same approval rule of a review score of at least 6. For the cache experiments I call those existing HW8 stages through an in-process adapter instead of sending the question over the Kafka topics, so that Kafka transport latency does not distort the cache and threshold measurements. The agent behaviour itself is unchanged; only the transport between the stages is not used. Second, the Part 1 counter needs a place in the database, so migrate_hw09.py adds one column, view_count (INT, default 0), to the clinical_trials table of s4833_rel. models.py and the HW4 to HW8 code are untouched, and the script can drop the column again."
     )
 
     d.h1("Part 1 - Redis View Counter")
@@ -619,7 +619,7 @@ def build(canvas: bool, commit: str) -> Doc:
     d.h1("Part 3 - Threshold Economics and Stale Answers")
     d.h2("3.1 Labeled test set")
     d.p(
-        "cache_cases.yaml has 40 labeled queries, ten of each kind, and the ten seed queries that fill the cache before every run. I wrote and fixed the labels before I ran any sweep and did not change them afterwards. The seeds mix questions that depend on a database row (the capacity and title of trials) with questions about the platform rules (field lengths, required fields, the retry rule). The tricky group is 'similar but different': for example the capacity of CT-2026-102 against the cached capacity of CT-2026-101, or the maximum length of a trial category against the cached length of a trial title. A good cache must not return the stored answer for these. The full file is in the appendix."
+        "cache_cases.yaml contains 40 labeled evaluation cases (10 in each required category), plus 10 separate seed queries that are used to fill the cache before every run. I wrote and fixed the labels before I ran any sweep and did not change them afterwards. The seeds mix questions that depend on a database row (the capacity and title of trials) with questions about the platform rules (field lengths, required fields, the retry rule). The tricky group is 'similar but different': for example the capacity of CT-2026-102 against the cached capacity of CT-2026-101, or the maximum length of a trial category against the cached length of a trial title. A good cache must not return the stored answer for these. The full file is in the appendix."
     )
     d.table(case_count_rows(), [1.6, 0.6, 3.0, 0.9])
     d.figs("cases_yaml")
@@ -629,6 +629,7 @@ def build(canvas: bool, commit: str) -> Doc:
     )
     d.figs("sweep")
     d.table(sweep_rows(), [1.0, 1.0, 1.2, 1.5, 1.0])
+    d.p("For comparability, the miss-side agent latency was recorded once per distinct query and reused across thresholds; the embedding and Redis-search latency were measured live for every threshold run. The mean latency is therefore an estimate of end-to-end latency, not five separate wall-clock experiments.")
     d.table(sweep_detail_rows(), [1.0, 0.7, 0.9, 2.3, 1.2])
     d.p(sweep_comment())
     d.h2("3.3 One false hit in full")
