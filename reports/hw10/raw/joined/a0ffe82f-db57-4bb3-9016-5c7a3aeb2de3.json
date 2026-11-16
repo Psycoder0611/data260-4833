@@ -1,0 +1,62 @@
+{
+  "trace_id": "a0ffe82f-db57-4bb3-9016-5c7a3aeb2de3",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 1,
+    "offset": 182,
+    "timestamp_ms": 1794858332364,
+    "key": "a0ffe82f-db57-4bb3-9016-5c7a3aeb2de3",
+    "value": {
+      "correlation_id": "a0ffe82f-db57-4bb3-9016-5c7a3aeb2de3",
+      "stage": "plan",
+      "question": "What does open label mean?",
+      "plan": [
+        "Open label means no placebo is used.",
+        "All participants receive the active treatment.",
+        "Blinding is not applied in this design."
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:45:32+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 337,
+    "timestamp_ms": 1794858335969,
+    "key": "a0ffe82f-db57-4bb3-9016-5c7a3aeb2de3",
+    "value": {
+      "correlation_id": "a0ffe82f-db57-4bb3-9016-5c7a3aeb2de3",
+      "stage": "draft",
+      "question": "What does open label mean?",
+      "plan": [
+        "Open label means no placebo is used.",
+        "All participants receive the active treatment.",
+        "Blinding is not applied in this design."
+      ],
+      "draft": "Open label means that no placebo is used in the study. All participants receive the active treatment being tested. Blinding is not applied in this design, meaning both the participants and the researchers know which treatment is being given. This approach is often used when it is not ethical or practical to use a placebo, and it allows for more straightforward observation of the treatment's effects.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:45:35+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 46,
+    "timestamp_ms": 1794858338560,
+    "key": "a0ffe82f-db57-4bb3-9016-5c7a3aeb2de3",
+    "value": {
+      "correlation_id": "a0ffe82f-db57-4bb3-9016-5c7a3aeb2de3",
+      "stage": "final",
+      "status": "approved",
+      "answer": "Open label means that no placebo is used in the study. All participants receive the active treatment being tested. Blinding is not applied in this design, meaning both the participants and the researchers know which treatment is being given. This approach is often used when it is not ethical or practical to use a placebo, and it allows for more straightforward observation of the treatment's effects.",
+      "score": 9,
+      "feedback": "The draft accurately defines open label and explains its use cases, but could clarify that the term 'open label' refers to the transparency of treatment assignment rather than the absence of blinding.",
+      "question": "What does open label mean?",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:45:38+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

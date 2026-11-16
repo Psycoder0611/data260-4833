@@ -1,0 +1,62 @@
+{
+  "trace_id": "5c4ac608-6a29-4a49-a0dd-d759cef3627b",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 1,
+    "offset": 181,
+    "timestamp_ms": 1794858293563,
+    "key": "5c4ac608-6a29-4a49-a0dd-d759cef3627b",
+    "value": {
+      "correlation_id": "5c4ac608-6a29-4a49-a0dd-d759cef3627b",
+      "stage": "plan",
+      "question": "How are trial participants matched to a listing?",
+      "plan": [
+        "Check inclusion/exclusion criteria",
+        "Screen potential candidates",
+        "Match based on eligibility and availability"
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:44:53+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 335,
+    "timestamp_ms": 1794858297679,
+    "key": "5c4ac608-6a29-4a49-a0dd-d759cef3627b",
+    "value": {
+      "correlation_id": "5c4ac608-6a29-4a49-a0dd-d759cef3627b",
+      "stage": "draft",
+      "question": "How are trial participants matched to a listing?",
+      "plan": [
+        "Check inclusion/exclusion criteria",
+        "Screen potential candidates",
+        "Match based on eligibility and availability"
+      ],
+      "draft": "Trial participants are matched to a listing by first checking if they meet the inclusion and exclusion criteria outlined in the study. Once eligibility is confirmed, potential candidates are screened to ensure they fit the required profile. Finally, participants are matched based on their eligibility and availability, ensuring they can participate according to the trial's schedule and requirements. This process helps align suitable candidates with the appropriate study opportunities.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:44:57+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 44,
+    "timestamp_ms": 1794858299429,
+    "key": "5c4ac608-6a29-4a49-a0dd-d759cef3627b",
+    "value": {
+      "correlation_id": "5c4ac608-6a29-4a49-a0dd-d759cef3627b",
+      "stage": "final",
+      "status": "approved",
+      "answer": "Trial participants are matched to a listing by first checking if they meet the inclusion and exclusion criteria outlined in the study. Once eligibility is confirmed, potential candidates are screened to ensure they fit the required profile. Finally, participants are matched based on their eligibility and availability, ensuring they can participate according to the trial's schedule and requirements. This process helps align suitable candidates with the appropriate study opportunities.",
+      "score": 9,
+      "feedback": "The draft clearly explains the matching process but could specify how eligibility and availability are assessed in more detail.",
+      "question": "How are trial participants matched to a listing?",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:44:59+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

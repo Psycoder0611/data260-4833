@@ -1,0 +1,65 @@
+{
+  "table": {
+    "n": 50,
+    "rows": [
+      {
+        "stage": "Cache lookup",
+        "p50_ms": 55.3,
+        "p95_ms": 151.0,
+        "share_pct": 0.4
+      },
+      {
+        "stage": "Planner",
+        "p50_ms": 1768.5,
+        "p95_ms": 2116.3,
+        "share_pct": 9.8
+      },
+      {
+        "stage": "Writer",
+        "p50_ms": 3877.8,
+        "p95_ms": 4816.6,
+        "share_pct": 21.8
+      },
+      {
+        "stage": "Reviewer",
+        "p50_ms": 1621.6,
+        "p95_ms": 2271.4,
+        "share_pct": 9.4
+      },
+      {
+        "stage": "Queue wait (total)",
+        "p50_ms": 37.5,
+        "p95_ms": 86.0,
+        "share_pct": 0.2
+      },
+      {
+        "stage": "Evaluation",
+        "p50_ms": 10650.5,
+        "p95_ms": 12250.6,
+        "share_pct": 58.4
+      },
+      {
+        "stage": "End-to-end (all stages above)",
+        "p50_ms": 18066.9,
+        "p95_ms": 20373.2,
+        "share_pct": 100.0
+      }
+    ],
+    "user_facing_p50_ms": 7504.2,
+    "user_facing_p95_ms": 8533.4
+  },
+  "checks": {
+    "requests": 50,
+    "all_cache_lookup_miss": true,
+    "all_ran_the_full_pipeline": true,
+    "max_similarity": 0.8385,
+    "threshold": 0.85,
+    "approved": 50
+  },
+  "dominant": {
+    "stage": "Evaluation",
+    "p50_ms": 10650.5,
+    "p95_ms": 12250.6,
+    "share_pct": 58.4
+  }
+}

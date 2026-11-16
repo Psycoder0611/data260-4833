@@ -25,3 +25,8 @@ data/bay_wheels_raw/
 # HW8
 reports/hw08/state/
 jmeter.log
+
+# HW10
+reports/hw10/state/
+.deepeval/
+.streamlit/

@@ -1,0 +1,363 @@
+===== HW10 PART 2 EVALUATOR RUN START: Mon Nov 16 11:03:48 PST 2026 =====
+Student: Trapti Kulshrestha | SID4 4833 | HW10 part 2 evaluator
+2026-11-16 11:03:48
+(could not check the agent groups: KafkaConnectionError: Connection at localhost:9092 closed)
+Preflight OK: Kafka, agents, Redis and Ollama are reachable.
+
+ASK: What is the participant capacity of trial CT-2026-105, and who sponsors it?
+  -> path=miss status=ok latency=12518 ms trace_id=06cd2bca-c66f-488b-8b9e-28e87e5975d6
+------------------------------------------------------------------------------
+trace_id: 06cd2bca-c66f-488b-8b9e-28e87e5975d6
+question: What is the participant capacity of trial CT-2026-105, and who sponsors it?
+Plan Quality         : 2/5  reason: The response correctly identifies the sponsor and participant capacity from the provided facts, directly answering the question. However, it omits the title of the trial and the category, which were part of the input facts. The steps are specific and relevant, but minor gaps exist in completeness.
+Writer Helpfulness   : 3/5  (trace_id 06cd2bca-c66f-488b-8b9e-28e87e5975d6)
+Final Answer Helpful.: 3/5  final answer: 'The trial CT-2026-105, titled "Hypertension Medication Adherence Study," is sponsored by the Stanford Clinical Trials Center. The participant capacity for this '
+Final vs Draft       : draft 3, final 3, difference 0
+  interpretation: The final answer is word for word the Writer's draft: the Reviewer only approved or rejected it (status approved, reviewer score 10/10) and did not edit it, so no improvement is possible by design. The two scores are equal, as expected.
+evaluator status: ok  evaluation took 10593 ms
+
+ASK: Explain in simple words what a Phase II trial is and who can join one.
+  -> path=miss status=ok latency=8280 ms trace_id=6a6500cb-5715-4d46-80f4-6ac88c8e771a
+------------------------------------------------------------------------------
+trace_id: 6a6500cb-5715-4d46-80f4-6ac88c8e771a
+question: Explain in simple words what a Phase II trial is and who can join one.
+Plan Quality         : 2/5  reason: The response provides a basic explanation of Phase II trials but lacks clarity on who can join one. It mentions 'people with the disease' but does not specify eligibility criteria or the purpose of inclusion. The explanation is incomplete and lacks detail required for a full understanding.
+Writer Helpfulness   : 2/5  (trace_id 6a6500cb-5715-4d46-80f4-6ac88c8e771a)
+Final Answer Helpful.: 2/5  final answer: 'A Phase II trial checks if a treatment works and has few side effects. It involves more patients than Phase I and usually includes people who have the disease b'
+Final vs Draft       : draft 2, final 2, difference 0
+  interpretation: The final answer is word for word the Writer's draft: the Reviewer only approved or rejected it (status approved, reviewer score 9/10) and did not edit it, so no improvement is possible by design. The two scores are equal, as expected.
+evaluator status: ok  evaluation took 13673 ms
+
+ASK: Which category does trial CT-2026-102 belong to?
+  -> path=miss status=ok latency=4931 ms trace_id=07ad4ce7-5ee8-4417-8677-38109d0a5444
+------------------------------------------------------------------------------
+trace_id: 07ad4ce7-5ee8-4417-8677-38109d0a5444
+question: Which category does trial CT-2026-102 belong to?
+Plan Quality         : 3/5  reason: The response correctly identifies the category as 'not set' based on the provided facts. The steps are specific, relevant, and logically ordered. However, the plan could have been more concise by directly stating the category without an intermediate step, but it is still fully helpful and correct.
+Writer Helpfulness   : 3/5  (trace_id 07ad4ce7-5ee8-4417-8677-38109d0a5444)
+Final Answer Helpful.: 3/5  final answer: 'The trial CT-2026-102 belongs to the category "not set" as indicated in the provided facts.'
+Final vs Draft       : draft 3, final 3, difference 0
+  interpretation: The final answer is word for word the Writer's draft: the Reviewer only approved or rejected it (status approved, reviewer score 10/10) and did not edit it, so no improvement is possible by design. The two scores are equal, as expected.
+evaluator status: ok  evaluation took 10458 ms
+
+Saved 3 evaluated trace(s) to /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw10/raw/part2_eval.json
+===== HW10 PART 2 EVALUATOR RUN END: Mon Nov 16 11:04:49 PST 2026 =====
+===== HW10 PART 2 EVALUATOR RUN START: Mon Nov 16 11:08:34 PST 2026 =====
+Student: Trapti Kulshrestha | SID4 4833 | HW10 part 2 evaluator
+2026-11-16 11:08:34
+Preflight OK: Kafka topics, Redis and Ollama are reachable.
+
+ASK: What is the participant capacity of trial CT-2026-105, and who sponsors it?
+  -> path=miss status=ok latency=5381 ms trace_id=9e818d1b-d286-43eb-83a5-5f645451ba38
+------------------------------------------------------------------------------
+trace_id: 9e818d1b-d286-43eb-83a5-5f645451ba38
+question: What is the participant capacity of trial CT-2026-105, and who sponsors it?
+Plan Quality         : 4/5  reason: The response correctly identifies the sponsor and participant capacity from the provided facts, and the steps are specific and relevant. However, it omits the title of the trial and mentions 'enrolled individuals' which is not a term used in the facts provided, introducing a minor inaccuracy.
+Writer Helpfulness   : 5/5  (trace_id 9e818d1b-d286-43eb-83a5-5f645451ba38)
+Final Answer Helpful.: 5/5  final answer: 'The trial CT-2026-105, titled "Hypertension Medication Adherence Study," is sponsored by the Stanford Clinical Trials Center. The participant capacity for this '
+Final vs Draft       : draft 5, final 5, difference 0
+  interpretation: The final answer is word for word the Writer's draft: the Reviewer only approved or rejected it (status approved, reviewer score 10/10) and did not edit it, so no improvement is possible by design. The two scores are equal, as expected.
+evaluator status: ok  evaluation took 11116 ms
+
+ASK: Explain in simple words what a Phase II trial is and who can join one.
+  -> path=miss status=ok latency=8206 ms trace_id=c9e2ed1d-a502-4b40-bd44-bad372e52c4b
+------------------------------------------------------------------------------
+trace_id: c9e2ed1d-a502-4b40-bd44-bad372e52c4b
+question: Explain in simple words what a Phase II trial is and who can join one.
+Plan Quality         : 3/5  reason: The response provides a basic explanation of Phase II trials but lacks key details such as the purpose of Phase II trials beyond testing effectiveness, the typical number of participants, and the specific criteria for who can join. It is incomplete and vague, missing important context required to fully answer the question.
+Writer Helpfulness   : 5/5  (trace_id c9e2ed1d-a502-4b40-bd44-bad372e52c4b)
+Final Answer Helpful.: 5/5  final answer: 'A Phase II trial checks if a treatment works and has few side effects. It involves more patients than Phase I and usually includes people who have the disease b'
+Final vs Draft       : draft 5, final 5, difference 0
+  interpretation: The final answer is word for word the Writer's draft: the Reviewer only approved or rejected it (status approved, reviewer score 9/10) and did not edit it, so no improvement is possible by design. The two scores are equal, as expected.
+evaluator status: ok  evaluation took 12950 ms
+
+ASK: Which category does trial CT-2026-102 belong to?
+  -> path=miss status=ok latency=5216 ms trace_id=80c18989-75eb-4ebc-913f-c68359a71bab
+------------------------------------------------------------------------------
+trace_id: 80c18989-75eb-4ebc-913f-c68359a71bab
+question: Which category does trial CT-2026-102 belong to?
+Plan Quality         : 5/5  reason: The response correctly identifies the category as 'not set' based on the provided facts. The steps are specific, relevant, and in a logical order. However, the plan could have been more concise by directly stating the category without an intermediate step. The response is fully helpful and correct for the question.
+Writer Helpfulness   : 5/5  (trace_id 80c18989-75eb-4ebc-913f-c68359a71bab)
+Final Answer Helpful.: 5/5  final answer: 'The trial CT-2026-102 belongs to the category "not set" as indicated in the provided facts.'
+Final vs Draft       : draft 5, final 5, difference 0
+  interpretation: The final answer is word for word the Writer's draft: the Reviewer only approved or rejected it (status approved, reviewer score 10/10) and did not edit it, so no improvement is possible by design. The two scores are equal, as expected.
+evaluator status: ok  evaluation took 11742 ms
+
+Saved 3 evaluated trace(s) to /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw10/raw/part2_eval.json
+===== HW10 PART 2 EVALUATOR RUN END: Mon Nov 16 11:09:29 PST 2026 =====
+===== HW10 PART 4 TRACES RUN START: Mon Nov 16 11:10:28 PST 2026 =====
+Student: Trapti Kulshrestha | SID4 4833 | HW10 part 4 traces
+2026-11-16 11:10:28
+Preflight OK: Kafka topics, Redis and Ollama are reachable.
+
+[1] cache MISS, successful: What is the participant capacity of trial CT-2026-103, and which category is it in?
+===== HW10 PART 4 TRACES RUN END: Mon Nov 16 11:10:28 PST 2026 =====
+===== HW10 PART 4 TRACES RUN START: Mon Nov 16 11:11:19 PST 2026 =====
+Student: Trapti Kulshrestha | SID4 4833 | HW10 part 4 traces
+2026-11-16 11:11:19
+Preflight OK: Kafka topics, Redis and Ollama are reachable.
+
+[1] cache MISS, successful: List the title, sponsor and participant capacity of trial CT-2026-104 for a patient reading the listing.
+===== HW10 PART 4 TRACES RUN END: Mon Nov 16 11:11:20 PST 2026 =====
+===== HW10 PART 4 TRACES RUN START: Mon Nov 16 11:12:15 PST 2026 =====
+Student: Trapti Kulshrestha | SID4 4833 | HW10 part 4 traces
+2026-11-16 11:12:15
+Preflight OK: Kafka topics, Redis and Ollama are reachable.
+
+[1] cache MISS, successful: What is the participant capacity of trial CT-2026-103, and which category is it in?
+
+trace_id 5f6c27f0-cd9c-4c90-baf7-5ba8928b391d  path=miss  status=ok
+stage         start                          duration ms  status  error
+cache_lookup  2026-11-16T19:12:16.103+00:00         24.7  ok      
+request       2026-11-16T19:12:16.103+00:00       6067.3  ok      
+queue_inbox   2026-11-16T19:12:16.132+00:00          3.2  ok      
+planner       2026-11-16T19:12:16.135+00:00       2054.2  ok      
+queue_tasks   2026-11-16T19:12:18.190+00:00          6.1  ok      
+writer        2026-11-16T19:12:18.196+00:00       2373.9  ok      
+queue_drafts  2026-11-16T19:12:20.571+00:00          9.2  ok      
+reviewer      2026-11-16T19:12:20.581+00:00       1578.7  ok      
+queue_final   2026-11-16T19:12:22.160+00:00          5.6  ok      
+evaluation    2026-11-16T19:12:22.170+00:00      10357.5  ok      
+
+[2] cache HIT, same question again: What is the participant capacity of trial CT-2026-103, and which category is it in?
+
+trace_id cb907c6b-8689-4164-88ac-2014a27f43fd  path=hit  status=ok
+stage         start                          duration ms  status  error
+cache_lookup  2026-11-16T19:12:32.531+00:00         60.3  ok      
+request       2026-11-16T19:12:32.531+00:00         60.9  ok      
+
+[3] FAILED request (the Planner is told to publish an empty plan): Explain the steps to enroll in a listed trial.
+
+trace_id 5a397cec-b42b-4c25-b7c2-a74ca7a82e64  path=miss  status=error
+stage         start                          duration ms  status  error
+cache_lookup  2026-11-16T19:12:32.593+00:00         27.4  ok      
+request       2026-11-16T19:12:32.593+00:00       3063.0  error   RuntimeError: request dead-lettered at stage writer: ValueError: plan must be a non-empty list of non-empty strings
+queue_inbox   2026-11-16T19:12:32.621+00:00          6.8  ok      
+planner       2026-11-16T19:12:32.628+00:00       1494.6  ok      
+queue_tasks   2026-11-16T19:12:34.123+00:00         12.7  ok      
+writer        2026-11-16T19:12:34.136+00:00          0.1  error   ValueError: plan must be a non-empty list of non-empty strings
+writer        2026-11-16T19:12:34.637+00:00          0.0  error   ValueError: plan must be a non-empty list of non-empty strings
+writer        2026-11-16T19:12:35.640+00:00          0.0  error   ValueError: plan must be a non-empty list of non-empty strings
+dead_letter   2026-11-16T19:12:35.655+00:00          0.0  error   ValueError: plan must be a non-empty list of non-empty strings
+evaluation    2026-11-16T19:12:35.656+00:00          0.0  error   plan message missing or malformed; draft message missing or malformed; final message missing or malformed
+
+Failing stage: writer  error: ValueError: plan must be a non-empty list of non-empty strings
+
+Saved the three trace ids to /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw10/raw/part4_traces.json
+  cache_miss_success: 5f6c27f0-cd9c-4c90-baf7-5ba8928b391d
+  cache_hit: cb907c6b-8689-4164-88ac-2014a27f43fd
+  failed: 5a397cec-b42b-4c25-b7c2-a74ca7a82e64
+===== HW10 PART 4 TRACES RUN END: Mon Nov 16 11:12:35 PST 2026 =====
+===== HW10 MAKE EVAL CASES RUN START: Mon Nov 16 11:13:32 PST 2026 =====
+Student: Trapti Kulshrestha | SID4 4833 | HW10 make eval cases
+2026-11-16 11:13:32
+C01 ok: What is the participant capacity of trial CT-2026-101?
+C02 ok: Who sponsors trial CT-2026-102 and what is its title?
+C03 ok: Which category is trial CT-2026-103 listed under?
+C04 ok: Give me a one-line summary of trial CT-2026-104.
+C05 ok: Tell me everything about trial CT-2026-105.
+C06 ok: What is the capacity of trial CT-2026-999?
+C07 ok: What does a Phase II clinical trial test?
+C08 ok: Explain informed consent to a first-time participant.
+C09 ok: How do I know if a trial listing is still recruiting?
+C10 ok: What is a placebo and why is it used?
+C11 ok: Can I join a trial if I am taking other medication?
+C12 ok: Is it safe to take part in a clinical trial?
+C13 ok: What should I ask before enrolling in a trial?
+C14 ok: How is a trial sponsor different from a principal investigat
+C15 ok: Compare trials CT-2026-101 and CT-2026-102 by capacity.
+C16 ok: Which trial is best for me?
+C17 ok: Trials?
+C18 ok: What is the weather in San Jose today?
+C19 ok: Write a poem about clinical trials.
+C20 ok: Does the platform guarantee that a trial will cure my condit
+Saved 20 cases to /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/data/hw10/eval_cases.json
+===== HW10 MAKE EVAL CASES RUN END: Mon Nov 16 11:15:27 PST 2026 =====
+===== HW10 PART 3 JUDGE VALIDATION (ALL) RUN START: Mon Nov 16 11:28:34 PST 2026 =====
+Student: Trapti Kulshrestha | SID4 4833 | HW10 part 3 judge validation (all)
+2026-11-16 11:28:34
+Judge run 1: model=qwen3:8b temperature=0.0 seed=4833; inputs committed in 0befa57f63
+  C01: human 5  judge 5  (ok, 10.8s)
+  C02: human 5  judge 5  (ok, 4.4s)
+  C03: human 5  judge 5  (ok, 4.4s)
+  C04: human 5  judge 5  (ok, 3.2s)
+  C05: human 4  judge 4  (ok, 4.5s)
+  C06: human 5  judge 5  (ok, 3.9s)
+  C07: human 4  judge 5  (ok, 3.4s)
+  C08: human 5  judge 5  (ok, 4.0s)
+  C09: human 3  judge 5  (ok, 4.1s)
+  C10: human 5  judge 5  (ok, 4.0s)
+  C11: human 5  judge 5  (ok, 4.2s)
+  C12: human 4  judge 5  (ok, 3.4s)
+  C13: human 4  judge 5  (ok, 3.5s)
+  C14: human 5  judge 5  (ok, 4.2s)
+  C15: human 5  judge 5  (ok, 3.2s)
+  C16: human 5  judge 4  (ok, 3.4s)
+  C17: human 3  judge 4  (ok, 2.6s)
+  C18: human 2  judge 2  (ok, 3.5s)
+  C19: human 5  judge 2  (ok, 4.0s)
+  C20: human 5  judge 5  (ok, 3.2s)
+Judge run 2: model=qwen3:8b temperature=0.0 seed=4833; inputs committed in 0befa57f63
+  C01: human 5  judge 5  (ok, 4.0s)
+  C02: human 5  judge 5  (ok, 3.9s)
+  C03: human 5  judge 5  (ok, 4.1s)
+  C04: human 5  judge 5  (ok, 3.3s)
+  C05: human 4  judge 4  (ok, 4.5s)
+  C06: human 5  judge 5  (ok, 3.7s)
+  C07: human 4  judge 5  (ok, 3.5s)
+  C08: human 5  judge 5  (ok, 4.0s)
+  C09: human 3  judge 5  (ok, 4.1s)
+  C10: human 5  judge 5  (ok, 3.9s)
+  C11: human 5  judge 5  (ok, 4.4s)
+  C12: human 4  judge 5  (ok, 3.7s)
+  C13: human 4  judge 5  (ok, 3.7s)
+  C14: human 5  judge 5  (ok, 4.4s)
+  C15: human 5  judge 5  (ok, 3.7s)
+  C16: human 5  judge 4  (ok, 3.6s)
+  C17: human 3  judge 4  (ok, 2.9s)
+  C18: human 2  judge 2  (ok, 3.6s)
+  C19: human 5  judge 2  (ok, 4.5s)
+  C20: human 5  judge 5  (ok, 3.4s)
+Judge run 3: model=qwen3:8b temperature=0.0 seed=4833; inputs committed in 0befa57f63
+  C01: human 5  judge 5  (ok, 4.3s)
+  C02: human 5  judge 5  (ok, 4.1s)
+  C03: human 5  judge 5  (ok, 4.2s)
+  C04: human 5  judge 5  (ok, 3.3s)
+  C05: human 4  judge 4  (ok, 4.6s)
+  C06: human 5  judge 5  (ok, 3.9s)
+  C07: human 4  judge 5  (ok, 3.6s)
+  C08: human 5  judge 5  (ok, 4.6s)
+  C09: human 3  judge 5  (ok, 4.3s)
+  C10: human 5  judge 5  (ok, 4.2s)
+  C11: human 5  judge 5  (ok, 4.5s)
+  C12: human 4  judge 5  (ok, 3.6s)
+  C13: human 4  judge 5  (ok, 3.5s)
+  C14: human 5  judge 5  (ok, 4.4s)
+  C15: human 5  judge 5  (ok, 3.3s)
+  C16: human 5  judge 4  (ok, 3.6s)
+  C17: human 3  judge 4  (ok, 2.7s)
+  C18: human 2  judge 2  (ok, 3.6s)
+  C19: human 5  judge 2  (ok, 4.3s)
+  C20: human 5  judge 5  (ok, 3.4s)
+{
+  "validation": {
+    "n": 20,
+    "n_missing": 0,
+    "spearman": 0.362,
+    "p_value": 0.1173,
+    "mad": 0.5,
+    "mean_bias": 0.1,
+    "exact_agreement_pct": 65.0,
+    "within_one_pct": 90.0
+  },
+  "repeatability": {
+    "runs": 3,
+    "cases": 20,
+    "cases_changed": 0,
+    "fraction_changed": 0.0,
+    "mean_abs_change": 0.0,
+    "max_abs_change": 0.0
+  }
+}
+Saved /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw10/raw/part3_validation.json and /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw10/raw/part3_per_case.csv
+===== HW10 PART 3 JUDGE VALIDATION (ALL) RUN END: Mon Nov 16 11:32:31 PST 2026 =====
+===== HW10 PART 4 LATENCY RUN START: Mon Nov 16 11:35:15 PST 2026 =====
+Student: Trapti Kulshrestha | SID4 4833 | HW10 part 4 latency
+2026-11-16 11:35:15
+Preflight OK: Kafka topics, Redis and Ollama are reachable.
+Starting fresh.
+[ 1/50] miss ok=ok sim=0.569 7890 ms plan=5 draft=5 final=5  What does a Phase II clinical trial test?
+[ 2/50] miss ok=ok sim=0.658 7353 ms plan=5 draft=5 final=5  How do I find clinical trials for type 2 diabetes 
+[ 3/50] miss ok=ok sim=0.691 7849 ms plan=4 draft=5 final=5  What is informed consent in a clinical trial?
+[ 4/50] miss ok=ok sim=0.703 7597 ms plan=5 draft=5 final=5  Can a person leave a clinical trial after enrollin
+[ 5/50] miss ok=ok sim=0.617 7551 ms plan=5 draft=5 final=5  What is a placebo and why do some trials use one?
+[ 6/50] miss ok=ok sim=0.654 6379 ms plan=4 draft=5 final=5  What does it mean when a trial is double blind?
+[ 7/50] miss ok=ok sim=0.748 7374 ms plan=5 draft=5 final=5  Who pays for the costs of taking part in a clinica
+[ 8/50] miss ok=ok sim=0.534 7354 ms plan=5 draft=4 final=4  What is an inclusion criterion?
+[ 9/50] miss ok=ok sim=0.783 7115 ms plan=4 draft=4 final=4  What is an exclusion criterion and who sets it?
+[10/50] miss ok=ok sim=0.675 6617 ms plan=3 draft=4 final=4  How long does a typical Phase III trial last?
+[11/50] miss ok=ok sim=0.701 7264 ms plan=5 draft=4 final=4  What is a trial sponsor?
+[12/50] miss ok=ok sim=0.784 7821 ms plan=4 draft=5 final=5  What does participant capacity mean on a trial lis
+[13/50] miss ok=ok sim=0.741 8036 ms plan=4 draft=5 final=5  How is a clinical trial different from regular tre
+[14/50] miss ok=ok sim=0.539 7024 ms plan=5 draft=5 final=5  What is an institutional review board?
+[15/50] miss ok=ok sim=0.778 7930 ms plan=4 draft=5 final=5  Can children take part in clinical trials?
+[16/50] miss ok=ok sim=0.684 7476 ms plan=3 draft=5 final=5  What is a randomized controlled trial?
+[17/50] miss ok=ok sim=0.685 6740 ms plan=5 draft=5 final=5  How do researchers protect participant privacy in 
+[18/50] miss ok=ok sim=0.621 6883 ms plan=4 draft=5 final=5  What does recruiting status mean on a listing?
+[19/50] miss ok=ok sim=0.735 7840 ms plan=3 draft=5 final=5  What is the difference between Phase I and Phase I
+[20/50] miss ok=ok sim=0.710 7696 ms plan=5 draft=5 final=5  What is an adverse event in a trial?
+[21/50] miss ok=ok sim=0.681 7064 ms plan=4 draft=5 final=5  Why do some trials have a waiting list?
+[22/50] miss ok=ok sim=0.673 7488 ms plan=4 draft=4 final=4  How can a hospital list a new trial on the platfor
+[23/50] miss ok=ok sim=0.744 7171 ms plan=4 draft=5 final=5  What information must a trial listing contain?
+[24/50] miss ok=ok sim=0.733 7011 ms plan=4 draft=3 final=3  What is a trial registry identifier?
+[25/50] miss ok=ok sim=0.753 7387 ms plan=3 draft=5 final=5  Can I join more than one clinical trial at the sam
+[26/50] miss ok=ok sim=0.582 7335 ms plan=5 draft=5 final=5  What is a control group?
+[27/50] miss ok=ok sim=0.733 9105 ms plan=3 draft=4 final=4  What does it mean if a trial is withdrawn before i
+[28/50] miss ok=ok sim=0.835 7926 ms plan=4 draft=4 final=4  How do I contact the sponsor of a trial?
+[29/50] miss ok=ok sim=0.630 8341 ms plan=5 draft=5 final=5  What is a pilot study?
+[30/50] miss ok=ok sim=0.795 7038 ms plan=4 draft=4 final=4  What does the category field on a trial listing de
+[31/50] miss ok=ok sim=0.736 7772 ms plan=4 draft=5 final=5  Is travel reimbursed for trial participants?
+[32/50] miss ok=ok sim=0.556 8691 ms plan=5 draft=5 final=5  What is an interim analysis?
+[33/50] miss ok=ok sim=0.783 7282 ms plan=3 draft=5 final=5  How are trial participants matched to a listing?
+[34/50] miss ok=ok sim=0.623 8225 ms plan=5 draft=4 final=4  What is a data safety monitoring board?
+[35/50] miss ok=ok sim=0.528 7978 ms plan=5 draft=4 final=4  What does open label mean?
+[36/50] miss ok=ok sim=0.589 7986 ms plan=5 draft=5 final=5  What is the purpose of a screening visit?
+[37/50] miss ok=ok sim=0.735 8336 ms plan=5 draft=5 final=5  Do trials accept healthy volunteers?
+[38/50] miss ok=ok sim=0.646 8153 ms plan=5 draft=5 final=5  What is a crossover trial design?
+[39/50] miss ok=ok sim=0.746 7853 ms plan=5 draft=5 final=5  How are cardiology trials usually grouped on a lis
+[40/50] miss ok=ok sim=0.719 7521 ms plan=5 draft=5 final=5  What is a biomarker in a trial?
+[41/50] miss ok=ok sim=0.829 7100 ms plan=4 draft=5 final=5  What happens to my data if I withdraw from a trial
+[42/50] miss ok=ok sim=0.587 7919 ms plan=5 draft=5 final=5  What is compassionate use?
+[43/50] miss ok=ok sim=0.687 6956 ms plan=3 draft=5 final=5  Why does a listing show a minimum age?
+[44/50] miss ok=ok sim=0.602 6396 ms plan=5 draft=5 final=5  What is the role of a principal investigator?
+[45/50] miss ok=ok sim=0.756 8994 ms plan=4 draft=5 final=5  How do endocrinology trials differ from oncology t
+[46/50] miss ok=ok sim=0.717 7547 ms plan=4 draft=5 final=5  What is a trial protocol?
+[47/50] miss ok=ok sim=0.776 7698 ms plan=3 draft=4 final=4  Can a trial listing be updated after it is publish
+[48/50] miss ok=ok sim=0.691 7222 ms plan=5 draft=4 final=4  What is a follow-up visit?
+  SKIPPED (served by cache, similarity 0.862): How is the participant capacity of a trial decided?
+[49/50] miss ok=ok sim=0.839 7000 ms plan=4 draft=5 final=5  What does a sponsor have to report during a trial?
+[50/50] miss ok=ok sim=0.805 6875 ms plan=4 draft=4 final=4  Are trial results published?
+
+confirmed misses: 50  skipped because the cache answered: 1
+
+Stage                               p50 (ms)    p95 (ms)    % of miss end-to-end
+Cache lookup                            55.3       151.0                     0.4
+Planner                               1768.5      2116.3                     9.8
+Writer                                3877.8      4816.6                    21.8
+Reviewer                              1621.6      2271.4                     9.4
+Queue wait (total)                      37.5        86.0                     0.2
+Evaluation                           10650.5     12250.6                    58.4
+End-to-end (all stages above)        18066.9     20373.2                   100.0
+
+user-facing latency (request start -> answer): p50 7504.2 ms, p95 8533.4 ms
+checks: {"requests": 50, "all_cache_lookup_miss": true, "all_ran_the_full_pipeline": true, "max_similarity": 0.8385, "threshold": 0.85, "approved": 50}
+dominant contributor: Evaluation (58.4%)
+Saved /Users/tripti/SJSU_Study/DATA_260_Agentic_AI/Assignments/data260-4833/reports/hw10/raw/part4_latency.json
+===== HW10 PART 4 LATENCY RUN END: Mon Nov 16 11:50:21 PST 2026 =====
+===== HW10 PART 4 HITS RUN START: Mon Nov 16 11:51:40 PST 2026 =====
+Student: Trapti Kulshrestha | SID4 4833 | HW10 part 4 hits
+2026-11-16 11:51:40
+Preflight OK: Kafka topics, Redis and Ollama are reachable.
+  HIT  sim=1.000 32 ms  What does a Phase II clinical trial test?
+  HIT  sim=1.000 17 ms  How do I find clinical trials for type 2 diabetes near me?
+  HIT  sim=1.000 14 ms  What is informed consent in a clinical trial?
+  HIT  sim=1.000 14 ms  Can a person leave a clinical trial after enrolling?
+  HIT  sim=1.000 14 ms  What is a placebo and why do some trials use one?
+  HIT  sim=1.000 16 ms  What does it mean when a trial is double blind?
+  HIT  sim=1.000 16 ms  Who pays for the costs of taking part in a clinical trial?
+  HIT  sim=1.000 15 ms  What is an inclusion criterion?
+  HIT  sim=1.000 15 ms  What is an exclusion criterion and who sets it?
+  HIT  sim=1.000 15 ms  How long does a typical Phase III trial last?
+  HIT  sim=1.000 14 ms  What is a trial sponsor?
+  HIT  sim=1.000 16 ms  What does participant capacity mean on a trial listing?
+  HIT  sim=1.000 17 ms  How is a clinical trial different from regular treatment?
+  HIT  sim=1.000 17 ms  What is an institutional review board?
+  HIT  sim=1.000 16 ms  Can children take part in clinical trials?
+  HIT  sim=1.000 16 ms  What is a randomized controlled trial?
+  HIT  sim=1.000 17 ms  How do researchers protect participant privacy in a trial?
+  HIT  sim=1.000 17 ms  What does recruiting status mean on a listing?
+  HIT  sim=1.000 18 ms  What is the difference between Phase I and Phase II?
+  HIT  sim=1.000 19 ms  What is an adverse event in a trial?
+
+20 of 20 repeated questions were cache hits.
+===== HW10 PART 4 HITS RUN END: Mon Nov 16 11:51:41 PST 2026 =====

@@ -1,0 +1,62 @@
+{
+  "trace_id": "3e1b3c15-8672-45f8-9fa9-69834f01d1cd",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 0,
+    "offset": 178,
+    "timestamp_ms": 1794858109860,
+    "key": "3e1b3c15-8672-45f8-9fa9-69834f01d1cd",
+    "value": {
+      "correlation_id": "3e1b3c15-8672-45f8-9fa9-69834f01d1cd",
+      "stage": "plan",
+      "question": "What information must a trial listing contain?",
+      "plan": [
+        "Trial title and unique identifier",
+        "Eligibility criteria and study design",
+        "Contact details and recruitment status"
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:41:49+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 325,
+    "timestamp_ms": 1794858113712,
+    "key": "3e1b3c15-8672-45f8-9fa9-69834f01d1cd",
+    "value": {
+      "correlation_id": "3e1b3c15-8672-45f8-9fa9-69834f01d1cd",
+      "stage": "draft",
+      "question": "What information must a trial listing contain?",
+      "plan": [
+        "Trial title and unique identifier",
+        "Eligibility criteria and study design",
+        "Contact details and recruitment status"
+      ],
+      "draft": "A trial listing must include the trial title and unique identifier to ensure proper recognition and tracking. It should also outline the eligibility criteria and study design to inform potential participants about the requirements and structure of the trial. Contact details are necessary for communication purposes, and the recruitment status should indicate whether the trial is currently recruiting, completed, or closed. This information helps researchers and participants make informed decisions about involvement in the trial.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:41:53+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 34,
+    "timestamp_ms": 1794858115617,
+    "key": "3e1b3c15-8672-45f8-9fa9-69834f01d1cd",
+    "value": {
+      "correlation_id": "3e1b3c15-8672-45f8-9fa9-69834f01d1cd",
+      "stage": "final",
+      "status": "approved",
+      "answer": "A trial listing must include the trial title and unique identifier to ensure proper recognition and tracking. It should also outline the eligibility criteria and study design to inform potential participants about the requirements and structure of the trial. Contact details are necessary for communication purposes, and the recruitment status should indicate whether the trial is currently recruiting, completed, or closed. This information helps researchers and participants make informed decisions about involvement in the trial.",
+      "score": 9,
+      "feedback": "The draft accurately addresses the required information for a trial listing but could include details about the primary purpose, interventions, and outcomes.",
+      "question": "What information must a trial listing contain?",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:41:55+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

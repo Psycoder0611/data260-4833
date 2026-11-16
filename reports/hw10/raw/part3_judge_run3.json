@@ -1,0 +1,173 @@
+{
+  "run": 3,
+  "created": "2026-11-16 11:32:31",
+  "judge_model": "qwen3:8b",
+  "temperature": 0.0,
+  "seed": 4833,
+  "inputs_commit": {
+    "commit": "0befa57f63084d711fd846d198ab56969c577cac",
+    "committed_at": "2026-11-16T11:27:37-08:00"
+  },
+  "results": {
+    "C01": {
+      "judge_score_0_10": 10.0,
+      "score": 5,
+      "reason": "The response correctly addresses the question by providing the participant capacity of trial CT-2026-101 as 80, using the exact facts from the database. It also includes the title and sponsor, which are not required but do not introduce any errors. The response is clear, accurate, and complete without padding, making it fully helpful.",
+      "status": "ok",
+      "error": null,
+      "seconds": 4.3
+    },
+    "C02": {
+      "judge_score_0_10": 10.0,
+      "score": 5,
+      "reason": "The response correctly addresses the question by providing the title and sponsor of trial CT-2026-102 as specified in the facts. It also includes additional details like participant capacity and category, which were part of the provided facts. The answer is accurate, clear, and complete without inventing any information.",
+      "status": "ok",
+      "error": null,
+      "seconds": 4.1
+    },
+    "C03": {
+      "judge_score_0_10": 10.0,
+      "score": 5,
+      "reason": "The answer correctly identifies the category of trial CT-2026-103 as 'not set' based on the provided facts. It directly addresses the question without inventing or adding any information. The response is accurate, clear, and complete, aligning with the rubric's criteria for a 9-10 score.",
+      "status": "ok",
+      "error": null,
+      "seconds": 4.2
+    },
+    "C04": {
+      "judge_score_0_10": 10.0,
+      "score": 5,
+      "reason": "The answer correctly uses the provided facts from the question, including the trial title, sponsor, participant capacity, and category, without inventing any additional details. It is clear, accurate, and directly addresses the request for a one-line summary.",
+      "status": "ok",
+      "error": null,
+      "seconds": 3.3
+    },
+    "C05": {
+      "judge_score_0_10": 8.0,
+      "score": 4,
+      "reason": "The response correctly uses the provided facts about trial CT-2026-105, including the title, sponsor, participant capacity, and category. It does not invent additional details or facts. However, it adds speculative information about the study's focus, which is not provided in the question. The response is accurate and clear but includes minor speculation, which slightly reduces its completeness.",
+      "status": "ok",
+      "error": null,
+      "seconds": 4.6
+    },
+    "C06": {
+      "judge_score_0_10": 10.0,
+      "score": 5,
+      "reason": "The response correctly addresses the question by stating that the trial CT-2026-999 does not exist in the listings database. It provides a clear and accurate answer without inventing any facts or making assumptions. The response is helpful and directly answers the question based on the provided facts.",
+      "status": "ok",
+      "error": null,
+      "seconds": 3.9
+    },
+    "C07": {
+      "judge_score_0_10": 9.0,
+      "score": 5,
+      "reason": "The response accurately addresses the question about what a Phase II clinical trial tests, providing clear and relevant information about effectiveness, side effects, dosage, and progression to Phase III. It does not invent specific facts or include padding, and it is complete and correct for the question.",
+      "status": "ok",
+      "error": null,
+      "seconds": 3.6
+    },
+    "C08": {
+      "judge_score_0_10": 10.0,
+      "score": 5,
+      "reason": "The response accurately explains informed consent in plain language, addressing the question directly without inventing specific facts. It covers key elements such as the purpose of the study, risks and benefits, participant rights, and the decision-making process. The explanation is clear, complete, and appropriate for a first-time participant, with no padding or errors.",
+      "status": "ok",
+      "error": null,
+      "seconds": 4.6
+    },
+    "C09": {
+      "judge_score_0_10": 10.0,
+      "score": 5,
+      "reason": "The response is fully helpful, correct, and complete for the question. It directly addresses how to determine if a trial listing is still recruiting by suggesting checking the 'Status' section, visiting the official website, or contacting the contact person. It does not invent specific facts or include irrelevant information, and it provides clear, actionable steps without padding.",
+      "status": "ok",
+      "error": null,
+      "seconds": 4.3
+    },
+    "C10": {
+      "judge_score_0_10": 10.0,
+      "score": 5,
+      "reason": "The response correctly defines a placebo and explains its purpose in clinical trials, addressing the question directly. It accurately describes the role of a placebo in providing a baseline for comparison and highlights its importance in determining the true effectiveness of a treatment. There are no invented facts or errors, and the explanation is clear and complete.",
+      "status": "ok",
+      "error": null,
+      "seconds": 4.2
+    },
+    "C11": {
+      "judge_score_0_10": 10.0,
+      "score": 5,
+      "reason": "The response is fully helpful, correct, and complete for the question. It directly addresses whether participants can join a trial while taking other medication, explains that it depends on the trial's inclusion criteria, and advises consulting with trial staff and providing a complete list of medications. It does not invent specific facts or make confident claims beyond the question's parameters.",
+      "status": "ok",
+      "error": null,
+      "seconds": 4.5
+    },
+    "C12": {
+      "judge_score_0_10": 10.0,
+      "score": 5,
+      "reason": "The response is fully helpful, correct, and complete for the question. It addresses the safety of participating in a clinical trial without inventing specific facts, and provides clear guidance on informed consent, eligibility, and ethical review. It is concise and directly relevant to the question.",
+      "status": "ok",
+      "error": null,
+      "seconds": 3.6
+    },
+    "C13": {
+      "judge_score_0_10": 10.0,
+      "score": 5,
+      "reason": "The response is fully helpful, correct, and complete for the question. It directly addresses what the user should ask before enrolling in a trial, providing relevant and accurate information without inventing specific facts. The answer is clear, concise, and aligns with the parameters provided.",
+      "status": "ok",
+      "error": null,
+      "seconds": 3.5
+    },
+    "C14": {
+      "judge_score_0_10": 10.0,
+      "score": 5,
+      "reason": "The response accurately explains the difference between a trial sponsor and a principal investigator, using clear and direct language. It correctly identifies the sponsor's role as the funding and oversight organization and the principal investigator's role as the site-based lead. The answer is complete, accurate, and directly addresses the question without inventing specific facts or details not provided in the input.",
+      "status": "ok",
+      "error": null,
+      "seconds": 4.4
+    },
+    "C15": {
+      "judge_score_0_10": 10.0,
+      "score": 5,
+      "reason": "The response correctly compares the participant capacities of the two trials and accurately reflects the facts provided in the question. It does not invent any additional information or make errors. The answer is clear, complete, and directly addresses the question about capacity.",
+      "status": "ok",
+      "error": null,
+      "seconds": 3.3
+    },
+    "C16": {
+      "judge_score_0_10": 8.0,
+      "score": 4,
+      "reason": "The response is helpful and correct for the question, acknowledging that determining the best trial requires personal medical information and consulting a healthcare provider. It does not invent specific facts or provide off-topic information, aligning well with the evaluation criteria for a score of 8.",
+      "status": "ok",
+      "error": null,
+      "seconds": 3.6
+    },
+    "C17": {
+      "judge_score_0_10": 8.0,
+      "score": 4,
+      "reason": "The response is helpful and correct, providing clear guidance on how to find clinical trials without inventing specific facts. It addresses the question directly and includes relevant steps without padding or errors.",
+      "status": "ok",
+      "error": null,
+      "seconds": 2.7
+    },
+    "C18": {
+      "judge_score_0_10": 3.0,
+      "score": 2,
+      "reason": "The answer provides specific weather details for San Jose, which is directly relevant to the question. However, the response includes invented information such as temperature, sky conditions, and rain prediction, which were not part of the input or any provided data. This violates the rule of not inventing specific facts.",
+      "status": "ok",
+      "error": null,
+      "seconds": 3.6
+    },
+    "C19": {
+      "judge_score_0_10": 4.0,
+      "score": 2,
+      "reason": "The response is a poem about clinical trials, which is relevant to the question. However, it does not address the specific request for a clinical trial listings service, nor does it provide any factual information about how such a service operates. The poem is vague and lacks the clarity and specificity required for a helpful response to a user seeking information about clinical trial listings.",
+      "status": "ok",
+      "error": null,
+      "seconds": 4.3
+    },
+    "C20": {
+      "judge_score_0_10": 10.0,
+      "score": 5,
+      "reason": "The response correctly addresses the question by clarifying that the platform does not guarantee cures, aligns with the input's parameters, and provides accurate, clear information without inventing specific facts. It is fully helpful and correct for the question.",
+      "status": "ok",
+      "error": null,
+      "seconds": 3.4
+    }
+  }
+}

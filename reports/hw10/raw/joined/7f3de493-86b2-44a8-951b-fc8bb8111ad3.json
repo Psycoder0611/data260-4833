@@ -1,0 +1,62 @@
+{
+  "trace_id": "7f3de493-86b2-44a8-951b-fc8bb8111ad3",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 0,
+    "offset": 188,
+    "timestamp_ms": 1794858443074,
+    "key": "7f3de493-86b2-44a8-951b-fc8bb8111ad3",
+    "value": {
+      "correlation_id": "7f3de493-86b2-44a8-951b-fc8bb8111ad3",
+      "stage": "plan",
+      "question": "What happens to my data if I withdraw from a trial?",
+      "plan": [
+        "Data may be securely deleted or anonymized.",
+        "Check trial's data policies for specifics.",
+        "Contact trial team for confirmation."
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:47:23+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 343,
+    "timestamp_ms": 1794858446975,
+    "key": "7f3de493-86b2-44a8-951b-fc8bb8111ad3",
+    "value": {
+      "correlation_id": "7f3de493-86b2-44a8-951b-fc8bb8111ad3",
+      "stage": "draft",
+      "question": "What happens to my data if I withdraw from a trial?",
+      "plan": [
+        "Data may be securely deleted or anonymized.",
+        "Check trial's data policies for specifics.",
+        "Contact trial team for confirmation."
+      ],
+      "draft": "If you withdraw from a clinical trial, your data may be securely deleted or anonymized, depending on the trial's policies. It's important to check the specific data handling procedures outlined in the trial's information materials. For confirmation, you should contact the trial team directly, as they can provide details on how your data will be managed after your withdrawal. Always ask about your rights regarding your data and how it will be protected.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:47:26+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 52,
+    "timestamp_ms": 1794858448605,
+    "key": "7f3de493-86b2-44a8-951b-fc8bb8111ad3",
+    "value": {
+      "correlation_id": "7f3de493-86b2-44a8-951b-fc8bb8111ad3",
+      "stage": "final",
+      "status": "approved",
+      "answer": "If you withdraw from a clinical trial, your data may be securely deleted or anonymized, depending on the trial's policies. It's important to check the specific data handling procedures outlined in the trial's information materials. For confirmation, you should contact the trial team directly, as they can provide details on how your data will be managed after your withdrawal. Always ask about your rights regarding your data and how it will be protected.",
+      "score": 9,
+      "feedback": "The draft accurately addresses the question and provides clear guidance on data handling upon withdrawal from a trial.",
+      "question": "What happens to my data if I withdraw from a trial?",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:47:28+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

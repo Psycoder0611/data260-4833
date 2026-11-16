@@ -1,0 +1,62 @@
+{
+  "trace_id": "8e0331cf-484e-48f1-be9d-7f8e4ad54dc8",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 0,
+    "offset": 193,
+    "timestamp_ms": 1794858572092,
+    "key": "8e0331cf-484e-48f1-be9d-7f8e4ad54dc8",
+    "value": {
+      "correlation_id": "8e0331cf-484e-48f1-be9d-7f8e4ad54dc8",
+      "stage": "plan",
+      "question": "What is a follow-up visit?",
+      "plan": [
+        "A follow-up visit is a scheduled check-in after treatment.",
+        "It monitors patient recovery and health status.",
+        "It ensures long-term safety and treatment effectiveness."
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:49:32+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 350,
+    "timestamp_ms": 1794858575918,
+    "key": "8e0331cf-484e-48f1-be9d-7f8e4ad54dc8",
+    "value": {
+      "correlation_id": "8e0331cf-484e-48f1-be9d-7f8e4ad54dc8",
+      "stage": "draft",
+      "question": "What is a follow-up visit?",
+      "plan": [
+        "A follow-up visit is a scheduled check-in after treatment.",
+        "It monitors patient recovery and health status.",
+        "It ensures long-term safety and treatment effectiveness."
+      ],
+      "draft": "A follow-up visit is a scheduled check-in after treatment to monitor the patient's recovery and health status. These visits help ensure long-term safety and assess how well the treatment is working. They allow healthcare providers to address any concerns, track progress, and make necessary adjustments to care. Follow-up visits are an important part of the treatment process, supporting both the patient's well-being and the success of the clinical trial.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:49:35+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 59,
+    "timestamp_ms": 1794858577415,
+    "key": "8e0331cf-484e-48f1-be9d-7f8e4ad54dc8",
+    "value": {
+      "correlation_id": "8e0331cf-484e-48f1-be9d-7f8e4ad54dc8",
+      "stage": "final",
+      "status": "approved",
+      "answer": "A follow-up visit is a scheduled check-in after treatment to monitor the patient's recovery and health status. These visits help ensure long-term safety and assess how well the treatment is working. They allow healthcare providers to address any concerns, track progress, and make necessary adjustments to care. Follow-up visits are an important part of the treatment process, supporting both the patient's well-being and the success of the clinical trial.",
+      "score": 10,
+      "feedback": "The draft accurately and clearly defines a follow-up visit and addresses the question comprehensively.",
+      "question": "What is a follow-up visit?",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:49:37+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

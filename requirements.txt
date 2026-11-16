@@ -41,3 +41,7 @@ aiokafka==0.14.0
 # HW9
 redis==8.1.0
 fakeredis==2.40.0
+
+# HW10
+deepeval==4.3.4
+streamlit==1.67.0

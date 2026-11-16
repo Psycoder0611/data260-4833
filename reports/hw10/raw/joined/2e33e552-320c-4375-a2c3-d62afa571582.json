@@ -1,0 +1,62 @@
+{
+  "trace_id": "2e33e552-320c-4375-a2c3-d62afa571582",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 1,
+    "offset": 178,
+    "timestamp_ms": 1794858076391,
+    "key": "2e33e552-320c-4375-a2c3-d62afa571582",
+    "value": {
+      "correlation_id": "2e33e552-320c-4375-a2c3-d62afa571582",
+      "stage": "plan",
+      "question": "Why do some trials have a waiting list?",
+      "plan": [
+        "To manage participant enrollment when demand exceeds capacity.",
+        "To ensure fair access for future candidates.",
+        "To maintain trial integrity and safety standards."
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:41:16+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 323,
+    "timestamp_ms": 1794858079908,
+    "key": "2e33e552-320c-4375-a2c3-d62afa571582",
+    "value": {
+      "correlation_id": "2e33e552-320c-4375-a2c3-d62afa571582",
+      "stage": "draft",
+      "question": "Why do some trials have a waiting list?",
+      "plan": [
+        "To manage participant enrollment when demand exceeds capacity.",
+        "To ensure fair access for future candidates.",
+        "To maintain trial integrity and safety standards."
+      ],
+      "draft": "Some trials have a waiting list to manage participant enrollment when demand exceeds capacity. This helps ensure fair access for future candidates who may be interested in the study. A waiting list also allows the research team to maintain trial integrity and safety standards by carefully selecting participants who meet the eligibility criteria. This process helps protect the safety of all participants and ensures the trial runs smoothly and effectively.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:41:19+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 32,
+    "timestamp_ms": 1794858081659,
+    "key": "2e33e552-320c-4375-a2c3-d62afa571582",
+    "value": {
+      "correlation_id": "2e33e552-320c-4375-a2c3-d62afa571582",
+      "stage": "final",
+      "status": "approved",
+      "answer": "Some trials have a waiting list to manage participant enrollment when demand exceeds capacity. This helps ensure fair access for future candidates who may be interested in the study. A waiting list also allows the research team to maintain trial integrity and safety standards by carefully selecting participants who meet the eligibility criteria. This process helps protect the safety of all participants and ensures the trial runs smoothly and effectively.",
+      "score": 9,
+      "feedback": "The draft accurately explains why trials have waiting lists and covers key points about fairness, safety, and trial integrity.",
+      "question": "Why do some trials have a waiting list?",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:41:21+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

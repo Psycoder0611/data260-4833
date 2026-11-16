@@ -1,0 +1,62 @@
+{
+  "trace_id": "f11fe1bd-2462-40a5-9ee5-fe790ead0034",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 0,
+    "offset": 182,
+    "timestamp_ms": 1794858220439,
+    "key": "f11fe1bd-2462-40a5-9ee5-fe790ead0034",
+    "value": {
+      "correlation_id": "f11fe1bd-2462-40a5-9ee5-fe790ead0034",
+      "stage": "plan",
+      "question": "What is a pilot study?",
+      "plan": [
+        "A pilot study is a small-scale trial to test a research plan.",
+        "It evaluates feasibility, design, and procedures.",
+        "It helps refine protocols before full-scale trials."
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:43:40+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 331,
+    "timestamp_ms": 1794858225277,
+    "key": "f11fe1bd-2462-40a5-9ee5-fe790ead0034",
+    "value": {
+      "correlation_id": "f11fe1bd-2462-40a5-9ee5-fe790ead0034",
+      "stage": "draft",
+      "question": "What is a pilot study?",
+      "plan": [
+        "A pilot study is a small-scale trial to test a research plan.",
+        "It evaluates feasibility, design, and procedures.",
+        "It helps refine protocols before full-scale trials."
+      ],
+      "draft": "A pilot study is a small-scale trial conducted to test a research plan. It evaluates the feasibility, design, and procedures of a proposed study. This type of study helps identify potential issues and refine protocols before moving on to a full-scale clinical trial. Pilot studies are essential for ensuring that the main study is well-designed, efficient, and capable of producing reliable results. They also help in estimating sample sizes and training staff. Overall, pilot studies play a crucial role in improving the quality and success of larger research efforts.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:43:45+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 40,
+    "timestamp_ms": 1794858226846,
+    "key": "f11fe1bd-2462-40a5-9ee5-fe790ead0034",
+    "value": {
+      "correlation_id": "f11fe1bd-2462-40a5-9ee5-fe790ead0034",
+      "stage": "final",
+      "status": "approved",
+      "answer": "A pilot study is a small-scale trial conducted to test a research plan. It evaluates the feasibility, design, and procedures of a proposed study. This type of study helps identify potential issues and refine protocols before moving on to a full-scale clinical trial. Pilot studies are essential for ensuring that the main study is well-designed, efficient, and capable of producing reliable results. They also help in estimating sample sizes and training staff. Overall, pilot studies play a crucial role in improving the quality and success of larger research efforts.",
+      "score": 10,
+      "feedback": "The draft accurately and clearly defines a pilot study and addresses the question comprehensively.",
+      "question": "What is a pilot study?",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:43:46+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

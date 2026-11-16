@@ -1,0 +1,62 @@
+{
+  "trace_id": "bc532059-e7f9-4578-acf4-e41d7454fdde",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 0,
+    "offset": 177,
+    "timestamp_ms": 1794858092878,
+    "key": "bc532059-e7f9-4578-acf4-e41d7454fdde",
+    "value": {
+      "correlation_id": "bc532059-e7f9-4578-acf4-e41d7454fdde",
+      "stage": "plan",
+      "question": "How can a hospital list a new trial on the platform?",
+      "plan": [
+        "Contact platform support for listing guidelines.",
+        "Prepare required trial documentation.",
+        "Submit trial details through the platform's portal."
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:41:32+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 324,
+    "timestamp_ms": 1794858096951,
+    "key": "bc532059-e7f9-4578-acf4-e41d7454fdde",
+    "value": {
+      "correlation_id": "bc532059-e7f9-4578-acf4-e41d7454fdde",
+      "stage": "draft",
+      "question": "How can a hospital list a new trial on the platform?",
+      "plan": [
+        "Contact platform support for listing guidelines.",
+        "Prepare required trial documentation.",
+        "Submit trial details through the platform's portal."
+      ],
+      "draft": "A hospital can list a new trial on the platform by first contacting platform support to obtain listing guidelines. Next, they should prepare all required trial documentation, such as the protocol, informed consent forms, and IRB approval. Finally, the hospital can submit the trial details through the platform's portal, following the provided instructions to ensure all information is complete and accurate. This process helps ensure the trial is properly listed and accessible to eligible participants.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:41:36+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 33,
+    "timestamp_ms": 1794858098823,
+    "key": "bc532059-e7f9-4578-acf4-e41d7454fdde",
+    "value": {
+      "correlation_id": "bc532059-e7f9-4578-acf4-e41d7454fdde",
+      "stage": "final",
+      "status": "approved",
+      "answer": "A hospital can list a new trial on the platform by first contacting platform support to obtain listing guidelines. Next, they should prepare all required trial documentation, such as the protocol, informed consent forms, and IRB approval. Finally, the hospital can submit the trial details through the platform's portal, following the provided instructions to ensure all information is complete and accurate. This process helps ensure the trial is properly listed and accessible to eligible participants.",
+      "score": 9,
+      "feedback": "The draft clearly explains the steps for listing a trial but could benefit from mentioning specific portal navigation or contact details for support.",
+      "question": "How can a hospital list a new trial on the platform?",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:41:38+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

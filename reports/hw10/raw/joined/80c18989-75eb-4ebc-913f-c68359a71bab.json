@@ -1,0 +1,62 @@
+{
+  "trace_id": "80c18989-75eb-4ebc-913f-c68359a71bab",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 0,
+    "offset": 164,
+    "timestamp_ms": 1794856154598,
+    "key": "80c18989-75eb-4ebc-913f-c68359a71bab",
+    "value": {
+      "correlation_id": "80c18989-75eb-4ebc-913f-c68359a71bab",
+      "stage": "plan",
+      "question": "Which category does trial CT-2026-102 belong to?\n\nFacts from the listings database (use them exactly):\nTrial CT-2026-102: title \"Diabetes Prevention Lifestyle Study\", sponsor \"Stanford Clinical Trials Center\", participant capacity 200, category \"not set\".",
+      "plan": [
+        "Check the provided facts for the trial's category.",
+        "Identify the category from the given data.",
+        "Return that the category is 'not set'."
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:09:14+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 301,
+    "timestamp_ms": 1794856156163,
+    "key": "80c18989-75eb-4ebc-913f-c68359a71bab",
+    "value": {
+      "correlation_id": "80c18989-75eb-4ebc-913f-c68359a71bab",
+      "stage": "draft",
+      "question": "Which category does trial CT-2026-102 belong to?\n\nFacts from the listings database (use them exactly):\nTrial CT-2026-102: title \"Diabetes Prevention Lifestyle Study\", sponsor \"Stanford Clinical Trials Center\", participant capacity 200, category \"not set\".",
+      "plan": [
+        "Check the provided facts for the trial's category.",
+        "Identify the category from the given data.",
+        "Return that the category is 'not set'."
+      ],
+      "draft": "The trial CT-2026-102 belongs to the category \"not set\" as indicated in the provided facts.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:09:16+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 10,
+    "timestamp_ms": 1794856157722,
+    "key": "80c18989-75eb-4ebc-913f-c68359a71bab",
+    "value": {
+      "correlation_id": "80c18989-75eb-4ebc-913f-c68359a71bab",
+      "stage": "final",
+      "status": "approved",
+      "answer": "The trial CT-2026-102 belongs to the category \"not set\" as indicated in the provided facts.",
+      "score": 10,
+      "feedback": "The draft accurately and clearly answers the question using the provided facts.",
+      "question": "Which category does trial CT-2026-102 belong to?\n\nFacts from the listings database (use them exactly):\nTrial CT-2026-102: title \"Diabetes Prevention Lifestyle Study\", sponsor \"Stanford Clinical Trials Center\", participant capacity 200, category \"not set\".",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:09:17+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

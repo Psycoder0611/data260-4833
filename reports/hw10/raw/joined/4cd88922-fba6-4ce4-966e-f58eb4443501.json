@@ -1,0 +1,62 @@
+{
+  "trace_id": "4cd88922-fba6-4ce4-966e-f58eb4443501",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 1,
+    "offset": 171,
+    "timestamp_ms": 1794857737332,
+    "key": "4cd88922-fba6-4ce4-966e-f58eb4443501",
+    "value": {
+      "correlation_id": "4cd88922-fba6-4ce4-966e-f58eb4443501",
+      "stage": "plan",
+      "question": "How do I find clinical trials for type 2 diabetes near me?",
+      "plan": [
+        "Check the NIH ClinicalTrials.gov database for trials near your location.",
+        "Use a search tool like TrialScribe to filter trials by location and condition.",
+        "Contact the trial sites directly for more information and eligibility."
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:35:37+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 304,
+    "timestamp_ms": 1794857740850,
+    "key": "4cd88922-fba6-4ce4-966e-f58eb4443501",
+    "value": {
+      "correlation_id": "4cd88922-fba6-4ce4-966e-f58eb4443501",
+      "stage": "draft",
+      "question": "How do I find clinical trials for type 2 diabetes near me?",
+      "plan": [
+        "Check the NIH ClinicalTrials.gov database for trials near your location.",
+        "Use a search tool like TrialScribe to filter trials by location and condition.",
+        "Contact the trial sites directly for more information and eligibility."
+      ],
+      "draft": "To find clinical trials for type 2 diabetes near you, start by searching the NIH ClinicalTrials.gov database and entering your location. You can also use a tool like TrialScribe to filter trials by condition and location. Once you find relevant trials, contact the study sites directly for more details and to check your eligibility. This approach helps you locate and connect with trials that match your needs.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:35:40+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 13,
+    "timestamp_ms": 1794857742450,
+    "key": "4cd88922-fba6-4ce4-966e-f58eb4443501",
+    "value": {
+      "correlation_id": "4cd88922-fba6-4ce4-966e-f58eb4443501",
+      "stage": "final",
+      "status": "approved",
+      "answer": "To find clinical trials for type 2 diabetes near you, start by searching the NIH ClinicalTrials.gov database and entering your location. You can also use a tool like TrialScribe to filter trials by condition and location. Once you find relevant trials, contact the study sites directly for more details and to check your eligibility. This approach helps you locate and connect with trials that match your needs.",
+      "score": 9,
+      "feedback": "The draft provides clear and accurate steps for finding clinical trials for type 2 diabetes near the user.",
+      "question": "How do I find clinical trials for type 2 diabetes near me?",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:35:42+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

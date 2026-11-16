@@ -1,0 +1,62 @@
+{
+  "trace_id": "f799560f-a9d3-4525-94ce-d72614cf0317",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 0,
+    "offset": 176,
+    "timestamp_ms": 1794858041247,
+    "key": "f799560f-a9d3-4525-94ce-d72614cf0317",
+    "value": {
+      "correlation_id": "f799560f-a9d3-4525-94ce-d72614cf0317",
+      "stage": "plan",
+      "question": "What is the difference between Phase I and Phase II?",
+      "plan": [
+        "Phase I tests safety and dosage in small groups.",
+        "Phase II evaluates effectiveness and side effects in larger groups.",
+        "Phase III confirms effectiveness and monitors risks in broader populations."
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:40:41+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 321,
+    "timestamp_ms": 1794858045321,
+    "key": "f799560f-a9d3-4525-94ce-d72614cf0317",
+    "value": {
+      "correlation_id": "f799560f-a9d3-4525-94ce-d72614cf0317",
+      "stage": "draft",
+      "question": "What is the difference between Phase I and Phase II?",
+      "plan": [
+        "Phase I tests safety and dosage in small groups.",
+        "Phase II evaluates effectiveness and side effects in larger groups.",
+        "Phase III confirms effectiveness and monitors risks in broader populations."
+      ],
+      "draft": "Phase I trials focus on testing the safety of a new treatment and determining the correct dosage in a small group of healthy volunteers or patients. Phase II trials assess how well the treatment works and further evaluate its side effects in a larger group of patients. These phases are crucial for gathering data on both safety and effectiveness before moving to larger-scale trials in Phase III, which confirm the treatment's effectiveness and monitor long-term risks in a broader population.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:40:45+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 30,
+    "timestamp_ms": 1794858047098,
+    "key": "f799560f-a9d3-4525-94ce-d72614cf0317",
+    "value": {
+      "correlation_id": "f799560f-a9d3-4525-94ce-d72614cf0317",
+      "stage": "final",
+      "status": "approved",
+      "answer": "Phase I trials focus on testing the safety of a new treatment and determining the correct dosage in a small group of healthy volunteers or patients. Phase II trials assess how well the treatment works and further evaluate its side effects in a larger group of patients. These phases are crucial for gathering data on both safety and effectiveness before moving to larger-scale trials in Phase III, which confirm the treatment's effectiveness and monitor long-term risks in a broader population.",
+      "score": 9,
+      "feedback": "The draft accurately explains the difference between Phase I and Phase II trials and provides a clear overview of their purposes.",
+      "question": "What is the difference between Phase I and Phase II?",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:40:47+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

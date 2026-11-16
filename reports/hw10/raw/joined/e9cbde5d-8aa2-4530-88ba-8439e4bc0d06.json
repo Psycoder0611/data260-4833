@@ -1,0 +1,62 @@
+{
+  "trace_id": "e9cbde5d-8aa2-4530-88ba-8439e4bc0d06",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 1,
+    "offset": 176,
+    "timestamp_ms": 1794858023917,
+    "key": "e9cbde5d-8aa2-4530-88ba-8439e4bc0d06",
+    "value": {
+      "correlation_id": "e9cbde5d-8aa2-4530-88ba-8439e4bc0d06",
+      "stage": "plan",
+      "question": "What does recruiting status mean on a listing?",
+      "plan": [
+        "Recruiting status shows if a trial is currently enrolling participants.",
+        "It indicates whether the trial is open, closed, or paused.",
+        "This helps determine eligibility and availability for participation."
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:40:23+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 320,
+    "timestamp_ms": 1794858027178,
+    "key": "e9cbde5d-8aa2-4530-88ba-8439e4bc0d06",
+    "value": {
+      "correlation_id": "e9cbde5d-8aa2-4530-88ba-8439e4bc0d06",
+      "stage": "draft",
+      "question": "What does recruiting status mean on a listing?",
+      "plan": [
+        "Recruiting status shows if a trial is currently enrolling participants.",
+        "It indicates whether the trial is open, closed, or paused.",
+        "This helps determine eligibility and availability for participation."
+      ],
+      "draft": "The recruiting status of a clinical trial indicates whether the trial is currently enrolling participants. It shows if the trial is open, closed, or paused. This information helps potential participants understand if they can join the study and whether the trial is still accepting new volunteers. Knowing the recruiting status is important for determining eligibility and availability for participation in the trial.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:40:27+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 29,
+    "timestamp_ms": 1794858028577,
+    "key": "e9cbde5d-8aa2-4530-88ba-8439e4bc0d06",
+    "value": {
+      "correlation_id": "e9cbde5d-8aa2-4530-88ba-8439e4bc0d06",
+      "stage": "final",
+      "status": "approved",
+      "answer": "The recruiting status of a clinical trial indicates whether the trial is currently enrolling participants. It shows if the trial is open, closed, or paused. This information helps potential participants understand if they can join the study and whether the trial is still accepting new volunteers. Knowing the recruiting status is important for determining eligibility and availability for participation in the trial.",
+      "score": 9,
+      "feedback": "The draft accurately explains the recruiting status but could be slightly more concise.",
+      "question": "What does recruiting status mean on a listing?",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:40:28+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

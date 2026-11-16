@@ -1,0 +1,62 @@
+{
+  "trace_id": "caf9af6e-76ce-4b24-bf83-660ab9f5a7c0",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 0,
+    "offset": 186,
+    "timestamp_ms": 1794858312867,
+    "key": "caf9af6e-76ce-4b24-bf83-660ab9f5a7c0",
+    "value": {
+      "correlation_id": "caf9af6e-76ce-4b24-bf83-660ab9f5a7c0",
+      "stage": "plan",
+      "question": "What is a data safety monitoring board?",
+      "plan": [
+        "A DSMB is an independent group overseeing trial safety.",
+        "They review data to protect participant safety.",
+        "They decide if a trial should continue, modify, or stop."
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:45:12+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 336,
+    "timestamp_ms": 1794858317440,
+    "key": "caf9af6e-76ce-4b24-bf83-660ab9f5a7c0",
+    "value": {
+      "correlation_id": "caf9af6e-76ce-4b24-bf83-660ab9f5a7c0",
+      "stage": "draft",
+      "question": "What is a data safety monitoring board?",
+      "plan": [
+        "A DSMB is an independent group overseeing trial safety.",
+        "They review data to protect participant safety.",
+        "They decide if a trial should continue, modify, or stop."
+      ],
+      "draft": "A Data Safety Monitoring Board (DSMB) is an independent group that oversees the safety of participants in a clinical trial. They regularly review data to ensure the trial is conducted safely and ethically. The DSMB's role includes assessing risks and benefits, making recommendations to the trial sponsors, and deciding whether the trial should continue, be modified, or be stopped to protect participants' well-being. Their involvement helps ensure that the trial remains safe and scientifically valid throughout its duration.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:45:17+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 45,
+    "timestamp_ms": 1794858319090,
+    "key": "caf9af6e-76ce-4b24-bf83-660ab9f5a7c0",
+    "value": {
+      "correlation_id": "caf9af6e-76ce-4b24-bf83-660ab9f5a7c0",
+      "stage": "final",
+      "status": "approved",
+      "answer": "A Data Safety Monitoring Board (DSMB) is an independent group that oversees the safety of participants in a clinical trial. They regularly review data to ensure the trial is conducted safely and ethically. The DSMB's role includes assessing risks and benefits, making recommendations to the trial sponsors, and deciding whether the trial should continue, be modified, or be stopped to protect participants' well-being. Their involvement helps ensure that the trial remains safe and scientifically valid throughout its duration.",
+      "score": 10,
+      "feedback": "The draft accurately and clearly defines a data safety monitoring board and addresses the question comprehensively.",
+      "question": "What is a data safety monitoring board?",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:45:19+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

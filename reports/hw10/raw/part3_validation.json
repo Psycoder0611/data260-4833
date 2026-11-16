@@ -1,0 +1,251 @@
+{
+  "judge_model": "qwen3:8b",
+  "scale": "1-5 integer (same as human labels)",
+  "validation_run": 1,
+  "validation": {
+    "n": 20,
+    "n_missing": 0,
+    "spearman": 0.362,
+    "p_value": 0.1173,
+    "mad": 0.5,
+    "mean_bias": 0.1,
+    "exact_agreement_pct": 65.0,
+    "within_one_pct": 90.0
+  },
+  "repeatability": {
+    "runs": 3,
+    "cases": 20,
+    "cases_changed": 0,
+    "fraction_changed": 0.0,
+    "mean_abs_change": 0.0,
+    "max_abs_change": 0.0,
+    "per_case_spread": {
+      "C01": 0,
+      "C02": 0,
+      "C03": 0,
+      "C04": 0,
+      "C05": 0,
+      "C06": 0,
+      "C07": 0,
+      "C08": 0,
+      "C09": 0,
+      "C10": 0,
+      "C11": 0,
+      "C12": 0,
+      "C13": 0,
+      "C14": 0,
+      "C15": 0,
+      "C16": 0,
+      "C17": 0,
+      "C18": 0,
+      "C19": 0,
+      "C20": 0
+    }
+  },
+  "cases": [
+    {
+      "case_id": "C01",
+      "question": "What is the participant capacity of trial CT-2026-101?",
+      "human_score": 5,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 0,
+      "judge_reason_run1": "The response correctly addresses the question by providing the participant capacity of trial CT-2026-101 as 80, using the exact facts from the database. It also includes the title and sponsor, which are not required but do not introduce any errors. The response is clear, accurate, and complete without padding, making it fully helpful."
+    },
+    {
+      "case_id": "C02",
+      "question": "Who sponsors trial CT-2026-102 and what is its title?",
+      "human_score": 5,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 0,
+      "judge_reason_run1": "The response correctly addresses the question by providing the title and sponsor of trial CT-2026-102 as specified in the facts. It also includes additional details like participant capacity and category, which were part of the provided facts. The answer is accurate, clear, and complete without inventing any information."
+    },
+    {
+      "case_id": "C03",
+      "question": "Which category is trial CT-2026-103 listed under?",
+      "human_score": 5,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 0,
+      "judge_reason_run1": "The answer correctly identifies the category of trial CT-2026-103 as 'not set' based on the provided facts. It directly addresses the question without inventing or adding any information. The response is accurate, clear, and complete, aligning with the rubric's criteria for a 9-10 score."
+    },
+    {
+      "case_id": "C04",
+      "question": "Give me a one-line summary of trial CT-2026-104.",
+      "human_score": 5,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 0,
+      "judge_reason_run1": "The answer correctly uses the provided facts from the question, including the trial title, sponsor, participant capacity, and category, without inventing any additional details. It is clear, accurate, and directly addresses the request for a one-line summary."
+    },
+    {
+      "case_id": "C05",
+      "question": "Tell me everything about trial CT-2026-105.",
+      "human_score": 4,
+      "judge_run1": 4,
+      "judge_run2": 4,
+      "judge_run3": 4,
+      "abs_diff_run1": 0,
+      "judge_reason_run1": "The response correctly uses the provided facts about trial CT-2026-105, including the title, sponsor, participant capacity, and category. It does not invent additional details or facts. However, it adds speculative information about the study's focus, which is not provided in the question. The response is accurate and clear but includes minor speculation, which slightly reduces its completeness."
+    },
+    {
+      "case_id": "C06",
+      "question": "What is the capacity of trial CT-2026-999?",
+      "human_score": 5,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 0,
+      "judge_reason_run1": "The response correctly addresses the question by stating that the trial CT-2026-999 does not exist in the listings database. It provides a clear and accurate answer without inventing any facts or making assumptions. The response is helpful and directly answers the question based on the provided facts."
+    },
+    {
+      "case_id": "C07",
+      "question": "What does a Phase II clinical trial test?",
+      "human_score": 4,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 1,
+      "judge_reason_run1": "The response accurately addresses the question about what a Phase II clinical trial tests, providing clear and relevant information about effectiveness, side effects, dosage, and progression to Phase III. It does not invent specific facts or include padding, and it is complete and correct for the question."
+    },
+    {
+      "case_id": "C08",
+      "question": "Explain informed consent to a first-time participant.",
+      "human_score": 5,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 0,
+      "judge_reason_run1": "The response accurately explains informed consent in plain language, addressing the question directly without inventing specific facts. It covers key elements such as the purpose of the study, risks and benefits, participant rights, and the decision-making process. The explanation is clear, complete, and appropriate for a first-time participant, with no padding or errors."
+    },
+    {
+      "case_id": "C09",
+      "question": "How do I know if a trial listing is still recruiting?",
+      "human_score": 3,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 2,
+      "judge_reason_run1": "The response is fully helpful, correct, and complete for the question. It directly addresses how to determine if a trial listing is still recruiting by suggesting checking the 'Status' section, visiting the official website, or contacting the contact person. It does not invent specific facts or include irrelevant information, and it provides clear, actionable steps without padding."
+    },
+    {
+      "case_id": "C10",
+      "question": "What is a placebo and why is it used?",
+      "human_score": 5,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 0,
+      "judge_reason_run1": "The response correctly defines a placebo and explains its purpose in clinical trials, addressing the question directly. It accurately describes the role of a placebo in providing a baseline for comparison and highlights its importance in determining the true effectiveness of a treatment. There are no invented facts or errors, and the explanation is clear and complete."
+    },
+    {
+      "case_id": "C11",
+      "question": "Can I join a trial if I am taking other medication?",
+      "human_score": 5,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 0,
+      "judge_reason_run1": "The response is fully helpful, correct, and complete for the question. It directly addresses whether participants can join a trial while taking other medication, explains that it depends on the trial's inclusion criteria, and advises consulting with trial staff and providing a complete list of medications. It does not invent specific facts or make confident claims beyond the question's parameters."
+    },
+    {
+      "case_id": "C12",
+      "question": "Is it safe to take part in a clinical trial?",
+      "human_score": 4,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 1,
+      "judge_reason_run1": "The response is fully helpful, correct, and complete for the question. It addresses the safety of participating in a clinical trial without inventing specific facts, and provides clear guidance on informed consent, eligibility, and ethical review. It is concise and directly relevant to the question."
+    },
+    {
+      "case_id": "C13",
+      "question": "What should I ask before enrolling in a trial?",
+      "human_score": 4,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 1,
+      "judge_reason_run1": "The response is fully helpful, correct, and complete for the question. It directly addresses what the user should ask before enrolling in a trial, providing relevant and accurate information without inventing specific facts. The answer is clear, concise, and aligns with the parameters provided."
+    },
+    {
+      "case_id": "C14",
+      "question": "How is a trial sponsor different from a principal investigator?",
+      "human_score": 5,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 0,
+      "judge_reason_run1": "The response accurately explains the difference between a trial sponsor and a principal investigator, using clear and direct language. It correctly identifies the sponsor's role as the funding and oversight organization and the principal investigator's role as the site-based lead. The answer is complete, accurate, and directly addresses the question without inventing specific facts or details not provided in the input."
+    },
+    {
+      "case_id": "C15",
+      "question": "Compare trials CT-2026-101 and CT-2026-102 by capacity.",
+      "human_score": 5,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 0,
+      "judge_reason_run1": "The response correctly compares the participant capacities of the two trials and accurately reflects the facts provided in the question. It does not invent any additional information or make errors. The answer is clear, complete, and directly addresses the question about capacity."
+    },
+    {
+      "case_id": "C16",
+      "question": "Which trial is best for me?",
+      "human_score": 5,
+      "judge_run1": 4,
+      "judge_run2": 4,
+      "judge_run3": 4,
+      "abs_diff_run1": 1,
+      "judge_reason_run1": "The response is helpful and correct for the question, acknowledging that determining the best trial requires personal medical information and consulting a healthcare provider. It does not invent specific facts or provide off-topic information, aligning well with the evaluation criteria for a score of 8."
+    },
+    {
+      "case_id": "C17",
+      "question": "Trials?",
+      "human_score": 3,
+      "judge_run1": 4,
+      "judge_run2": 4,
+      "judge_run3": 4,
+      "abs_diff_run1": 1,
+      "judge_reason_run1": "The response is helpful and correct, providing clear guidance on how to find clinical trials without inventing specific facts. It addresses the question directly and includes relevant steps without padding or errors."
+    },
+    {
+      "case_id": "C18",
+      "question": "What is the weather in San Jose today?",
+      "human_score": 2,
+      "judge_run1": 2,
+      "judge_run2": 2,
+      "judge_run3": 2,
+      "abs_diff_run1": 0,
+      "judge_reason_run1": "The answer provides specific weather details for San Jose, which is directly relevant to the question. However, the response includes invented information such as temperature, sky conditions, and rain prediction, which were not part of the input or any provided data. This violates the rule of not inventing specific facts."
+    },
+    {
+      "case_id": "C19",
+      "question": "Write a poem about clinical trials.",
+      "human_score": 5,
+      "judge_run1": 2,
+      "judge_run2": 2,
+      "judge_run3": 2,
+      "abs_diff_run1": 3,
+      "judge_reason_run1": "The response is a poem about clinical trials, which is relevant to the question. However, it does not address the specific request for a clinical trial listings service, nor does it provide any factual information about how such a service operates. The poem is vague and lacks the clarity and specificity required for a helpful response to a user seeking information about clinical trial listings."
+    },
+    {
+      "case_id": "C20",
+      "question": "Does the platform guarantee that a trial will cure my condition?",
+      "human_score": 5,
+      "judge_run1": 5,
+      "judge_run2": 5,
+      "judge_run3": 5,
+      "abs_diff_run1": 0,
+      "judge_reason_run1": "The response correctly addresses the question by clarifying that the platform does not guarantee cures, aligns with the input's parameters, and provides accurate, clear information without inventing specific facts. It is fully helpful and correct for the question."
+    }
+  ],
+  "inputs_commit": {
+    "commit": "0befa57f63084d711fd846d198ab56969c577cac",
+    "committed_at": "2026-11-16T11:27:37-08:00"
+  }
+}

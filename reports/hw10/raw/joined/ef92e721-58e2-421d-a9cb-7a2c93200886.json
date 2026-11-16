@@ -1,0 +1,62 @@
+{
+  "trace_id": "ef92e721-58e2-421d-a9cb-7a2c93200886",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 0,
+    "offset": 167,
+    "timestamp_ms": 1794857793264,
+    "key": "ef92e721-58e2-421d-a9cb-7a2c93200886",
+    "value": {
+      "correlation_id": "ef92e721-58e2-421d-a9cb-7a2c93200886",
+      "stage": "plan",
+      "question": "What is a placebo and why do some trials use one?",
+      "plan": [
+        "A placebo is an inactive treatment used to compare against real treatments.",
+        "It helps determine if a treatment's effects are real or due to chance.",
+        "Placebos ensure fair comparison in clinical trials."
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:36:33+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 307,
+    "timestamp_ms": 1794857797098,
+    "key": "ef92e721-58e2-421d-a9cb-7a2c93200886",
+    "value": {
+      "correlation_id": "ef92e721-58e2-421d-a9cb-7a2c93200886",
+      "stage": "draft",
+      "question": "What is a placebo and why do some trials use one?",
+      "plan": [
+        "A placebo is an inactive treatment used to compare against real treatments.",
+        "It helps determine if a treatment's effects are real or due to chance.",
+        "Placebos ensure fair comparison in clinical trials."
+      ],
+      "draft": "A placebo is an inactive treatment that looks like the real treatment but has no active ingredients. Some trials use placebos to compare the effects of a real treatment against no treatment. This helps researchers determine if the treatment's effects are real or if they are due to chance or the placebo effect. Using a placebo ensures a fair and unbiased comparison, allowing scientists to accurately assess the effectiveness and safety of new medical treatments.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:36:37+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 16,
+    "timestamp_ms": 1794857798659,
+    "key": "ef92e721-58e2-421d-a9cb-7a2c93200886",
+    "value": {
+      "correlation_id": "ef92e721-58e2-421d-a9cb-7a2c93200886",
+      "stage": "final",
+      "status": "approved",
+      "answer": "A placebo is an inactive treatment that looks like the real treatment but has no active ingredients. Some trials use placebos to compare the effects of a real treatment against no treatment. This helps researchers determine if the treatment's effects are real or if they are due to chance or the placebo effect. Using a placebo ensures a fair and unbiased comparison, allowing scientists to accurately assess the effectiveness and safety of new medical treatments.",
+      "score": 10,
+      "feedback": "The draft accurately and clearly explains what a placebo is and why it is used in trials.",
+      "question": "What is a placebo and why do some trials use one?",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:36:38+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

@@ -63,3 +63,30 @@ part4-hw09:
 	$(PYTHON) run_hw09_part4.py validate
 	$(PYTHON) run_hw09_part4.py demo-reuse
 	$(PYTHON) run_hw09_part4.py final
+
+# ---------------------------------------------------------------- HW10
+.PHONY: agents-hw10 test-hw10 verify-hw10 dashboard-hw10 part2-hw10 part3-hw10 part4-hw10
+
+# Run each traced agent in its own terminal: make agents-hw10 ROLE=planner
+agents-hw10:
+	$(PYTHON) hw10_agents.py $(ROLE)
+
+test-hw10:
+	$(PYTHON) -m pytest -q test_hw10_offline.py
+
+verify-hw10:
+	$(PYTHON) verify_hw10.py
+
+dashboard-hw10:
+	streamlit run hw10_dashboard.py
+
+part2-hw10:
+	$(PYTHON) run_hw10_part2.py
+
+part3-hw10:
+	$(PYTHON) run_hw10_part3.py all
+
+part4-hw10:
+	$(PYTHON) run_hw10_part4.py traces
+	$(PYTHON) run_hw10_part4.py latency --n 50
+	$(PYTHON) run_hw10_part4.py hits --n 20

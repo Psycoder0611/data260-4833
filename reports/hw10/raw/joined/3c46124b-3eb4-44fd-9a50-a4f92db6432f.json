@@ -1,0 +1,62 @@
+{
+  "trace_id": "3c46124b-3eb4-44fd-9a50-a4f92db6432f",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 1,
+    "offset": 180,
+    "timestamp_ms": 1794858202544,
+    "key": "3c46124b-3eb4-44fd-9a50-a4f92db6432f",
+    "value": {
+      "correlation_id": "3c46124b-3eb4-44fd-9a50-a4f92db6432f",
+      "stage": "plan",
+      "question": "How do I contact the sponsor of a trial?",
+      "plan": [
+        "Check the trial's official website for contact details.",
+        "Look for the sponsor's contact information in the trial description.",
+        "Reach out via email or phone as listed."
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:43:22+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 330,
+    "timestamp_ms": 1794858207042,
+    "key": "3c46124b-3eb4-44fd-9a50-a4f92db6432f",
+    "value": {
+      "correlation_id": "3c46124b-3eb4-44fd-9a50-a4f92db6432f",
+      "stage": "draft",
+      "question": "How do I contact the sponsor of a trial?",
+      "plan": [
+        "Check the trial's official website for contact details.",
+        "Look for the sponsor's contact information in the trial description.",
+        "Reach out via email or phone as listed."
+      ],
+      "draft": "To contact the sponsor of a trial, start by checking the trial's official website for contact details. Many trials provide the sponsor's email address or phone number in the description or on the contact page. If this information is not available, look for the sponsor's name and contact details in the trial description. Once you have the contact information, you can reach out via email or phone to ask questions or request further details about the trial. Always be clear and polite when making contact.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:43:27+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 39,
+    "timestamp_ms": 1794858208531,
+    "key": "3c46124b-3eb4-44fd-9a50-a4f92db6432f",
+    "value": {
+      "correlation_id": "3c46124b-3eb4-44fd-9a50-a4f92db6432f",
+      "stage": "final",
+      "status": "approved",
+      "answer": "To contact the sponsor of a trial, start by checking the trial's official website for contact details. Many trials provide the sponsor's email address or phone number in the description or on the contact page. If this information is not available, look for the sponsor's name and contact details in the trial description. Once you have the contact information, you can reach out via email or phone to ask questions or request further details about the trial. Always be clear and polite when making contact.",
+      "score": 9,
+      "feedback": "The draft provides clear and accurate steps on how to contact the sponsor of a trial.",
+      "question": "How do I contact the sponsor of a trial?",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:43:28+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

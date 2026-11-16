@@ -1,0 +1,62 @@
+{
+  "trace_id": "cb319040-3bff-41b9-9e7e-801235a8c2a2",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 1,
+    "offset": 174,
+    "timestamp_ms": 1794857932094,
+    "key": "cb319040-3bff-41b9-9e7e-801235a8c2a2",
+    "value": {
+      "correlation_id": "cb319040-3bff-41b9-9e7e-801235a8c2a2",
+      "stage": "plan",
+      "question": "How is a clinical trial different from regular treatment?",
+      "plan": [
+        "Clinical trials test new treatments, while regular treatment uses established methods.",
+        "Trials involve strict protocols and monitoring.",
+        "Participants in trials may receive placebo or experimental therapies."
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:38:52+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 315,
+    "timestamp_ms": 1794857935938,
+    "key": "cb319040-3bff-41b9-9e7e-801235a8c2a2",
+    "value": {
+      "correlation_id": "cb319040-3bff-41b9-9e7e-801235a8c2a2",
+      "stage": "draft",
+      "question": "How is a clinical trial different from regular treatment?",
+      "plan": [
+        "Clinical trials test new treatments, while regular treatment uses established methods.",
+        "Trials involve strict protocols and monitoring.",
+        "Participants in trials may receive placebo or experimental therapies."
+      ],
+      "draft": "A clinical trial is different from regular treatment because it tests new treatments that haven't been widely used yet, while regular treatment uses established, proven methods. Trials follow strict protocols and are closely monitored to ensure safety and effectiveness. Participants may receive a placebo or an experimental therapy instead of standard care, which helps researchers evaluate the new treatment's benefits and risks. These trials are essential for advancing medical knowledge and improving patient care.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:38:55+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 24,
+    "timestamp_ms": 1794857938266,
+    "key": "cb319040-3bff-41b9-9e7e-801235a8c2a2",
+    "value": {
+      "correlation_id": "cb319040-3bff-41b9-9e7e-801235a8c2a2",
+      "stage": "final",
+      "status": "approved",
+      "answer": "A clinical trial is different from regular treatment because it tests new treatments that haven't been widely used yet, while regular treatment uses established, proven methods. Trials follow strict protocols and are closely monitored to ensure safety and effectiveness. Participants may receive a placebo or an experimental therapy instead of standard care, which helps researchers evaluate the new treatment's benefits and risks. These trials are essential for advancing medical knowledge and improving patient care.",
+      "score": 9,
+      "feedback": "The draft accurately explains the difference between clinical trials and regular treatment, but could clarify that regular treatment is based on existing evidence rather than being 'established, proven methods'.",
+      "question": "How is a clinical trial different from regular treatment?",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:38:58+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

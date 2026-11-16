@@ -1,0 +1,62 @@
+{
+  "trace_id": "3fdfef5a-f576-40f6-8de1-47ad1f200e8a",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 0,
+    "offset": 183,
+    "timestamp_ms": 1794858237660,
+    "key": "3fdfef5a-f576-40f6-8de1-47ad1f200e8a",
+    "value": {
+      "correlation_id": "3fdfef5a-f576-40f6-8de1-47ad1f200e8a",
+      "stage": "plan",
+      "question": "What does the category field on a trial listing describe?",
+      "plan": [
+        "Identifies the trial's main focus area.",
+        "Categorizes the type of research conducted.",
+        "Helps users find relevant trials quickly."
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:43:57+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 332,
+    "timestamp_ms": 1794858240850,
+    "key": "3fdfef5a-f576-40f6-8de1-47ad1f200e8a",
+    "value": {
+      "correlation_id": "3fdfef5a-f576-40f6-8de1-47ad1f200e8a",
+      "stage": "draft",
+      "question": "What does the category field on a trial listing describe?",
+      "plan": [
+        "Identifies the trial's main focus area.",
+        "Categorizes the type of research conducted.",
+        "Helps users find relevant trials quickly."
+      ],
+      "draft": "The category field on a trial listing describes the trial's main focus area and categorizes the type of research being conducted. It helps users quickly identify and find relevant trials based on their interests or medical conditions. This field is essential for organizing and filtering clinical trial information, making it easier for participants to locate studies that match their criteria.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:44:00+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 41,
+    "timestamp_ms": 1794858242886,
+    "key": "3fdfef5a-f576-40f6-8de1-47ad1f200e8a",
+    "value": {
+      "correlation_id": "3fdfef5a-f576-40f6-8de1-47ad1f200e8a",
+      "stage": "final",
+      "status": "approved",
+      "answer": "The category field on a trial listing describes the trial's main focus area and categorizes the type of research being conducted. It helps users quickly identify and find relevant trials based on their interests or medical conditions. This field is essential for organizing and filtering clinical trial information, making it easier for participants to locate studies that match their criteria.",
+      "score": 9,
+      "feedback": "The draft accurately and clearly explains what the category field describes, but could be slightly more specific about the types of categories used in trial listings.",
+      "question": "What does the category field on a trial listing describe?",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:44:02+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

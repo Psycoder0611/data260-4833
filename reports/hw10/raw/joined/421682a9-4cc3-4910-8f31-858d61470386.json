@@ -1,0 +1,62 @@
+{
+  "trace_id": "421682a9-4cc3-4910-8f31-858d61470386",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 1,
+    "offset": 175,
+    "timestamp_ms": 1794857950889,
+    "key": "421682a9-4cc3-4910-8f31-858d61470386",
+    "value": {
+      "correlation_id": "421682a9-4cc3-4910-8f31-858d61470386",
+      "stage": "plan",
+      "question": "What is an institutional review board?",
+      "plan": [
+        "An IRB is a committee reviewing research risks and benefits.",
+        "It ensures ethical standards and participant safety.",
+        "IRBs approve and monitor clinical trials."
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:39:10+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 316,
+    "timestamp_ms": 1794857954607,
+    "key": "421682a9-4cc3-4910-8f31-858d61470386",
+    "value": {
+      "correlation_id": "421682a9-4cc3-4910-8f31-858d61470386",
+      "stage": "draft",
+      "question": "What is an institutional review board?",
+      "plan": [
+        "An IRB is a committee reviewing research risks and benefits.",
+        "It ensures ethical standards and participant safety.",
+        "IRBs approve and monitor clinical trials."
+      ],
+      "draft": "An institutional review board, or IRB, is a committee that reviews research to ensure it meets ethical standards and protects participants' safety. It evaluates the risks and benefits of studies to safeguard individuals' rights and well-being. IRBs are responsible for approving and monitoring clinical trials throughout their duration, ensuring compliance with regulations and ethical guidelines. This oversight helps maintain the integrity and safety of research involving human subjects.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:39:14+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 25,
+    "timestamp_ms": 1794857956018,
+    "key": "421682a9-4cc3-4910-8f31-858d61470386",
+    "value": {
+      "correlation_id": "421682a9-4cc3-4910-8f31-858d61470386",
+      "stage": "final",
+      "status": "approved",
+      "answer": "An institutional review board, or IRB, is a committee that reviews research to ensure it meets ethical standards and protects participants' safety. It evaluates the risks and benefits of studies to safeguard individuals' rights and well-being. IRBs are responsible for approving and monitoring clinical trials throughout their duration, ensuring compliance with regulations and ethical guidelines. This oversight helps maintain the integrity and safety of research involving human subjects.",
+      "score": 10,
+      "feedback": "The draft accurately and clearly defines an institutional review board and addresses the question comprehensively.",
+      "question": "What is an institutional review board?",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:39:16+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

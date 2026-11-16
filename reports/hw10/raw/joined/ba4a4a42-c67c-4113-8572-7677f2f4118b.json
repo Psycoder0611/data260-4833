@@ -1,0 +1,62 @@
+{
+  "trace_id": "ba4a4a42-c67c-4113-8572-7677f2f4118b",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 1,
+    "offset": 177,
+    "timestamp_ms": 1794858059392,
+    "key": "ba4a4a42-c67c-4113-8572-7677f2f4118b",
+    "value": {
+      "correlation_id": "ba4a4a42-c67c-4113-8572-7677f2f4118b",
+      "stage": "plan",
+      "question": "What is an adverse event in a trial?",
+      "plan": [
+        "An adverse event is an unfavorable medical occurrence during a trial.",
+        "It may be related to the trial treatment or not.",
+        "It is monitored and reported for safety assessment."
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:40:59+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 322,
+    "timestamp_ms": 1794858063653,
+    "key": "ba4a4a42-c67c-4113-8572-7677f2f4118b",
+    "value": {
+      "correlation_id": "ba4a4a42-c67c-4113-8572-7677f2f4118b",
+      "stage": "draft",
+      "question": "What is an adverse event in a trial?",
+      "plan": [
+        "An adverse event is an unfavorable medical occurrence during a trial.",
+        "It may be related to the trial treatment or not.",
+        "It is monitored and reported for safety assessment."
+      ],
+      "draft": "An adverse event is an unfavorable medical occurrence that happens during a clinical trial. It can be related to the treatment being tested or may occur by chance. These events are closely monitored and reported to ensure the safety of participants. Researchers use this information to assess the risks and benefits of the treatment, making informed decisions about its continued use in the trial. Adverse events are an important part of evaluating the overall safety profile of a new medical intervention.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:41:03+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 31,
+    "timestamp_ms": 1794858065098,
+    "key": "ba4a4a42-c67c-4113-8572-7677f2f4118b",
+    "value": {
+      "correlation_id": "ba4a4a42-c67c-4113-8572-7677f2f4118b",
+      "stage": "final",
+      "status": "approved",
+      "answer": "An adverse event is an unfavorable medical occurrence that happens during a clinical trial. It can be related to the treatment being tested or may occur by chance. These events are closely monitored and reported to ensure the safety of participants. Researchers use this information to assess the risks and benefits of the treatment, making informed decisions about its continued use in the trial. Adverse events are an important part of evaluating the overall safety profile of a new medical intervention.",
+      "score": 9,
+      "feedback": "The draft accurately defines an adverse event and explains its importance in clinical trials.",
+      "question": "What is an adverse event in a trial?",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:41:05+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

@@ -1,0 +1,62 @@
+{
+  "trace_id": "5f6c27f0-cd9c-4c90-baf7-5ba8928b391d",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 1,
+    "offset": 168,
+    "timestamp_ms": 1794856338190,
+    "key": "5f6c27f0-cd9c-4c90-baf7-5ba8928b391d",
+    "value": {
+      "correlation_id": "5f6c27f0-cd9c-4c90-baf7-5ba8928b391d",
+      "stage": "plan",
+      "question": "What is the participant capacity of trial CT-2026-103, and which category is it in?\n\nFacts from the listings database (use them exactly):\nTrial CT-2026-103: title \"Oncology Immunotherapy Phase II\", sponsor \"Stanford Clinical Trials Center\", participant capacity 60, category \"not set\".",
+      "plan": [
+        "Identify trial CT-2026-103 from the database.",
+        "Retrieve participant capacity as 60.",
+        "Note category is 'not set' as per the data."
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:12:18+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 302,
+    "timestamp_ms": 1794856340571,
+    "key": "5f6c27f0-cd9c-4c90-baf7-5ba8928b391d",
+    "value": {
+      "correlation_id": "5f6c27f0-cd9c-4c90-baf7-5ba8928b391d",
+      "stage": "draft",
+      "question": "What is the participant capacity of trial CT-2026-103, and which category is it in?\n\nFacts from the listings database (use them exactly):\nTrial CT-2026-103: title \"Oncology Immunotherapy Phase II\", sponsor \"Stanford Clinical Trials Center\", participant capacity 60, category \"not set\".",
+      "plan": [
+        "Identify trial CT-2026-103 from the database.",
+        "Retrieve participant capacity as 60.",
+        "Note category is 'not set' as per the data."
+      ],
+      "draft": "Trial CT-2026-103, titled \"Oncology Immunotherapy Phase II,\" has a participant capacity of 60. The category for this trial is listed as \"not set.\"",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:12:20+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 11,
+    "timestamp_ms": 1794856342160,
+    "key": "5f6c27f0-cd9c-4c90-baf7-5ba8928b391d",
+    "value": {
+      "correlation_id": "5f6c27f0-cd9c-4c90-baf7-5ba8928b391d",
+      "stage": "final",
+      "status": "approved",
+      "answer": "Trial CT-2026-103, titled \"Oncology Immunotherapy Phase II,\" has a participant capacity of 60. The category for this trial is listed as \"not set.\"",
+      "score": 10,
+      "feedback": "The draft accurately and clearly answers the question using the provided facts.",
+      "question": "What is the participant capacity of trial CT-2026-103, and which category is it in?\n\nFacts from the listings database (use them exactly):\nTrial CT-2026-103: title \"Oncology Immunotherapy Phase II\", sponsor \"Stanford Clinical Trials Center\", participant capacity 60, category \"not set\".",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:12:22+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

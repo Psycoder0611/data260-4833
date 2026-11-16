@@ -1,0 +1,62 @@
+{
+  "trace_id": "1a68e60e-f84c-4703-abb7-fa9f3f2e4331",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 0,
+    "offset": 168,
+    "timestamp_ms": 1794857809947,
+    "key": "1a68e60e-f84c-4703-abb7-fa9f3f2e4331",
+    "value": {
+      "correlation_id": "1a68e60e-f84c-4703-abb7-fa9f3f2e4331",
+      "stage": "plan",
+      "question": "What does it mean when a trial is double blind?",
+      "plan": [
+        "Neither participants nor researchers know who is receiving the treatment.",
+        "This prevents bias in results.",
+        "It ensures objective outcome evaluation."
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:36:49+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 308,
+    "timestamp_ms": 1794857813035,
+    "key": "1a68e60e-f84c-4703-abb7-fa9f3f2e4331",
+    "value": {
+      "correlation_id": "1a68e60e-f84c-4703-abb7-fa9f3f2e4331",
+      "stage": "draft",
+      "question": "What does it mean when a trial is double blind?",
+      "plan": [
+        "Neither participants nor researchers know who is receiving the treatment.",
+        "This prevents bias in results.",
+        "It ensures objective outcome evaluation."
+      ],
+      "draft": "A double-blind trial means neither the participants nor the researchers know who is receiving the actual treatment and who is receiving a placebo. This setup helps prevent bias in results, as both groups are treated equally without any prior knowledge of their assignments. It ensures that the outcomes are evaluated objectively, making the trial results more reliable and trustworthy.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:36:53+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 17,
+    "timestamp_ms": 1794857814633,
+    "key": "1a68e60e-f84c-4703-abb7-fa9f3f2e4331",
+    "value": {
+      "correlation_id": "1a68e60e-f84c-4703-abb7-fa9f3f2e4331",
+      "stage": "final",
+      "status": "approved",
+      "answer": "A double-blind trial means neither the participants nor the researchers know who is receiving the actual treatment and who is receiving a placebo. This setup helps prevent bias in results, as both groups are treated equally without any prior knowledge of their assignments. It ensures that the outcomes are evaluated objectively, making the trial results more reliable and trustworthy.",
+      "score": 10,
+      "feedback": "The draft accurately and clearly explains what a double-blind trial means and its importance in minimizing bias.",
+      "question": "What does it mean when a trial is double blind?",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:36:54+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

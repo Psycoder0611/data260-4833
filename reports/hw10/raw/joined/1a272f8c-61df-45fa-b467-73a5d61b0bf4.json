@@ -1,0 +1,62 @@
+{
+  "trace_id": "1a272f8c-61df-45fa-b467-73a5d61b0bf4",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 0,
+    "offset": 175,
+    "timestamp_ms": 1794858005324,
+    "key": "1a272f8c-61df-45fa-b467-73a5d61b0bf4",
+    "value": {
+      "correlation_id": "1a272f8c-61df-45fa-b467-73a5d61b0bf4",
+      "stage": "plan",
+      "question": "How do researchers protect participant privacy in a trial?",
+      "plan": [
+        "Anonymize data by removing personal identifiers.",
+        "Use secure data storage and encryption methods.",
+        "Obtain informed consent and limit data access."
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:40:05+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 319,
+    "timestamp_ms": 1794858008830,
+    "key": "1a272f8c-61df-45fa-b467-73a5d61b0bf4",
+    "value": {
+      "correlation_id": "1a272f8c-61df-45fa-b467-73a5d61b0bf4",
+      "stage": "draft",
+      "question": "How do researchers protect participant privacy in a trial?",
+      "plan": [
+        "Anonymize data by removing personal identifiers.",
+        "Use secure data storage and encryption methods.",
+        "Obtain informed consent and limit data access."
+      ],
+      "draft": "Researchers protect participant privacy by anonymizing data, which involves removing all personal identifiers. They also use secure data storage and encryption to prevent unauthorized access. Informed consent is obtained to ensure participants understand how their data will be used, and access to data is strictly limited to authorized personnel only. These measures help maintain confidentiality and comply with ethical and legal standards throughout the trial.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:40:08+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 28,
+    "timestamp_ms": 1794858010382,
+    "key": "1a272f8c-61df-45fa-b467-73a5d61b0bf4",
+    "value": {
+      "correlation_id": "1a272f8c-61df-45fa-b467-73a5d61b0bf4",
+      "stage": "final",
+      "status": "approved",
+      "answer": "Researchers protect participant privacy by anonymizing data, which involves removing all personal identifiers. They also use secure data storage and encryption to prevent unauthorized access. Informed consent is obtained to ensure participants understand how their data will be used, and access to data is strictly limited to authorized personnel only. These measures help maintain confidentiality and comply with ethical and legal standards throughout the trial.",
+      "score": 10,
+      "feedback": "The draft accurately and clearly explains how researchers protect participant privacy in a trial.",
+      "question": "How do researchers protect participant privacy in a trial?",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:40:10+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

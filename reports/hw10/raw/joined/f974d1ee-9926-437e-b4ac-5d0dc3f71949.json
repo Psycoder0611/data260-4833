@@ -1,0 +1,62 @@
+{
+  "trace_id": "f974d1ee-9926-437e-b4ac-5d0dc3f71949",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 0,
+    "offset": 185,
+    "timestamp_ms": 1794858275212,
+    "key": "f974d1ee-9926-437e-b4ac-5d0dc3f71949",
+    "value": {
+      "correlation_id": "f974d1ee-9926-437e-b4ac-5d0dc3f71949",
+      "stage": "plan",
+      "question": "What is an interim analysis?",
+      "plan": [
+        "Interim analysis is a statistical review during a trial.",
+        "It checks for early success or futility.",
+        "Helps decide if to continue, modify, or stop the trial."
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:44:35+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 334,
+    "timestamp_ms": 1794858279920,
+    "key": "f974d1ee-9926-437e-b4ac-5d0dc3f71949",
+    "value": {
+      "correlation_id": "f974d1ee-9926-437e-b4ac-5d0dc3f71949",
+      "stage": "draft",
+      "question": "What is an interim analysis?",
+      "plan": [
+        "Interim analysis is a statistical review during a trial.",
+        "It checks for early success or futility.",
+        "Helps decide if to continue, modify, or stop the trial."
+      ],
+      "draft": "An interim analysis is a statistical review of trial data conducted during an ongoing study. It checks whether the trial is showing early signs of success or if it is unlikely to meet its goals, a concept known as futility. This analysis helps researchers decide whether to continue the trial as planned, modify its design, or stop it early based on the findings. Interim analyses are important for ensuring the trial remains ethical, efficient, and scientifically valid.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:44:39+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 43,
+    "timestamp_ms": 1794858281604,
+    "key": "f974d1ee-9926-437e-b4ac-5d0dc3f71949",
+    "value": {
+      "correlation_id": "f974d1ee-9926-437e-b4ac-5d0dc3f71949",
+      "stage": "final",
+      "status": "approved",
+      "answer": "An interim analysis is a statistical review of trial data conducted during an ongoing study. It checks whether the trial is showing early signs of success or if it is unlikely to meet its goals, a concept known as futility. This analysis helps researchers decide whether to continue the trial as planned, modify its design, or stop it early based on the findings. Interim analyses are important for ensuring the trial remains ethical, efficient, and scientifically valid.",
+      "score": 10,
+      "feedback": "The draft accurately and clearly defines an interim analysis and addresses the question comprehensively.",
+      "question": "What is an interim analysis?",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:44:41+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}

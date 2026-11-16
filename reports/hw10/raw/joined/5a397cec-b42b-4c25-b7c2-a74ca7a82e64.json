@@ -1,0 +1,44 @@
+{
+  "trace_id": "5a397cec-b42b-4c25-b7c2-a74ca7a82e64",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 1,
+    "offset": 169,
+    "timestamp_ms": 1794856354123,
+    "key": "5a397cec-b42b-4c25-b7c2-a74ca7a82e64",
+    "value": {
+      "correlation_id": "5a397cec-b42b-4c25-b7c2-a74ca7a82e64",
+      "stage": "plan",
+      "question": "Explain the steps to enroll in a listed trial.",
+      "plan": [],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:12:34+00:00",
+      "fault_injected": "bad_plan"
+    }
+  },
+  "draft": null,
+  "final": null,
+  "dead_letter": {
+    "topic": "s4833_dead_letter",
+    "partition": 0,
+    "offset": 8,
+    "timestamp_ms": 1794856355643,
+    "key": "5a397cec-b42b-4c25-b7c2-a74ca7a82e64",
+    "value": {
+      "correlation_id": "5a397cec-b42b-4c25-b7c2-a74ca7a82e64",
+      "failed_stage": "writer",
+      "error": "ValueError: plan must be a non-empty list of non-empty strings",
+      "attempts": 3,
+      "source_topic": "s4833_tasks",
+      "source_partition": 1,
+      "source_offset": 169,
+      "original": "{\"correlation_id\": \"5a397cec-b42b-4c25-b7c2-a74ca7a82e64\", \"stage\": \"plan\", \"question\": \"Explain the steps to enroll in a listed trial.\", \"plan\": [], \"planned_by\": \"PLANNER\", \"created_at\": \"2026-11-16T19:12:34+00:00\", \"fault_injected\": \"bad_plan\"}",
+      "failed_at": "2026-11-16T19:12:35+00:00"
+    }
+  },
+  "issues": [
+    "plan is empty or not a list",
+    "missing draft message",
+    "message was dead-lettered"
+  ]
+}

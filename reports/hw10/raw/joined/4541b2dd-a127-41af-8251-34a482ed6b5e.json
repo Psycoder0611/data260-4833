@@ -1,0 +1,62 @@
+{
+  "trace_id": "4541b2dd-a127-41af-8251-34a482ed6b5e",
+  "plan": {
+    "topic": "s4833_tasks",
+    "partition": 1,
+    "offset": 173,
+    "timestamp_ms": 1794857861336,
+    "key": "4541b2dd-a127-41af-8251-34a482ed6b5e",
+    "value": {
+      "correlation_id": "4541b2dd-a127-41af-8251-34a482ed6b5e",
+      "stage": "plan",
+      "question": "What is an exclusion criterion and who sets it?",
+      "plan": [
+        "An exclusion criterion is a condition that disqualifies participants from a study.",
+        "It is set by the study's researchers and ethics committee.",
+        "It ensures participant safety and study validity."
+      ],
+      "planned_by": "PLANNER",
+      "created_at": "2026-11-16T19:37:41+00:00"
+    }
+  },
+  "draft": {
+    "topic": "s4833_drafts",
+    "partition": 0,
+    "offset": 311,
+    "timestamp_ms": 1794857863984,
+    "key": "4541b2dd-a127-41af-8251-34a482ed6b5e",
+    "value": {
+      "correlation_id": "4541b2dd-a127-41af-8251-34a482ed6b5e",
+      "stage": "draft",
+      "question": "What is an exclusion criterion and who sets it?",
+      "plan": [
+        "An exclusion criterion is a condition that disqualifies participants from a study.",
+        "It is set by the study's researchers and ethics committee.",
+        "It ensures participant safety and study validity."
+      ],
+      "draft": "An exclusion criterion is a condition that disqualifies participants from a study. It is set by the study's researchers and ethics committee. These criteria help ensure participant safety and maintain the validity of the study by excluding individuals who might be at risk or could affect the study's results.",
+      "written_by": "WRITER",
+      "created_at": "2026-11-16T19:37:43+00:00"
+    }
+  },
+  "final": {
+    "topic": "s4833_final",
+    "partition": 0,
+    "offset": 20,
+    "timestamp_ms": 1794857866372,
+    "key": "4541b2dd-a127-41af-8251-34a482ed6b5e",
+    "value": {
+      "correlation_id": "4541b2dd-a127-41af-8251-34a482ed6b5e",
+      "stage": "final",
+      "status": "approved",
+      "answer": "An exclusion criterion is a condition that disqualifies participants from a study. It is set by the study's researchers and ethics committee. These criteria help ensure participant safety and maintain the validity of the study by excluding individuals who might be at risk or could affect the study's results.",
+      "score": 9,
+      "feedback": "The draft accurately defines an exclusion criterion and explains who sets it, but could clarify that exclusion criteria are typically established by the study's investigators and institutional review board (IRB) or ethics committee.",
+      "question": "What is an exclusion criterion and who sets it?",
+      "reviewed_by": "REVIEWER",
+      "created_at": "2026-11-16T19:37:46+00:00"
+    }
+  },
+  "dead_letter": null,
+  "issues": []
+}
