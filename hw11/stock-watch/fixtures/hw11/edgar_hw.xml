@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- HW11 FIXTURE for DATA 260. Northwind Devices (NWDV), Calder Foods (CLDF), Halcyon Pharma (HLCN) and Vantor AI Systems (VNTR) are fictional companies; these filings do not exist. -->
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>EDGAR 8-K filings (HW11 fixture)</title>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999921-26-000051</id>
+    <updated>2026-11-24T16:20:00-05:00</updated>
+    <title>NWDV: 8-K - Current report</title>
+    <summary>(Fictional test filing.) Northwind Devices Corp. Item 2.02 Results of Operations and Financial Condition; Item 9.01 Financial Statements and Exhibits. Third-quarter revenue of $3.1B, up 14% year over year; the company raised its full-year revenue outlook.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999921/000999992126000051/0009999921-26-000051-index.htm" rel="alternate"/>
+  </entry>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999922-26-000019</id>
+    <updated>2026-11-24T08:45:00-05:00</updated>
+    <title>CLDF: 8-K - Current report</title>
+    <summary>(Fictional test filing.) Calder Foods Inc. Item 1.01 Entry into a Material Definitive Agreement: a five-year supply agreement with a national grocery chain, valued at about $850M over the term.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999922/000999992226000019/0009999922-26-000019-index.htm" rel="alternate"/>
+  </entry>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999923-26-000031</id>
+    <updated>2026-11-24T11:10:00-05:00</updated>
+    <title>HLCN: 8-K/A - Amendment to current report</title>
+    <summary>(Fictional test filing.) Halcyon Pharma Inc. Amendment No. 1 to the Form 8-K filed on November 10, 2026 (accession 0009999923-26-000022). The amendment corrects the date of the annual meeting stated in Item 5.07. No other changes.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999923/000999992326000031/0009999923-26-000031-index.htm" rel="alternate"/>
+  </entry>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999923-26-000033</id>
+    <updated>2026-11-25T07:30:00-05:00</updated>
+    <title>HLCN: 8-K - Current report</title>
+    <summary>(Fictional test filing.) Halcyon Pharma Inc. Item 8.01 Other Events: the Phase 3 study of the company's lead program did not meet its primary endpoint. The company is reviewing the full data set and will update investors.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999923/000999992326000033/0009999923-26-000033-index.htm" rel="alternate"/>
+  </entry>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999924-26-000012</id>
+    <updated>2026-11-25T16:05:00-05:00</updated>
+    <title>VNTR: 8-K - Current report</title>
+    <summary>(Fictional test filing.) Vantor AI Systems Inc. Item 5.02 Departure of Directors or Certain Officers: the Chief Financial Officer resigned effective immediately. The board named the Controller as interim Chief Financial Officer and has started a search.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999924/000999992426000012/0009999924-26-000012-index.htm" rel="alternate"/>
+  </entry>
+</feed>

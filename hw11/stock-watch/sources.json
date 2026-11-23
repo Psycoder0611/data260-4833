@@ -1,0 +1,156 @@
+{
+  "topic": "Material changes for a stock watchlist (KO, PFE, AAPL, NVDA): large daily price moves and new SEC 8-K filings",
+  "user_agent": "DATA260-stock-watch/1.0 trapti.kulshrestha@sjsu.edu",
+  "note": "Approved-source allowlist. watch.py refuses any URL whose host is not listed here. SEC asks automated clients to send a User-Agent with a contact email: put yours in user_agent above. Live watchlist: KO, PFE (class A, 1.5%), AAPL (class B, 2.5%), NVDA (class C, 4.0%); threshold_pct is the digest floor, see policy.md. The *_hw sources are the HW11 fictional fixtures; the *_demo sources are the kit's own demo.",
+  "sources": [
+    {
+      "id": "prices_live_a",
+      "type": "stooq",
+      "modes": [
+        "live"
+      ],
+      "url": "https://stooq.com/q/d/l/",
+      "tickers": [
+        "ko.us",
+        "pfe.us"
+      ],
+      "threshold_pct": 1.5,
+      "lookback_days": 3
+    },
+    {
+      "id": "prices_live_b",
+      "type": "stooq",
+      "modes": [
+        "live"
+      ],
+      "url": "https://stooq.com/q/d/l/",
+      "tickers": [
+        "aapl.us"
+      ],
+      "threshold_pct": 2.5,
+      "lookback_days": 3
+    },
+    {
+      "id": "prices_live_c",
+      "type": "stooq",
+      "modes": [
+        "live"
+      ],
+      "url": "https://stooq.com/q/d/l/",
+      "tickers": [
+        "nvda.us"
+      ],
+      "threshold_pct": 4.0,
+      "lookback_days": 3
+    },
+    {
+      "id": "edgar_live",
+      "type": "edgar",
+      "modes": [
+        "live"
+      ],
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar",
+      "form": "8-K",
+      "per_company": 5,
+      "ciks": {
+        "KO": "0000021344",
+        "PFE": "0000078003",
+        "AAPL": "0000320193",
+        "NVDA": "0001045810"
+      }
+    },
+    {
+      "id": "prices_demo",
+      "type": "stooq",
+      "modes": [
+        "fixtures"
+      ],
+      "url": "https://stooq.com/q/d/l/",
+      "tickers": [
+        "nbrx.us",
+        "cbds.us",
+        "lksp.us"
+      ],
+      "threshold_pct": 2.0,
+      "lookback_days": 3
+    },
+    {
+      "id": "edgar_demo",
+      "type": "edgar",
+      "modes": [
+        "fixtures"
+      ],
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar",
+      "fixture": "edgar_8k.xml",
+      "ciks": {}
+    },
+    {
+      "id": "newswire_demo",
+      "type": "rss",
+      "modes": [
+        "fixtures"
+      ],
+      "url": "https://example-newswire.example/markets/feed.xml",
+      "fixture": "newswire.xml"
+    },
+    {
+      "id": "prices_hw_a",
+      "type": "stooq",
+      "modes": [
+        "fixtures"
+      ],
+      "url": "https://stooq.com/q/d/l/",
+      "tickers": [
+        "cldf.us",
+        "hlcn.us"
+      ],
+      "threshold_pct": 1.5,
+      "lookback_days": 3
+    },
+    {
+      "id": "prices_hw_b",
+      "type": "stooq",
+      "modes": [
+        "fixtures"
+      ],
+      "url": "https://stooq.com/q/d/l/",
+      "tickers": [
+        "nwdv.us"
+      ],
+      "threshold_pct": 2.5,
+      "lookback_days": 3
+    },
+    {
+      "id": "prices_hw_c",
+      "type": "stooq",
+      "modes": [
+        "fixtures"
+      ],
+      "url": "https://stooq.com/q/d/l/",
+      "tickers": [
+        "vntr.us"
+      ],
+      "threshold_pct": 4.0,
+      "lookback_days": 3
+    },
+    {
+      "id": "edgar_hw",
+      "type": "edgar",
+      "modes": [
+        "fixtures"
+      ],
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar",
+      "fixture": "edgar_hw.xml",
+      "ciks": {}
+    },
+    {
+      "id": "newswire_hw",
+      "type": "rss",
+      "modes": [
+        "fixtures"
+      ],
+      "url": "https://example-newswire.example/markets/feed.xml",
+      "fixture": "newswire_hw.xml"
+    }
+  ]
+}
